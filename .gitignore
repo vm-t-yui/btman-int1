@@ -31,7 +31,6 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
 *.unitypackage
 
 # Odin - Inspector and Serializer
