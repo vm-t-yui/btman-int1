@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: eb8c639478c46ac4480af7688450d366
+  productGUID: 5db2f77851c313d48b87a1b2362eb61b
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -152,10 +152,11 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.Tricore_as04.AdTest
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -529,7 +530,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   scriptingDefineSymbols: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Android: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
@@ -618,9 +620,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 2e01012c-dca9-4e35-886a-408112ff7326
+  cloudProjectId: 28a8a260-f2fc-4366-bd67-33a9b4dfc1c8
   framebufferDepthMemorylessMode: 0
-  projectName: AdTest
+  projectName: AdTest (3)
   organizationId: unity_fbaoc9jbtmk2kg
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
