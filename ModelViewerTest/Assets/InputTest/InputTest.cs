@@ -10,10 +10,10 @@ public class InputTest: MonoBehaviour
     [SerializeField] GameObject sourceTouchPosImage = null;
 
     // 画像を格納するリスト
-    private List<GameObject> touchPosImages = new List<GameObject>();
+    List<GameObject> touchPosImages = new List<GameObject>();
 
     // テキストのコンポーネント
-    private Text log;
+    Text log;
 
     /// <summary>
     /// 開始
