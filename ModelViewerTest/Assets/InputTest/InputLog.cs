@@ -5,23 +5,32 @@ using UnityEngine.UI;
 
 public class InputLog : MonoBehaviour
 {
+    // タッチされている位置を表す画像のソース
+    [SerializeField] private GameObject sourceTouchPosImage;
+
+    // 画像を格納するリスト
+    private List<GameObject> touchPosImages = new List<GameObject>();
+
     // テキストのコンポーネント
-    Text log;
+    private Text log;
 
-    // タッチ入力情報
-    Touch touchState0;     // １本目の指
-    Touch touchState1;     // ２本目の指
-
-    // 初期化
+    /// <summary>
+    /// 開始
+    /// </summary>
     void Start()
     {
         // テキストのコンポーネントを取得
         log = GetComponent<Text>();
     }
 
-    // 更新
+   /// <summary>
+   /// 更新
+   /// </summary>
     void Update()
     {
+        // リスト内の画像を全て削除
+        AllDestroyTouchPosImage();
+
         // 入力がない場合は、ログを表示してそれ以降の処理をスキップする
         if (Input.touchCount <= 0)
         {
@@ -36,8 +45,43 @@ public class InputLog : MonoBehaviour
         // タッチされている数を表示
         log.text = "touchNum : " + Input.touchCount.ToString();
 
-        // 入力状態の取得
-        touchState0 = Input.GetTouch(0);    // １本目の指
-        touchState1 = Input.GetTouch(1);    // ２本目の指
+        // タッチされた位置を表す画像を描画
+        DrawTouchPosImage();
+    }
+   
+    /// <summary>
+    /// タップした位置に画像を描画
+    /// </summary>
+    void DrawTouchPosImage()
+    {
+        // リストの要素を全削除
+        touchPosImages.Clear();
+
+        // タッチされている数を取得
+        int touchNum = Input.touchCount;
+
+        // タッチされている数だけ処理を行う
+        for (int i = 0; i < touchNum; i++)
+        {
+            // タッチされている箇所のそれぞれの入力情報を取得
+            Touch touchInfo = Input.GetTouch(i);
+
+            // 取得した情報をもとに、位置を表す画像を複製する
+            GameObject tmpImage = Instantiate(sourceTouchPosImage,       // 複製元のソース画像
+                                              touchInfo.position,        // 初期位置
+                                              Quaternion.Euler(0,0,0),   // 初期回転角
+                                              Canvas.canvas.transform);  // 紐づける親オブジェクト（親：カンバス）
+
+            // 複製したオブジェクトをリストに加える
+            touchPosImages.Add(tmpImage);
+        }
+    }
+
+    /// <summary>
+    /// 残っている全ての画像を削除
+    /// </summary>
+    void AllDestroyTouchPosImage()
+    {
+        touchPosImages.ForEach(element => Destroy(element));
     }
 }
