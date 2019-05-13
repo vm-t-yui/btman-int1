@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputLog : MonoBehaviour
+// 入力関連のテストプログラムのクラス
+public class InputTest: MonoBehaviour
 {
     // タッチされている位置を表す画像のソース
-    [SerializeField] private GameObject sourceTouchPosImage;
+    [SerializeField] GameObject sourceTouchPosImage = null;
 
     // 画像を格納するリスト
     private List<GameObject> touchPosImages = new List<GameObject>();
@@ -29,7 +30,7 @@ public class InputLog : MonoBehaviour
     void Update()
     {
         // リスト内の画像を全て削除
-        AllDestroyTouchPosImage();
+        DestroyAllTouchPosImage();
 
         // 入力がない場合は、ログを表示してそれ以降の処理をスキップする
         if (Input.touchCount <= 0)
@@ -67,10 +68,10 @@ public class InputLog : MonoBehaviour
             Touch touchInfo = Input.GetTouch(i);
 
             // 取得した情報をもとに、位置を表す画像を複製する
-            GameObject tmpImage = Instantiate(sourceTouchPosImage,       // 複製元のソース画像
-                                              touchInfo.position,        // 初期位置
-                                              Quaternion.Euler(0,0,0),   // 初期回転角
-                                              Canvas.canvas.transform);  // 紐づける親オブジェクト（親：カンバス）
+            GameObject tmpImage = Instantiate(sourceTouchPosImage,                          // 複製元のソース画像
+                                              touchInfo.position,                           // 初期位置
+                                              Quaternion.Euler(0,0,0),                      // 初期回転角
+                                              InputTestCanvas.canvasGameObject.transform);  // 紐づける親オブジェクト（親：カンバス）
 
             // 複製したオブジェクトをリストに加える
             touchPosImages.Add(tmpImage);
@@ -80,7 +81,7 @@ public class InputLog : MonoBehaviour
     /// <summary>
     /// 残っている全ての画像を削除
     /// </summary>
-    void AllDestroyTouchPosImage()
+    void DestroyAllTouchPosImage()
     {
         touchPosImages.ForEach(element => Destroy(element));
     }

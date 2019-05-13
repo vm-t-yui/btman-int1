@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : MonoBehaviour
+// カンバスの「InputTestCanvas」のオブジェクトクラス
+public class InputTestCanvas : MonoBehaviour
 {
     // カンバスのゲームオブジェクト
-    public static GameObject canvas;
+    public static GameObject canvasGameObject;
 
     /// <summary>
     /// 開始
@@ -13,6 +14,6 @@ public class Canvas : MonoBehaviour
     void Start()
     {
         // カンバスのゲームオブジェクトを取得
-        canvas = GameObject.Find("Canvas");
+        canvasGameObject = GameObject.Find("InputTestCanvas");
     }
 }
