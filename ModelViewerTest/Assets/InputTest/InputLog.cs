@@ -12,14 +12,18 @@ public class InputLog : MonoBehaviour
     Touch touchState0;     // １本目の指
     Touch touchState1;     // ２本目の指
 
-    /// 開始
+    /// <summary>
+   /// 開始
+   /// </summary>
     void Start()
     {
         // テキストのコンポーネントを取得
         log = GetComponent<Text>();
     }
 
-    /// 更新
+    /// <summary>
+   /// 更新
+   /// </summary>
     void Update()
     {
         // 入力がない場合は、ログを表示してそれ以降の処理をスキップする
