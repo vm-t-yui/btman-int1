@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// カンバスの「InputTestCanvas」のオブジェクトクラス
+/// <summary>
+/// カンバスの「InputTestCanvas」のオブジェクトクラス
+/// </summary>
 public class InputTestCanvas : MonoBehaviour
 {
     // カンバスのゲームオブジェクト

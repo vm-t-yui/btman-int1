@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 入力関連のテストプログラムのクラス
+/// <summary>
+/// 入力関連のテストプログラムのクラス
+/// </summary>
 public class InputTest: MonoBehaviour
 {
     // タッチされている位置を表す画像のソース
