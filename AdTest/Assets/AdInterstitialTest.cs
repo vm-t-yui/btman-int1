@@ -9,9 +9,9 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 /// </summary>
 public class AdInterstitialTest : MonoBehaviour
 {
-    InterstitialAd interstitialAd;  　　　　　　　　// インタースティシャル広告制御クラス
+    InterstitialAd interstitialAd;  // インタースティシャル広告制御クラス
 
-    public bool isLoaded { get; private set; }　　　// ロードし終わったかどうか
+    public bool isLoaded { get; private set; }
 
     /// <summary>
     /// 開始
