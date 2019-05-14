@@ -2,48 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using GoogleMobileAds.Api;
+using GoogleMobileAds.Api;    // Google AdMob広告用
 
-//---------------------------------------------------------------
-//バナー広告テストクラス
-//---------------------------------------------------------------
+/// <summary>
+/// バナー広告テストクラス
+/// </summary>
 public class AdBannerTest : MonoBehaviour
 {
-    // Use this for initialization
+    BannerView bannerView;  // バナー広告制御クラス
+
+    /// <summary>
+    /// 開始
+    /// </summary>
     void Start()
     {
-
-        // アプリID、 これはテスト用
-        string appId = "ca-app-pub-3940256099942544~3347511713";
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
-
-        RequestBanner();
+        // 処理なし
     }
 
     /// <summary>
     /// バナー広告生成
     /// </summary>
-    private void RequestBanner()
+    public void RequestBanner()
     {
-
         // 広告ユニットID これはテスト用
         string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 
-        // Create a 320x50 banner at the top of the screen.
-        BannerView bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
+        // サイズ320 x 50、画面上部表示の設定で初期化
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
 
-        // Create an empty ad request.
+        // 空の広告リクエストを作成
         AdRequest request = new AdRequest.Builder().Build();
 
-        // Load the banner with the request.
+        // bannerViewにrequestをロード
         bannerView.LoadAd(request);
+
+        // 表示状態で生成されるので非表示にする
+        bannerView.Hide();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// 表示
+    /// </summary>
+    public void ShowBanner()
+    {
+        bannerView.Show();
+    }
+
+    /// <summary>
+    /// 非表示
+    /// </summary>
+    public void HideBanner()
+    {
+        bannerView.Hide();
+    }
+
+    /// <summary>
+    /// 更新
+    /// </summary>
     void Update()
     {
-
+        // 処理なし
     }
 }
