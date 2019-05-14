@@ -15,7 +15,7 @@ public class AdManager : MonoBehaviour
     AdBannerTest adBanner;                   // バナー広告テストクラス
     AdInterstitialTest adInterstitial;       // インタースティシャル広告テストクラス
 
-    bool isAdView= false;                    // 広告表示してるかどうか                
+    bool IsAdView= false;                    // 広告表示してるかどうか                
 
     /// <summary>
     /// 開始
@@ -45,7 +45,7 @@ public class AdManager : MonoBehaviour
     void Update()
     {
         // インタースティシャルのロードが終わったら広告を表示する
-        if (adInterstitial.isLoaded && !isAdView)
+        if (adInterstitial.IsLoaded && !IsAdView)
         { 
             // バナー広告を表示
             adBanner.ShowBanner();
@@ -53,7 +53,7 @@ public class AdManager : MonoBehaviour
             // インタースティシャル広告を表示
             adInterstitial.ShowInterstitial();
 
-            isAdView = true;
+            IsAdView = true;
         }
     }
 }

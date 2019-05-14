@@ -9,7 +9,9 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 /// </summary>
 public class AdBannerTest : MonoBehaviour
 {
-    BannerView bannerView;  // バナー広告制御クラス
+    BannerView bannerView;                                              // バナー広告制御クラス
+
+    const string AdUnitId = "ca-app-pub-3940256099942544/6300978111";   // 広告ユニットID（テスト用ID）
 
     /// <summary>
     /// 開始
@@ -24,11 +26,8 @@ public class AdBannerTest : MonoBehaviour
     /// </summary>
     public void RequestBanner()
     {
-        // 広告ユニットID これはテスト用
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-
         // サイズ320 x 50、画面上部表示の設定で初期化
-        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
+        bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Top);
 
         // 空の広告リクエストを作成
         AdRequest request = new AdRequest.Builder().Build();

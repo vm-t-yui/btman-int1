@@ -9,9 +9,11 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 /// </summary>
 public class AdInterstitialTest : MonoBehaviour
 {
-    InterstitialAd interstitialAd;  　　　　　　　　// インタースティシャル広告制御クラス
+    InterstitialAd interstitialAd;  　　　　　　　　                    // インタースティシャル広告制御クラス
 
-    public bool isLoaded { get; private set; }　　　// ロードし終わったかどうか
+    const string AdUnitId = "ca-app-pub-3940256099942544/1033173712";   // 広告ユニットID（テスト用ID）
+
+    public bool IsLoaded { get; private set; }　　　                    // ロードし終わったかどうか
 
     /// <summary>
     /// 開始
@@ -26,13 +28,10 @@ public class AdInterstitialTest : MonoBehaviour
     /// </summary>
     public void RequestInterstitial()
     {
-        isLoaded = false;
-
-        // 広告ユニットID これはテスト用
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        IsLoaded = false;
 
         // interstitialAdを初期化
-        interstitialAd = new InterstitialAd(adUnitId);
+        interstitialAd = new InterstitialAd(AdUnitId);
 
         // 空の広告リクエストを作成
         AdRequest request = new AdRequest.Builder().Build();
@@ -70,7 +69,7 @@ public class AdInterstitialTest : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
-            isLoaded = true;
+            IsLoaded = true;
         }
     }
 }
