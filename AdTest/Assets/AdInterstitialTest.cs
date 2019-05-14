@@ -14,6 +14,7 @@ public class AdInterstitialTest : MonoBehaviour
     const string AdUnitId = "ca-app-pub-3940256099942544/1033173712";   // 広告ユニットID（テスト用ID）
 
     public bool IsLoaded { get; private set; }　　　                    // ロードし終わったかどうか
+    public bool IsClosed { get; private set; }                          // 広告を閉じているかどうか
 
     /// <summary>
     /// 開始
@@ -29,6 +30,7 @@ public class AdInterstitialTest : MonoBehaviour
     public void RequestInterstitial()
     {
         IsLoaded = false;
+        IsClosed = true;
 
         // interstitialAdを初期化
         interstitialAd = new InterstitialAd(AdUnitId);
@@ -40,15 +42,17 @@ public class AdInterstitialTest : MonoBehaviour
         this.interstitialAd.LoadAd(request);
 
         //// InterstitialAdの破棄と再読み込み
-        //interstitialAd.OnAdClosed += HandleAdClosed;
+        interstitialAd.OnAdClosed += HandleAdClosed;
     }
 
     /// <summary>
     /// インタースティシャル広告表示
     /// </summary>
-    public void ShowInterstitial()
+    public void Show()
     {
         interstitialAd.Show();
+
+        IsClosed = false;
     }
 
     /// <summary>
@@ -60,6 +64,7 @@ public class AdInterstitialTest : MonoBehaviour
     {
         interstitialAd.Destroy();
         RequestInterstitial();
+        IsClosed = true;
     }
 
     /// <summary>

@@ -10,12 +10,12 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 public class AdManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject bannerObj, interstitialObj;   // 各広告オブジェクト
+    GameObject bannerObj, interstitialObj;       // 各広告オブジェクト
 
-    AdBannerTest adBanner;                   // バナー広告テストクラス
-    AdInterstitialTest adInterstitial;       // インタースティシャル広告テストクラス
+    AdBannerTest adBanner;                       // バナー広告テストクラス
+    AdInterstitialTest adInterstitial;           // インタースティシャル広告テストクラス
 
-    bool IsAdView= false;                    // 広告表示してるかどうか                
+    public bool IsAdView { get; private set; }   // 広告表示してるかどうか                
 
     /// <summary>
     /// 開始
@@ -40,18 +40,26 @@ public class AdManager : MonoBehaviour
     }
 
     /// <summary>
+    /// インタースティシャル広告表示
+    /// </summary>
+    public void ShowInterstitial()
+    {
+        // ロードが終わっていて閉じているなら表示する
+        if (adInterstitial.IsLoaded && adInterstitial.IsClosed)
+        {
+            adInterstitial.Show();
+        }
+    }
+
+    /// <summary>
     /// バナー広告生成
     /// </summary>
     void Update()
     {
-        // インタースティシャルのロードが終わったら広告を表示する
-        if (adInterstitial.IsLoaded && !IsAdView)
-        { 
+        if (!IsAdView)
+        {
             // バナー広告を表示
-            adBanner.ShowBanner();
-
-            // インタースティシャル広告を表示
-            adInterstitial.ShowInterstitial();
+            adBanner.Show();
 
             IsAdView = true;
         }

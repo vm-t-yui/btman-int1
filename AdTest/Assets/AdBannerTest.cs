@@ -42,7 +42,7 @@ public class AdBannerTest : MonoBehaviour
     /// <summary>
     /// 表示
     /// </summary>
-    public void ShowBanner()
+    public void Show()
     {
         bannerView.Show();
     }
@@ -50,7 +50,7 @@ public class AdBannerTest : MonoBehaviour
     /// <summary>
     /// 非表示
     /// </summary>
-    public void HideBanner()
+    public void Hide()
     {
         bannerView.Hide();
     }
