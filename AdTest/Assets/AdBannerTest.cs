@@ -14,14 +14,6 @@ public class AdBannerTest : MonoBehaviour
     const string AdUnitId = "ca-app-pub-3940256099942544/6300978111";   // 広告ユニットID（テスト用ID）
 
     /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        // 処理なし
-    }
-
-    /// <summary>
     /// バナー広告生成
     /// </summary>
     public void RequestBanner()
@@ -53,13 +45,5 @@ public class AdBannerTest : MonoBehaviour
     public void Hide()
     {
         bannerView.Hide();
-    }
-
-    /// <summary>
-    /// 更新
-    /// </summary>
-    void Update()
-    {
-        // 処理なし
     }
 }
