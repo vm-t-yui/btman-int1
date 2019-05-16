@@ -11,9 +11,9 @@ public class SceneControll : MonoBehaviour
     // シーンのステータス
     public enum SCENE_STATE
     {
-        TITLE,
-        PLAY,
-        RESULT,
+        Title,
+        Play,
+        Result,
     }
 
     public static SCENE_STATE NowScene { get; private set; }    // 現在のシーン
@@ -26,7 +26,7 @@ public class SceneControll : MonoBehaviour
         // タイトルシーンでのみシーンの状態を初期化
         if (SceneManager.GetActiveScene().name == "Title")
         {
-            NowScene = SCENE_STATE.TITLE;
+            NowScene = SCENE_STATE.Title;
         }
     }
 
@@ -35,7 +35,7 @@ public class SceneControll : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        NowScene = SCENE_STATE.PLAY;
+        NowScene = SCENE_STATE.Play;
         SceneManager.LoadScene("MainGame");
     }
 
@@ -44,7 +44,7 @@ public class SceneControll : MonoBehaviour
     /// </summary>
     public void RetryGame()
     {
-        NowScene = SCENE_STATE.PLAY;
+        NowScene = SCENE_STATE.Play;
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public class SceneControll : MonoBehaviour
     /// </summary>
     public void ReturnTitle()
     {
-        NowScene = SCENE_STATE.TITLE;
+        NowScene = SCENE_STATE.Title;
         SceneManager.LoadScene("Title");
     }
 
@@ -63,13 +63,13 @@ public class SceneControll : MonoBehaviour
     {
         switch (NowScene)
         {
-            case SCENE_STATE.TITLE:
+            case SCENE_STATE.Title:
 
                 break;
-            case SCENE_STATE.PLAY:
+            case SCENE_STATE.Play:
 
                 break;
-            case SCENE_STATE.RESULT:
+            case SCENE_STATE.Result:
 
                 break;
         }
