@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;  // シーン管理用ネームスペース
 
 /// <summary>
-/// シーン管理クラス
+/// シーンコントロールクラス
 /// </summary>
 public class SceneControll : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class SceneControll : MonoBehaviour
     /// </summary>
     void Start()
     {
+        // タイトルシーンでのみシーンの状態を初期化
         if (SceneManager.GetActiveScene().name == "Title")
         {
             NowScene = SCENE_STATE.TITLE;
@@ -36,6 +37,14 @@ public class SceneControll : MonoBehaviour
     {
         NowScene = SCENE_STATE.PLAY;
         SceneManager.LoadScene("MainGame");
+    }
+
+    /// <summary>
+    /// リトライ時の更新処理
+    /// </summary>
+    public void RetryGame()
+    {
+        NowScene = SCENE_STATE.PLAY;
     }
 
     /// <summary>
