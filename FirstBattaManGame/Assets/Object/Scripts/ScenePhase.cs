@@ -18,17 +18,27 @@ public class ScenePhase : MonoBehaviour
         Result,         // リザルト
     }
 
-    Phase currentPhase;                          // シーンの現在のフェーズ
+    Phase currentPhase;                                // シーンの現在のフェーズ
 
-    [SerializeField] GameObject player;          // プレイヤー
-    [SerializeField] GameObject countTimerUi;    // カウントタイマーのUI
-    [SerializeField] GameObject jumpHeightUi;    // ジャンプの高さのUI
+    [SerializeField] GameObject player;                // プレイヤー
+    [SerializeField] GameObject ground;                // 地面
+    [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
+    [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
 
-    Text countTimerText;                         // カウントタイマーUIのテキスト
-    Text jumpHeightText;                         // ジャンプの高さのUIのテキスト
+    Rigidbody playerRigidbody;                         // プレイヤーのリジッドボディ
+    Text      countTimerText;                          // カウントタイマーUIのテキスト
+    Text      jumpHeightText;                          // ジャンプの高さのUIのテキスト
     
-    float currentTime;                          // 現在のタイマーの時間
-    float LimitTime = 10.0f;                    // 制限時間
+    float currentTime;                                 // 現在のタイマー時間
+    float currentJumpPower;                            // 現在蓄積されているジャンプ力
+    float currentJumpHeightToMetre;                    // ジャンプの高さ（メートル）
+    bool  isJump;                                      // ジャンプしたかどうか
+
+    [SerializeField] float LimitTime;                  // 制限時間
+    [SerializeField] float OneTouchJumpPower;          // ワンタッチで蓄積されるジャンプ力
+    [SerializeField] float OneMetreDistance;           // 1メール分の距離
+    [SerializeField] uint  TimeScaleToPlayerJump;      // プレイヤーがジャンプしている際のタイムスケール
+    [SerializeField] float uiFadeAttenuation;          // UIのフェード時の減衰値
 
     /// <summary>
     /// 開始
@@ -37,10 +47,14 @@ public class ScenePhase : MonoBehaviour
     {
         currentPhase = Phase.CountDown;                         // シーンのフェーズを"カウントダウン"に初期化
 
-        countTimerText = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
-        jumpHeightText = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
+        countTimerText  = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
+        jumpHeightText  = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
+        playerRigidbody = player.GetComponent<Rigidbody>();      // プレイヤーのリジッドボディのコンポーネントを取得
 
-        currentTime = LimitTime;                                 // タイマーの制限時間をセット
+        currentTime              = LimitTime;                    // タイマーの制限時間をセット
+        currentJumpPower         = 0;                            // 現在蓄積されているジャンプ力
+        currentJumpHeightToMetre = 0;                            // ジャンプの高さ（メートル）
+        isJump                   = false;                        // ジャンプしたかどうか
 
         // それぞれのアクティブフラグを初期化
         player.SetActive(true);                 // プレイヤー
@@ -82,22 +96,40 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     void PhaseCountDown()
     {
+        // タイマーが０になるまでの処理
         if (currentTime > 0)
         {
+            // 
+            if (Input.touchCount > 0)
+            {
+                // タッチの状態を取得
+                Touch touchInfo = Input.GetTouch(0);
+                // タッチされたら、ジャンプ力を溜める
+                if (touchInfo.phase == TouchPhase.Began)
+                {
+                    currentJumpPower += OneTouchJumpPower;
+                }
+            }
+
             // タイマーを減らしていく
             currentTime -= Time.deltaTime;
         }
+        // タイマーが０になった場合の処理
         else
         {
             // アルファを変更して、タイマーのテキストをフェードアウトさせる
             Color timerTextColor = countTimerText.color;
-            timerTextColor.a -= 0.1f;
+            timerTextColor.a -= uiFadeAttenuation;
             countTimerText.color = timerTextColor;
 
-            // フェードアウトが終了したら、アクティブフラグをfalseにする
+            // フェードアウトが終了
             if (timerTextColor.a <= 0)
             {
+                // タイマーのUIのアクティブフラグをfalseに変更する
                 countTimerUi.SetActive(false);
+                // フェーズを"PlayerJump"に変更する
+                currentPhase = Phase.Playerjump;
+
             }
         }
 
@@ -110,7 +142,28 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     void PhasePlayerJump()
     {
+        // プレイヤー（バッタマン）をジャンプさせる
+        if (!isJump)
+        {
+            // プレイヤーに蓄積されたジャンプ力を与える
+            playerRigidbody.AddForce(Vector3.up * currentJumpPower, ForceMode.VelocityChange);
+            // ジャンプフラグをtrueに変更する
+            isJump = true;
 
+            // ジャンプの高さのUIのアクティブフラグをtrueに変更する
+            jumpHeightUi.SetActive(true);
+
+            // タイムスケールを変更する
+            Time.timeScale = TimeScaleToPlayerJump;
+        }
+
+        // 地面からのプレイヤーの高さを算出
+        float currentJumpHeight = (player.transform.position - ground.transform.position).magnitude;
+        // 現在のジャンプ力をメートルに変換する
+        currentJumpHeightToMetre = currentJumpHeight / OneMetreDistance;
+
+        // ジャンプの高さを表すUIに反映させる
+        jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
     }
 
     /// <summary>
