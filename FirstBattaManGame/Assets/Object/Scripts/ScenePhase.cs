@@ -40,7 +40,7 @@ public class ScenePhase : MonoBehaviour
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
-    const float ResultChangeWait      = 5.0f;          // フェーズをリザルトに変更する際の待機時間
+    const float ResultChangeWait      = 1.0f;          // フェーズをリザルトに変更する際の待機時間
     const float ResultTextScale       = 1.5f;          // リザルトでのテキストのスケール
     const float ResultLerpRate        = 0.02f;         // リザルトでのラープの割合
 
@@ -108,6 +108,11 @@ public class ScenePhase : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                currentJumpPower += OneTouchJumpPower;
+            }
+
             // タイマーを減らしていく
             currentTime -= Time.deltaTime;
         }
@@ -164,14 +169,15 @@ public class ScenePhase : MonoBehaviour
             // ベロシティが下向きになったら
             if (playerRigidbody.velocity.y <= 0)
             {
+                // タイムスケールをもとに戻す
+                Time.timeScale = 1;
+
                 // プレイヤーの重力を停止する
                 playerRigidbody.useGravity = false;
                 // 指定の時間だけ待機して、フェーズをリザルトに変更する
                 StartCoroutine(ChangePhase(ResultChangeWait, Phase.Result));
             }
         }
-
-
 
         // ジャンプの高さを表すUIに反映させる
         jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
@@ -188,7 +194,7 @@ public class ScenePhase : MonoBehaviour
         jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, new Vector3(0, 0, 0), ResultLerpRate);
 
         // テキストが画面中央に移動したら
-        if (jumpHeightUi.transform.localPosition == Vector3.zero)
+        if (jumpHeightUi.transform.localPosition.magnitude < 0.1f)
         {
             // タイトルへ戻るボタンを表示
             backToTitleButton.SetActive(true);
@@ -202,6 +208,8 @@ public class ScenePhase : MonoBehaviour
     {
         // シーンをタイトルへ変更する
         SceneManager.LoadScene("Title");
+        // 終了処理
+        Finalize();
     }
 
     /// <summary>
@@ -218,4 +226,21 @@ public class ScenePhase : MonoBehaviour
         currentPhase = changePhase;
     }
 
+    /// <summary>
+    /// 終了処理
+    /// </summary>
+    void Finalize()
+    {
+        // 各GameObjectを削除
+        Destroy(player);
+        Destroy(ground);
+        Destroy(countTimerUi);
+        Destroy(jumpHeightUi);
+        Destroy(backToTitleButton);
+
+        // 各コンポーネントを削除
+        Destroy(playerRigidbody);
+        Destroy(countTimerText);
+        Destroy(jumpHeightText);
+    }
 }
