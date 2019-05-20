@@ -18,27 +18,35 @@ public class ScenePhase : MonoBehaviour
         Result,         // リザルト
     }
 
-    [SerializeField] GameObject player;          // プレイヤー
-    [SerializeField] GameObject countTimerUi;    // カウントタイマーのUI
-    [SerializeField] GameObject jumpHeightUi;    // ジャンプの高さのUI
+    [SerializeField] GameObject player;                // プレイヤー
+    [SerializeField] GameObject ground;                // 地面
+    [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
+    [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
 
-    Text countTimerText;                         // カウントタイマーUIのテキスト
-    Text jumpHeightText;                         // ジャンプの高さのUIのテキスト
-    Phase currentPhase;                          // シーンの現在のフェーズ
-    float currentTime;                           // 現在のタイマーの時間
-    const float LimitTime = 10.0f;               // 制限時間
+    Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
+    float     currentTime              = LimitTime;           // 現在のタイマー時間
+    float     currentJumpPower         = 0;                   // 現在蓄積されているジャンプ力
+    float     currentJumpHeightToMetre = 0;                   // ジャンプの高さ（メートル）
+    bool      isJump                   = false;               // ジャンプしたかどうか
+
+    Rigidbody playerRigidbody;                                // プレイヤーのリジッドボディ
+    Text      countTimerText;                                 // カウントタイマーUIのテキスト
+    Text      jumpHeightText;                                 // ジャンプの高さのUIのテキスト
+
+    const float LimitTime             = 10;            // 制限時間
+    const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
+    const float OneMetreDistance      = 100;           // 1メール分の距離
+    const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
+    const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
 
     /// <summary>
     /// 開始
     /// </summary>
     void Start()
     {
-        currentPhase = Phase.CountDown;                         // シーンのフェーズを"カウントダウン"に初期化
-
-        countTimerText = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
-        jumpHeightText = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
-
-        currentTime = LimitTime;                                 // タイマーの制限時間をセット
+        countTimerText  = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
+        jumpHeightText  = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
+        playerRigidbody = player.GetComponent<Rigidbody>();      // プレイヤーのリジッドボディのコンポーネントを取得
 
         // それぞれのアクティブフラグを初期化
         player.SetActive(true);                 // プレイヤー
@@ -80,22 +88,40 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     void PhaseCountDown()
     {
+        // タイマーが０になるまでの処理
         if (currentTime > 0)
         {
+            // 
+            if (Input.touchCount > 0)
+            {
+                // タッチの状態を取得
+                Touch touchInfo = Input.GetTouch(0);
+                // タッチされたら、ジャンプ力を溜める
+                if (touchInfo.phase == TouchPhase.Began)
+                {
+                    currentJumpPower += OneTouchJumpPower;
+                }
+            }
+
             // タイマーを減らしていく
             currentTime -= Time.deltaTime;
         }
+        // タイマーが０になった場合の処理
         else
         {
             // アルファを変更して、タイマーのテキストをフェードアウトさせる
             Color timerTextColor = countTimerText.color;
-            timerTextColor.a -= 0.1f;
+            timerTextColor.a -= UiFadeAttenuation;
             countTimerText.color = timerTextColor;
 
-            // フェードアウトが終了したら、アクティブフラグをfalseにする
+            // フェードアウトが終了
             if (timerTextColor.a <= 0)
             {
+                // タイマーのUIのアクティブフラグをfalseに変更する
                 countTimerUi.SetActive(false);
+                // フェーズを"PlayerJump"に変更する
+                currentPhase = Phase.Playerjump;
+
             }
         }
 
@@ -109,7 +135,28 @@ public class ScenePhase : MonoBehaviour
     ///  TODO: t.mitsumaru 未実装
     void PhasePlayerJump()
     {
+        // プレイヤー（バッタマン）をジャンプさせる
+        if (!isJump)
+        {
+            // プレイヤーに蓄積されたジャンプ力を与える
+            playerRigidbody.AddForce(Vector3.up * currentJumpPower, ForceMode.VelocityChange);
+            // ジャンプフラグをtrueに変更する
+            isJump = true;
 
+            // ジャンプの高さのUIのアクティブフラグをtrueに変更する
+            jumpHeightUi.SetActive(true);
+
+            // タイムスケールを変更する
+            Time.timeScale = TimeScaleToPlayerJump;
+        }
+
+        // 地面からのプレイヤーの高さを算出
+        float currentJumpHeight = (player.transform.position - ground.transform.position).magnitude;
+        // 現在のジャンプ力をメートルに変換する
+        currentJumpHeightToMetre = currentJumpHeight / OneMetreDistance;
+
+        // ジャンプの高さを表すUIに反映させる
+        jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
     }
 
     /// <summary>
