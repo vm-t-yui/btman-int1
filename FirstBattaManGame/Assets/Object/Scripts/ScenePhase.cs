@@ -132,6 +132,7 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：プレイヤー（バッタマン）のジャンプ
     /// </summary>
+    ///  TODO: t.mitsumaru 未実装
     void PhasePlayerJump()
     {
         // プレイヤー（バッタマン）をジャンプさせる
