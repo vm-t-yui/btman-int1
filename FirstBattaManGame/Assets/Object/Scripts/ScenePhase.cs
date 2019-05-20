@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// シーンのフェーズを管理するクラス
@@ -22,6 +23,7 @@ public class ScenePhase : MonoBehaviour
     [SerializeField] GameObject ground;                // 地面
     [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
+    [SerializeField] GameObject backToTitleButton;     // タイトルへ戻るボタン
 
     Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
     float     currentTime              = LimitTime;           // 現在のタイマー時間
@@ -38,6 +40,8 @@ public class ScenePhase : MonoBehaviour
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
+    const float ResultTextScale       = 1.5f;          // リザルトでのテキストのスケール
+    const float ResultLerpRate        = 0.02f;         // リザルトでのラープの割合
 
     /// <summary>
     /// 開始
@@ -52,6 +56,7 @@ public class ScenePhase : MonoBehaviour
         player.SetActive(true);                 // プレイヤー
         countTimerUi.SetActive(true);           // カウントタイマーのUI
         jumpHeightUi.SetActive(false);          // ジャンプの高さのUI
+        backToTitleButton.SetActive(false);     // タイトルへ戻るボタン
     }
 
     /// <summary>
@@ -132,7 +137,6 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：プレイヤー（バッタマン）のジャンプ
     /// </summary>
-    ///  TODO: t.mitsumaru 未実装
     void PhasePlayerJump()
     {
         // プレイヤー（バッタマン）をジャンプさせる
@@ -157,6 +161,8 @@ public class ScenePhase : MonoBehaviour
 
         // ジャンプの高さを表すUIに反映させる
         jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
+
+
     }
 
     /// <summary>
@@ -165,6 +171,21 @@ public class ScenePhase : MonoBehaviour
     /// TODO: t.mitsumaru 未実装
     void PhaseResult()
     {
-
+      
     }
+
+    /// <summary>
+    /// 指定の時間だけ待機した後に、フェーズを変更するコルーチン
+    /// </summary>
+    /// <param name="phaseWaitSeconds">フェーズを変更するまでの待機時間</param>
+    /// <param name="changePhase">変更するフェーズ</param>
+    /// <returns>IEnumeratorを返す</returns>
+    IEnumerator ChangePhase(float phaseWaitSeconds,Phase changePhase)
+    {
+        // 指定の時間だけ待機する
+        yield return new WaitForSeconds(phaseWaitSeconds);
+        // フェーズを変更する
+        currentPhase = changePhase;
+    }
+
 }
