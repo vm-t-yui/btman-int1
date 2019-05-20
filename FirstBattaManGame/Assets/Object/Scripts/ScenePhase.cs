@@ -23,6 +23,7 @@ public class ScenePhase : MonoBehaviour
     [SerializeField] GameObject ground;                // 地面
     [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
+    [SerializeField] GameObject backToTitleButton;     // タイトルへ戻るボタン
 
     Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
     float     currentTime              = LimitTime;           // 現在のタイマー時間
@@ -56,6 +57,7 @@ public class ScenePhase : MonoBehaviour
         player.SetActive(true);                 // プレイヤー
         countTimerUi.SetActive(true);           // カウントタイマーのUI
         jumpHeightUi.SetActive(false);          // ジャンプの高さのUI
+        backToTitleButton.SetActive(false);     // タイトルへ戻るボタン
     }
 
     /// <summary>
@@ -95,7 +97,6 @@ public class ScenePhase : MonoBehaviour
         // タイマーが０になるまでの処理
         if (currentTime > 0)
         {
-            // 
             if (Input.touchCount > 0)
             {
                 // タッチの状態を取得
@@ -105,11 +106,6 @@ public class ScenePhase : MonoBehaviour
                 {
                     currentJumpPower += OneTouchJumpPower;
                 }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                currentJumpPower += OneTouchJumpPower;
             }
 
             // タイマーを減らしていく
@@ -184,13 +180,28 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：リザルト
     /// </summary>
-    /// TODO: t.mitsumaru 未実装
     void PhaseResult()
     {
         // テキストをラープで拡大させる
         jumpHeightUi.transform.localScale = Vector3.Lerp(jumpHeightUi.transform.localScale, new Vector3(ResultTextScale, ResultTextScale, ResultTextScale), ResultLerpRate);
         // テキストをラープで画面中央に移動させる
         jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, new Vector3(0, 0, 0), ResultLerpRate);
+
+        // テキストが画面中央に移動したら
+        if (jumpHeightUi.transform.localPosition == Vector3.zero)
+        {
+            // タイトルへ戻るボタンを表示
+            backToTitleButton.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// タイトルへ戻るボタンを押した際のコールバック
+    /// </summary>
+    public void OnTouchBackToTitleButton()
+    {
+        // シーンをタイトルへ変更する
+        SceneManager.LoadScene("Title");
     }
 
     /// <summary>
