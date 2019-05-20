@@ -18,43 +18,35 @@ public class ScenePhase : MonoBehaviour
         Result,         // リザルト
     }
 
-    Phase currentPhase;                                // シーンの現在のフェーズ
-
     [SerializeField] GameObject player;                // プレイヤー
     [SerializeField] GameObject ground;                // 地面
     [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
 
-    Rigidbody playerRigidbody;                         // プレイヤーのリジッドボディ
-    Text      countTimerText;                          // カウントタイマーUIのテキスト
-    Text      jumpHeightText;                          // ジャンプの高さのUIのテキスト
-    
-    float currentTime;                                 // 現在のタイマー時間
-    float currentJumpPower;                            // 現在蓄積されているジャンプ力
-    float currentJumpHeightToMetre;                    // ジャンプの高さ（メートル）
-    bool  isJump;                                      // ジャンプしたかどうか
+    Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
+    float     currentTime              = LimitTime;           // 現在のタイマー時間
+    float     currentJumpPower         = 0;                   // 現在蓄積されているジャンプ力
+    float     currentJumpHeightToMetre = 0;                   // ジャンプの高さ（メートル）
+    bool      isJump                   = false;               // ジャンプしたかどうか
 
-    [SerializeField] float LimitTime;                  // 制限時間
-    [SerializeField] float OneTouchJumpPower;          // ワンタッチで蓄積されるジャンプ力
-    [SerializeField] float OneMetreDistance;           // 1メール分の距離
-    [SerializeField] uint  TimeScaleToPlayerJump;      // プレイヤーがジャンプしている際のタイムスケール
-    [SerializeField] float uiFadeAttenuation;          // UIのフェード時の減衰値
+    Rigidbody playerRigidbody;                                // プレイヤーのリジッドボディ
+    Text      countTimerText;                                 // カウントタイマーUIのテキスト
+    Text      jumpHeightText;                                 // ジャンプの高さのUIのテキスト
+
+    const float LimitTime             = 10;            // 制限時間
+    const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
+    const float OneMetreDistance      = 100;           // 1メール分の距離
+    const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
+    const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
 
     /// <summary>
     /// 開始
     /// </summary>
     void Start()
     {
-        currentPhase = Phase.CountDown;                         // シーンのフェーズを"カウントダウン"に初期化
-
         countTimerText  = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
         jumpHeightText  = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
         playerRigidbody = player.GetComponent<Rigidbody>();      // プレイヤーのリジッドボディのコンポーネントを取得
-
-        currentTime              = LimitTime;                    // タイマーの制限時間をセット
-        currentJumpPower         = 0;                            // 現在蓄積されているジャンプ力
-        currentJumpHeightToMetre = 0;                            // ジャンプの高さ（メートル）
-        isJump                   = false;                        // ジャンプしたかどうか
 
         // それぞれのアクティブフラグを初期化
         player.SetActive(true);                 // プレイヤー
@@ -119,7 +111,7 @@ public class ScenePhase : MonoBehaviour
         {
             // アルファを変更して、タイマーのテキストをフェードアウトさせる
             Color timerTextColor = countTimerText.color;
-            timerTextColor.a -= uiFadeAttenuation;
+            timerTextColor.a -= UiFadeAttenuation;
             countTimerText.color = timerTextColor;
 
             // フェードアウトが終了
@@ -169,6 +161,7 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：リザルト
     /// </summary>
+    /// TODO: t.mitsumaru 未実装
     void PhaseResult()
     {
 
