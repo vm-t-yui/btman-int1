@@ -10,23 +10,22 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 public class AdManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject bannerObj, interstitialObj;       // 各広告オブジェクト
+    GameObject bannerObj, interstitialObj;                            // 各広告オブジェクト
 
-    AdBannerTest adBanner;                       // バナー広告テストクラス
-    AdInterstitialTest adInterstitial;           // インタースティシャル広告テストクラス
+    AdBannerTest adBanner;                                            // バナー広告テストクラス
+    AdInterstitialTest adInterstitial;                                // インタースティシャル広告テストクラス
 
-    public bool IsAdView { get; private set; }   // 広告表示してるかどうか                
+    const string AppId = "ca-app-pub-3824454621992610~6537798789";    // アプリID（テスト用）
+
+    public bool IsAdView { get; private set; }                        // 広告表示してるかどうか                
 
     /// <summary>
     /// 開始
     /// </summary>
     void Start()
     {
-        // アプリID、 これはテスト用
-        string appId = "ca-app-pub-3824454621992610~6537798789";
-
         // Google Mobile Ads SDKを設定したアプリIDで初期化.
-        MobileAds.Initialize(appId);
+        MobileAds.Initialize(AppId);
 
         // 各広告クラスのコンポーネントを取得
         adBanner = bannerObj.GetComponent<AdBannerTest>();
