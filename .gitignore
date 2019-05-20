@@ -49,6 +49,9 @@ Assets/ImportAssets/
 Assets/_Complete-Game/
 Assets/TutorialInfo/
 ModelViewerTest/.vs/
-AdTest/Library/
 AdTest/.vs/
+AdTest/Library/
 *.zip
+FirstBattaManGame/Library/
+FirstBattaManGame/Logs/
+FirstBattaManGame/.vs/
