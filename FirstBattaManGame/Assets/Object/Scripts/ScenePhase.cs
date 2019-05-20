@@ -18,17 +18,15 @@ public class ScenePhase : MonoBehaviour
         Result,         // リザルト
     }
 
-    Phase currentPhase;                          // シーンの現在のフェーズ
-
     [SerializeField] GameObject player;          // プレイヤー
     [SerializeField] GameObject countTimerUi;    // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;    // ジャンプの高さのUI
 
     Text countTimerText;                         // カウントタイマーUIのテキスト
     Text jumpHeightText;                         // ジャンプの高さのUIのテキスト
-    
-    float currentTime;                          // 現在のタイマーの時間
-    float LimitTime = 10.0f;                    // 制限時間
+    Phase currentPhase;                          // シーンの現在のフェーズ
+    float currentTime;                           // 現在のタイマーの時間
+    const float LimitTime = 10.0f;               // 制限時間
 
     /// <summary>
     /// 開始
@@ -108,6 +106,7 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：プレイヤー（バッタマン）のジャンプ
     /// </summary>
+    ///  TODO: t.mitsumaru 未実装
     void PhasePlayerJump()
     {
 
@@ -116,6 +115,7 @@ public class ScenePhase : MonoBehaviour
     /// <summary>
     /// フェーズ内の処理：リザルト
     /// </summary>
+    /// TODO: t.mitsumaru 未実装
     void PhaseResult()
     {
 
