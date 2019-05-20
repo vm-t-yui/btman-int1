@@ -23,7 +23,6 @@ public class ScenePhase : MonoBehaviour
     [SerializeField] GameObject ground;                // 地面
     [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
-    [SerializeField] GameObject backToTitleButton;     // タイトルへ戻るボタン
 
     Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
     float     currentTime              = LimitTime;           // 現在のタイマー時間
@@ -40,6 +39,7 @@ public class ScenePhase : MonoBehaviour
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
+    const float ResultChangeWait      = 5.0f;          // フェーズをリザルトに変更する際の待機時間
     const float ResultTextScale       = 1.5f;          // リザルトでのテキストのスケール
     const float ResultLerpRate        = 0.02f;         // リザルトでのラープの割合
 
@@ -56,7 +56,6 @@ public class ScenePhase : MonoBehaviour
         player.SetActive(true);                 // プレイヤー
         countTimerUi.SetActive(true);           // カウントタイマーのUI
         jumpHeightUi.SetActive(false);          // ジャンプの高さのUI
-        backToTitleButton.SetActive(false);     // タイトルへ戻るボタン
     }
 
     /// <summary>
@@ -108,6 +107,11 @@ public class ScenePhase : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                currentJumpPower += OneTouchJumpPower;
+            }
+
             // タイマーを減らしていく
             currentTime -= Time.deltaTime;
         }
@@ -153,16 +157,28 @@ public class ScenePhase : MonoBehaviour
             // タイムスケールを変更する
             Time.timeScale = TimeScaleToPlayerJump;
         }
+        // ジャンプした際の処理
+        else
+        {
+            // 地面からのプレイヤーの高さを算出
+            float currentJumpHeight = (player.transform.position - ground.transform.position).magnitude;
+            // 現在のジャンプ力をメートルに変換する
+            currentJumpHeightToMetre = currentJumpHeight / OneMetreDistance;
 
-        // 地面からのプレイヤーの高さを算出
-        float currentJumpHeight = (player.transform.position - ground.transform.position).magnitude;
-        // 現在のジャンプ力をメートルに変換する
-        currentJumpHeightToMetre = currentJumpHeight / OneMetreDistance;
+            // ベロシティが下向きになったら
+            if (playerRigidbody.velocity.y <= 0)
+            {
+                // プレイヤーの重力を停止する
+                playerRigidbody.useGravity = false;
+                // 指定の時間だけ待機して、フェーズをリザルトに変更する
+                StartCoroutine(ChangePhase(ResultChangeWait, Phase.Result));
+            }
+        }
+
+
 
         // ジャンプの高さを表すUIに反映させる
         jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
-
-
     }
 
     /// <summary>
@@ -171,7 +187,10 @@ public class ScenePhase : MonoBehaviour
     /// TODO: t.mitsumaru 未実装
     void PhaseResult()
     {
-      
+        // テキストをラープで拡大させる
+        jumpHeightUi.transform.localScale = Vector3.Lerp(jumpHeightUi.transform.localScale, new Vector3(ResultTextScale, ResultTextScale, ResultTextScale), ResultLerpRate);
+        // テキストをラープで画面中央に移動させる
+        jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, new Vector3(0, 0, 0), ResultLerpRate);
     }
 
     /// <summary>
