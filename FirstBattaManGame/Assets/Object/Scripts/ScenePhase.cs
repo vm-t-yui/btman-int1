@@ -50,7 +50,7 @@ public class ScenePhase : MonoBehaviour
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
     const float ResultChangeWait      = 1.0f;          // フェーズをリザルトに変更する際の待機時間
     const float ResultTextScale       = 1.5f;          // リザルトでのテキストのスケール
-    const float ResultLerpRate        = 0.02f;         // リザルトでのラープの割合
+    const float ResultLerpRate        = 0.05f;         // リザルトでのラープの割合
 
     /// <summary>
     /// 開始
