@@ -42,6 +42,8 @@ public class ScenePhase : MonoBehaviour
 
     const int   StartCountNum         = 3;             // 開始時のカウント数
     const float LimitTime             = 10;            // 制限時間
+    const float CameraZoomInSpeed     = 0.005f;        // カメラのズームインのスピード
+    const float CameraZoomOutLerpRate = 0.05f;         // ラープのズームアウト時のラープの割合
     const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
@@ -181,6 +183,11 @@ public class ScenePhase : MonoBehaviour
 
         // タイマーの値をテキストにセット
         countTimerText.text = currentTime.ToString("f1");
+
+        // カメラのトランスフォームを取得
+        Transform cameraTrans = Camera.main.transform;
+        // カメラのズームさせる
+        cameraTrans.Translate(new Vector3(0, 0, CameraZoomInSpeed));
     }
 
     /// <summary>
@@ -225,6 +232,11 @@ public class ScenePhase : MonoBehaviour
 
         // ジャンプの高さを表すUIに反映させる
         jumpHeightText.text = currentJumpHeightToMetre.ToString("f1") + "m";
+
+        // カメラのトランスフォームを取得
+        Transform cameraTrans = Camera.main.transform;
+        // ラープを使用して、ジャンプの瞬間にカメラを引く
+        cameraTrans.position = Vector3.Lerp(cameraTrans.position, new Vector3(cameraTrans.position.x, cameraTrans.position.y, -15), CameraZoomOutLerpRate);
     }
 
     /// <summary>
