@@ -14,27 +14,33 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     enum Phase
     {
-        CountDown,      // カウントダウン
-        Playerjump,     // プレイヤー（バッタマン）のジャンプ
-        Result,         // リザルト
+        StartCountDown,     // 開始時のカウントダウン
+        CountDown,          // カウントダウン
+        Playerjump,         // プレイヤー（バッタマン）のジャンプ
+        Result,             // リザルト
     }
 
     [SerializeField] GameObject player;                // プレイヤー
     [SerializeField] GameObject ground;                // 地面
+    [SerializeField] GameObject startCountDownUi;      // 開始時のカウントダウン
     [SerializeField] GameObject countTimerUi;          // カウントタイマーのUI
     [SerializeField] GameObject jumpHeightUi;          // ジャンプの高さのUI
     [SerializeField] GameObject backToTitleButton;     // タイトルへ戻るボタン
 
-    Phase     currentPhase             = Phase.CountDown;     // シーンの現在のフェーズ
-    float     currentTime              = LimitTime;           // 現在のタイマー時間
-    float     currentJumpPower         = 0;                   // 現在蓄積されているジャンプ力
-    float     currentJumpHeightToMetre = 0;                   // ジャンプの高さ（メートル）
-    bool      isJump                   = false;               // ジャンプしたかどうか
+    Phase     currentPhase             = Phase.StartCountDown;      // シーンの現在のフェーズ
+    int       currentStartCount        = StartCountNum;             // 現在の開始カウント数
+    int       startCountInterval       = 0;                         // 開始カウント時のインターバル 
+    float     currentTime              = LimitTime;                 // 現在のタイマー時間
+    float     currentJumpPower         = 0;                         // 現在蓄積されているジャンプ力
+    float     currentJumpHeightToMetre = 0;                         // ジャンプの高さ（メートル）
+    bool      isJump                   = false;                     // ジャンプしたかどうか
 
-    Rigidbody playerRigidbody;                                // プレイヤーのリジッドボディ
-    Text      countTimerText;                                 // カウントタイマーUIのテキスト
-    Text      jumpHeightText;                                 // ジャンプの高さのUIのテキスト
+    Rigidbody playerRigidbody;                         // プレイヤーのリジッドボディ
+    Text      startCountDownText;                      // 開始時のカウントダウンのテキスト
+    Text      countTimerText;                          // カウントタイマーUIのテキスト
+    Text      jumpHeightText;                          // ジャンプの高さのUIのテキスト
 
+    const int   StartCountNum         = 3;             // 開始時のカウント数
     const float LimitTime             = 10;            // 制限時間
     const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
     const float OneMetreDistance      = 100;           // 1メール分の距離
@@ -49,13 +55,15 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     void Start()
     {
-        countTimerText  = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
-        jumpHeightText  = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
-        playerRigidbody = player.GetComponent<Rigidbody>();      // プレイヤーのリジッドボディのコンポーネントを取得
+        startCountDownText = startCountDownUi.GetComponent<Text>(); // 開始時のカウントダウンのテキストのコンポーネントを取得
+        countTimerText     = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
+        jumpHeightText     = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
+        playerRigidbody    = player.GetComponent<Rigidbody>();      // プレイヤーのリジッドボディのコンポーネントを取得
 
         // それぞれのアクティブフラグを初期化
+        startCountDownUi.SetActive(true);       // 開始時のカウントダウン
         player.SetActive(true);                 // プレイヤー
-        countTimerUi.SetActive(true);           // カウントタイマーのUI
+        countTimerUi.SetActive(false);          // カウントタイマーのUI
         jumpHeightUi.SetActive(false);          // ジャンプの高さのUI
         backToTitleButton.SetActive(false);     // タイトルへ戻るボタン
     }
@@ -68,6 +76,11 @@ public class ScenePhase : MonoBehaviour
         // それぞれのフェーズごとに関数を分けて処理を行う
         switch (currentPhase)
         {
+            // 開始時のカウントダウン
+            case Phase.StartCountDown:
+                PhaseStartCountDown();
+                break;
+
             // カウントダウン
             case Phase.CountDown:
                 PhaseCountDown();
@@ -86,6 +99,37 @@ public class ScenePhase : MonoBehaviour
             // デフォルト
             default:
                 break;
+        }
+    }
+
+    /// <summary>
+    /// ゲーム開始時のカウントダウン
+    /// </summary>
+    void PhaseStartCountDown()
+    {
+        // インターバルカウントを回しながら、カウントダウンを行う
+        startCountInterval++;
+        if (startCountInterval % 60 == 59)
+        {
+            // カウント数が０になったら、それぞれのUIを入れ替えてフェーズを変更する
+            if (currentStartCount == 0)
+            {
+                currentPhase = Phase.CountDown;     // フェーズをカウントダウンに変更
+                countTimerUi.SetActive(true);       // カウントダウンのUIを表示する
+                startCountDownUi.SetActive(false);  // 開始カウントダウンのUIを非表示にする
+            }
+            currentStartCount--;
+        }
+
+        // 開始カウント数が０以外なら、そのままカウント数を表示
+        if (currentStartCount != 0)
+        {
+            startCountDownText.text = currentStartCount.ToString();
+        }
+        // カウント数が０であれば、代わりに"START"を表示
+        else
+        {
+            startCountDownText.text = "START";
         }
     }
 
@@ -232,6 +276,7 @@ public class ScenePhase : MonoBehaviour
     void Finalize()
     {
         // 各GameObjectを削除
+        Destroy(startCountDownUi);
         Destroy(player);
         Destroy(ground);
         Destroy(countTimerUi);
@@ -239,6 +284,7 @@ public class ScenePhase : MonoBehaviour
         Destroy(backToTitleButton);
 
         // 各コンポーネントを削除
+        Destroy(startCountDownText);
         Destroy(playerRigidbody);
         Destroy(countTimerText);
         Destroy(jumpHeightText);
