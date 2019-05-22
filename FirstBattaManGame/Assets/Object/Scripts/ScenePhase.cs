@@ -240,7 +240,7 @@ public class ScenePhase : MonoBehaviour
         // テキストをリープで拡大させる
         jumpHeightUi.transform.localScale = Vector3.Lerp(jumpHeightUi.transform.localScale, new Vector3(ResultTextScale, ResultTextScale, ResultTextScale), ResultLerpRate);
         // テキストをリープで画面中央に移動させる
-        jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, new Vector3(0, 0, 0), ResultLerpRate);
+        jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, Vector3.zero, ResultLerpRate);
 
         // テキストが画面中央に移動したら
         // （0.1未満になった時点で中心に移動したとみなす）
