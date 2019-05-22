@@ -16,7 +16,7 @@ public class GameCenterManager : MonoBehaviour
     float firstAchievementsPoint = 100;         //最初の実績を取るためのポイント
     
     //プラットフxームがUnityの時のみ使用可能
-    #if UNITY_IPHONE
+#if UNITY_IPHONE
     
     /// <summary>
     /// 開始
@@ -90,5 +90,5 @@ public class GameCenterManager : MonoBehaviour
             // 処理なし
         });
     }
-    #endif
+#endif
 }
