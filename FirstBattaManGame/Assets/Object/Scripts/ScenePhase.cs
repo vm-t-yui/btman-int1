@@ -41,6 +41,7 @@ public class ScenePhase : MonoBehaviour
     const float LimitTime             = 10;            // 制限時間
     const float CameraZoomInSpeed     = 0.005f;        // カメラのズームインのスピード
     const float CameraZoomOutLerpRate = 0.05f;         // リープのズームアウト時のリープの割合
+    const float CameraLerpMoveAmount  = 15.0f;         // リープでのカメラの移動量
     const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
@@ -105,6 +106,7 @@ public class ScenePhase : MonoBehaviour
     void PhaseStartCountDown()
     {
         // インターバルカウントを回しながら、カウントダウンを行う
+        // カウントダウンの間隔は１秒(60フレーム)
         startCountInterval++;
         if (startCountInterval % 60 == 59)
         {
@@ -227,7 +229,7 @@ public class ScenePhase : MonoBehaviour
         // カメラのトランスフォームを取得
         Transform cameraTrans = Camera.main.transform;
         // リープを使用して、ジャンプの瞬間にカメラを引く
-        cameraTrans.position = Vector3.Lerp(cameraTrans.position, new Vector3(cameraTrans.position.x, cameraTrans.position.y, -15), CameraZoomOutLerpRate);
+        cameraTrans.position = Vector3.Lerp(cameraTrans.position, new Vector3(cameraTrans.position.x, cameraTrans.position.y, -CameraLerpMoveAmount), CameraZoomOutLerpRate);
     }
 
     /// <summary>
@@ -241,6 +243,7 @@ public class ScenePhase : MonoBehaviour
         jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, new Vector3(0, 0, 0), ResultLerpRate);
 
         // テキストが画面中央に移動したら
+        // （0.1未満になった時点で中心に移動したとみなす）
         if (jumpHeightUi.transform.localPosition.magnitude < 0.1f)
         {
             // タイトルへ戻るボタンを表示
