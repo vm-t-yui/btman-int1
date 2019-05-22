@@ -24,14 +24,14 @@ public class GameCenterManager : MonoBehaviour
     void Awake()
     {
         // 初期化処理
-        Social.localUser.Authenticate(processAuthentication);
+        Social.localUser.Authenticate(ProcessAuthentication);
     }
     
     /// <summary>
     /// 認証に成功したかどうか
     /// </summary>
     /// <param name="success">If set to <c>true</c> success.</param>
-    void processAuthentication(bool success)
+    void ProcessAuthentication(bool success)
     {
         if (success)
         {
