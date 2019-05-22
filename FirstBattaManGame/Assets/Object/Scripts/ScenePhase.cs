@@ -40,15 +40,15 @@ public class ScenePhase : MonoBehaviour
     const int   StartCountNum         = 3;             // 開始時のカウント数
     const float LimitTime             = 10;            // 制限時間
     const float CameraZoomInSpeed     = 0.005f;        // カメラのズームインのスピード
-    const float CameraZoomOutLerpRate = 0.05f;         // リープのズームアウト時のリープの割合
-    const float CameraLerpMoveAmount  = 15.0f;         // リープでのカメラの移動量
+    const float CameraZoomOutLerpRate = 0.05f;         // Lerpのズームアウト時のLerpの割合
+    const float CameraLerpMoveAmount  = 15.0f;         // Lerpでのカメラの移動量
     const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
     const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
     const float ResultChangeWait      = 1.0f;          // フェーズをリザルトに変更する際の待機時間
     const float ResultTextScale       = 1.5f;          // リザルトでのテキストのスケール
-    const float ResultLerpRate        = 0.05f;         // リザルトでのリープの割合
+    const float ResultLerpRate        = 0.05f;         // リザルトでのLerpの割合
 
     /// <summary>
     /// 開始
@@ -228,7 +228,7 @@ public class ScenePhase : MonoBehaviour
 
         // カメラのトランスフォームを取得
         Transform cameraTrans = Camera.main.transform;
-        // リープを使用して、ジャンプの瞬間にカメラを引く
+        // Lerpを使用して、ジャンプの瞬間にカメラを引く
         cameraTrans.position = Vector3.Lerp(cameraTrans.position, new Vector3(cameraTrans.position.x, cameraTrans.position.y, -CameraLerpMoveAmount), CameraZoomOutLerpRate);
     }
 
@@ -237,9 +237,9 @@ public class ScenePhase : MonoBehaviour
     /// </summary>
     void PhaseResult()
     {
-        // テキストをリープで拡大させる
+        // テキストをLerpで拡大させる
         jumpHeightUi.transform.localScale = Vector3.Lerp(jumpHeightUi.transform.localScale, new Vector3(ResultTextScale, ResultTextScale, ResultTextScale), ResultLerpRate);
-        // テキストをリープで画面中央に移動させる
+        // テキストをLerpで画面中央に移動させる
         jumpHeightUi.transform.localPosition = Vector3.Lerp(jumpHeightUi.transform.localPosition, Vector3.zero, ResultLerpRate);
 
         // テキストが画面中央に移動したら
