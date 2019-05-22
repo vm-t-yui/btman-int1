@@ -17,14 +17,6 @@ public class AdInterstitialTest : MonoBehaviour
     public bool IsClosed { get; private set; }                          // 広告を閉じているかどうか
 
     /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        // 処理なし
-    }
-
-    /// <summary>
     /// インタースティシャル広告生成
     /// </summary>
     public void RequestInterstitial()
