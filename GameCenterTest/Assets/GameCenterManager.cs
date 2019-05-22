@@ -14,10 +14,7 @@ public class GameCenterManager : MonoBehaviour
     const string achievementID = "firstjump";   // 達成項目ID
     
     float firstAchievementsPoint = 100;         //最初の実績を取るためのポイント
-    
-    //プラットフxームがUnityの時のみ使用可能
-#if UNITY_IPHONE
-    
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -33,14 +30,7 @@ public class GameCenterManager : MonoBehaviour
     /// <param name="success">If set to <c>true</c> success.</param>
     void ProcessAuthentication(bool success)
     {
-        if (success)
-        {
-            // 処理なし
-        }
-        else
-        {
-            // 処理なし
-        }
+        // 処理なし
     }
     
     /// <summary>
@@ -59,16 +49,7 @@ public class GameCenterManager : MonoBehaviour
         int score = 0;
         if (int.TryParse(inputField.text, out score))
         {
-            Social.ReportScore(score, leaderBoardId, success => {
-                if (success)
-                {
-                    // 処理なし
-                }
-                else
-                {
-                    // 処理なし
-                }
-            });
+            Social.ReportScore(score, leaderBoardId, success => {});
         }
     }
     
@@ -85,10 +66,6 @@ public class GameCenterManager : MonoBehaviour
     /// </summary>
     public void SendAchievementsPoint()
     {
-        Social.ReportProgress(achievementID, firstAchievementsPoint, success => {
-            
-            // 処理なし
-        });
+        Social.ReportProgress(achievementID, firstAchievementsPoint, success => {});
     }
-#endif
 }
