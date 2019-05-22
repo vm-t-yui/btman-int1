@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 以下の3つはGooglePlayGamesの機能を使用するためのもの
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
@@ -37,6 +38,7 @@ public class GoogleServiceManager : MonoBehaviour
             if (success)
             {
                 // サインイン成功！
+                // TODO: m.tanaka テスト用の実績（初ログイン時）の解除処理が未実装
             }
         });
     }
