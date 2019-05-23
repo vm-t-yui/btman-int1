@@ -15,7 +15,6 @@ public class JumpPowerGauge : MonoBehaviour
     const  float GaugeAmountMax              = 100;   // ゲージの最大量
     public int   gaugeMagnification          = 0;     // ゲージの倍率
 
-
     /// <summary>
     /// 更新
     /// </summary>
