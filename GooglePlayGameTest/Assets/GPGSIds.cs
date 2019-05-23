@@ -25,6 +25,10 @@
 public static class GPGSIds
 {
         public const string achievement_first_login = "CgkI_vDQ3ZYdEAIQAQ"; // <GPGSID>
+        public const string achievement_first_tap = "CgkI_vDQ3ZYdEAIQAg"; // <GPGSID>
+        public const string achievement_threefinger_tap = "CgkI_vDQ3ZYdEAIQBA"; // <GPGSID>
+        public const string achievement_twofinger_tap = "CgkI_vDQ3ZYdEAIQAw"; // <GPGSID>
+        public const string achievement_fourfinger_tap = "CgkI_vDQ3ZYdEAIQBQ"; // <GPGSID>
 
 }
 
