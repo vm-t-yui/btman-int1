@@ -13,6 +13,8 @@ using UnityEngine.SocialPlatforms;
 /// </summary>
 public class GoogleServiceManager : MonoBehaviour
 {
+    public bool IsSignIn { get; private set; }    // サインインしているかどうか
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -23,6 +25,8 @@ public class GoogleServiceManager : MonoBehaviour
 
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
+
+        IsSignIn = false;
 
         // サインイン実行
         SignIn();
@@ -38,7 +42,11 @@ public class GoogleServiceManager : MonoBehaviour
             if (success)
             {
                 // サインイン成功！
-                // TODO: m.tanaka テスト用の実績（初ログイン時）の解除処理が未実装
+                IsSignIn = true;
+            }
+            else
+            {
+                IsSignIn = false;
             }
         });
     }
