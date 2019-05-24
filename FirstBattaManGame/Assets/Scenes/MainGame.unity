@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 5335008786304626979, guid: 3b7eff8a09786024da75f0680f6319b6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5335008786304626976, guid: 3b7eff8a09786024da75f0680f6319b6,
         type: 3}
@@ -642,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335008786295087416, guid: 3b7eff8a09786024da75f0680f6319b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b7eff8a09786024da75f0680f6319b6, type: 3}
@@ -814,7 +819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1418623199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +890,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1944638102987594637}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1453737716 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1944638103904165237, guid: 41b766ce9617ccd47bd840d2e95570fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1944638102987594637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1453737719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1944638103904165242, guid: 41b766ce9617ccd47bd840d2e95570fd,
@@ -903,6 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b942141287690740a2592445e2dc7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PlayerRigidbody>k__BackingField: {fileID: 1453737716}
 --- !u!1 &1514360305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1913225299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1264,6 +1276,10 @@ MonoBehaviour:
   countTimerUi: {fileID: 1913225298}
   jumpHeightUi: {fileID: 1418623198}
   backToTitleButton: {fileID: 354962671}
+  playerRigidbody: {fileID: 1453737716}
+  startCountDownText: {fileID: 159862853}
+  countTimerText: {fileID: 1913225300}
+  jumpHeightText: {fileID: 1418623199}
 --- !u!4 &1978637693
 Transform:
   m_ObjectHideFlags: 0

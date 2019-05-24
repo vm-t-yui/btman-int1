@@ -27,23 +27,26 @@ public class ScenePhase : MonoBehaviour
     [SerializeField] GameObject           jumpHeightUi;          // ジャンプの高さのUI
     [SerializeField] GameObject           backToTitleButton;     // タイトルへ戻るボタン
 
-    Rigidbody playerRigidbody;                                   // プレイヤーのリジッドボディ
-    Text      startCountDownText;                                // 開始時のカウントダウンのテキスト
-    Text      countTimerText;                                    // カウントタイマーUIのテキスト
-    Text      jumpHeightText;                                    // ジャンプの高さのUIのテキスト
+    [SerializeField] Rigidbody            playerRigidbody;       // プレイヤーのリジッドボディ
+    [SerializeField] Text                 startCountDownText;    // 開始時のカウントダウンのテキスト
+    [SerializeField] Text                 countTimerText;        // カウントタイマーUIのテキスト
+    [SerializeField] Text                 jumpHeightText;        // ジャンプの高さのUIのテキスト
 
-    Phase     currentPhase       = Phase.StartCountDown;         // シーンの現在のフェーズ
-    int       currentStartCount  = StartCountNum;                // 現在の開始カウント数
-    int       startCountInterval = 0;                            // 開始カウント時のインターバル 
-    float     currentTime        = LimitTime;                    // 現在のタイマー時間
+    public float CurrentJumpPower             { get; private set; } = 0;    // 現在蓄積されているジャンプ力
+    public float CurrentJumpHeight            { get; private set; } = 0;    // 現在のジャンプ高さ
+    public float CurrentJumpHeightToKilometer { get; private set; } = 0;    // 現在のジャンプ高さ（キロメートル）
 
+    Phase     currentPhase       = Phase.StartCountDown;                    // シーンの現在のフェーズ
+    int       currentStartCount  = StartCountNum;                           // 現在の開始カウント数
+    int       startCountInterval = 0;                                       // 開始カウント時のインターバル 
+    float     currentTime        = LimitTime;                               // 現在のタイマー時間
+
+    const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
     const int   StartCountNum         = 3;             // 開始時のカウント数
     const float LimitTime             = 10;            // 制限時間
     const float CameraZoomInSpeed     = 0.005f;        // カメラのズームインのスピード
     const float CameraZoomOutLerpRate = 0.05f;         // Lerpのズームアウト時のLerpの割合
     const float CameraLerpMoveAmount  = 15.0f;         // Lerpでのカメラの移動量
-    const float OneTouchJumpPower     = 5;             // ワンタッチで蓄積されるジャンプ力
-    const float OneMetreDistance      = 100;           // 1メール分の距離
     const uint  TimeScaleToPlayerJump = 5;             // プレイヤーがジャンプしている際のタイムスケール
     const float UiFadeAttenuation     = 0.1f;          // UIのフェード時の減衰値
     const float ResultChangeWait      = 1.0f;          // フェーズをリザルトに変更する際の待機時間
@@ -51,23 +54,8 @@ public class ScenePhase : MonoBehaviour
     const float ResultLerpRate        = 0.05f;         // リザルトでのLerpの割合
 
     /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        startCountDownText = startCountDownUi.GetComponent<Text>(); // 開始時のカウントダウンのテキストのコンポーネントを取得
-        countTimerText     = countTimerUi.GetComponent<Text>();     // カウントタイマーのテキストのコンポーネントを取得
-        jumpHeightText     = jumpHeightUi.GetComponent<Text>();     // ジャンプの高さのテキストのコンポーネントを取得
-
-        // それぞれのアクティブフラグを初期化
-        startCountDownUi.SetActive(true);       // 開始時のカウントダウン
-        countTimerUi.SetActive(false);          // カウントタイマーのUI
-        jumpHeightUi.SetActive(false);          // ジャンプの高さのUI
-        backToTitleButton.SetActive(false);     // タイトルへ戻るボタン
-    }
-
-    /// <summary>
     /// 更新
+    /// （Updateだとモニターのリフレッシュレートによって処理速度が変わるため）
     /// </summary>
     void FixedUpdate()
     {
@@ -147,13 +135,13 @@ public class ScenePhase : MonoBehaviour
                 // タッチされたら、ジャンプ力を溜める
                 if (touchInfo.phase == TouchPhase.Began)
                 {
-                    playerJumpController.currentJumpPower += playerJumpController.OneTouchJumpPower;
+                    CurrentJumpPower += OneTouchJumpPower;
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                playerJumpController.currentJumpPower += playerJumpController.OneTouchJumpPower;
+                CurrentJumpPower += OneTouchJumpPower;
             }
 
             // タイマーを減らしていく
@@ -193,10 +181,10 @@ public class ScenePhase : MonoBehaviour
     void PhasePlayerJump()
     {
         // プレイヤー（バッタマン）をジャンプさせる
-        if (!playerJumpController.isJump)
+        if (!playerJumpController.IsJump)
         {
             // プレイヤーをジャンプさせる
-            playerJumpController.StartJump();
+            playerJumpController.StartJump(CurrentJumpPower);
 
             // ジャンプの高さのUIのアクティブフラグをtrueに変更する
             jumpHeightUi.SetActive(true);
@@ -208,23 +196,25 @@ public class ScenePhase : MonoBehaviour
         else
         {
             // 地面からのプレイヤーの高さを算出
-            playerJumpController.currentJumpHeight = (playerJumpController.transform.position - ground.transform.position).magnitude;
+            CurrentJumpHeight = (playerJumpController.transform.position - ground.transform.position).magnitude;
+            // ジャンプ高さをキロメートルに変換
+            JumpHeightToKiloMetre();
 
             // ベロシティが下向きになったら
-            if (playerJumpController.rigidbody.velocity.y <= 0)
+            if (playerJumpController.PlayerRigidbody.velocity.y <= 0)
             {
                 // タイムスケールをもとに戻す
                 Time.timeScale = 1;
 
                 // プレイヤーの重力を停止する
-                playerJumpController.rigidbody.useGravity = false;
+                playerJumpController.PlayerRigidbody.useGravity = false;
                 // 指定の時間だけ待機して、フェーズをリザルトに変更する
                 StartCoroutine(ChangePhase(ResultChangeWait, Phase.Result));
             }
         }
 
         // ジャンプの高さを表すUIに反映させる
-        jumpHeightText.text = playerJumpController.currentJumpHeightToKilometer.ToString("f1") + "km" ;
+        jumpHeightText.text = CurrentJumpHeightToKilometer.ToString("f1") + "km" ;
 
         // カメラのトランスフォームを取得
         Transform cameraTrans = Camera.main.transform;
@@ -248,6 +238,18 @@ public class ScenePhase : MonoBehaviour
         {
             // タイトルへ戻るボタンを表示
             backToTitleButton.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// ジャンプ高さをキロメートルに変換する
+    /// </summary>
+    void JumpHeightToKiloMetre()
+    {
+        if (CurrentJumpHeight != 0)
+        {
+            // 現在のジャンプ力をキロメートルに変換
+            CurrentJumpHeightToKilometer = CurrentJumpHeight / GameCommonParameter.OneKiloMetreDistance;
         }
     }
 
@@ -289,7 +291,6 @@ public class ScenePhase : MonoBehaviour
         Destroy(backToTitleButton);
 
         // 各コンポーネントを削除
-        Destroy(playerJumpController);
         Destroy(startCountDownText);
         Destroy(playerRigidbody);
         Destroy(countTimerText);
