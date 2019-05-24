@@ -46,7 +46,8 @@ public class GoogleServiceManager : MonoBehaviour
             }
             else
             {
-                IsSignIn = false;
+                // 失敗したらもう一度
+                SignIn();
             }
         });
     }

@@ -7,6 +7,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 
+#if UNITY_ANDROID
 /// <summary>
 /// GooglePlay実績管理クラス
 /// </summary>
@@ -107,3 +108,4 @@ public class GoogleAchievementManager : MonoBehaviour
         Social.ShowAchievementsUI();
     }
 }
+#endif
