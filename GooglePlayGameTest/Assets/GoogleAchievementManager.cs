@@ -14,7 +14,6 @@ using UnityEngine.SocialPlatforms;
 public class GoogleAchievementManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject googleServiceObj;                             // GoogleService機能管理オブジェクト
     GoogleServiceManager googleService;                      // GoogleService機能管理クラス
 
     const int AchievementNum = 5;                            // 実績の総数
@@ -34,9 +33,6 @@ public class GoogleAchievementManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // GoogleService機能管理クラス取得
-        googleService = googleServiceObj.GetComponent<GoogleServiceManager>();
-
         // 実績解除状況初期化
         for (int i = 0; i < AchievementNum; i++)
         {
@@ -52,50 +48,48 @@ public class GoogleAchievementManager : MonoBehaviour
         // ログインに成功したら実績１解除
         if (googleService.IsSignIn && !isReleased[0])
         {
-            ReleaseAchievement(AchievementIDs[0], 100.0f);
-            isReleased[0] = true;
+            ReleaseAchievement(0, AchievementIDs[0], 100.0f);
         }
 
         // タップしたら実績２解除
         if (Input.touchCount >= 1 && !isReleased[1])
         {
-            ReleaseAchievement(AchievementIDs[1], 100.0f);
-            isReleased[1] = true;
+            ReleaseAchievement(1, AchievementIDs[1], 100.0f);
         }
 
         // 2本指でタップしたら実績３解除
         if (Input.touchCount >= 2 && !isReleased[2])
         {
-            ReleaseAchievement(AchievementIDs[2], 100.0f);
-            isReleased[2] = true;
+            ReleaseAchievement(2, AchievementIDs[2], 100.0f);
         }
 
         // 3本指でタップしたら実績４解除
         if (Input.touchCount >= 3 && !isReleased[3])
         {
-            ReleaseAchievement(AchievementIDs[3], 100.0f);
-            isReleased[3] = true;
+            ReleaseAchievement(3, AchievementIDs[3], 100.0f);
         }
 
         // 4本指でタップしたら実績５解除
         if (Input.touchCount >= 4 && !isReleased[4])
         {
-            ReleaseAchievement(AchievementIDs[4], 100.0f);
-            isReleased[4] = true;
+            ReleaseAchievement(4, AchievementIDs[4], 100.0f);
         }
     }
 
     /// <summary>
     /// 実績解除
     /// </summary>
+    /// <param name="num">実績の番号</param>
     /// <param name="id">実績ID</param>
     /// <param name="progress">実績の進捗（0で非表示解除、100で実績解除）</param>
-    void ReleaseAchievement(string id, float progress)
+    void ReleaseAchievement(int num, string id, float progress)
     {
+        // 解除処理
         Social.ReportProgress(id, progress, (bool success) => {
             if (success)
             {
-                ((GooglePlayGames.PlayGamesPlatform)Social.Active).SetGravityForPopups(Gravity.TOP);
+                // 解除に成功したら解除状況を更新
+                isReleased[num] = true;
             }
         });
     }

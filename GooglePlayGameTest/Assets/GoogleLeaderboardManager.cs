@@ -14,20 +14,11 @@ using UnityEngine.SocialPlatforms;
 public class GoogleLeaderboardManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject inputFieldObj;                                // 仮でスコアを登録するための入力欄
-    InputField inputField;
+    InputField inputField;                                   // 仮でスコアを登録するための入力欄
 
     readonly string LeaderboardID = "CgkI_vDQ3ZYdEAIQBg";    // リーダーボードID
 
     long score = 0;                                          // リーダーボードへ登録するスコア
-
-    /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        inputField = inputFieldObj.GetComponent<InputField>();
-    }
 
     /// <summary>
     /// リーダーボードへスコアを登録
@@ -35,9 +26,9 @@ public class GoogleLeaderboardManager : MonoBehaviour
     public void RegisterScoreToLeaderboard()
     {
         score = long.Parse(inputField.text);
-        Social.ReportScore(score, LeaderboardID, (bool success) => {
-            
-        });
+        
+        // スコア登録処理（成功時になにか処理をしたりはしないので空にしてます）
+        Social.ReportScore(score, LeaderboardID, (bool success) => {});
     }
 
     /// <summary>
