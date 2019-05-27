@@ -8,7 +8,7 @@ public class StateMachine<T> where T : struct
     /// <summary>
     /// ステート
     /// </summary>
-    private class State
+    class State
     {
         readonly Action EnterAction;  // 開始時に呼び出されるデリゲート
         readonly Action UpdateAction; // 更新時に呼び出されるデリゲート
