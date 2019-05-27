@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class StateMachine<T>
+public class StateMachine<T> where T : struct
 {
     /// <summary>
     /// ステート
@@ -18,6 +19,11 @@ public class StateMachine<T>
         /// </summary>
         public State(Action enterAction = null, Action updateAction = null, Action exitAction = null)
         {
+            // ジェネリックがenum型かどうか判断
+            Type type = typeof(T);
+            // 渡された型がenum以外だったら、Assertでとめる
+            Debug.Assert(type.IsEnum);
+
             EnterAction = enterAction ?? delegate { };
             UpdateAction = updateAction ?? delegate { };
             ExitAction = exitAction ?? delegate { };
@@ -48,7 +54,7 @@ public class StateMachine<T>
         }
     }
 
-    Dictionary<T, State> stateTable = new Dictionary<T, State>();   // ステートのテーブル
+    Dictionary<T, State> stateMap = new Dictionary<T, State>();   // ステートのテーブル
     State currentState;                                             // 現在のステート
     T currentStateKey;                                              // 現在のステートキー
 
@@ -57,7 +63,7 @@ public class StateMachine<T>
     /// </summary>
     public void Add(T key, Action enterAction = null, Action updateAction = null, Action exitAction = null)
     {
-        stateTable.Add(key, new State(enterAction, updateAction, exitAction));
+        stateMap.Add(key, new State(enterAction, updateAction, exitAction));
     }
 
     /// <summary>
@@ -65,12 +71,9 @@ public class StateMachine<T>
     /// </summary>
     public void SetState(T key)
     {
-        if (currentState != null)
-        {
-            currentState.Exit();
-        }
+        currentState?.Exit();
         currentStateKey = key;
-        currentState = stateTable[key];
+        currentState = stateMap[key];
         currentState.Enter();
     }
 
@@ -82,17 +85,12 @@ public class StateMachine<T>
         return currentStateKey;
     }
 
-
     /// <summary>
     /// 現在のステートの更新
     /// </summary>
     public void Update()
     {
-        if (currentState == null)
-        {
-            return;
-        }
-        currentState.Update();
+        currentState?.Update();
     }
 
     /// <summary>
@@ -100,7 +98,7 @@ public class StateMachine<T>
     /// </summary>
     public void Clear()
     {
-        stateTable.Clear();
+        stateMap.Clear();
         currentState = null;
     }
 }
