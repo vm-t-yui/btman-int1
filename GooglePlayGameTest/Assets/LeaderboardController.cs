@@ -14,7 +14,7 @@ using UnityEngine.SocialPlatforms;
 public class LeaderboardController : MonoBehaviour
 {
     [SerializeField]
-    InputField inputField;                                   // 仮でスコアを登録するための入力欄
+    InputField inputField = default;                         // 仮でスコアを登録するための入力欄
 
     readonly string LeaderboardID =                          // リーダーボードID
 #if UNITY_ANDROID

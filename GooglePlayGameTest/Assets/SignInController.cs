@@ -23,7 +23,6 @@ public class SignInController : MonoBehaviour
     void Awake()
     {
 #if UNITY_ANDROID
-
         // PlayGames初期化
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
 
