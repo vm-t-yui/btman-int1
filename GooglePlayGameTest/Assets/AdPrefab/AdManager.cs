@@ -67,7 +67,7 @@ public class AdManager : MonoBehaviour
     /// <summary>
     /// 更新
     /// </summary>
-    private void Update()
+    void Update()
     {
         // 広告表示されていないなら
         if (!IsAdView)
