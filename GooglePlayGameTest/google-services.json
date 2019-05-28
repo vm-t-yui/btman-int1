@@ -1,0 +1,57 @@
+{
+  "project_info": {
+    "project_number": "1002534353022",
+    "firebase_url": "https://api-project-60640869.firebaseio.com",
+    "project_id": "api-project-60640869",
+    "storage_bucket": "api-project-60640869.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002534353022:android:24a7ac77e19ea6ba",
+        "android_client_info": {
+          "package_name": "com.vikingmaxx.btmanJump"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002534353022-7ikf99b3gj8k16563hd1po1oar3inj4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikingmaxx.btmanJump",
+            "certificate_hash": "175c83941d78bb1e4993c4f122f96f7c257bf668"
+          }
+        },
+        {
+          "client_id": "1002534353022-qq6sh3u0m1dnaafkljf1c579kib8qb89.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikingmaxx.btmanJump",
+            "certificate_hash": "2207fdd08b2923c575ef396d4610a9a385e3daf1"
+          }
+        },
+        {
+          "client_id": "1002534353022-3cb36t8nienuc42de3t7dn3njhk8h1k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsgfBF873mjcRGxGjQUOpq-rOmQ2unFeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002534353022-3cb36t8nienuc42de3t7dn3njhk8h1k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4943898464524496~6287332981"
+    }
+  ],
+  "configuration_version": "1"
+}
