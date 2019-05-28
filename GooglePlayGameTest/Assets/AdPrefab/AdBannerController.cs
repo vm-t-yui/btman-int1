@@ -7,7 +7,7 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 /// <summary>
 /// バナー広告テストクラス
 /// </summary>
-public class AdBannerControll : MonoBehaviour
+public class AdBannerController : MonoBehaviour
 {
     BannerView bannerView;                                              // バナー広告制御クラス
 

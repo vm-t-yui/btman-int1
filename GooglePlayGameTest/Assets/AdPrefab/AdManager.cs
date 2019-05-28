@@ -10,9 +10,9 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 public class AdManager : MonoBehaviour
 {
     [SerializeField]
-    AdBannerControll adBanner = default;                              // バナー広告テストクラス
+    AdBannerController adBanner = default;                              // バナー広告テストクラス
     [SerializeField]
-    AdInterstitialControll adInterstitial = default;                  // インタースティシャル広告テストクラス
+    AdInterstitialController adInterstitial = default;                  // インタースティシャル広告テストクラス
 
     const string AppId = "ca-app-pub-3824454621992610~6537798789";    // アプリID（テスト用）
 

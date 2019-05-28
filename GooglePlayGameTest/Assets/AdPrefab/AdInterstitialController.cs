@@ -7,7 +7,7 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 /// <summary>
 /// インタースティシャル広告テストクラス
 /// </summary>
-public class AdInterstitialControll : MonoBehaviour
+public class AdInterstitialController : MonoBehaviour
 {
     InterstitialAd interstitialAd;                                      // インタースティシャル広告制御クラス
 
