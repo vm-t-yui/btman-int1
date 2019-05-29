@@ -8,7 +8,7 @@ using UnityEngine;
 public class InputController
 {
     // タッチの回数
-    public int touchCount { get; private set; } = 0;
+    public int TouchCount { get; private set; } = 0;
 
     /// <summary>
     /// タッチされた回数を記録
@@ -23,7 +23,7 @@ public class InputController
             // タッチされた回数をカウント
             if (touch.phase == TouchPhase.Began)
             {
-                touchCount++;
+                TouchCount++;
             }
         }
     }

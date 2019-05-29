@@ -30,10 +30,10 @@ public class PhaseCountDown : PhaseBase
     {
         // 開始カウント数が０以外なら、そのままカウント数を表示
         // （UIに表示されるまでにラグがあるため、0.５以下は０とみなす）
-        if (Counter.currentCountNum > 0.5f)
+        if (Counter.CurrentCountNum > 0.5f)
         {
             // カウントダウンの値を表示
-            countDownTimerText.text = Counter.currentCountNum.ToString("F0");
+            countDownTimerText.text = Counter.CurrentCountNum.ToString("F0");
             // カウントダウンを行う
             Counter.CountDown();
         }

@@ -8,7 +8,7 @@ using UnityEngine;
 public class Counter
 {
     // カウントの値
-    static public float currentCountNum { get; private set; } = 0;
+    static public float CurrentCountNum { get; private set; } = 0;
 
     /// <summary>
     /// カウントをセットする
@@ -16,7 +16,7 @@ public class Counter
     /// <param name="count">セットする値</param>
     static public void SetCount(float count)
     {
-        currentCountNum = count;
+        CurrentCountNum = count;
     }
 
     /// <summary>
@@ -24,6 +24,6 @@ public class Counter
     /// </summary>
     static public void CountDown()
     {
-        currentCountNum -= Time.deltaTime;
+        CurrentCountNum -= Time.deltaTime;
     }
 }

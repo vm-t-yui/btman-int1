@@ -34,13 +34,13 @@ public class PhaseChargeJumpPower : PhaseBase
     public override void Updater()
     {
         // 開始カウント数が０以外なら、そのままカウント数を表示
-        if (Counter.currentCountNum > 0)
+        if (Counter.CurrentCountNum > 0)
         {
             // タップの回数を記録する
             inputController.TouchCounter();
 
             // カウントダウンの値を表示
-            countDownText.text = Counter.currentCountNum.ToString("F1");
+            countDownText.text = Counter.CurrentCountNum.ToString("F1");
             // カウントダウンを行う
             Counter.CountDown();
         }
