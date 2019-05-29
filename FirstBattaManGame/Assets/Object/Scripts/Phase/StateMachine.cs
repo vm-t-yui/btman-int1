@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,8 +56,8 @@ public class StateMachine<T> where T : struct
     }
 
     Dictionary<T, State> stateMap = new Dictionary<T, State>();   // ステートのテーブル
-    State currentState;                                             // 現在のステート
-    T currentStateKey;                                              // 現在のステートキー
+    State currentState;                                           // 現在のステート
+    T currentStateKey;                                            // 現在のステートキー
 
     /// <summary>
     /// ステートの追加
@@ -67,10 +68,31 @@ public class StateMachine<T> where T : struct
     }
 
     /// <summary>
-    /// 現在のステートの設定
+    /// 現在のステートの変更
     /// </summary>
+    /// <param name="key">変更するステートのキー</param>
     public void SetState(T key)
     {
+        // 現在のステートを変更
+        currentState?.Exit();
+        currentStateKey = key;
+        currentState = stateMap[key];
+        currentState.Enter();
+    }
+
+    /// <summary>
+    /// 現在のステートを変更（遅延処理あり）
+    /// </summary>
+    /// <param name="key">変更するステートのキー</param>
+    /// <param name="delayMsec">変更時の遅延時間</param>
+    public void SetState(T key,int delayMsec)
+    {
+        // 指定時間分待機
+        Task task = TaskDelay(delayMsec);
+        // タスク終了まで待機
+        task.Wait(delayMsec);
+
+        // 現在のステートを変更
         currentState?.Exit();
         currentStateKey = key;
         currentState = stateMap[key];
@@ -100,5 +122,15 @@ public class StateMachine<T> where T : struct
     {
         stateMap.Clear();
         currentState = null;
+    }
+
+    /// <summary>
+    /// 指定した時間だけ待機する
+    /// </summary>
+    /// <param name="msec">待機する時間（ミリ秒）</param>
+    /// <returns></returns>
+    async Task TaskDelay(int msec)
+    {
+        await Task.Delay(msec);
     }
 }

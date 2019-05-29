@@ -8,18 +8,9 @@ using UnityEngine;
 public class PhaseBase : MonoBehaviour
 {
     /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        // MonoBehaviour内の関数の自動コールを無効化
-        enabled = false;
-    }
-
-    /// <summary>
     /// フェーズの初期化
     /// </summary>
-    public virtual void Initialize()
+    public virtual void Initializer()
     {
         // 仮想関数
     }
@@ -27,7 +18,7 @@ public class PhaseBase : MonoBehaviour
     /// <summary>
     /// フェーズの更新
     /// </summary>
-    public virtual void Update()
+    public virtual void Updater()
     {
         // 仮想関数
     }

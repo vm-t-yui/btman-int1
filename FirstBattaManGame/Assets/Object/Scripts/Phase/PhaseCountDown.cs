@@ -11,45 +11,43 @@ public class PhaseCountDown : PhaseBase
     [SerializeField] GameObject countDownTimerUi   = default;    // カウントダウンUI
     [SerializeField] Text       countDownTimerText = default;    // カウントダウンUIのテキスト
 
-          int countDownInterval   = 0;                           // カウントダウンのインターバル
-          int currentCountDownNum = CountDownNum;                // 現在のカウント数
-    const int CountDownNum        = 3;                           // カウントダウンの数
+    const float CountDownNum           = 3.6f;     // カウントダウンの初期値
+    const int   PhaseChangeDelayToMsec = 1000;     // フェーズ変更時の遅延時間（ミリ秒）
 
     /// <summary>
     /// フェーズの初期化
     /// </summary>
-    public override void Initialize()
+    public override void Initializer()
     {
-        // 処理なし
+        // カウントの値をセットする
+        Counter.SetCount(CountDownNum);
     }
 
     /// <summary>
     /// フェーズの更新
     /// </summary>
-    public override void Update()
+    public override void Updater()
     {
-        // インターバルカウントを回しながら、カウントダウンを行う
-        countDownInterval++;
-        if (countDownInterval % 60 == 59)
-        {
-            // カウント数が０になったら、それぞれのUIを入れ替えてフェーズを変更する
-            if (currentCountDownNum == 0)
-            {
-                // フェーズをジャンプ力チャージに変更
-                PhaseState.StateMachine.SetState(PhaseState.PhaseType.ChargeJumpPower);
-            }
-            currentCountDownNum--;
-        }
-
         // 開始カウント数が０以外なら、そのままカウント数を表示
-        if (currentCountDownNum != 0)
+        // （UIに表示されるまでにラグがあるため、0.５以下は０とみなす）
+        if (Counter.currentCountNum > 0.5f)
         {
-            countDownTimerText.text = currentCountDownNum.ToString();
+            // カウントダウンの値を表示
+            countDownTimerText.text = Counter.currentCountNum.ToString("F0");
+            // カウントダウンを行う
+            Counter.CountDown();
         }
-        // カウント数が０であれば、代わりに"START"を表示
+        // カウント数が０であれば、代わりに"スタート"を表示
         else
         {
-            countDownTimerText.text = "START";
+            // "スタート"が表示されたら、指定時間分待機してフェーズを変更する
+            if (countDownTimerText.text == "スタート")
+            {
+                PhaseState.StateMachine.SetState(PhaseState.PhaseType.ChargeJumpPower, PhaseChangeDelayToMsec);
+            }
+
+            // UIに"スタート"を表示
+            countDownTimerText.text = "スタート";
         }
     }
 
