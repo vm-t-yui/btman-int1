@@ -12,15 +12,11 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     public enum PhaseType
     {
-        CountDown,          // カウントダウン
-        ChargeJumpPower,    // ジャンプ力を溜める
+        ChargeCountDown,    // ジャンプ力を溜めている際のカウントダウン
         PlayerJump,         // ジャンプ
     }
 
-    [SerializeField] PhaseCountDown       phaseCountDown       = default;       // フェーズ：カウントダウン
-    [SerializeField] PhaseChargeJumpPower phaseChargeJumpPower = default;       // フェーズ：ジャンプ力を溜める
-
-
+    [SerializeField] PhaseChargeCountDown phaseChargeJumpPower = default;       // フェーズ：ジャンプ力を溜める
     // ステートマシン
     static public StateMachine<PhaseType> StateMachine { get; private set; } = new StateMachine<PhaseType>();
 
@@ -30,11 +26,9 @@ public class PhaseState : MonoBehaviour
     void Start()
     {
         // フェーズのそれぞれの関数をステートマシンに追加
-        StateMachine.Add(PhaseType.CountDown, phaseCountDown.Initializer, phaseCountDown.Updater, phaseCountDown.Cleanup);
-        StateMachine.Add(PhaseType.ChargeJumpPower, phaseChargeJumpPower.Initializer, phaseChargeJumpPower.Updater, phaseChargeJumpPower.Cleanup);
-
+        StateMachine.Add(PhaseType.ChargeCountDown, phaseChargeJumpPower.Initializer, phaseChargeJumpPower.Updater, phaseChargeJumpPower.Cleanup);
         // 最初のフェーズをセット
-        StateMachine.SetState(PhaseType.CountDown);
+        StateMachine.SetState(PhaseType.ChargeCountDown);
     }
 
     /// <summary>
@@ -46,4 +40,6 @@ public class PhaseState : MonoBehaviour
         // 各フェーズの更新を行う
         StateMachine.Update();
     }
+
+
 }

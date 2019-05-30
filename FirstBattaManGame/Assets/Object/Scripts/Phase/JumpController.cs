@@ -8,9 +8,9 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     // プレイヤーのリジッドボディ
-    [SerializeField] Rigidbody playerRigidbody;
+    [SerializeField] Rigidbody playerRigidbody = default;
     // ジャンプ中どうか
-    bool isJumping = false;
+    public bool IsJumping { get; private set; } = false;
 
     /// <summary>
     /// プレイヤーをジャンプさせる
@@ -21,28 +21,26 @@ public class JumpController : MonoBehaviour
         // プレイヤーに上方向に力を加える
         playerRigidbody.AddForce(Vector3.up * power, ForceMode.VelocityChange);
         // ジャンプフラグを立てる
-        isJumping = true;
+        IsJumping = true;
     }
 
     /// <summary>
     /// ジャンプの状態を監視する
     /// </summary>
     /// <returns>ジャンプ中かどうかを返す</returns>
-    public bool ObserverJumpState()
+    public void ObserverJumpState()
     {
         // ジャンプ中の処理
-        if (isJumping)
+        if (IsJumping)
         {
             // ベロシティが下向きになったら
             if (playerRigidbody.velocity.y <= 0)
             {
                 // ジャンプフラグを倒す
-                isJumping = false;
+                IsJumping = false;
                 // プレイヤーの重力を停止する
                 playerRigidbody.useGravity = false;
             }
         }
-
-        return isJumping;
     }
 }
