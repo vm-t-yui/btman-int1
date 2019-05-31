@@ -952,50 +952,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858837687}
   m_CullTransparentMesh: 0
---- !u!1 &915923823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 915923824}
-  - component: {fileID: 915923825}
-  m_Layer: 0
-  m_Name: PhaseState
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &915923824
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915923823}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &915923825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915923823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f8338467176da4dad42609ced50925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  phaseChargeJumpPower: {fileID: 1445216673}
 --- !u!1001 &928410310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1225,6 +1181,7 @@ GameObject:
   - component: {fileID: 1418623201}
   - component: {fileID: 1418623200}
   - component: {fileID: 1418623199}
+  - component: {fileID: 1418623202}
   m_Layer: 5
   m_Name: JumpHeight
   m_TagString: Untagged
@@ -1297,6 +1254,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1418623202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418623198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc01b0f1d944fcc4eb0b6970e4dc2d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpController: {fileID: 1453737721}
+  playerTransform: {fileID: 1453737719}
+  jumpHeightText: {fileID: 1418623199}
 --- !u!1 &1445216670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,14 +1278,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445216672}
-  - component: {fileID: 1445216673}
+  - component: {fileID: 1445216671}
   m_Layer: 0
-  m_Name: Phases
+  m_Name: PhaseState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1445216671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445216670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f8338467176da4dad42609ced50925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeCountDown: {fileID: 1913225302}
+  jumpHeightCounter: {fileID: 1418623202}
 --- !u!4 &1445216672
 Transform:
   m_ObjectHideFlags: 0
@@ -1328,20 +1314,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1445216673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445216670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0d064d388cb734d90ebe49c54a4cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countDownUi: {fileID: 1913225298}
-  countDownText: {fileID: 1913225300}
 --- !u!1 &1453737715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1858,7 @@ GameObject:
   - component: {fileID: 1913225299}
   - component: {fileID: 1913225301}
   - component: {fileID: 1913225300}
+  - component: {fileID: 1913225302}
   m_Layer: 5
   m_Name: CountDown
   m_TagString: Untagged
@@ -1959,6 +1932,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913225298}
   m_CullTransparentMesh: 0
+--- !u!114 &1913225302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913225298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0d064d388cb734d90ebe49c54a4cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDownText: {fileID: 1913225300}
 --- !u!1 &1942761664
 GameObject:
   m_ObjectHideFlags: 0
