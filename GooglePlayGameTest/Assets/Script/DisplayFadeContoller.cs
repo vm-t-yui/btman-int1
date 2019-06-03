@@ -12,7 +12,7 @@ public class DisplayFadeContoller : MonoBehaviour
     /// </summary>
     public enum FadeType
     {
-        FadeIn = 0,   // フェードイン
+        FadeIn,       // フェードイン
         FadeOut       // フェードアウト
     }
 
