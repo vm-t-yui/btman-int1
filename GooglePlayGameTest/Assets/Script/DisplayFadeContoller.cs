@@ -17,7 +17,7 @@ public class DisplayFadeContoller : MonoBehaviour
     }
 
     /// <summary>
-    /// フェード色
+    /// 使用するパネルのタイプ（色）
     /// </summary>
     public enum PanelType
     {
@@ -40,7 +40,7 @@ public class DisplayFadeContoller : MonoBehaviour
     float fadeSpeed = 0.02f;                                // フェードするスピード
 
     FadeType fadeType;                                      // フェードのタイプ
-    PanelType panelType;                                    // フェードさせるパネルの色
+    PanelType panelType;                                    // フェードさせるパネルのタイプ
 
     public bool IsFade { get; private set; } = false;       // フェード中
     public bool IsFadeEnd { get; private set; } = false;    // フェード終了
@@ -58,39 +58,41 @@ public class DisplayFadeContoller : MonoBehaviour
     }
 
     /// <summary>
-    /// カンバスの状態設定（シーンの初めに画面を隠しておきたいときにも呼ぶ）
+    /// パネルの状態設定
+    /// シーンの最初にフェードアウトさせたい時はStart()などでこれを呼ぶ
     /// </summary>
-    /// <param name="color">設定する色（これによってどのカンバスをいじるか判断）</param>
-    /// <param name="isView">透明かどうか</param>
+    /// <param name="panel">設定する色（これによってどのパネルをいじるか判断）</param>
+    /// <param name="isView">trueなら不透明、falseなら透明で表示</param>
     public void OnPanel(PanelType panel, bool isView)
     {
-        // 透明ならalphaを1、そうでなければ0に設定
+        // 不透明で表示するならalphaを1、そうでなければ0に設定
         if (isView)
         {
             fadeCanvas.alpha = 1;
         }
         else
         {
+
             fadeCanvas.alpha = 0;
         }
 
-        // 指定された色のパネルを表示、他２つは非表示
+        // 指定されたパネルを表示、他２つは非表示
         switch (panel)
         {
             case PanelType.Black:    // 黒
-                blackPanel.SetActive(isView);
+                blackPanel.SetActive(true);
                 whitePanel.SetActive(false);
                 logoPanel.SetActive(false);
                 break;
 
             case PanelType.White:    // 白
-                whitePanel.SetActive(isView);
+                whitePanel.SetActive(true);
                 blackPanel.SetActive(false);
                 logoPanel.SetActive(false);
                 break;
 
             case PanelType.Logo:  // ロゴ入り 
-                logoPanel.SetActive(isView);
+                logoPanel.SetActive(true);
                 blackPanel.SetActive(false);
                 whitePanel.SetActive(false);
                 break;
@@ -101,7 +103,7 @@ public class DisplayFadeContoller : MonoBehaviour
     /// フェード開始処理（これをフェード処理したいタイミングで呼ぶ）
     /// </summary>
     /// <param name="type">フェードのタイプ</param>
-    /// <param name="color">フェード色</param>
+    /// <param name="panel">パネルタイプ</param>
     public void OnFade(FadeType type, PanelType panel)
     {
         fadeType = type;
@@ -114,7 +116,7 @@ public class DisplayFadeContoller : MonoBehaviour
         {
             OnPanel(panelType, false);
         }
-        // フェードアウトなら不透明でカンバスを出す
+        // フェードアウトなら不透明でパネルを出す
         else
         {
             OnPanel(panelType, true);
