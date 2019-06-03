@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// フェーズの状態を管理するクラス
 /// </summary>
-public partial class PhaseState : MonoBehaviour
+public class PhaseState : MonoBehaviour
 {
     /// <summary>
     /// フェーズの種類
