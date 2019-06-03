@@ -19,7 +19,7 @@ public class DisplayFadeContoller : MonoBehaviour
     /// <summary>
     /// フェード色
     /// </summary>
-    public enum FadeColor
+    public enum PanelType
     {
         Black,        // 黒
         White,        // 白
@@ -40,7 +40,7 @@ public class DisplayFadeContoller : MonoBehaviour
     float fadeSpeed = 0.02f;                                // フェードするスピード
 
     FadeType fadeType;                                      // フェードのタイプ
-    FadeColor fadeColor;                                    // フェードさせるパネルの色
+    PanelType panelType;                                    // フェードさせるパネルの色
 
     public bool IsFade { get; private set; } = false;       // フェード中
     public bool IsFadeEnd { get; private set; } = false;    // フェード終了
@@ -62,7 +62,7 @@ public class DisplayFadeContoller : MonoBehaviour
     /// </summary>
     /// <param name="color">設定する色（これによってどのカンバスをいじるか判断）</param>
     /// <param name="isView">透明かどうか</param>
-    public void OnPanel(FadeColor color, bool isView)
+    public void OnPanel(PanelType panel, bool isView)
     {
         // 透明ならalphaを1、そうでなければ0に設定
         if (isView)
@@ -75,21 +75,21 @@ public class DisplayFadeContoller : MonoBehaviour
         }
 
         // 指定された色のパネルを表示、他２つは非表示
-        switch (color)
+        switch (panel)
         {
-            case FadeColor.Black:    // 黒
+            case PanelType.Black:    // 黒
                 blackPanel.SetActive(isView);
                 whitePanel.SetActive(false);
                 logoPanel.SetActive(false);
                 break;
 
-            case FadeColor.White:    // 白
+            case PanelType.White:    // 白
                 whitePanel.SetActive(isView);
                 blackPanel.SetActive(false);
                 logoPanel.SetActive(false);
                 break;
 
-            case FadeColor.Logo:  // ロゴ入り 
+            case PanelType.Logo:  // ロゴ入り 
                 logoPanel.SetActive(isView);
                 blackPanel.SetActive(false);
                 whitePanel.SetActive(false);
@@ -102,22 +102,22 @@ public class DisplayFadeContoller : MonoBehaviour
     /// </summary>
     /// <param name="type">フェードのタイプ</param>
     /// <param name="color">フェード色</param>
-    public void OnFade(FadeType type, FadeColor color)
+    public void OnFade(FadeType type, PanelType panel)
     {
         fadeType = type;
-        fadeColor = color;
+        panelType = panel;
         IsFade = true;
         IsFadeEnd = false;
 
         // フェードインなら透明の状態でカンバスを出す
         if (fadeType == (int)FadeType.FadeIn)
         {
-            OnPanel(fadeColor, false);
+            OnPanel(panelType, false);
         }
         // フェードアウトなら不透明でカンバスを出す
         else
         {
-            OnPanel(fadeColor, true);
+            OnPanel(panelType, true);
         }
     }
 
