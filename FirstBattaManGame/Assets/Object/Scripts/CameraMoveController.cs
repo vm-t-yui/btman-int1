@@ -13,7 +13,7 @@ public class CameraMoveController : MonoBehaviour
     // 現在のズームカウント数
     int currentZoomTimeCount = 0;
 
-    readonly Vector3 JumpCameraPos      = new Vector3(-2,-0.8f,5);    // ジャンプ時のカメラの位置
+    readonly Vector3 jumpCameraPos      = new Vector3(-2,-0.8f,5);    // ジャンプ時のカメラの位置
     readonly Vector3 LookAtPosOffset    = new Vector3(0, 1, 0);       // 注視点のオフセット
     const    int     CameraMoveWaitTime = 10;                         // カメラの移動が開始するまでの待機時間
     const    int     ZoomTime           = 600;                        // ズーム時間
@@ -45,7 +45,7 @@ public class CameraMoveController : MonoBehaviour
             transform.parent = playerTransform;
 
             // Lerpを利用して移動する
-            transform.localPosition = Vector3.Lerp(transform.localPosition, JumpCameraPos, ZoomLerpRate);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, jumpCameraPos, ZoomLerpRate);
         }
     }
 }
