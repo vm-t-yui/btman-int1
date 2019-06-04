@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 7
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/sho-1/Desktop/PlayGameTest/GooglePlayGameTest/btmanJump.keystore
+  AndroidKeystoreName: C:/Users/sho-1/Desktop/AllPlatformTest/GooglePlayGameTest/btmanJump.keystore
   AndroidKeyaliasName: btmanjumpkey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
