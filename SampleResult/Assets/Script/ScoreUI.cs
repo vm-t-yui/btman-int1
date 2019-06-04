@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ScoreUI : MonoBehaviour
 {
     [SerializeField]
-    Text text;      //テキスト
+    Text text;                      //テキスト
 
     [SerializeField]
     DataManager dataManager;        //データクラス

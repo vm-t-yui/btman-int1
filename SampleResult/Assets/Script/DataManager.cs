@@ -11,7 +11,7 @@ public class DataManager : MonoBehaviour
     float highScore = 0;    //スコア
 
     [SerializeField]
-    int[] isGetItem = new int[ItemManager.count];  //アイテム取得フラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    int[] isGetItem = new int[Item.count];  //アイテム取得フラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// 起動時処理
@@ -28,7 +28,7 @@ public class DataManager : MonoBehaviour
     public void LoadData()
     {
         highScore = PlayerPrefs.GetFloat("HighScore", 0);
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < Item.count; i++)
         {
             isGetItem[i] = PlayerPrefs.GetInt("isGetItem" + i, 0);
         }
@@ -40,7 +40,7 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         PlayerPrefs.SetFloat("HighScore", highScore);
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < Item.count; i++)
         {
             PlayerPrefs.SetInt("isGetItem" + i, isGetItem[i]);
         }
@@ -55,7 +55,7 @@ public class DataManager : MonoBehaviour
     public void DeleteData()
     {
         PlayerPrefs.DeleteKey("HighScore");
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < Item.count; i++)
         {
             PlayerPrefs.DeleteKey("isGetItem" + i);
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// アイテムクラス
 /// </summary>
-public class ItemManager : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public static int count = 8;   　//アイテム数(10は仮)
 

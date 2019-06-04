@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// スコアクラス
 /// </summary>
-public class ScoreManager : MonoBehaviour
+public class Score : MonoBehaviour
 {
     [SerializeField]
     float score = 0;    //スコア
