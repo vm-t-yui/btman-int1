@@ -19,6 +19,15 @@ public class ChargeCountDown : MonoBehaviour
     const float CountDownNum = 10;
 
     /// <summary>
+    /// 初期化処理
+    /// </summary>
+    void OnEnable()
+    {
+        // カウントダウンのUIを表示する
+        countDownText.gameObject.SetActive(true);
+    }
+
+    /// <summary>
     /// 更新処理
     /// </summary>
     void Update()
@@ -38,5 +47,14 @@ public class ChargeCountDown : MonoBehaviour
                 countDownText.text = CurrentCountNum.ToString("F1");
             }
         }
+    }
+
+    /// <summary>
+    /// 終了処理
+    /// </summary>
+    void OnDisable()
+    {
+        // カウントダウンのUIを非表示にする
+        countDownText.gameObject.SetActive(false);
     }
 }

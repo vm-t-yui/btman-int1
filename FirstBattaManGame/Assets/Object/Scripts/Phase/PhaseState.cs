@@ -14,6 +14,7 @@ public class PhaseState : MonoBehaviour
     {
         ChargeCountDown,       // ジャンプ力を溜めている際のカウントダウン
         JumpHeightCounter,     // プレイヤーのジャンプ高さを計測するクラス
+        PlayerFalling,         // プレイヤーの落下演出
     }
 
     // ステートマシン
@@ -21,6 +22,7 @@ public class PhaseState : MonoBehaviour
 
     [SerializeField] ChargeCountDown   chargeCountDown   = default;         // ジャンプ力の溜めている際のカウントダウン
     [SerializeField] JumpHeightCounter jumpHeightCounter = default;         // プレイヤーのジャンプ高さを計測するクラス
+    [SerializeField] PlayerFalling     playerFalling     = default;         // プレイヤーの落下演出
 
     /// <summary>
     /// 開始
@@ -31,6 +33,8 @@ public class PhaseState : MonoBehaviour
         stateMachine.Add(PhaseType.ChargeCountDown, EnterChargeCountDown, UpdateChargeCountDown, ExitChargeCountDown);
         // "JumpHeightCounter"の関数をステートマシンに追加
         stateMachine.Add(PhaseType.JumpHeightCounter, EnterJumpHeightCounter, UpdateJumpHeightCounter, ExitJumpHeightCounter);
+        // "PlayerFalling"の関数をステートマシンに追加
+        stateMachine.Add(PhaseType.PlayerFalling, EnterPlayerFalling, UpdatePlayerFalling, ExitPlayerFalling);
 
         // 最初のステートを"ChargeCountDown"にセット
         stateMachine.SetState(PhaseType.ChargeCountDown);
@@ -52,7 +56,7 @@ public class PhaseState : MonoBehaviour
     void EnterChargeCountDown()
     {
         // "ChargeCountDown"をtrueに設定
-        chargeCountDown.gameObject.SetActive(true);
+        chargeCountDown.enabled = true;
     }
 
     /// <summary>
@@ -74,7 +78,7 @@ public class PhaseState : MonoBehaviour
     void ExitChargeCountDown()
     {
         // "ChargeCountDown"をfalseに設定
-        chargeCountDown.gameObject.SetActive(false);
+        chargeCountDown.enabled = false;
     }
 
     /// <summary>
@@ -83,22 +87,53 @@ public class PhaseState : MonoBehaviour
     void EnterJumpHeightCounter()
     {
         // "JumpHeightCounter"をtrueに設定
-        jumpHeightCounter.gameObject.SetActive(true);
+        jumpHeightCounter.enabled = true;
     }
 
     /// <summary>
     /// "JumpHeightCounter"の更新処理
     /// </summary>
-    /// TODO：t.mitsumaru（未実装今後処理を追加する可能性があるため関数のみを追加）
     void UpdateJumpHeightCounter()
     {
+        // ジャンプ高さの結果が出たら
+        if (jumpHeightCounter.IsJumpHeightResult)
+        {
+            // ステートを"PlayerFalling"に変更する
+            stateMachine.SetState(PhaseType.PlayerFalling);
+        }
     }
 
     /// <summary>
     /// "JumpHeightCounter"の終了処理
     /// </summary>
-    /// TODO：t.mitsumaru（未実装今後処理を追加する可能性があるため関数のみを追加）
     void ExitJumpHeightCounter()
     {
+        // "JumpHeightCounter"をfalseに設定
+        jumpHeightCounter.enabled = false;
+    }
+
+    /// <summary>
+    /// "EnterPlayerFalling"の初期化処理
+    /// </summary>
+    void EnterPlayerFalling()
+    {
+        // "PlayerFalling"をtrueに設定
+        playerFalling.enabled = true;
+    }
+
+    /// <summary>
+    /// "EnterPlayerFalling"の更新処理
+    /// </summary>
+    void UpdatePlayerFalling()
+    {
+
+    }
+
+    /// <summary>
+    /// "EnterPlayerFalling"の終了処理
+    /// </summary>
+    void ExitPlayerFalling()
+    {
+
     }
 }

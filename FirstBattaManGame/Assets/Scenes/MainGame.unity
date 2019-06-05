@@ -958,13 +958,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1795393082}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &963990968 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1795393082}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &963990969
+--- !u!114 &963990967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -977,6 +971,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 963990970}
+--- !u!4 &963990968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795393082}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &963990970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1080,6 +1080,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148149496}
   m_CullTransparentMesh: 0
+--- !u!1 &1162031151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162031155}
+  - component: {fileID: 1162031154}
+  - component: {fileID: 1162031153}
+  - component: {fileID: 1162031152}
+  m_Layer: 0
+  m_Name: Phases
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1162031152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162031151}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a736a9802f119d4085dcf46ab718107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 963990970}
+--- !u!114 &1162031153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162031151}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc01b0f1d944fcc4eb0b6970e4dc2d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpController: {fileID: 963990967}
+  playerTransform: {fileID: 963990968}
+  jumpHeightText: {fileID: 1418623199}
+--- !u!114 &1162031154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162031151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0d064d388cb734d90ebe49c54a4cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDownText: {fileID: 1913225300}
+--- !u!4 &1162031155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162031151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14170599, y: 0.48113352, z: 0.7331394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1233238540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1240,6 @@ GameObject:
   - component: {fileID: 1418623201}
   - component: {fileID: 1418623200}
   - component: {fileID: 1418623199}
-  - component: {fileID: 1418623202}
   m_Layer: 5
   m_Name: JumpHeight
   m_TagString: Untagged
@@ -1239,21 +1312,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1418623202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418623198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc01b0f1d944fcc4eb0b6970e4dc2d56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpController: {fileID: 963990969}
-  playerTransform: {fileID: 963990968}
-  jumpHeightText: {fileID: 1418623199}
 --- !u!1 &1445216670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,8 +1341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f8338467176da4dad42609ced50925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeCountDown: {fileID: 1913225302}
-  jumpHeightCounter: {fileID: 1418623202}
+  chargeCountDown: {fileID: 1162031154}
+  jumpHeightCounter: {fileID: 1162031153}
+  playerFalling: {fileID: 1162031152}
 --- !u!4 &1445216672
 Transform:
   m_ObjectHideFlags: 0
@@ -1446,7 +1505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1536135240
 MonoBehaviour:
@@ -1461,6 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 963990968}
+  jumpHeightCounter: {fileID: 1162031153}
 --- !u!1 &1716856317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1838,7 +1898,6 @@ GameObject:
   - component: {fileID: 1913225299}
   - component: {fileID: 1913225301}
   - component: {fileID: 1913225300}
-  - component: {fileID: 1913225302}
   m_Layer: 5
   m_Name: CountDown
   m_TagString: Untagged
@@ -1912,19 +1971,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913225298}
   m_CullTransparentMesh: 0
---- !u!114 &1913225302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913225298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0d064d388cb734d90ebe49c54a4cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countDownText: {fileID: 1913225300}
 --- !u!1 &1942761664
 GameObject:
   m_ObjectHideFlags: 0
