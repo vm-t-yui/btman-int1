@@ -638,6 +638,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5335008786295087430, guid: 3b7eff8a09786024da75f0680f6319b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5335008786304626979, guid: 3b7eff8a09786024da75f0680f6319b6,
         type: 3}
       propertyPath: m_IsActive
@@ -1659,6 +1664,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 98a0c12645b0e4b499031f1f69dc69fc, type: 2}
+    - target: {fileID: 400050, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99453914
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000020041973
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000061982144
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.10436453
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9922839
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.07405199
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09943264
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0014797461
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9960412
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000000027019957
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000009219834
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08889307
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
 --- !u!1 &1824880643
@@ -1765,7 +1822,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

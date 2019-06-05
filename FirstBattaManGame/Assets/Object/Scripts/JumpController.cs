@@ -14,6 +14,8 @@ public class JumpController : MonoBehaviour
 
     // ワンタップあたりのジャンプ力
     const float OneTouchJumpPower = 5;
+    // 初期ジャンプ力（タップ回数に関係なく必ず与えられるジャンプ力）
+    const float InitJumpPower = 20;
 
     /// <summary>
     /// プレイヤーをジャンプさせる
@@ -21,8 +23,11 @@ public class JumpController : MonoBehaviour
     /// <param name="touchCount">タッチのカウント数</param>
     public void PlayerJump(int touchCount)
     {
+        // ジャンプ力を算出 (初期ジャンプ力 + (ワンタップのジャンプ力 * タップ回数))
+        float jumpPower = InitJumpPower + (OneTouchJumpPower * touchCount);
+
         // プレイヤーに上方向に力を加える（ジャンプ力＝ワンタップあたりのジャンプ力＊タッチされた数）
-        playerRigidbody.AddForce(Vector3.up * (OneTouchJumpPower * touchCount), ForceMode.VelocityChange);
+        playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
         // ジャンプフラグを立てる
         IsJumping = true;
     }
@@ -40,6 +45,8 @@ public class JumpController : MonoBehaviour
             {
                 // コールバック関数を呼ぶ
                 OnJumpStop();
+
+                
             }
         }
     }

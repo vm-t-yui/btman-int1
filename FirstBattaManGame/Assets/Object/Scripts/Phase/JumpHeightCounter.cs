@@ -12,10 +12,13 @@ public class JumpHeightCounter : MonoBehaviour
     [SerializeField] Transform      playerTransform = default;       // プレイヤーのトランスフォーム
     [SerializeField] Text           jumpHeightText  = default;       // ジャンプ高さのUIテキスト
 
-    // １キロあたりの距離
-    const float OneKiloMetreDistance = 10;
-    // 地面のY軸の位置
-    const float GroundPosY = -0.5f;
+    // ジャンプ高さ（キロメートル単位）
+    public int JumpHeightToKiloMetre { get; private set; } = 0;
+
+    const    float  OneKiloMetreDistance  = 1;           // １キロあたりの距離
+    const    float  GroundPosY            = -0.5f;       // 地面のY軸の位置
+    const    float  HeightUiMagnification = 10;          // UIに表示する高さの倍率
+    readonly string DistanceUnit          = " km";       // 距離の単位
 
     /// <summary>
     /// 初期化処理
@@ -33,10 +36,13 @@ public class JumpHeightCounter : MonoBehaviour
     {
         // ジャンプ高さを算出
         float jumpHeight = playerTransform.position.y - GroundPosY;
+        // 高さをキロメートルに変換
+        JumpHeightToKiloMetre = (int)((jumpHeight / OneKiloMetreDistance) * HeightUiMagnification);
+
         if (jumpHeight != 0)
         {
             // ジャンプ高さをキロメートルに変換してUIに表示
-            jumpHeightText.text = (jumpHeight / OneKiloMetreDistance).ToString("F1");
+            jumpHeightText.text = JumpHeightToKiloMetre.ToString() + DistanceUnit;
         }
     }
 }

@@ -31,6 +31,15 @@ public class InputController : MonoBehaviour
                 TouchCountNum++;
             }
         }
+
+        // 画面のクリック操作（エディタ用）
+        if (Input.GetMouseButtonDown(0))
+        {
+            // 初めてタッチが行われたフラグを起こす
+            IsFirstTouch = true;
+            // タッチされた回数をカウント
+            TouchCountNum++;
+        }
     }
 }
 　
