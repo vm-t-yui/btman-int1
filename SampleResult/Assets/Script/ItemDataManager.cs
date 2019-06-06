@@ -8,10 +8,10 @@ using UnityEngine;
 public class ItemDataManager : MonoBehaviour
 {
     [SerializeField]
-    ItemManager itemManager = default;      //アイテムクラス
+    ItemManager itemManager = default;                //アイテムクラス
 
     [SerializeField]
-    int[] isHaveItem = new int[ItemManager.count];  　//アイテム取得フラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    int[] isHaveItem = new int[ItemManager.count];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// 起動時処理
