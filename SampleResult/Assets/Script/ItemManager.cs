@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class ItemManager : MonoBehaviour
 {
-    public const int count = 8;   　             //アイテム数(10は仮)
-    static int[] isHaveItem = new int[count];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    public const int num = 8;   　             //アイテム数(10は仮)
+    static int[] isHaveItem = new int[num];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// アイテムゲット

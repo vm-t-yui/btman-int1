@@ -13,12 +13,12 @@ public class ItemBoxController : MonoBehaviour
     [SerializeField]
     GameObject ItemBox = default;           //アイテムボックス
     [SerializeField]
-    GameObject[] materializeButton = new GameObject[ItemManager.count];   //アイテム説明ボタン
+    GameObject[] materializeButton = new GameObject[ItemManager.num];   //アイテム説明ボタン
     [SerializeField]
-    GameObject[] silhouetteButton = new GameObject[ItemManager.count];    //アイテムのシルエットだけのアイテム説明ボタン
+    GameObject[] silhouetteButton = new GameObject[ItemManager.num];    //アイテムのシルエットだけのアイテム説明ボタン
 
     [SerializeField]
-    int[] isHaveItem = new int[ItemManager.count];  //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    int[] isHaveItem = new int[ItemManager.num];  //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// 開始処理
@@ -26,7 +26,7 @@ public class ItemBoxController : MonoBehaviour
     void Start()
     {
         //データをもらってくる
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < ItemManager.num; i++)
         {
             isHaveItem[i] = itemManager.GetHaveItemFlag(i);
         }
@@ -46,7 +46,7 @@ public class ItemBoxController : MonoBehaviour
     /// </summary>
     void ButtonActive()
     {
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < ItemManager.num; i++)
         {
             //アイテムをゲットしたらアイテム説明ボタン表示、していなかったらシルエットだけのボタン表示
             if (isHaveItem[i] == 1)

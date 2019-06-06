@@ -11,7 +11,7 @@ public class ItemDataManager : MonoBehaviour
     ItemManager itemManager = default;                //アイテムクラス
 
     [SerializeField]
-    int[] isHaveItem = new int[ItemManager.count];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    int[] isHaveItem = new int[ItemManager.num];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// 起動時処理
@@ -28,7 +28,7 @@ public class ItemDataManager : MonoBehaviour
     public void LoadData()
     {
         //データロード
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < ItemManager.num; i++)
         {
             isHaveItem[i] = PlayerPrefs.GetInt("isGetItem" + i, 0);
         }
@@ -42,7 +42,7 @@ public class ItemDataManager : MonoBehaviour
     /// </summary>
     public void SaveData()
     {
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < ItemManager.num; i++)
         {
             //まだゲットしてしていなかったらゲット
             if (isHaveItem[i] == 0)
@@ -63,7 +63,7 @@ public class ItemDataManager : MonoBehaviour
     /// </summary>
     public void DeleteData()
     {
-        for (int i = 0; i < ItemManager.count; i++)
+        for (int i = 0; i < ItemManager.num; i++)
         {
             PlayerPrefs.DeleteKey("isGetItem" + i);
         }
