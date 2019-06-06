@@ -16,14 +16,6 @@ public class PlayerFalling : MonoBehaviour
     const int FallWaitTime = 60;
 
     /// <summary>
-    /// 初期化処理
-    /// </summary>
-    void OnEnable()
-    {
-        
-    }
-
-    /// <summary>
     /// 更新処理
     /// </summary>
     void Update()
@@ -35,13 +27,5 @@ public class PlayerFalling : MonoBehaviour
             // 物理演算をオンにする
             playerRigidbody.isKinematic = false;
         }
-    }
-
-    /// <summary>
-    /// 終了処理
-    /// </summary>
-    void OnDisable()
-    {
-        
     }
 }

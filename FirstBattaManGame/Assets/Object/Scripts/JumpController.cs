@@ -45,8 +45,6 @@ public class JumpController : MonoBehaviour
             {
                 // コールバック関数を呼ぶ
                 OnJumpStop();
-
-                
             }
         }
     }

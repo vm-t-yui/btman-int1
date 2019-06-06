@@ -124,6 +124,7 @@ public class PhaseState : MonoBehaviour
     /// <summary>
     /// "EnterPlayerFalling"の更新処理
     /// </summary>
+    /// TODO：t.mitsumaru　未実装（今後処理を追加する可能性があるため関数のみを追加）
     void UpdatePlayerFalling()
     {
 
@@ -132,6 +133,7 @@ public class PhaseState : MonoBehaviour
     /// <summary>
     /// "EnterPlayerFalling"の終了処理
     /// </summary>
+    /// TODO：t.mitsumaru　未実装（今後処理を追加する可能性があるため関数のみを追加）
     void ExitPlayerFalling()
     {
 
