@@ -9,17 +9,23 @@ using UnityEngine.UI;
 public class ScoreUI : MonoBehaviour
 {
     [SerializeField]
-    Text text;                      //テキスト
-
-    [SerializeField]
-    DataManager dataManager;        //データクラス
+    Text scoreUI = default;   //テキスト
 
     /// <summary>
-    /// 更新
+    /// スコアUIのセット関数
     /// </summary>
-    void Update()
+    /// <param name="Score">獲得スコア</param>
+    public void SetScoreUI(float Score)
     {
-        //点数を更新
-        text.text = dataManager.GetHighScore().ToString();
+        scoreUI.text = Score.ToString();
+    }
+
+    /// <summary>
+    /// スコアUIのハイセット関数
+    /// </summary>
+    /// <param name="highScore">ハイスコア</param>
+    public void SetHighScoreUI(float highScore)
+    {
+        scoreUI.text = highScore.ToString();
     }
 }

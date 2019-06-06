@@ -8,8 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemDescription : MonoBehaviour
 {
-    [SerializeField] Text itemName;         //アイテムの名前
-    [SerializeField] Text itemDescription;  //アイテムの説明
+    [SerializeField] Text itemName = default;         //アイテムの名前
+    [SerializeField] Text itemDescription = default;  //アイテムの説明
 
     //TODO:アイテムの説明はまだ決まっていないので、仮として〜番目のアイテム、〜番目のアイテムの説明にしています。
     //TODO:アイテムの詳細が決まれば、ちゃんとした説明を入れます。
