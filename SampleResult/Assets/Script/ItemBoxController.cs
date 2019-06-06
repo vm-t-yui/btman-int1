@@ -28,7 +28,7 @@ public class ItemBoxController : MonoBehaviour
         //データをもらってくる
         for (int i = 0; i < ItemManager.count; i++)
         {
-            isHaveItem[i] = itemManager.GetIsHaveItem(i);
+            isHaveItem[i] = itemManager.GetHaveItemFlag(i);
         }
     }
 

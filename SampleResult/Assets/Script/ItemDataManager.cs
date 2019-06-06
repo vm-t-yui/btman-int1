@@ -34,7 +34,7 @@ public class ItemDataManager : MonoBehaviour
         }
 
         //ロードしたデータをセット
-        itemManager.SetIsHaveItem(isHaveItem);
+        itemManager.SetHaveItemFlag(isHaveItem);
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ public class ItemDataManager : MonoBehaviour
             //まだゲットしてしていなかったらゲット
             if (isHaveItem[i] == 0)
             {
-                isHaveItem[i] = itemManager.GetIsHaveItem(i);
+                isHaveItem[i] = itemManager.GetHaveItemFlag(i);
             }
 
             //ゲットのデータをセット

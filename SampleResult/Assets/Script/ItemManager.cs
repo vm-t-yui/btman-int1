@@ -26,7 +26,7 @@ public class ItemManager : MonoBehaviour
     /// </summary>
     /// <returns>セーブデータから取ってきたアイテム取得フラグ</returns>
     /// <param name="i">アイテムの番号</param>
-    public int GetIsHaveItem(int i)
+    public int GetHaveItemFlag(int i)
     {
         return isHaveItem[i];
     }
@@ -35,7 +35,7 @@ public class ItemManager : MonoBehaviour
     /// アイテム取得フラグのセット関数
     /// </summary>
     /// <param name="ItemNum">アイテム取得時のフラグ</param>
-    public void SetIsHaveItem(int[] ItemNum)
+    public void SetHaveItemFlag(int[] ItemNum)
     {
         for (int i = 0; i < isHaveItem.Length; i++)
         {
