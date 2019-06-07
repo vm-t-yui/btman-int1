@@ -11,7 +11,7 @@ public class ItemBoxController : MonoBehaviour
     ItemManager itemManager = default;        //データクラス
 
     [SerializeField]
-    GameObject ItemBox = default;             //アイテムボックス
+    GameObject itemBox = default;             //アイテムボックス
     [SerializeField]
     GameObject[] materializeButton = default; //アイテム説明ボタン
     [SerializeField]
@@ -25,7 +25,7 @@ public class ItemBoxController : MonoBehaviour
     void Start()
     {
         //データをもらってくる
-        for (int i = 0; i < ItemManager.Num; i++)
+        for (int i = 0; i < isHasItem.Length; i++)
         {
             isHasItem[i] = itemManager.GetHaveItemFlag(i);
         }
@@ -45,7 +45,7 @@ public class ItemBoxController : MonoBehaviour
     /// </summary>
     void ButtonActive()
     {
-        for (int i = 0; i < ItemManager.Num; i++)
+        for (int i = 0; i < isHasItem.Length; i++)
         {
             //アイテムをゲットしたらアイテム説明ボタン表示、していなかったらシルエットだけのボタン表示
             if (isHasItem[i] == 1)
@@ -67,13 +67,13 @@ public class ItemBoxController : MonoBehaviour
     public void ItemBoxActive()
     {
         //アイテムボックス表示非表示する
-        if (ItemBox.activeInHierarchy)
+        if (itemBox.activeInHierarchy)
         {
-            ItemBox.SetActive(false);
+            itemBox.SetActive(false);
         }
         else
         {
-            ItemBox.SetActive(true);
+            itemBox.SetActive(true);
         }
     }
 }
