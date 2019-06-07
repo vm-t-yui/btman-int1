@@ -7,15 +7,15 @@ using UnityEngine;
 /// </summary>
 public class CameraMoveController : MonoBehaviour
 {
-    // プレイヤーのトランスフォーム
-    [SerializeField] Transform playerTransform = default;
+    [SerializeField] Transform         playerTransform   = default;       // プレイヤーのトランスフォーム
+    [SerializeField] JumpHeightCounter jumpHeightCounter = default;       // プレイヤーのジャンプ高さを計測するクラス
 
     // 現在のズームカウント数
     int currentZoomTimeCount = 0;
 
     readonly Vector3 jumpCameraPos      = new Vector3(-2,-0.8f,5);    // ジャンプ時のカメラの位置
     readonly Vector3 LookAtPosOffset    = new Vector3(0, 1, 0);       // 注視点のオフセット
-    const    int     CameraMoveWaitTime = 10;                         // カメラの移動が開始するまでの待機時間
+    const    int     CameraMoveWaitTime = 5;                         // カメラの移動が開始するまでの待機時間
     const    int     ZoomTime           = 600;                        // ズーム時間
     const    float   ZoomSpeed          = 0.003f;                     // ズームスピード
     const    float   ZoomLerpRate       = 0.05f;                      // ズームのLerp率
@@ -42,10 +42,21 @@ public class CameraMoveController : MonoBehaviour
         // 待機したあとはLerpでプレイヤーに近づいていく
         else if (currentZoomTimeCount > ZoomTime + CameraMoveWaitTime)
         {
+            // カメラをプレイヤーの子オブジェクトにする
             transform.parent = playerTransform;
-
             // Lerpを利用して移動する
             transform.localPosition = Vector3.Lerp(transform.localPosition, jumpCameraPos, ZoomLerpRate);
+
+            // ジャンプ高さの結果がでたら
+            if (jumpHeightCounter.IsJumpHeightResult)
+            {
+                // カメラとプレイヤーの親子関係を解除する
+                transform.parent = null;
+                // スクリプトをオフにする
+                enabled = false;
+            }
+
+
         }
     }
 }
