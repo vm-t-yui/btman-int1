@@ -69,7 +69,11 @@ public class ItemDataManager : MonoBehaviour
         }
     }
 
-    //keyの取得
+    /// <summary>
+    /// key取得
+    /// </summary>
+    /// <returns>The key.</returns>
+    /// <param name="count">アイテムの数</param>
     string GetKey(int count)
     {
         return "isGetItem" + count;

@@ -479,7 +479,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1162148226}
+      - m_Target: {fileID: 0}
         m_MethodName: SendData
         m_Mode: 1
         m_Arguments:
@@ -902,7 +902,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162148227}
-  - component: {fileID: 1162148226}
   - component: {fileID: 1162148228}
   m_Layer: 0
   m_Name: ScoreManager
@@ -911,19 +910,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1162148226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162148225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c498cb48c8b349af9ebb9caed4bb4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreUI: {fileID: 1162148228}
 --- !u!4 &1162148227
 Transform:
   m_ObjectHideFlags: 0
@@ -1272,7 +1258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 1962554690}
-  isHaveItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1966070342
 GameObject:
   m_ObjectHideFlags: 0

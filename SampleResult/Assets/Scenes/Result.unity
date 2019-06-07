@@ -139,7 +139,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263910995}
-  - component: {fileID: 263910994}
   - component: {fileID: 263910996}
   - component: {fileID: 263910997}
   m_Layer: 0
@@ -149,19 +148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &263910994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263910993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c498cb48c8b349af9ebb9caed4bb4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreUI: {fileID: 263910997}
 --- !u!4 &263910995
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d897714b18db94370bd71adca0ae676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 263910994}
   highScore: 0
 --- !u!114 &263910997
 MonoBehaviour:
@@ -1383,7 +1368,6 @@ MonoBehaviour:
   - {fileID: 1399488651}
   - {fileID: 1216692407}
   - {fileID: 1449173944}
-  isGetItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1657247409
 Transform:
   m_ObjectHideFlags: 0
@@ -1411,7 +1395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 1657247407}
-  isHaveItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1657674296
 GameObject:
   m_ObjectHideFlags: 0

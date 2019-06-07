@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 150278881}
+  ItemBox: {fileID: 3720386051517857888}
   materializeButton:
   - {fileID: 2863093211744124090}
   - {fileID: 2437263469293826471}
@@ -189,8 +190,6 @@ MonoBehaviour:
   - {fileID: 4462032137412611002}
   - {fileID: 3202189424001743404}
   - {fileID: 6047179007503868321}
-  ItemBox: {fileID: 3720386051517857888}
-  isGetItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &150278884
 Transform:
   m_ObjectHideFlags: 0
@@ -218,7 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 150278881}
-  isHaveItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &218869628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,7 +1083,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125320876}
-  - component: {fileID: 2125320875}
   - component: {fileID: 2125320877}
   - component: {fileID: 2125320878}
   m_Layer: 0
@@ -1095,19 +1092,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2125320875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125320874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c498cb48c8b349af9ebb9caed4bb4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreUI: {fileID: 2125320878}
 --- !u!4 &2125320876
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,7 +1118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d897714b18db94370bd71adca0ae676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 2125320875}
   highScore: 0
 --- !u!114 &2125320878
 MonoBehaviour:
