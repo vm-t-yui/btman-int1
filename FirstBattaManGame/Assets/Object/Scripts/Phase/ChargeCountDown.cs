@@ -24,7 +24,7 @@ public class ChargeCountDown : MonoBehaviour
     void OnEnable()
     {
         // カウントダウンのUIを表示する
-        countDownText.gameObject.SetActive(true);
+        HelperFunc.SetActiveFromAllChild(transform, true);
     }
 
     /// <summary>
@@ -55,6 +55,6 @@ public class ChargeCountDown : MonoBehaviour
     void OnDisable()
     {
         // カウントダウンのUIを非表示にする
-        countDownText.gameObject.SetActive(false);
+        HelperFunc.SetActiveFromAllChild(transform, false);
     }
 }
