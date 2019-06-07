@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// タイトルフェーズ管理クラス
+/// リザルトフェーズ管理クラス
 /// </summary>
-public class TitlePhaseState : MonoBehaviour
+public class ResultPhaseState : MonoBehaviour
 {
     /// <summary>
     /// フェーズの状態
@@ -14,7 +14,8 @@ public class TitlePhaseState : MonoBehaviour
     {
         WaitAdLoad,                                  // ロード完了待機
         WaitFadeOut,                                 // フェードアウト待機
-        ViewTitle,                                   // タイトル表示中
+        CountScore,                                  // スコアカウント中
+        ViewResult,                                  // リザルト表示中
         NextScene                                    // 次のシーンへ
     }
 
@@ -27,10 +28,16 @@ public class TitlePhaseState : MonoBehaviour
     AdManager adManager = default;                   // 広告管理クラス
 
     [SerializeField]
-    TutorialViewer tutorialViewer = default;         // チュートリアル表示クラス
+    ScoreCountUp scoreCountUp = default;             // スコアカウントアップクラス
+
+    [SerializeField]
+    ResultEnd resultEnd = default;                   // リザルト終了検知クラス
 
     [SerializeField]
     NextSceneChanger nextScene = default;            // シーン移行クラス
+
+    [SerializeField]
+    GameObject resultCanvas = default;               // ボタン等のカンバス
 
     /// <summary>
     /// 開始
@@ -63,6 +70,7 @@ public class TitlePhaseState : MonoBehaviour
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);
 
+                    // フェーズを次の状態へ
                     nowPhase = PhaseType.WaitFadeOut;
                 }
                 break;
@@ -75,20 +83,45 @@ public class TitlePhaseState : MonoBehaviour
                     // バナー広告を表示
                     adManager.ShowBanner();
 
-                    nowPhase = PhaseType.ViewTitle;
+                    // スコアカウントアップ処理開始
+                    scoreCountUp.enabled = true;
+
+                    nowPhase = PhaseType.CountScore;
                 }
                 break;
 
-            case PhaseType.ViewTitle:          // タイトル表示中
+            case PhaseType.CountScore:        // スコアカウント中
 
-                // チュートリアルを閉じたら次の処理へ
-                if (tutorialViewer.IsEnd)
+                // カウントが終わったら次の処理へ
+                if (scoreCountUp.IsEnd)
                 {
-                    // フェードイン開始
-                    fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeIn, DisplayFadeContoller.PanelType.Black);
+                    // スコアカウントアップ処理終了
+                    scoreCountUp.enabled = false;
 
-                    // チュートリアル表示クラスをオフにする
-                    tutorialViewer.gameObject.SetActive(false);
+                    resultCanvas.SetActive(true);
+
+                    // インタースティシャル広告を表示
+                    adManager.ShowInterstitial();
+
+                    nowPhase = PhaseType.ViewResult;
+                }
+                break;
+
+            case PhaseType.ViewResult:        // リザルト表示中
+
+                // リザルトが終了したら次の処理へ
+                if (resultEnd.IsEnd)
+                {
+                    // 次に読むシーンがメインゲームなら黒いパネルでフェードイン開始
+                    if (nextScene.NextSceneNum == SceneLoader.SceneNum.MainGame)
+                    {
+                        fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeIn, DisplayFadeContoller.PanelType.Black);
+                    }
+                    // そうでなければ白いパネルでフェードイン開始
+                    else
+                    {
+                        fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeIn, DisplayFadeContoller.PanelType.White);
+                    }
 
                     // バナー広告を非表示
                     adManager.HideBanner();
@@ -102,9 +135,6 @@ public class TitlePhaseState : MonoBehaviour
                 // フェードインが終わったら次のシーンへ移行
                 if (fadeContoller.IsFadeEnd)
                 {
-                    // 次に読むシーンをメインゲームに設定
-                    nextScene.SetNextSceneMainGame();
-
                     // シーンをロード
                     nextScene.ChangeNextScene();
                 }
