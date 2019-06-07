@@ -8,90 +8,49 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemDescription : MonoBehaviour
 {
-    [SerializeField] Text itemName = default;         //アイテムの名前
-    [SerializeField] Text itemDescription = default;  //アイテムの説明
-
-    //TODO:アイテムの説明はまだ決まっていないので、仮として〜番目のアイテム、〜番目のアイテムの説明にしています。
-    //TODO:アイテムの詳細が決まれば、ちゃんとした説明を入れます。
+    [SerializeField] Text displayName = default;         　　//アイテムの名前(表示用)
+    [SerializeField] Text displayDescription = default;  　　//アイテムの説明(表示用)
+    const int DescriptionNum = ItemManager.Num + 1;         //アイテム説明の数(アイテム総数 + 入手してない時の???)
+    string[] itemName = new string[DescriptionNum];         //アイテムの名前(データ用)
+    string[] itemDescription = new string[DescriptionNum];  //アイテムの説明(データ用)
+    int selectingNum = 0;     //現在選ばれているアイテムの番号
 
     /// <summary>
-    /// 1番目のアイテムの説明
+    /// 押したボタンに応じてアイテム名、説明表示
     /// </summary>
-    public void ItemDescription1()
+    /// <param name="num">ボタンの番号.</param>
+    public void OnClickDescription(int num)
     {
-        itemName.text = "1番目のアイテム";
-        itemDescription.text = "1番目のアイテムの説明";
+        selectingNum = num;
+        displayName.text = itemName[num]; displayDescription.text = itemDescription[num];
     }
 
     /// <summary>
-    /// 2番目のアイテムの説明
+    /// アイテムの名前のセット関数
     /// </summary>
-    public void ItemDescription2()
+    /// <param name="num">アイテムの番号</param>
+    /// <param name="name">アイテムの名前</param>
+    public void SetItemName(int num, string name)
     {
-        itemName.text = "2番目のアイテム";
-        itemDescription.text = "2番目のアイテムの説明";
+        itemName[num] = name;
     }
 
     /// <summary>
-    /// 3番目のアイテムの説明
+    /// アイテム説明のセット関数
     /// </summary>
-    public void ItemDescription3()
+    /// <param name="num">アイテムの番号</param>
+    /// <param name="description">アイテムの説明</param>
+    public void SetItemDescription(int num, string description)
     {
-        itemName.text = "3番目のアイテム";
-        itemDescription.text = "3番目のアイテムの説明";
+        itemDescription[num] = description;
     }
 
     /// <summary>
-    /// 4番目のアイテムの説明
+    /// 今選択しているアイテム番号のゲット関数
     /// </summary>
-    public void ItemDescription4()
+    /// <returns>今選択しているアイテム番号.</returns>
+    public int GetSelectingNum()
     {
-        itemName.text = "4番目のアイテム";
-        itemDescription.text = "4番目のアイテムの説明";
-    }
-
-    /// <summary>
-    /// 5番目のアイテムの説明
-    /// </summary>
-    public void ItemDescription5()
-    {
-        itemName.text = "5番目のアイテム";
-        itemDescription.text = "5番目のアイテムの説明";
-    }
-
-    /// <summary>
-    /// 6番目のアイテムの説明
-    /// </summary>
-    public void ItemDescription6()
-    {
-        itemName.text = "6番目のアイテム";
-        itemDescription.text = "6番目のアイテムの説明";
-    }
-
-    /// <summary>
-    /// 7番目のアイテムの説明
-    /// </summary>
-    public void ItemDescription7()
-    {
-        itemName.text = "7番目のアイテム";
-        itemDescription.text = "7番目のアイテムの説明";
-    }
-
-    /// <summary>
-    /// 8番目のアイテムの説明
-    /// </summary>
-    public void ItemDescription8()
-    {
-        itemName.text = "8番目のアイテム";
-        itemDescription.text = "8番目のアイテムの説明";
-    }
-
-    /// <summary>
-    /// そのアイテムを手に入れていない時の説明
-    /// </summary>
-    public void NotGetItem()
-    {
-        itemName.text = "???";
-        itemDescription.text = "アイテムを手に入れよう！";
+        return selectingNum;
     }
 }
