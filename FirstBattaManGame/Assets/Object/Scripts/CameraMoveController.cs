@@ -55,6 +55,8 @@ public class CameraMoveController : MonoBehaviour
                 // スクリプトをオフにする
                 enabled = false;
             }
+
+
         }
     }
 }
