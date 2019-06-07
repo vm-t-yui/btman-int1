@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// スコアクラス
 /// </summary>
-public class ScoreManager : MonoBehaviour
+public class ScoreManager
 {
     [SerializeField]
     ScoreUI scoreUI = default;   //スコアのUIクラス

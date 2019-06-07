@@ -161,8 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c498cb48c8b349af9ebb9caed4bb4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  dataManager: {fileID: 263910996}
+  scoreUI: {fileID: 263910997}
 --- !u!4 &263910995
 Transform:
   m_ObjectHideFlags: 0
@@ -189,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d897714b18db94370bd71adca0ae676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 263910994}
   highScore: 0
 --- !u!114 &263910997
 MonoBehaviour:
@@ -202,8 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb35c9bcf0d4451ae2a60a71790f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1752441348}
-  dataManager: {fileID: 263910996}
+  scoreUI: {fileID: 1752441348}
 --- !u!1 &336734400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba205f512a9c4b06a981761ae2f2101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataManager: {fileID: 1657247410}
-  isGetItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &1657247408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,7 +1363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f88a970b06d443db707a0299abf5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataManager: {fileID: 1657247410}
+  itemManager: {fileID: 1657247407}
+  ItemBox: {fileID: 1130122983}
   materializeButton:
   - {fileID: 208985994}
   - {fileID: 1263834707}
@@ -1385,7 +1383,6 @@ MonoBehaviour:
   - {fileID: 1399488651}
   - {fileID: 1216692407}
   - {fileID: 1449173944}
-  ItemBox: {fileID: 1130122983}
   isGetItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1657247409
 Transform:
@@ -1413,7 +1410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee629581b92342b8a44794e85df9c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGetItem: 0000000000000000000000000000000000000000000000000000000000000000
+  itemManager: {fileID: 1657247407}
+  isHaveItem: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1657674296
 GameObject:
   m_ObjectHideFlags: 0

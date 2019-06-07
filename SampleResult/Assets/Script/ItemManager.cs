@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class ItemManager : MonoBehaviour
 {
-    public const int num = 8;   　             //アイテム数(10は仮)
-    static int[] isHaveItem = new int[num];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    public const int Num = 8;   　             //アイテム数(10は仮)
+    static int[] isHasItem = new int[Num];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     /// <summary>
     /// アイテムゲット
@@ -18,28 +18,28 @@ public class ItemManager : MonoBehaviour
     {
         //NOTE: プレイヤーのOnCollisionEnterにいれて処理をするつもり
         //NOTE: int型で指定しているので1がtrue、0がfalseになる    
-        isHaveItem[num] = 1;
+        isHasItem[num] = 1;
     }
 
     /// <summary>
     /// アイテム取得フラグのゲット関数
     /// </summary>
     /// <returns>セーブデータから取ってきたアイテム取得フラグ</returns>
-    /// <param name="i">アイテムの番号</param>
-    public int GetHaveItemFlag(int i)
+    /// <param name="num">アイテムの番号</param>
+    public int GetHaveItemFlag(int num)
     {
-        return isHaveItem[i];
+        return isHasItem[num];
     }
 
     /// <summary>
     /// アイテム取得フラグのセット関数
     /// </summary>
-    /// <param name="ItemNum">アイテム取得時のフラグ</param>
-    public void SetHaveItemFlag(int[] ItemNum)
+    /// <param name="itemNum">アイテム取得時のフラグ</param>
+    public void SetHaveItemFlag(int[] itemNum)
     {
-        for (int i = 0; i < isHaveItem.Length; i++)
+        for (int i = 0; i < isHasItem.Length; i++)
         {
-            isHaveItem[i] = ItemNum[i];
+            isHasItem[i] = itemNum[i];
         }
     }
 }

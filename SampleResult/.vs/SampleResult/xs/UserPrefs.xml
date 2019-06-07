@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{5C52F4DC-7505-C244-1D8C-3F71592B79E8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ItemDescription.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/SceneChanger.cs">
     <Files>
-      <File FileName="Assets/Script/ItemDataManager.cs" Line="14" Column="54" />
-      <File FileName="Assets/Script/ScoreDataManager.cs" Line="25" Column="18" />
-      <File FileName="Assets/Script/ItemManager.cs" Line="11" Column="94" />
-      <File FileName="Assets/Script/ScoreManager.cs" Line="11" Column="34" />
-      <File FileName="Assets/Script/ScoreUI.cs" Line="26" Column="38" />
-      <File FileName="Assets/Script/ItemBoxController.cs" Line="21" Column="96" />
-      <File FileName="Assets/Script/ItemDescription.cs" Line="12" Column="52" />
+      <File FileName="Assets/Script/ItemBoxController.cs" Line="19" Column="1" />
+      <File FileName="Assets/Script/ItemManager.cs" Line="44" Column="6" />
+      <File FileName="Assets/Script/ItemDescription.cs" Line="14" Column="63" />
+      <File FileName="Assets/Script/ItemDataManager.cs" Line="72" Column="13" />
+      <File FileName="Assets/Script/ScoreManager.cs" Line="33" Column="6" />
+      <File FileName="Assets/Script/SceneChanger.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +14,7 @@
           <Node name="SampleResult" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="ItemDescription.cs" selected="True" />
+                <Node name="SceneChanger.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0bc95ac9-1ce0-46e2-9d46-c0cb89181233" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c8791da-1ee2-4fc1-b9a0-0497d57bf652" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

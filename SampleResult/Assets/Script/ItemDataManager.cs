@@ -10,8 +10,8 @@ public class ItemDataManager : MonoBehaviour
     [SerializeField]
     ItemManager itemManager = default;                //アイテムクラス
 
-    [SerializeField]
-    int[] isHaveItem = new int[ItemManager.num];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    int[] isHasItem = new int[ItemManager.Num];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    string key = "";
 
     /// <summary>
     /// 起動時処理
@@ -28,13 +28,13 @@ public class ItemDataManager : MonoBehaviour
     public void LoadData()
     {
         //データロード
-        for (int i = 0; i < ItemManager.num; i++)
+        for (int i = 0; i < ItemManager.Num; i++)
         {
-            isHaveItem[i] = PlayerPrefs.GetInt("isGetItem" + i, 0);
+            isHasItem[i] = PlayerPrefs.GetInt(GetKey(i), 0);
         }
 
         //ロードしたデータをセット
-        itemManager.SetHaveItemFlag(isHaveItem);
+        itemManager.SetHaveItemFlag(isHasItem);
     }
 
     /// <summary>
@@ -42,16 +42,16 @@ public class ItemDataManager : MonoBehaviour
     /// </summary>
     public void SaveData()
     {
-        for (int i = 0; i < ItemManager.num; i++)
+        for (int i = 0; i < ItemManager.Num; i++)
         {
             //まだゲットしてしていなかったらゲット
-            if (isHaveItem[i] == 0)
+            if (isHasItem[i] == 0)
             {
-                isHaveItem[i] = itemManager.GetHaveItemFlag(i);
+                isHasItem[i] = itemManager.GetHaveItemFlag(i);
             }
 
             //ゲットのデータをセット
-            PlayerPrefs.SetInt("isGetItem" + i, isHaveItem[i]);
+            PlayerPrefs.SetInt(GetKey(i), isHasItem[i]);
         }
 
         //セットしたデータをセーブ
@@ -63,9 +63,15 @@ public class ItemDataManager : MonoBehaviour
     /// </summary>
     public void DeleteData()
     {
-        for (int i = 0; i < ItemManager.num; i++)
+        for (int i = 0; i < ItemManager.Num; i++)
         {
-            PlayerPrefs.DeleteKey("isGetItem" + i);
+            PlayerPrefs.DeleteKey(GetKey(i));
         }
+    }
+
+    //keyの取得
+    string GetKey(int count)
+    {
+        return "isGetItem" + count;
     }
 }
