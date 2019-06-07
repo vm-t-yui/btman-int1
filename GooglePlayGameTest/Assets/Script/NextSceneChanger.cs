@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// シーン遷移クラス
+/// シーン移行クラス
 /// NOTE: m.tanaka ボタンで呼び出す場合もあるので、使い勝手がいいよう細かくpublic関数にしてます
 /// </summary>
 public class NextSceneChanger : MonoBehaviour
@@ -11,14 +11,14 @@ public class NextSceneChanger : MonoBehaviour
     [SerializeField]
     SceneLoader sceneLoader = default;                               // シーンロードクラス
 
-    public SceneLoader.SceneNum nextSceneNum { get; private set; }   // 次のシーン
+    public SceneLoader.SceneNum NextSceneNum { get; private set; }   // 次のシーン
 
     /// <summary>
     /// 次のシーンセット関数（メインゲームをセット）
     /// </summary>
     public void SetNextSceneMainGame()
     {
-        nextSceneNum = SceneLoader.SceneNum.MainGame;
+        NextSceneNum = SceneLoader.SceneNum.MainGame;
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ public class NextSceneChanger : MonoBehaviour
     /// </summary>
     public void SetNextSceneResult()
     {
-        nextSceneNum = SceneLoader.SceneNum.Result;
+        NextSceneNum = SceneLoader.SceneNum.Result;
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public class NextSceneChanger : MonoBehaviour
     /// </summary>
     public void SetNextSceneTitle()
     {
-        nextSceneNum = SceneLoader.SceneNum.Title;
+        NextSceneNum = SceneLoader.SceneNum.Title;
     }
 
     /// <summary>
@@ -42,6 +42,6 @@ public class NextSceneChanger : MonoBehaviour
     /// </summary>
     public void ChangeNextScene()
     {
-        sceneLoader.OnLoad(nextSceneNum);
+        sceneLoader.OnLoad(NextSceneNum);
     }
 }

@@ -10,7 +10,7 @@ public class ResultPhaseState : MonoBehaviour
     /// <summary>
     /// フェーズの状態
     /// </summary>
-    enum PhaseState
+    enum PhaseType
     {
         WaitAdLoad,                                  // ロード完了待機
         WaitFadeOut,                                 // フェードアウト待機
@@ -19,7 +19,7 @@ public class ResultPhaseState : MonoBehaviour
         NextScene                                    // 次のシーンへ
     }
 
-    PhaseState nowPhase;                             // フェーズの状態
+    PhaseType nowPhase;                             // フェーズの状態
 
     [SerializeField]
     DisplayFadeContoller fadeContoller = default;    // フェード管理クラス
@@ -51,7 +51,7 @@ public class ResultPhaseState : MonoBehaviour
         fadeContoller.OnPanel(DisplayFadeContoller.PanelType.White, true);
 
         // 現在のフェーズをロード完了待機に設定
-        nowPhase = PhaseState.WaitAdLoad;
+        nowPhase = PhaseType.WaitAdLoad;
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ public class ResultPhaseState : MonoBehaviour
         // 現在のフェーズの状態により処理を分岐
         switch (nowPhase)
         {
-            case PhaseState.WaitAdLoad:        // 広告ロード完了待機
+            case PhaseType.WaitAdLoad:        // 広告ロード完了待機
 
                 // 広告のロードが完了したら次の処理へ
                 if (adManager.IsLoaded())
@@ -71,11 +71,11 @@ public class ResultPhaseState : MonoBehaviour
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);
 
                     // フェーズを次の状態へ
-                    nowPhase = PhaseState.WaitFadeOut;
+                    nowPhase = PhaseType.WaitFadeOut;
                 }
                 break;
 
-            case PhaseState.WaitFadeOut:       // フェードアウト待機
+            case PhaseType.WaitFadeOut:       // フェードアウト待機
 
                 // フェードアウトが終わったら次の処理へ
                 if (fadeContoller.IsFadeEnd)
@@ -86,11 +86,11 @@ public class ResultPhaseState : MonoBehaviour
                     // スコアカウントアップ処理開始
                     scoreCountUp.enabled = true;
 
-                    nowPhase = PhaseState.CountScore;
+                    nowPhase = PhaseType.CountScore;
                 }
                 break;
 
-            case PhaseState.CountScore:        // スコアカウント中
+            case PhaseType.CountScore:        // スコアカウント中
 
                 // カウントが終わったら次の処理へ
                 if (scoreCountUp.IsEnd)
@@ -98,20 +98,22 @@ public class ResultPhaseState : MonoBehaviour
                     // スコアカウントアップ処理終了
                     scoreCountUp.enabled = false;
 
+                    resultCanvas.SetActive(true);
+
                     // インタースティシャル広告を表示
                     adManager.ShowInterstitial();
 
-                    nowPhase = PhaseState.ViewResult;
+                    nowPhase = PhaseType.ViewResult;
                 }
                 break;
 
-            case PhaseState.ViewResult:        // リザルト表示中
+            case PhaseType.ViewResult:        // リザルト表示中
 
                 // リザルトが終了したら次の処理へ
                 if (resultEnd.IsEnd)
                 {
                     // 次に読むシーンがメインゲームなら黒いパネルでフェードイン開始
-                    if (nextScene.nextSceneNum == SceneLoader.SceneNum.MainGame)
+                    if (nextScene.NextSceneNum == SceneLoader.SceneNum.MainGame)
                     {
                         fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeIn, DisplayFadeContoller.PanelType.Black);
                     }
@@ -124,11 +126,11 @@ public class ResultPhaseState : MonoBehaviour
                     // バナー広告を非表示
                     adManager.HideBanner();
 
-                    nowPhase = PhaseState.NextScene;
+                    nowPhase = PhaseType.NextScene;
                 }
                 break;
 
-            case PhaseState.NextScene:         // 次のシーンへ
+            case PhaseType.NextScene:         // 次のシーンへ
 
                 // フェードインが終わったら次のシーンへ移行
                 if (fadeContoller.IsFadeEnd)

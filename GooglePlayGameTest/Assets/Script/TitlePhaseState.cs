@@ -10,7 +10,7 @@ public class TitlePhaseState : MonoBehaviour
     /// <summary>
     /// フェーズの状態
     /// </summary>
-    enum PhaseState
+    enum PhaseType
     {
         WaitAdLoad,                                  // ロード完了待機
         WaitFadeOut,                                 // フェードアウト待機
@@ -18,7 +18,7 @@ public class TitlePhaseState : MonoBehaviour
         NextScene                                    // 次のシーンへ
     }
 
-    PhaseState nowPhase;                             // フェーズの状態
+    PhaseType nowPhase;                             // フェーズの状態
 
     [SerializeField]
     DisplayFadeContoller fadeContoller = default;    // フェード管理クラス
@@ -44,7 +44,7 @@ public class TitlePhaseState : MonoBehaviour
         fadeContoller.OnPanel(DisplayFadeContoller.PanelType.White, true);
 
         // 現在のフェーズをロード完了待機に設定
-        nowPhase = PhaseState.WaitAdLoad;
+        nowPhase = PhaseType.WaitAdLoad;
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class TitlePhaseState : MonoBehaviour
         // 現在のフェーズの状態により処理を分岐
         switch (nowPhase)
         {
-            case PhaseState.WaitAdLoad:        // 広告ロード完了待機
+            case PhaseType.WaitAdLoad:        // 広告ロード完了待機
 
                 // 広告のロードが完了したら次の処理へ
                 if (adManager.IsLoaded())
@@ -63,11 +63,11 @@ public class TitlePhaseState : MonoBehaviour
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);
 
-                    nowPhase = PhaseState.WaitFadeOut;
+                    nowPhase = PhaseType.WaitFadeOut;
                 }
                 break;
 
-            case PhaseState.WaitFadeOut:       // フェードアウト待機
+            case PhaseType.WaitFadeOut:       // フェードアウト待機
 
                 // フェードアウトが終わったら次の処理へ
                 if (fadeContoller.IsFadeEnd)
@@ -75,11 +75,11 @@ public class TitlePhaseState : MonoBehaviour
                     // バナー広告を表示
                     adManager.ShowBanner();
 
-                    nowPhase = PhaseState.ViewTitle;
+                    nowPhase = PhaseType.ViewTitle;
                 }
                 break;
 
-            case PhaseState.ViewTitle:          // タイトル表示中
+            case PhaseType.ViewTitle:          // タイトル表示中
 
                 // チュートリアルを閉じたら次の処理へ
                 if (tutorialViewer.IsEnd)
@@ -93,11 +93,11 @@ public class TitlePhaseState : MonoBehaviour
                     // バナー広告を非表示
                     adManager.HideBanner();
 
-                    nowPhase = PhaseState.NextScene;
+                    nowPhase = PhaseType.NextScene;
                 }
                 break;
 
-            case PhaseState.NextScene:         // 次のシーンへ
+            case PhaseType.NextScene:         // 次のシーンへ
 
                 // フェードインが終わったら次のシーンへ移行
                 if (fadeContoller.IsFadeEnd)
