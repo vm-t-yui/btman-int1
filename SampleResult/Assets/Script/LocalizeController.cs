@@ -9,15 +9,16 @@ using UnityEngine.UI;
 public class LocalizeController : MonoBehaviour
 {
     //言語
-    enum language
+    enum LocalizeLanguage
     {
-        Japanese,
-        English,
-        German,
-        Italian,
-        French,
-        Chinese,
-        Spanish,
+        Japanese,   //日本語
+        English,    //英語
+        German,     //ドイツ語
+        Italian,    //イタリア語
+        French,     //フランス語
+        Chinese,    //中国語
+        Spanish,    //スペイン語
+        EnumLenght, //このenumのサイズ
     }
 
     //テキスト
@@ -52,22 +53,23 @@ public class LocalizeController : MonoBehaviour
         ItemDescription7,       //アイテムの説明7
         ItemDescription8,       //アイテムの説明8
         AdvertisingPrompt,      //広告促し
+        EnumLenght,             //このenumのサイズ
     }
-
-    const int localizeTextCount = 30;      //ローカライズするテキストの総数
-    const int languageCount = 7;
+    
+    const int LocalizeTextCount = (int)LocalizeText.EnumLenght;      //ローカライズするテキストの総数
+    const int LanguageCount = (int)LocalizeLanguage.EnumLenght;
 
     [SerializeField] ItemDescription itemDescription = default;
 
-    [SerializeField] Text[] localizeText = new Text[localizeTextCount];  //ローカライズしたいテキスト
+    [SerializeField] Text[] localizeText = new Text[LocalizeTextCount];  //ローカライズしたいテキスト
 
-    [SerializeField] string[] japaneseText = new string[localizeTextCount];  //日本語テキスト
-    [SerializeField] string[] englishText = new string[localizeTextCount];   //英語テキスト
-    [SerializeField] string[] germanText = new string[localizeTextCount];    //ドイツ語テキスト
-    [SerializeField] string[] italianText = new string[localizeTextCount];   //イタリア語テキスト
-    [SerializeField] string[] frenchText = new string[localizeTextCount];    //フランス語テキスト
-    [SerializeField] string[] chineseText = new string[localizeTextCount];   //中国語テキスト
-    [SerializeField] string[] spanishText = new string[localizeTextCount];   //スペイン語テキスト
+    [SerializeField] string[] japaneseText = new string[LocalizeTextCount];  //日本語テキスト
+    [SerializeField] string[] englishText = new string[LocalizeTextCount];   //英語テキスト
+    [SerializeField] string[] germanText = new string[LocalizeTextCount];    //ドイツ語テキスト
+    [SerializeField] string[] italianText = new string[LocalizeTextCount];   //イタリア語テキスト
+    [SerializeField] string[] frenchText = new string[LocalizeTextCount];    //フランス語テキスト
+    [SerializeField] string[] chineseText = new string[LocalizeTextCount];   //中国語テキスト
+    [SerializeField] string[] spanishText = new string[LocalizeTextCount];   //スペイン語テキスト
 
     /// <summary>
     /// CSVファイル読み込み
@@ -76,26 +78,26 @@ public class LocalizeController : MonoBehaviour
     public void TextLoad(List<string[]> csvData)
     {
         //csvファイルのデータを各言語配列に入れる
-        for (int i = 0; i < languageCount; i++)
+        for (int i = 0; i < LanguageCount; i++)
         {
-            for (int j = 1; j < localizeTextCount; j++)
+            for (int j = 0; j < LocalizeTextCount; j++)
             {
                 //各言語の配列に入れる
                 switch (i)
                 {
-                    case (int)language.Japanese: japaneseText[j - 1] = csvData[i][j]; break;
-                    case (int)language.English : englishText[j - 1]  = csvData[i][j]; break;
-                    case (int)language.German  : germanText[j - 1]   = csvData[i][j]; break;
-                    case (int)language.Italian : italianText[j - 1]  = csvData[i][j]; break;
-                    case (int)language.French  : frenchText[j - 1]   = csvData[i][j]; break;
-                    case (int)language.Chinese : chineseText[j - 1]  = csvData[i][j]; break;
-                    case (int)language.Spanish : spanishText[j - 1]  = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.Japanese: japaneseText[j] = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.English : englishText[j]  = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.German  : germanText[j]   = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.Italian : italianText[j]  = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.French  : frenchText[j]   = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.Chinese : chineseText[j]  = csvData[i][j]; break;
+                    case (int)LocalizeLanguage.Spanish : spanishText[j]  = csvData[i][j]; break;
                 }
             }
         }
 
         //端末の言語設定に応じてローカライズ
-        for (int i = 0; i < localizeTextCount; i++)
+        for (int i = 0; i < LocalizeTextCount; i++)
         {
             switch (Application.systemLanguage)
             {
@@ -122,17 +124,17 @@ public class LocalizeController : MonoBehaviour
     public void OnClickLocalize(int num)
     {
         //押したボタンの番号に応じた言語にローカライズ
-        for (int i = 0; i < localizeTextCount; i++)
+        for (int i = 0; i < LocalizeTextCount; i++)
         {
             switch (num)
             {
-                case (int)language.Japanese: localizeText[i].text = japaneseText[i]; break;
-                case (int)language.English : localizeText[i].text = englishText[i]; break;
-                case (int)language.German  : localizeText[i].text = germanText[i]; break;
-                case (int)language.Italian : localizeText[i].text = italianText[i]; break;
-                case (int)language.French  : localizeText[i].text = frenchText[i]; break;
-                case (int)language.Chinese : localizeText[i].text = chineseText[i]; break;
-                case (int)language.Spanish : localizeText[i].text = spanishText[i]; break;
+                case (int)LocalizeLanguage.Japanese: localizeText[i].text = japaneseText[i]; break;
+                case (int)LocalizeLanguage.English : localizeText[i].text = englishText[i]; break;
+                case (int)LocalizeLanguage.German  : localizeText[i].text = germanText[i]; break;
+                case (int)LocalizeLanguage.Italian : localizeText[i].text = italianText[i]; break;
+                case (int)LocalizeLanguage.French  : localizeText[i].text = frenchText[i]; break;
+                case (int)LocalizeLanguage.Chinese : localizeText[i].text = chineseText[i]; break;
+                case (int)LocalizeLanguage.Spanish : localizeText[i].text = spanishText[i]; break;
             }
         }
 
@@ -145,16 +147,18 @@ public class LocalizeController : MonoBehaviour
     /// </summary>
     public void SetLocalizeItem()
     {
-        //アイテム名
+        //アイテム名セット
         for(int i = (int)LocalizeText.NoItemName; i <= (int)LocalizeText.ItemName8; i++)
         {
+            //NOTE:配列が0から始まるのに対し、アイテム名が10から始まるのでその差分を引いた
             int itemNum = i - (int)LocalizeText.NoItemName;
             itemDescription.SetItemName(itemNum, localizeText[i].text);
         }
 
-        //アイテム説明
+        //アイテム説明セット
         for (int i = (int)LocalizeText.NoItemDescription; i <= (int)LocalizeText.ItemDescription8; i++)
         {
+            //NOTE:配列が0から始まるのに対し、アイテム名が10から始まるのでその差分を引いた
             int itemNum = i - (int)LocalizeText.NoItemDescription;
             itemDescription.SetItemDescription(itemNum, localizeText[i].text);
         }

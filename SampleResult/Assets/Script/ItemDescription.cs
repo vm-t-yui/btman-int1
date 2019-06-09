@@ -10,10 +10,12 @@ public class ItemDescription : MonoBehaviour
 {
     [SerializeField] Text displayName = default;         　　//アイテムの名前(表示用)
     [SerializeField] Text displayDescription = default;  　　//アイテムの説明(表示用)
+
     const int DescriptionNum = ItemManager.Num + 1;         //アイテム説明の数(アイテム総数 + 入手してない時の???)
+    int selectingNum = 0;     //現在選ばれているアイテムの番号
+
     string[] itemName = new string[DescriptionNum];         //アイテムの名前(データ用)
     string[] itemDescription = new string[DescriptionNum];  //アイテムの説明(データ用)
-    int selectingNum = 0;     //現在選ばれているアイテムの番号
 
     /// <summary>
     /// 押したボタンに応じてアイテム名、説明表示
@@ -22,7 +24,8 @@ public class ItemDescription : MonoBehaviour
     public void OnClickDescription(int num)
     {
         selectingNum = num;
-        displayName.text = itemName[num]; displayDescription.text = itemDescription[num];
+        displayName.text = itemName[num]; 
+        displayDescription.text = itemDescription[num];
     }
 
     /// <summary>
