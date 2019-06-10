@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 他のクラスで扱う補助関数をまとめたクラス
 /// </summary>
-public class HelperFunc
+public class GeneralFuncion
 {
     /// <summary>
     /// 全ての子オブジェクトにSetActiveを行う
