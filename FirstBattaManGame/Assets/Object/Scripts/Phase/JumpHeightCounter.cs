@@ -30,7 +30,7 @@ public class JumpHeightCounter : MonoBehaviour
         // プレイヤーの上方向に力を与えて、ジャンプさせる
         jumpController.PlayerJump(InputController.TouchCountNum);
         // ジャンプ高さのUIを表示する
-        jumpHeightText.gameObject.SetActive(true);
+        GeneralFuncion.SetActiveFromAllChild(transform, true);
     }
 
     /// <summary>
