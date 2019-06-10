@@ -24,12 +24,14 @@
 
 public static class GPGSIds
 {
-        public const string achievement_twofinger_tap = "CgkI_vDQ3ZYdEAIQAw"; // <GPGSID>
-        public const string achievement_first_tap = "CgkI_vDQ3ZYdEAIQAg"; // <GPGSID>
         public const string leaderboard_maximum_jumping_distance = "CgkI_vDQ3ZYdEAIQBg"; // <GPGSID>
-        public const string achievement_fourfinger_tap = "CgkI_vDQ3ZYdEAIQBQ"; // <GPGSID>
-        public const string achievement_threefinger_tap = "CgkI_vDQ3ZYdEAIQBA"; // <GPGSID>
-        public const string achievement_first_login = "CgkI_vDQ3ZYdEAIQAQ"; // <GPGSID>
+        public const string achievement_jump_advanced_person = "CgkI_vDQ3ZYdEAIQBQ"; // <GPGSID>
+        public const string achievement_jump_master = "CgkI_vDQ3ZYdEAIQBw"; // <GPGSID>
+        public const string achievement_huh_cant_fly = "CgkI_vDQ3ZYdEAIQBA"; // <GPGSID>
+        public const string achievement_the_solar_system_is_mine = "CgkI_vDQ3ZYdEAIQAw"; // <GPGSID>
+        public const string achievement_first_jump = "CgkI_vDQ3ZYdEAIQAQ"; // <GPGSID>
+        public const string achievement_space_came_foooooooo = "CgkI_vDQ3ZYdEAIQAg"; // <GPGSID>
+        public const string achievement_item_complete = "CgkI_vDQ3ZYdEAIQCA"; // <GPGSID>
 
 }
 

@@ -5,13 +5,15 @@ using UnityEngine;
 using GoogleMobileAds.Api;    // Google AdMob広告用
 
 /// <summary>
-/// バナー広告テストクラス
+/// バナー広告コントロールクラス
 /// </summary>
 public class AdBannerController : MonoBehaviour
 {
     BannerView bannerView;                                              // バナー広告制御クラス
 
     const string AdUnitId = "ca-app-pub-3940256099942544/6300978111";   // 広告ユニットID（テスト用ID）
+
+    public bool IsLoaded { get; private set; } = false;                 // ロード完了
 
     /// <summary>
     /// バナー広告生成
@@ -29,6 +31,8 @@ public class AdBannerController : MonoBehaviour
 
         // 表示状態で生成されるので非表示にする
         bannerView.Hide();
+
+        IsLoaded = true;
     }
 
     /// <summary>
