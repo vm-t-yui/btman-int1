@@ -1,30 +1,16 @@
 ﻿<Properties StartupConfiguration="{5C52F4DC-7505-C244-1D8C-3F71592B79E8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ItemDataManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ItemDescription.cs">
     <Files>
-      <File FileName="Assets/Script/ItemBoxController.cs" Line="19" Column="1" />
-      <File FileName="Assets/Script/ItemManager.cs" Line="44" Column="6" />
-      <File FileName="Assets/Script/ItemDescription.cs" Line="14" Column="63" />
-      <File FileName="Assets/Script/ItemDataManager.cs" Line="13" Column="95" />
-      <File FileName="Assets/Script/ScoreManager.cs" Line="33" Column="6" />
-      <File FileName="Assets/Script/SceneChanger.cs" Line="10" Column="2" />
+      <File FileName="Assets/Script/ItemDescription.cs" Line="13" Column="92" />
+      <File FileName="Assets/Script/LocalizeController.cs" Line="159" Column="57" />
+      <File FileName="Assets/Script/CSVReader.cs" Line="13" Column="21" />
+      <File FileName="Assets/Script/ItemBoxController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ItemManager.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="SampleResult" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Script" expanded="True">
-                <Node name="ItemDataManager.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c8791da-1ee2-4fc1-b9a0-0497d57bf652" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bf167428-7705-4d11-bb87-3e69e68ece62" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
