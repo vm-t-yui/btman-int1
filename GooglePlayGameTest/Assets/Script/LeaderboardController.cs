@@ -13,26 +13,21 @@ using UnityEngine.SocialPlatforms;
 /// </summary>
 public class LeaderboardController : MonoBehaviour
 {
-    [SerializeField]
-    InputField inputField = default;                         // 仮でスコアを登録するための入力欄
-
-    readonly string LeaderboardID =                          // リーダーボードID
+    readonly string LeaderboardID =    // リーダーボードID
 #if UNITY_ANDROID
         "CgkI_vDQ3ZYdEAIQBg";
 #elif UNITY_IOS
         "maxdistance";
 #endif
 
-    long score = 0;                                          // リーダーボードへ登録するスコア
+    long score = 0;                    // リーダーボードへ登録するスコア
 
     /// <summary>
     /// リーダーボードへスコアを登録
     /// </summary>
-    public void RegisterScoreToLeaderboard()
+    /// <param name="score">登録するスコア</param>
+    public void RegisterScoreToLeaderboard(int score)
     {
-        // 入力された値をlong型に変換
-        score = long.Parse(inputField.text);
-
         // スコア登録処理（成功時になにか処理をしたりはしないので空にしてます）
         Social.ReportScore(score, LeaderboardID, (bool success) => {});
     }
