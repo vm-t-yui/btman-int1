@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class ScoreCountUp : MonoBehaviour
 {
+    [SerializeField]
+    ScoreDataManager scoreData = default;
+
     public int countScore { get; private set; } = 0;    //カウントアップ用スコア
 
     [SerializeField]
@@ -20,14 +23,14 @@ public class ScoreCountUp : MonoBehaviour
     void Update()
     {
         // ゲーム内で獲得したスコアまでカウントアップする
-        if (countScore < getScore)
+        if (countScore < scoreData.GetNowScore())
         {
-            countScore += (int)(getScore * Time.deltaTime);
+            countScore += (int)(scoreData.GetNowScore() * Time.deltaTime);
         }
         // ゲーム内で獲得したスコアを超えたらカウントアップ終了
         else
         {
-            countScore = getScore;
+            countScore = scoreData.GetNowScore();
             IsEnd = true;
         }
     }
