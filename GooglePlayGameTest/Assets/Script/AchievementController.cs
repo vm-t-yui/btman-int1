@@ -12,7 +12,7 @@ using UnityEngine.SocialPlatforms;
 /// </summary>
 public class AchievementController : MonoBehaviour
 {
-    const int AchievementNum = 5;                            // 実績の総数
+    const int AchievementNum = 7;                            // 実績の総数
 
     readonly string[] AchievementIDs = {                     // 実績ID群
 #if UNITY_ANDROID
@@ -21,7 +21,8 @@ public class AchievementController : MonoBehaviour
         "CgkI_vDQ3ZYdEAIQAw",                                // 実績３：太陽系制覇
         "CgkI_vDQ3ZYdEAIQBA",                                // 実績４：開始後、放置
         "CgkI_vDQ3ZYdEAIQBQ",                                // 実績５：15回ジャンプ
-        "CgkI_vDQ3ZYdEAIQBw"                                 // 実績６：30回ジャンプ
+        "CgkI_vDQ3ZYdEAIQBw",                                // 実績６：30回ジャンプ
+        "CgkI_vDQ3ZYdEAIQCA"                                 // 実績７：アイテムコンプリート
 #elif UNITY_IOS
         "firstjump",                                         // 実績１：初ジャンプ
         "spacecame",                                         // 実績２：宇宙到達
@@ -29,6 +30,7 @@ public class AchievementController : MonoBehaviour
         "pleasefly",                                         // 実績４：開始後、放置
         "fifteenjump",                                       // 実績５：15回ジャンプ
         "thirtyjump"                                         // 実績６：30回ジャンプ
+        "itemComplete",                                      // 実績７：アイテムコンプリート
 #endif
     };
 

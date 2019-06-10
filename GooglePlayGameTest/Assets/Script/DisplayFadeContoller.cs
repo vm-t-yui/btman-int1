@@ -65,6 +65,8 @@ public class DisplayFadeContoller : MonoBehaviour
     /// <param name="isView">trueなら不透明、falseなら透明で表示</param>
     public void OnPanel(PanelType panel, bool isView)
     {
+        fadeCanvas.gameObject.SetActive(true);
+
         // 不透明で表示するならalphaを1、そうでなければ0に設定
         if (isView)
         {
@@ -72,7 +74,6 @@ public class DisplayFadeContoller : MonoBehaviour
         }
         else
         {
-
             fadeCanvas.alpha = 0;
         }
 
@@ -152,6 +153,7 @@ public class DisplayFadeContoller : MonoBehaviour
             if (fadeCanvas.alpha <= 0)
             {
                 fadeCanvas.alpha = 0;
+                fadeCanvas.gameObject.SetActive(false);
                 IsFade = false;
                 IsFadeEnd = true;
             }
