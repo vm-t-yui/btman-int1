@@ -5,7 +5,7 @@ using UnityEngine;
 using GoogleMobileAds.Api;    // Google AdMob広告用
 
 /// <summary>
-/// インタースティシャル広告コントロールクラス
+/// インタースティシャル広告テストクラス
 /// </summary>
 public class AdInterstitialController : MonoBehaviour
 {
@@ -13,30 +13,15 @@ public class AdInterstitialController : MonoBehaviour
 
     const string AdUnitId = "ca-app-pub-3940256099942544/1033173712";   // 広告ユニットID（テスト用ID）
 
+    public bool IsLoaded { get; private set; }                          // ロードし終わったかどうか
     public bool IsClosed { get; private set; }                          // 広告を閉じているかどうか
-
-    /// <summary>
-    /// ロード完了検知
-    /// </summary>
-    /// <returns></returns>
-    public bool IsLoaded()
-    {
-        // 広告のロードが完了したらtrueを返す
-        if (interstitialAd.IsLoaded())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
     /// <summary>
     /// インタースティシャル広告生成
     /// </summary>
     public void RequestInterstitial()
     {
+        IsLoaded = false;
         IsClosed = true;
 
         // interstitialAdを初期化
@@ -46,7 +31,7 @@ public class AdInterstitialController : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
 
         // interstitialAdにrequestをロード
-        interstitialAd.LoadAd(request);
+        this.interstitialAd.LoadAd(request);
 
         //// InterstitialAdの破棄と再読み込み
         interstitialAd.OnAdClosed += HandleAdClosed;
@@ -72,5 +57,16 @@ public class AdInterstitialController : MonoBehaviour
         interstitialAd.Destroy();
         RequestInterstitial();
         IsClosed = true;
+    }
+
+    /// <summary>
+    /// バナー広告生成
+    /// </summary>
+    void Update()
+    {
+        if (interstitialAd.IsLoaded())
+        {
+            IsLoaded = true;
+        }
     }
 }

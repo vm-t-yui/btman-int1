@@ -10,33 +10,18 @@ using GoogleMobileAds.Api;    // Google AdMob広告用
 public class AdManager : MonoBehaviour
 {
     [SerializeField]
-    AdBannerController adBanner = default;                            // バナー広告コントロールクラス
+    AdBannerController adBanner = default;                              // バナー広告テストクラス
     [SerializeField]
-    AdInterstitialController adInterstitial = default;                // インタースティシャル広告コントロールクラス
+    AdInterstitialController adInterstitial = default;                  // インタースティシャル広告テストクラス
 
     const string AppId = "ca-app-pub-3824454621992610~6537798789";    // アプリID（テスト用）
 
-    /// <summary>
-    /// ロード完了検知
-    /// </summary>
-    /// <returns></returns>
-    public bool IsLoaded()
-    {
-        // バナー、インタースティシャルどちらもロードが完了したらtrueを返す
-        if (adBanner.IsLoaded && adInterstitial.IsLoaded())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    public bool IsAdView { get; private set; }                        // 広告表示してるかどうか                
 
     /// <summary>
-    /// 広告生成
+    /// 開始
     /// </summary>
-    public void OnEnable()
+    void Start()
     {
         // Google Mobile Ads SDKを設定したアプリIDで初期化.
         MobileAds.Initialize(AppId);
@@ -46,6 +31,9 @@ public class AdManager : MonoBehaviour
 
         // インタースティシャル広告を生成
         adInterstitial.RequestInterstitial();
+
+        // 一度バナー広告を非表示にする
+        HideBanner();
     }
 
     /// <summary>
@@ -69,10 +57,25 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void ShowInterstitial()
     {
-        // 閉じているなら表示する
-        if (adInterstitial.IsClosed)
+        // ロードが終わっていて閉じているなら表示する
+        if (adInterstitial.IsLoaded && adInterstitial.IsClosed)
         {
             adInterstitial.Show();
+        }
+    }
+
+    /// <summary>
+    /// 更新
+    /// </summary>
+    void Update()
+    {
+        // 広告表示されていないなら
+        if (!IsAdView)
+        {
+            // バナー広告を表示
+            ShowBanner();
+
+            IsAdView = true;
         }
     }
 }
