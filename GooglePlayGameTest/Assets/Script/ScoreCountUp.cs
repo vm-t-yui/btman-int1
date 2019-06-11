@@ -7,12 +7,24 @@ using UnityEngine;
 /// </summary>
 public class ScoreCountUp : MonoBehaviour
 {
-    public int countScore { get; private set; } = 0;    //カウントアップ用スコア
+    [SerializeField]
+    ScoreDataManager scoreData = default;               // スコアデータクラス
+
+    public int countScore { get; private set; } = 0;    // カウントアップ用スコア
 
     [SerializeField]
-    int getScore = 1000;                                //ゲーム内で獲得したスコア（デバッグ用にSerializeFiedを設定）
+    int getScore = 1000;                                // ゲーム内で獲得したスコア（デバッグ用にSerializeFiedを設定）
 
     public bool IsEnd { get; private set; } = false;    // 処理終了フラグ
+
+    /// <summary>
+    /// オブジェクト起動時
+    /// </summary>
+    void OnEnable()
+    {
+        // 獲得スコアを取得
+        getScore = scoreData.GetNowScore();
+    }
 
     /// <summary>
     /// 更新
