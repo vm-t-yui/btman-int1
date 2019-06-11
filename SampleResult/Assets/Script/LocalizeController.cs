@@ -80,7 +80,7 @@ public class LocalizeController : MonoBehaviour
         //データが保存されているなら、保存されている言語番号からローカライズする
         switch (LanguageNum)
         {
-            case (int)LocalizeLanguage.None: TerminalLocalize(); break;
+            case (int)LocalizeLanguage.NoneData: TerminalLocalize(); break;
             default: LanguageNumLocalize(LanguageNum);break;
         }
     }

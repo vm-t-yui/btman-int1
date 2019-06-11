@@ -7,20 +7,6 @@ using UnityEngine;
 /// </summary>
 public class LocalizeDataManager : MonoBehaviour
 {
-    //言語
-    enum LocalizeLanguage
-    {
-        NoneData = -1,  //データ無し
-        Japanese,   //日本語
-        English,    //英語
-        German,     //ドイツ語
-        Italian,    //イタリア語
-        French,     //フランス語
-        Chinese,    //中国語
-        Spanish,    //スペイン語
-
-    }
-
     [SerializeField]
     LocalizeController localizeController;  //スコアクラス
 
