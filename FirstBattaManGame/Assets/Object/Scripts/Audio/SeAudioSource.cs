@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// SEのパラメータクラス
+/// SEのオーディオソース
 /// </summary>
-public class SeParameter : MonoBehaviour
+public class SeAudioSource : MonoBehaviour
 {
     // AudioSourceコンポーネント
-    [SerializeField] AudioSource seAudioSource = default;
+    [SerializeField] AudioSource audioSource = default;
 
     /// <summary>
     /// 更新
@@ -16,7 +16,7 @@ public class SeParameter : MonoBehaviour
     void Update()
     {
         // 再生が終了したSEはオブジェクトを切る
-        if (!seAudioSource.isPlaying)
+        if (!audioSource.isPlaying)
         {
             gameObject.SetActive(false);
         }

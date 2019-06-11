@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// BGMのパラメータクラス
+/// BGMのオーディオソース
 /// </summary>
-public class BgmParameter : MonoBehaviour
+public class BgmAudioSource: MonoBehaviour
 {
     // AudioSourceコンポーネント
-    [SerializeField] AudioSource bgmAudioSource = default;
+    [SerializeField] AudioSource audioSource = default;
 
     /// <summary>
     /// 更新
@@ -16,7 +16,7 @@ public class BgmParameter : MonoBehaviour
     void Update()
     {
         // 再生が終了したBGMはオブジェクトを切る
-        if (!bgmAudioSource.isPlaying)
+        if (!audioSource.isPlaying)
         {
             gameObject.SetActive(false);
         }
