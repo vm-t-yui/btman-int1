@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6979de55c3743f449799a0dec658080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmAudioSource: {fileID: 788580579683833057}
+  audioSource: {fileID: 788580579683833057}
