@@ -18,7 +18,7 @@ public class CSVReader : MonoBehaviour
     /// <summary>
     /// 開始処理
     /// </summary>
-    void Start()
+    void Awake()
     {
         StringReader reader = new StringReader(csvFile.text);
 
