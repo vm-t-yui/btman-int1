@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ローカライズデータクラス
+/// </summary>
 public class LocalizeDataManager : MonoBehaviour
 {
     //言語
@@ -21,7 +24,7 @@ public class LocalizeDataManager : MonoBehaviour
     [SerializeField]
     LocalizeController localizeController;  //スコアクラス
 
-    int languageNum = 0;                    //言語の番号
+    int languageNum = 0;                    //言語番号
 
     /// <summary>
     /// 起動時処理
