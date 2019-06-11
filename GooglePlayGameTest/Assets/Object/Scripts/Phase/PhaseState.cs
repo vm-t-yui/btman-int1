@@ -65,6 +65,7 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void EnterWaitFadeOut()
     {
+        // フェードアウト開始
         fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.Black);
     }
 
@@ -73,8 +74,10 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void UpdateWaitFadeOut()
     {
+        // フェードアウトが終わったら
         if (fadeContoller.IsFadeEnd)
         {
+            // ステートを"ChargeCountDown"に変更する
             stateMachine.SetState(PhaseType.ChargeCountDown);
         }
     }
