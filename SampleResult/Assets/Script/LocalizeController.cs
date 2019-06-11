@@ -11,7 +11,7 @@ public class LocalizeController : MonoBehaviour
     //言語
     enum LocalizeLanguage
     {
-        None = -1,  //データ無し
+        NoneData = -1,  //データ無し
         Japanese,   //日本語
         English,    //英語
         German,     //ドイツ語
