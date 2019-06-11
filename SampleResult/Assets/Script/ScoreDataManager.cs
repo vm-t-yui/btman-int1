@@ -7,8 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ScoreDataManager : MonoBehaviour
 {
-    [SerializeField]
-    ScoreManager scoreManager = default;  //スコアクラス
+    ScoreManager scoreManager;  //スコアクラス
 
     [SerializeField]
     float highScore = 0;                  //ハイスコア

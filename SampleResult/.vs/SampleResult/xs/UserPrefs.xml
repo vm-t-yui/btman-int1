@@ -1,16 +1,27 @@
 ﻿<Properties StartupConfiguration="{5C52F4DC-7505-C244-1D8C-3F71592B79E8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ItemDescription.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/LocalizeController.cs">
     <Files>
-      <File FileName="Assets/Script/ItemDescription.cs" Line="13" Column="92" />
-      <File FileName="Assets/Script/LocalizeController.cs" Line="159" Column="57" />
-      <File FileName="Assets/Script/CSVReader.cs" Line="13" Column="21" />
-      <File FileName="Assets/Script/ItemBoxController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/ItemManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/LocalizeController.cs" Line="36" Column="38" />
+      <File FileName="Assets/LocalizeDataManager.cs" Line="24" Column="25" />
+      <File FileName="Assets/Script/CSVReader.cs" Line="21" Column="15" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SampleResult" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="LocalizeController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bf167428-7705-4d11-bb87-3e69e68ece62" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="53c29757-e0f5-4baa-82e4-58d89bf17208" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

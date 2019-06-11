@@ -147,7 +147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &263910995
 Transform:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d897714b18db94370bd71adca0ae676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScore: 0
+  highScore: 100
 --- !u!114 &263910997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003002203}
     m_Modifications:
+    - target: {fileID: 1287051078527342434, guid: 0e8be03c2c8c44b3ba289d2bddd1b861,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7262758410608485025, guid: 0e8be03c2c8c44b3ba289d2bddd1b861,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -439,11 +444,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1287051078527342434, guid: 0e8be03c2c8c44b3ba289d2bddd1b861,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7262758410774278927, guid: 0e8be03c2c8c44b3ba289d2bddd1b861,
         type: 3}
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 1657247407}
-  ItemBox: {fileID: 1130122983}
+  itemBox: {fileID: 1130122983}
   materializeButton:
   - {fileID: 208985994}
   - {fileID: 1263834707}
