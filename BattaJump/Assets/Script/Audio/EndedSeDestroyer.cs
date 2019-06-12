@@ -16,7 +16,7 @@ public class EndedSeDestroyer : MonoBehaviour
     void Update()
     {
         // 子オブジェクトの最大数を超えたら
-        if (transform.childCount == childAmountMax)
+        if (transform.childCount > childAmountMax)
         {
             // 再生が終了したSEの子オブジェクトを一斉に削除する
             foreach (Transform endedSeChild in transform)
