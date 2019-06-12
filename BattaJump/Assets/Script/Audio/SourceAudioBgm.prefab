@@ -141,4 +141,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 788580579683833057}
-  bgmParameter: {fileID: 11400000, guid: cc24658c0c9eb2746b25bad6b11fae8c, type: 2}

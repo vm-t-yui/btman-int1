@@ -141,4 +141,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4014806871047462683}
-  seParameter: {fileID: 11400000, guid: 167952a8398cfd744852dc925196f0da, type: 2}
