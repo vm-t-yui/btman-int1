@@ -54,6 +54,7 @@ public class LocalizeController : MonoBehaviour
         ItemDescription7,       //アイテムの説明7
         ItemDescription8,       //アイテムの説明8
         AdvertisingPrompt,      //広告促し
+        TapToStart,             //タップしてスタート
         EnumLenght,             //このenumのサイズ
     }
 

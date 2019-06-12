@@ -274,7 +274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -747,8 +747,7 @@ MonoBehaviour:
   - {fileID: 2270307594600503621}
   - {fileID: 2270307594956389702}
   - {fileID: 2270307595035597832}
-  - {fileID: 4052887591540478205}
-  displayTextNum: 0000000001000000020000000300000004000000050000000600000007000000
+  displayTextNum: 00000000010000000200000003000000040000000500000006000000
 --- !u!114 &1769805338695832740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,7 +891,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -1021,7 +1020,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -1150,7 +1149,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -1437,7 +1436,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -1566,7 +1565,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2528723213305394832}
         m_MethodName: LanguageNumLocalize
         m_Mode: 3
         m_Arguments:
@@ -1860,7 +1859,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1769805338695832740}
         m_MethodName: SaveData
         m_Mode: 1
         m_Arguments:
