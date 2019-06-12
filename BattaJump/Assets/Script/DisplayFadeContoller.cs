@@ -48,7 +48,7 @@ public class DisplayFadeContoller : MonoBehaviour
     /// <summary>
     /// 更新
     /// </summary>
-    void Update()
+    void FixedUpdate()
     {
         // フェード中のフラグがtrueならフェード処理
         if (IsFade)
