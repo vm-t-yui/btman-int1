@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SeParameter
   m_EditorClassIdentifier: 
   playVolumeSe: 0.2
-  isMuteSe: 0
+  isMuteSe: 1

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2323c7f8154674147af6a91638ba7f2c, type: 3}
   m_Name: BgmParameter
   m_EditorClassIdentifier: 
-  playVolumeBgm: 0.477
-  isMuteBgm: 0
+  playVolumeBgm: 1
+  isMuteBgm: 1
