@@ -9,22 +9,31 @@ public class PlayingSeParentSwitcher : MonoBehaviour
 {
     // 再生が終了しているSEの親オブジェクトのトランスフォーム
     [SerializeField] Transform parentEndSe = default;
+    // 前フレームの子オブジェクト数
+    int prevChildCount = 0;
 
     /// <summary>
     /// 更新
     /// </summary>
     void Update()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        // 子オブジェクトの数が前フレームから変動したら
+        if (prevChildCount != transform.childCount)
         {
-            // 子オブジェクトを取得
-            GameObject childSe = transform.GetChild(i).gameObject;
-
-            // 子オブジェクトの中で既に再生が終了しているSEは専用の親オブジェクトに切り替える
-            if (!childSe.activeSelf)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                childSe.transform.SetParent(parentEndSe);
+                // 子オブジェクトを取得
+                GameObject childSe = transform.GetChild(i).gameObject;
+
+                // 子オブジェクトの中で既に再生が終了しているSEは専用の親オブジェクトに切り替える
+                if (!childSe.activeSelf)
+                {
+                    childSe.transform.SetParent(parentEndSe);
+                }
             }
         }
+
+        // 現在の子オブジェクトの数を前フレームとして登録
+        prevChildCount = transform.childCount;
     }
 }
