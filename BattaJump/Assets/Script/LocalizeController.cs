@@ -19,7 +19,7 @@ public class LocalizeController : MonoBehaviour
         French,     //フランス語
         Chinese,    //中国語
         Spanish,    //スペイン語
-        EnumLenght, //このenumのサイズ
+        EnumLength, //このenumのサイズ
     }
 
     //テキスト
@@ -55,13 +55,13 @@ public class LocalizeController : MonoBehaviour
         ItemDescription8,       //アイテムの説明8
         AdvertisingPrompt,      //広告促し
         TapToStart,             //タップしてスタート
-        EnumLenght,             //このenumのサイズ
+        EnumLength,             //このenumのサイズ
     }
 
     [SerializeField] ItemDescription itemDescription = default;          //アイテム説明クラス
 
-    public const int LocalizeTextCount = (int)LocalizeText.EnumLenght;   //ローカライズするテキストの総数
-    public const int LanguageCount = (int)LocalizeLanguage.EnumLenght;   //ローカライズする言語の総数
+    public const int LocalizeTextCount = (int)LocalizeText.EnumLength;   //ローカライズするテキストの総数
+    public const int LanguageCount = (int)LocalizeLanguage.EnumLength;   //ローカライズする言語の総数
 
     [SerializeField]int LanguageNum = 0;     //言語番号
 

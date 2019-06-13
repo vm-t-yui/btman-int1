@@ -8,29 +8,31 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Create LocalizeDataObject", fileName = "LocalizeDataObject")]
 public class LocalizeDataObject : ScriptableObject
 {
-    private static readonly string RESOURCE_PATH = "LocalizeDataObject";    //リソースのパス
+    static readonly string ResourcePath = "LocalizeDataObject";    //リソースのパス
 
-    private static LocalizeDataObject s_instance = null;
+    static LocalizeDataObject staticInstance = null;
 
     //リソース内のローカライズ用ScriptableObject取得
     public static LocalizeDataObject Instance
     {
         get
         {
-            if (s_instance == null)
+            if (staticInstance == null)
             {
-                var asset = Resources.Load(RESOURCE_PATH) as LocalizeDataObject;
+                var asset = Resources.Load(ResourcePath) as LocalizeDataObject;
                 if (asset == null)
                 {
                     asset = CreateInstance<LocalizeDataObject>();
                 }
 
-                s_instance = asset;
+                staticInstance = asset;
             }
 
-            return s_instance;
+            return staticInstance;
         }
     }
+
+    //↓こっからローカライズ用のScriptableObjectの要素
 
     //言語
     enum LocalizeLanguage
@@ -43,7 +45,7 @@ public class LocalizeDataObject : ScriptableObject
         French,     //フランス語
         Chinese,    //中国語
         Spanish,    //スペイン語
-        EnumLenght, //このenumのサイズ
+        EnumLength, //このenumのサイズ
     }
 
     [SerializeField]
