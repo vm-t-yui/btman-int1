@@ -1,0 +1,262 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5735a55d90b4746a9809e1d7def216b3, type: 3}
+  m_Name: LocalizeDataObject
+  m_EditorClassIdentifier: 
+  localizeText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  japaneseText:
+  - "\u65E5\u672C\u8A9E"
+  - "\u82F1\u8A9E"
+  - "\u30C9\u30A4\u30C4\u8A9E"
+  - "\u30A4\u30BF\u30EA\u30A2\u8A9E"
+  - "\u30D5\u30E9\u30F3\u30B9\u8A9E"
+  - "\u4E2D\u56FD\u8A9E"
+  - "\u30B9\u30DA\u30A4\u30F3\u8A9E"
+  - "\u304A\u3059\u3059\u3081\u30A2\u30D7\u30EA"
+  - "\u30EA\u30C8\u30E9\u30A4"
+  - "\u30BF\u30A4\u30C8\u30EB"
+  - ???
+  - "\u30A2\u30A4\u30C6\u30E0\u540D1"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D2"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D3"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D4"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D5"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D6"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D7"
+  - "\u30A2\u30A4\u30C6\u30E0\u540D8"
+  - "\u30A2\u30A4\u30C6\u30E0\u3092\u96C6\u3081\u3088\u3046"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E1"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E2"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E3"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E4"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E5"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E6"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E7"
+  - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E8"
+  - "\u5E83\u544A\u4FC3\u3057"
+  - "\u30BF\u30C3\u30D7\u3067\u30C1\u30E3\u30FC\u30B8\u958B\u59CB\uFF01"
+  englishText:
+  - Japanese
+  - English
+  - German
+  - Italian
+  - French
+  - Chinese
+  - Spanish
+  - RecommendedApplication
+  - Retry
+  - Title
+  - ???
+  - ItemName1
+  - ItemName2
+  - ItemName3
+  - ItemName4
+  - ItemName5
+  - ItemName6
+  - ItemName7
+  - ItemName8
+  - Let's collect items
+  - ItemDescription1
+  - ItemDescription2
+  - ItemDescription3
+  - ItemDescription4
+  - ItemDescription5
+  - ItemDescription6
+  - ItemDescription7
+  - ItemDescription8
+  - AdvertisingPrompt
+  - Start charging with a tap!
+  germanText:
+  - Japanisch
+  - Englisch
+  - Deutsch
+  - Italienisch
+  - "Franz\xF6sisch"
+  - Chinesisch
+  - Spanisch
+  - EmpfohleneAnwendung
+  - Retry
+  - Title
+  - ???
+  - Artikelname1
+  - Artikelname2
+  - Artikelname3
+  - Artikelname4
+  - Artikelname5
+  - Artikelname6
+  - Artikelname7
+  - Artikelname8
+  - "Lass uns Gegenst\xE4nde sammeln"
+  - Artikelbeschreibung1
+  - Artikelbeschreibung2
+  - Artikelbeschreibung3
+  - Artikelbeschreibung4
+  - Artikelbeschreibung5
+  - Artikelbeschreibung6
+  - Artikelbeschreibung7
+  - Artikelbeschreibung8
+  - Werbeaufforderung
+  - Starten Sie den Ladevorgang mit einem Fingertipp!
+  italianText:
+  - giapponese
+  - inglese
+  - tedesco
+  - italiano
+  - francese
+  - cinese
+  - spagnolo
+  - Applicazione consigliata
+  - Retry
+  - Title
+  - ???
+  - Nome dell'oggetto1
+  - Nome dell'oggetto2
+  - Nome dell'oggetto3
+  - Nome dell'oggetto4
+  - Nome dell'oggetto5
+  - Nome dell'oggetto6
+  - Nome dell'oggetto7
+  - Nome dell'oggetto8
+  - Raccogliamo oggetti
+  - Descrizione dell'oggetto1
+  - Descrizione dell'oggetto2
+  - Descrizione dell'oggetto3
+  - Descrizione dell'oggetto4
+  - Descrizione dell'oggetto5
+  - Descrizione dell'oggetto6
+  - Descrizione dell'oggetto7
+  - Descrizione dell'oggetto8
+  - Promemoria pubblicitario
+  - Inizia a caricare con un tocco!
+  frenchText:
+  - Japonais
+  - Anglais
+  - Allemand
+  - Italien
+  - "Le fran\xE7ais"
+  - Chinois
+  - Espagnol
+  - "Application recommand\xE9e"
+  - Retry
+  - Title
+  - ???
+  - Nom de l'article1
+  - Nom de l'article2
+  - Nom de l'article3
+  - Nom de l'article4
+  - Nom de l'article5
+  - Nom de l'article6
+  - Nom de l'article7
+  - Nom de l'article8
+  - Collectionnons les objets
+  - Description de l'article1
+  - Description de l'article2
+  - Description de l'article3
+  - Description de l'article4
+  - Description de l'article5
+  - Description de l'article6
+  - Description de l'article7
+  - Description de l'article8
+  - Invite publicitaire
+  - "Commencez \xE0 charger avec un robinet!"
+  chineseText:
+  - "\u65E5\u672C"
+  - "\u82F1\u8BED"
+  - "\u5FB7\u56FD"
+  - "\u610F\u5927\u5229"
+  - "\u6CD5\u56FD"
+  - "\u4E2D\u56FD"
+  - "\u897F\u73ED\u7259\u8BED"
+  - "\u63A8\u8350\u5E94\u7528"
+  - Retry
+  - Title
+  - ???
+  - "\u7269\u54C1\u540D\u79F01"
+  - "\u7269\u54C1\u540D\u79F02"
+  - "\u7269\u54C1\u540D\u79F03"
+  - "\u7269\u54C1\u540D\u79F04"
+  - "\u7269\u54C1\u540D\u79F05"
+  - "\u7269\u54C1\u540D\u79F06"
+  - "\u7269\u54C1\u540D\u79F07"
+  - "\u7269\u54C1\u540D\u79F08"
+  - "\u6211\u4EEC\u6536\u96C6\u7269\u54C1"
+  - "\u9879\u76EE\u63CF\u8FF01"
+  - "\u9879\u76EE\u63CF\u8FF02"
+  - "\u9879\u76EE\u63CF\u8FF03"
+  - "\u9879\u76EE\u63CF\u8FF04"
+  - "\u9879\u76EE\u63CF\u8FF05"
+  - "\u9879\u76EE\u63CF\u8FF06"
+  - "\u9879\u76EE\u63CF\u8FF07"
+  - "\u9879\u76EE\u63CF\u8FF08"
+  - "\u5E7F\u544A\u63D0\u793A"
+  - "\u7528\u6C34\u9F99\u5934\u5F00\u59CB\u5145\u7535\uFF01"
+  spanishText:
+  - "Espa\xF1ol"
+  - Ingles
+  - "Alem\xE1n"
+  - Italiano
+  - "Franc\xE9s"
+  - Chino
+  - "Espa\xF1ol"
+  - "Aplicaci\xF3n recomendada"
+  - Retry
+  - Title
+  - ???
+  - Nombre del articulo1
+  - Nombre del articulo2
+  - Nombre del articulo3
+  - Nombre del articulo4
+  - Nombre del articulo5
+  - Nombre del articulo6
+  - Nombre del articulo7
+  - Nombre del articulo8
+  - Vamos a recoger articulos
+  - "Descripci\xF3n del art\xEDculo1"
+  - "Descripci\xF3n del art\xEDculo2"
+  - "Descripci\xF3n del art\xEDculo3"
+  - "Descripci\xF3n del art\xEDculo4"
+  - "Descripci\xF3n del art\xEDculo5"
+  - "Descripci\xF3n del art\xEDculo6"
+  - "Descripci\xF3n del art\xEDculo7"
+  - "Descripci\xF3n del art\xEDculo8"
+  - Mensaje publicitario
+  - "\xA1Empieza a cargar con un toque!"
