@@ -11,6 +11,26 @@ public class InputController : MonoBehaviour
     static public int  TouchCountNum { get; private set; } = 0;
     // 初めてタッチが行われたかどうか
     static public bool IsFirstTouch  { get; private set; } = false;
+    // クラス起動フラグ
+    static bool isAble = false;
+
+    /// <summary>
+    /// 起動時
+    /// </summary>
+    void OnEnable()
+    {
+        // クラスを起動させる
+        isAble = true;
+    }
+
+    /// <summary>
+    /// 終了時
+    /// </summary>
+    void OnDisable()
+    {
+        // クラスを停止する
+        isAble = false;
+    }
 
     /// <summary>
     /// 初期化
@@ -27,6 +47,9 @@ public class InputController : MonoBehaviour
     /// </summary>
     static public void CountTouch()
     {
+        // クラス起動フラグがtrueでなければ処理を抜ける
+        if (!isAble) { return; }
+
         // 画面のタッチ入力が行われていたら
         if (Input.touchCount > 0)
         {
