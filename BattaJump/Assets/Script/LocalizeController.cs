@@ -133,8 +133,9 @@ public class LocalizeController : MonoBehaviour
         //アイテム説明クラスをゲットしていなかったら処理に入らない
         if (itemDescription != null)
         {
+            //NOTE: +1 は入手してない時の???の分の誤差
             //アイテム名セット
-            for (int i = (int)LocalizeDataObject.LocalizeText.NoItemName; i <= (int)LocalizeDataObject.LocalizeText.ItemName8; i++)
+            for (int i = (int)LocalizeDataObject.LocalizeText.NoItemName; i < (int)LocalizeDataObject.LocalizeText.NoItemDescription; i++)
             {
                 //NOTE:配列が0から始まるのに対し、アイテム名が10から始まるのでその差分を引いた
                 int itemNum = i - (int)LocalizeDataObject.LocalizeText.NoItemName;
@@ -142,7 +143,7 @@ public class LocalizeController : MonoBehaviour
             }
 
             //アイテム説明セット
-            for (int i = (int)LocalizeDataObject.LocalizeText.NoItemDescription; i <= (int)LocalizeDataObject.LocalizeText.ItemDescription8; i++)
+            for (int i = (int)LocalizeDataObject.LocalizeText.NoItemDescription; i < (int)LocalizeDataObject.LocalizeText.EnumLength; i++)
             {
                 //NOTE:配列が0から始まるのに対し、アイテム名が10から始まるのでその差分を引いた
                 int itemNum = i - (int)LocalizeDataObject.LocalizeText.NoItemDescription;

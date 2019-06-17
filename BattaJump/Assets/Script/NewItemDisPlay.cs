@@ -16,6 +16,7 @@ public class NewItemDisPlay : MonoBehaviour
     List<int> newHasNum = new List<int>();            //新しく手に入れたアイテムの数
     List<string> names = new List<string>();          //今の言語のアイテム名前
     List<string> descriptions = new List<string>();   //今の言語のアイテム説明
+    [SerializeField]
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     int touchCount = 0;     //タッチ数カウント
@@ -28,15 +29,18 @@ public class NewItemDisPlay : MonoBehaviour
         //新しくゲットしたアイテムのフラグを取得
         isNewHasItem = itemManager.GetIsNewHasItem();
 
-        //新しくゲットしたアイテムの名前、説明を入れる
-        for (int i = 0; i < isNewHasItem.Length; i++)
+        //そもそも全ての要素数がfalseなら非表示にする
+        if(CheckAllFalse(isNewHasItem))
         {
-            if (isNewHasItem[i])
-            {
-                newHasNum.Add(i);
-                names.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.ItemName1 + i));
-                descriptions.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.ItemDescription1 + i));
-            }
+            gameObject.SetActive(false);
+        }
+        //あるなら新しいアイテムの情報をセット
+        else
+        {
+            SetNewItem();
+
+            //最初の表示
+            itemDescription.OnClickDescription(0);
         }
     }
 
@@ -52,16 +56,36 @@ public class NewItemDisPlay : MonoBehaviour
             // タッチされた回数をカウント
             if (touch.phase == TouchPhase.Began)
             {
-                DisplayNewItem(touchCount);
                 touchCount++;
+                DisplayNewItem(touchCount);
             }
         }
 
         // 画面のクリック操作（エディタ用）
         if (Input.GetMouseButtonDown(0))
         {
-            DisplayNewItem(touchCount);
             touchCount++;
+            DisplayNewItem(touchCount);
+        }
+    }
+
+    /// <summary>
+    /// 新しくゲットしたアイテムの情報をセット
+    /// </summary>
+    void SetNewItem()
+    {
+        for (int i = 0; i < isNewHasItem.Length; i++)
+        {
+            if (isNewHasItem[i])
+            {
+                newHasNum.Add(i);
+                //NOTE: +1 はまだ入手していない時の項目によるずれ
+                names.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.NoItemName + (i + 1)));
+                descriptions.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.NoItemDescription + (i + 1)));
+
+                itemDescription.SetItemName(i, names[i]);
+                itemDescription.SetItemDescription(i, descriptions[i]);
+            }
         }
     }
 
@@ -71,16 +95,70 @@ public class NewItemDisPlay : MonoBehaviour
     /// <param name="i">The index.</param>
     void DisplayNewItem(int i)
     {
-        animator.SetTrigger("In");
+        animator.SetTrigger("Out");
 
-        //タップ数がアイテム数を上回らない限り表示
-        if (i < newHasNum.Count)
+        StartCoroutine(WaitAnimationEnd("ResultItemOut", i));
+    }
+
+    /// <summary>
+    /// アニメーション終了を判定するコルーチン
+    /// </summary>
+    /// <returns>The animation end.</returns>
+    /// <param name="animatorName">アニメーションの名前</param>
+    /// <param name="i">画面タッチ数</param>
+    private IEnumerator WaitAnimationEnd(string animatorName, int i)
+    {
+        bool finish = false;
+        while (!finish)
         {
-            //追加されたアイテム数名前、説明表示
-            itemDescription.SetItemName(i, names[i]);
-            itemDescription.SetItemDescription(i, descriptions[i]);
-            itemDescription.OnClickDescription(i);
-            animator.SetTrigger("Out");
+            AnimatorStateInfo nowState = animator.GetCurrentAnimatorStateInfo(0);
+            if (nowState.IsName(animatorName))
+            {
+                //タップ数がアイテム数を上回らない限り表示
+                if (i < newHasNum.Count)
+                {
+                    //新しく手に入れたアイテム説明
+                    itemDescription.OnClickDescription(i);
+                    animator.SetTrigger("In");
+                }
+                //上回ったら非表示させる
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+
+                finish = true;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+    }
+
+    /// <summary>
+    /// フラグの中の要素が全てfalseの時にTRUEを返す
+    /// </summary>
+    /// <returns><c>true</c>全てfalse<c>false</c>trueがある</returns>
+    /// <param name="flag">フラグ</param>
+    bool CheckAllFalse(bool[] flag)
+    {
+        int count = 0;
+        foreach(var item in isNewHasItem)
+        {
+            if(item == false)
+            {
+                count++;
+            }
+        }
+
+        if(count == isNewHasItem.Length)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

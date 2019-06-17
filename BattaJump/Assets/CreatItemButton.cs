@@ -8,15 +8,16 @@ using UnityEngine.UI;
 /// </summary>
 public class CreatItemButton : MonoBehaviour
 {
-    Button button;
     [SerializeField]
-    GameObject originalButton;
+    GameObject originalButton = default;
+
+    [SerializeField]
+    GameObject scrollViewContent = default;
+
     [SerializeField]
     ItemDescription itemDescription = default;
-    [SerializeField]
-    bool isSilhouette;
 
-    void CreateButton()
+    void Start()
     {
         for (int i = 0; i < ItemManager.ItemNum; i++)
         {
@@ -24,16 +25,8 @@ public class CreatItemButton : MonoBehaviour
             int index = i + 0;
 
             GameObject duplicateButton = Instantiate(originalButton);
-            duplicateButton.AddComponent(typeof(Button)) as Button;
-
-            if (isSilhouette)
-            {
-                duplicateButton.button.onClick.AddListener(() => itemDescription.OnClickDescription(0));
-            }
-            else
-            {
-                duplicateButton.button.onClick.AddListener(() => itemDescription.OnClickDescription(index));
-            }
+            duplicateButton.GetComponent<Button>().onClick.AddListener(() => itemDescription.OnClickDescription(index));
+            duplicateButton.transform.parent = scrollViewContent.transform;
         }
     }
 }

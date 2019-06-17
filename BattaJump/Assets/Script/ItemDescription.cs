@@ -8,11 +8,14 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemDescription : MonoBehaviour
 {
+    [SerializeField]
+    ItemManager itemManager = default;
     [SerializeField] Text displayName = default;         　　//アイテムの名前(表示用)
     [SerializeField] Text displayDescription = default;  　　//アイテムの説明(表示用)
+    [SerializeField] Image displayImage = default;        //アイテムの画像(表示用)
+
 
     const int DescriptionNum = ItemManager.ItemNum + 1;         //アイテム説明の数(アイテム総数 + 入手してない時の???)
-    [SerializeField]
     int selectingNum = 0;     //現在選ばれているアイテムの番号
 
     [SerializeField]
@@ -26,9 +29,23 @@ public class ItemDescription : MonoBehaviour
     /// <param name="num">ボタンの番号.</param>
     public void OnClickDescription(int num)
     {
-        selectingNum = num;
-        displayName.text = itemName[num]; 
-        displayDescription.text = itemDescription[num];
+        //入手しているアイテムならそのアイテムの説明表示、していなかったら説明なし
+        if (itemManager.GetIsHasItem(num))
+        {
+            //NOTE: +1 はまだ入手していない時の項目によるずれ
+            int itemNum = num + 1;
+
+            selectingNum = itemNum;
+            displayImage.sprite = ItemDataObject.Instance.GetSprite(itemNum);
+            displayName.text = itemName[itemNum];
+            displayDescription.text = itemDescription[itemNum];
+        }
+        else
+        {
+            selectingNum = 0;
+            displayName.text = itemName[0];
+            displayDescription.text = itemDescription[0];
+        }
     }
 
     /// <summary>

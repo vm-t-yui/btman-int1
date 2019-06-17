@@ -61,27 +61,11 @@ public class LocalizeDataObject : ScriptableObject
         RecommendedApplication, //おすすめアプリ
         Retry,                  //リトライ
         Title,                  //タイトル
-        NoItemName,             //アイテムの名前無し
-        ItemName1,              //アイテムの名前1
-        ItemName2,              //アイテムの名前2
-        ItemName3,              //アイテムの名前3
-        ItemName4,              //アイテムの名前4
-        ItemName5,              //アイテムの名前5
-        ItemName6,              //アイテムの名前6
-        ItemName7,              //アイテムの名前7
-        ItemName8,              //アイテムの名前8
-        NoItemDescription,      //アイテムの説明無し
-        ItemDescription1,       //アイテムの説明1
-        ItemDescription2,       //アイテムの説明2
-        ItemDescription3,       //アイテムの説明3
-        ItemDescription4,       //アイテムの説明4
-        ItemDescription5,       //アイテムの説明5
-        ItemDescription6,       //アイテムの説明6
-        ItemDescription7,       //アイテムの説明7
-        ItemDescription8,       //アイテムの説明8
         AdvertisingPrompt,      //広告促し
         TapToStart,             //タップしてスタート
-        EnumLength,             //このenumのサイズ
+        NoItemName,             //アイテムの名前無し
+        NoItemDescription = NoItemName + ItemManager.ItemNum + 1,      //アイテムの説明無し (NOTE: +1 はまだ入手していない時の項目によるずれ)
+        EnumLength = NoItemDescription + ItemManager.ItemNum + 1,      //このenumのサイズ  (上記のずれ)
     }
 
     public const int LocalizeTextCount = (int)LocalizeText.EnumLength;   //ローカライズするテキストの総数

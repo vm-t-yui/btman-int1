@@ -25,32 +25,6 @@ public class ItemManager : MonoBehaviour
         isHasItem = itemDataManager.GetHaveItemFlag();
     }
 
-    void Update()
-    {
-        itemDataManager.SaveData();
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            GetItem(0);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GetItem(1);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            GetItem(2);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            GetItem(3);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GetItem(4);
-        }
-    }
-
     /// <summary>
     /// アイテムゲット
     /// </summary>
@@ -68,6 +42,15 @@ public class ItemManager : MonoBehaviour
 
         //アイテムをセーブ
         itemDataManager.SaveData();
+    }
+
+    /// <summary>
+    /// 入手したアイテムのフラグのゲット関数
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool GetIsHasItem(int i)
+    {
+        return isHasItem[i];
     }
 
     /// <summary>
