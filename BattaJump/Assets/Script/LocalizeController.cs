@@ -9,9 +9,11 @@ using UnityEngine.UI;
 public class LocalizeController : MonoBehaviour
 {
 
-    [SerializeField] ItemDescription itemDescription = default;          //アイテム説明クラス
+    [SerializeField] 
+    ItemDescription itemDescription = default;          //アイテム説明クラス
 
-    [SerializeField]int LanguageNum = 0;     //言語番号
+    [SerializeField]
+    int LanguageNum = 0;     //言語番号
 
     [SerializeField] string[] localizeText;  //ローカライズされたテキスト
     [SerializeField] Text[] displayText;     //表示用テキスト

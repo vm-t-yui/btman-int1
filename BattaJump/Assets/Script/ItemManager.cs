@@ -10,10 +10,10 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     ItemDataManager itemDataManager = default;  //アイテムデータクラス
 
-    public const int ItemNum = 8;          //アイテム数(10は仮)
+    public const int ItemNum = 8;               //アイテム数(10は仮)
 
     [SerializeField]
-    bool[] isHasItem = new bool[ItemNum];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    bool[] isHasItem = new bool[ItemNum];       //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
 
     public static bool[] isNewHasItem = new bool[ItemNum];   //新しく入手したアイテムのフラグ
 

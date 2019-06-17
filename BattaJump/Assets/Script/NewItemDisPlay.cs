@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  新規取得アイテム表示クラス
+/// </summary>
 public class NewItemDisPlay : MonoBehaviour
 {
     [SerializeField]
-    ItemManager itemManager = default;
+    ItemManager itemManager = default;                //アイテムクラス
     [SerializeField]
     LocalizeController localizeController = default;  //ローカライズクラス
     [SerializeField]
