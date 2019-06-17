@@ -15,11 +15,6 @@ public class SeAudioSource : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // 音量をセット
-        audioSource.volume = AudioParameter.seVolume;
-        // ミュートフラグをセット
-        audioSource.mute = AudioParameter.seMute;
-
         // 再生が終了したSEはオブジェクトを切る
         if (!audioSource.isPlaying)
         {
