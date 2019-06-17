@@ -1827,7 +1827,7 @@ RectTransform:
   m_GameObject: {fileID: 3720386051517857888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3901468016757608427}
   - {fileID: 5457568528844721373}
@@ -1889,6 +1889,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: {fileID: 2386024357751399100}
   displayDescription: {fileID: 8282693747797389301}
+  selectingNum: 0
+  itemName:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemDescription:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!114 &456235391924910468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1914,6 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDataManager: {fileID: 456235391924910468}
+  isHasItem: 0000000000000000
 --- !u!1 &3732446984192892977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4688480846571005024}
+  - component: {fileID: 6904915455309984277}
   m_Layer: 5
   m_Name: SilhouetteButton
   m_TagString: Untagged
@@ -2119,6 +2142,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6904915455309984277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043051291375815245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db14ffecb734a4061b4c559882991bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSilhouette: 0
 --- !u!1 &4462032137412611002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,6 +3052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5457568528844721373}
+  - component: {fileID: 6738864646540626455}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -3050,6 +3087,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6738864646540626455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972579404818317089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db14ffecb734a4061b4c559882991bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSilhouette: 0
 --- !u!1 &6980518651493813086
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// ローカライズ用のScriptableObject
 /// </summary>
-[CreateAssetMenu(menuName = "Data/Create LocalizeDataObject", fileName = "LocalizeDataObject")]
+[CreateAssetMenu(menuName = "DataObject/Create LocalizeDataObject", fileName = "LocalizeDataObject")]
 public class LocalizeDataObject : ScriptableObject
 {
     static readonly string ResourcePath = "LocalizeDataObject";    //リソースのパス
@@ -35,7 +35,7 @@ public class LocalizeDataObject : ScriptableObject
     //↓こっからローカライズ用のScriptableObjectの要素
 
     //言語
-    enum LocalizeLanguage
+    public enum LocalizeLanguage
     {
         NoneData = -1,  //データ無し
         Japanese,   //日本語
@@ -48,22 +48,59 @@ public class LocalizeDataObject : ScriptableObject
         EnumLength, //このenumのサイズ
     }
 
+    //テキスト
+    public enum LocalizeText
+    {
+        Japanese,               //日本語
+        English,                //英語
+        German,                 //ドイツ語
+        Italian,                //イタリア語
+        French,                 //フランス語
+        Chinese,                //中国語
+        Spanish,                //スペイン語
+        RecommendedApplication, //おすすめアプリ
+        Retry,                  //リトライ
+        Title,                  //タイトル
+        NoItemName,             //アイテムの名前無し
+        ItemName1,              //アイテムの名前1
+        ItemName2,              //アイテムの名前2
+        ItemName3,              //アイテムの名前3
+        ItemName4,              //アイテムの名前4
+        ItemName5,              //アイテムの名前5
+        ItemName6,              //アイテムの名前6
+        ItemName7,              //アイテムの名前7
+        ItemName8,              //アイテムの名前8
+        NoItemDescription,      //アイテムの説明無し
+        ItemDescription1,       //アイテムの説明1
+        ItemDescription2,       //アイテムの説明2
+        ItemDescription3,       //アイテムの説明3
+        ItemDescription4,       //アイテムの説明4
+        ItemDescription5,       //アイテムの説明5
+        ItemDescription6,       //アイテムの説明6
+        ItemDescription7,       //アイテムの説明7
+        ItemDescription8,       //アイテムの説明8
+        AdvertisingPrompt,      //広告促し
+        TapToStart,             //タップしてスタート
+        EnumLength,             //このenumのサイズ
+    }
+
+    public const int LocalizeTextCount = (int)LocalizeText.EnumLength;   //ローカライズするテキストの総数
+    public const int LanguageCount = (int)LocalizeLanguage.EnumLength;   //ローカライズする言語の総数
+
     [SerializeField]
-    string[] localizeText = new string[LocalizeController.LocalizeTextCount];   //保存用テキスト
+    string[] japaneseText = new string[LocalizeTextCount];  //日本語テキスト
     [SerializeField]
-    string[] japaneseText = new string[LocalizeController.LocalizeTextCount];  //日本語テキスト
+    string[] englishText = new string[LocalizeTextCount];   //英語テキスト
     [SerializeField]
-    string[] englishText = new string[LocalizeController.LocalizeTextCount];   //英語テキスト
+    string[] germanText = new string[LocalizeTextCount];    //ドイツ語テキスト
     [SerializeField]
-    string[] germanText = new string[LocalizeController.LocalizeTextCount];    //ドイツ語テキスト
+    string[] italianText = new string[LocalizeTextCount];   //イタリア語テキスト
     [SerializeField]
-    string[] italianText = new string[LocalizeController.LocalizeTextCount];   //イタリア語テキスト
+    string[] frenchText = new string[LocalizeTextCount];    //フランス語テキスト
     [SerializeField]
-    string[] frenchText = new string[LocalizeController.LocalizeTextCount];    //フランス語テキスト
+    string[] chineseText = new string[LocalizeTextCount];   //中国語テキスト
     [SerializeField]
-    string[] chineseText = new string[LocalizeController.LocalizeTextCount];   //中国語テキスト
-    [SerializeField]
-    string[] spanishText = new string[LocalizeController.LocalizeTextCount];   //スペイン語テキスト
+    string[] spanishText = new string[LocalizeTextCount];   //スペイン語テキスト
 
     /// <summary>
     /// CSVファイル読み込み
@@ -72,9 +109,9 @@ public class LocalizeDataObject : ScriptableObject
     public void TextLoad(List<string[]> csvData)
     {
         //csvファイルのデータを各言語配列に入れる
-        for (int i = 0; i < LocalizeController.LanguageCount; i++)
+        for (int i = 0; i < LanguageCount; i++)
         {
-            for (int j = 0; j < LocalizeController.LocalizeTextCount; j++)
+            for (int j = 0; j < LocalizeTextCount; j++)
             {
                 //各言語の配列に入れる
                 switch (i)
@@ -92,7 +129,7 @@ public class LocalizeDataObject : ScriptableObject
     }
 
     /// <summary>
-    /// テキストのゲット関数
+    /// テキストのゲット関数(配列ごと)
     /// </summary>
     /// <returns>The localize text.</returns>
     /// <param name="num">言語番号</param>
@@ -111,6 +148,32 @@ public class LocalizeDataObject : ScriptableObject
             case (int)LocalizeLanguage.Spanish: returnText = spanishText; break;
 
             default: returnText = englishText; break;
+        }
+
+        return returnText;
+    }
+
+    /// <summary>
+    /// テキストのゲット関数(ひとつずつ)
+    /// </summary>
+    /// <returns>The localize text.</returns>
+    /// <param name="lNum">言語番号</param>
+    /// <param name="eNum">配列の指定番号</param>
+    public string GetLocalizeText(int lNum, int eNum)
+    {
+        string returnText = null;
+
+        switch (lNum)
+        {
+            case (int)LocalizeLanguage.Japanese: returnText = japaneseText[eNum]; break;
+            case (int)LocalizeLanguage.English: returnText = englishText[eNum]; break;
+            case (int)LocalizeLanguage.German: returnText = germanText[eNum]; break;
+            case (int)LocalizeLanguage.Italian: returnText = italianText[eNum]; break;
+            case (int)LocalizeLanguage.French: returnText = frenchText[eNum]; break;
+            case (int)LocalizeLanguage.Chinese: returnText = chineseText[eNum]; break;
+            case (int)LocalizeLanguage.Spanish: returnText = spanishText[eNum]; break;
+
+            default: returnText = englishText[eNum]; break;
         }
 
         return returnText;

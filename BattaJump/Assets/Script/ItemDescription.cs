@@ -11,10 +11,13 @@ public class ItemDescription : MonoBehaviour
     [SerializeField] Text displayName = default;         　　//アイテムの名前(表示用)
     [SerializeField] Text displayDescription = default;  　　//アイテムの説明(表示用)
 
-    const int DescriptionNum = ItemManager.Num + 1;         //アイテム説明の数(アイテム総数 + 入手してない時の???)
+    const int DescriptionNum = ItemManager.ItemNum + 1;         //アイテム説明の数(アイテム総数 + 入手してない時の???)
+    [SerializeField]
     int selectingNum = 0;     //現在選ばれているアイテムの番号
 
+    [SerializeField]
     string[] itemName = new string[DescriptionNum];         //アイテムの名前(データ用)
+    [SerializeField]
     string[] itemDescription = new string[DescriptionNum];  //アイテムの説明(データ用)
 
     /// <summary>
