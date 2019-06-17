@@ -11,23 +11,24 @@ public class AudioSettingUiController : MonoBehaviour
     [SerializeField] Slider bgmVolumeSlider = default;
     [SerializeField] Slider seVolumeSlider = default;
 
+    [SerializeField] Toggle bgmMuteToggle = default;
+    [SerializeField] Toggle seMuteToggle  = default;
+
     /// <summary>
-    /// BGMのボリュームスライダーが変更された際のコールバック
+    /// BGMのパラメータが変更された際のコールバック
     /// </summary>
-    /// TODO : 未実装 （SetBgmParameterの第二引数はミュートかどうかのフラグ変数をセットするが、オプションのミュートを設定するUIが完成していないので仮でfalseをセット）
-    public void OnBgmVolumeSliderChange()
+    public void OnBgmParameterChange()
     {
         // スライダーの値をBGMのパラメータとしてセットする
-        AudioParameter.SetBgmParameter(bgmVolumeSlider.value, false);
+        AudioParameter.SetBgmParameter(bgmVolumeSlider.value, bgmMuteToggle.isOn);
     }
 
     /// <summary>
-    /// SEのボリュームスライダーが変更された際のコールバック
+    /// SEのパラメータが変更された際のコールバック
     /// </summary>
-    /// TODO : 未実装 （SetSeParameterの第二引数はミュートかどうかのフラグ変数をセットするが、オプションのミュートを設定するUIが完成していないので仮でfalseをセット）
-    public void OnSeVolumeSliderChange()
+    public void OnSeParameterChange()
     {
         // スライダーの値をSEのパラメータとしてセットする
-        AudioParameter.SetSeParameter(seVolumeSlider.value, false);
+        AudioParameter.SetSeParameter(seVolumeSlider.value, seMuteToggle.isOn);
     }
 }
