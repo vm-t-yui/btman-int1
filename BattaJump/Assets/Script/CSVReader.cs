@@ -10,15 +10,12 @@ public class CSVReader : MonoBehaviour
     [SerializeField]
     TextAsset csvFile = default; // CSVファイル
 
-    [SerializeField]
-    LocalizeController localizeController = default;    //ローカライズクラス
-
     static List<string[]> csvDatas = new List<string[]>(); // CSVの中身を入れるリスト;
 
     /// <summary>
     /// 開始処理
     /// </summary>
-    void Start()
+    void Awake()
     {
         StringReader reader = new StringReader(csvFile.text);
 
@@ -30,7 +27,7 @@ public class CSVReader : MonoBehaviour
             csvDatas.Add(line.Split(',')); // , 区切りでリストに追加
         }
 
-        //読み込んだデータをローカライズクラスへ
-        localizeController.TextLoad(csvDatas);
+        //読み込んだデータをローカライズのデータオブジェクトへ
+        LocalizeDataObject.Instance.TextLoad(csvDatas);
     }
 }

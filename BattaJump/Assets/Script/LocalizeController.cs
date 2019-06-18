@@ -19,7 +19,7 @@ public class LocalizeController : MonoBehaviour
         French,     //フランス語
         Chinese,    //中国語
         Spanish,    //スペイン語
-        EnumLenght, //このenumのサイズ
+        EnumLength, //このenumのサイズ
     }
 
     //テキスト
@@ -54,53 +54,26 @@ public class LocalizeController : MonoBehaviour
         ItemDescription7,       //アイテムの説明7
         ItemDescription8,       //アイテムの説明8
         AdvertisingPrompt,      //広告促し
-        EnumLenght,             //このenumのサイズ
+        TapToStart,             //タップしてスタート
+        EnumLength,             //このenumのサイズ
     }
 
-    [SerializeField] ItemDescription itemDescription = default;      //アイテム説明クラス
+    [SerializeField] ItemDescription itemDescription = default;          //アイテム説明クラス
 
-    const int LocalizeTextCount = (int)LocalizeText.EnumLenght;      //ローカライズするテキストの総数
-    const int LanguageCount = (int)LocalizeLanguage.EnumLenght;      //ローカライズする言語の総数
+    public const int LocalizeTextCount = (int)LocalizeText.EnumLength;   //ローカライズするテキストの総数
+    public const int LanguageCount = (int)LocalizeLanguage.EnumLength;   //ローカライズする言語の総数
 
     [SerializeField]int LanguageNum = 0;     //言語番号
 
-    [SerializeField] Text[] displayText;                    //表示用テキスト
-    [SerializeField] int[] displayTextNum;                  //表示用テキストの番号
-
-    string[] localizeText = new string[LocalizeTextCount];   //保存用テキスト
-    string[] japaneseText = new string[LocalizeTextCount];  //日本語テキスト
-    string[] englishText = new string[LocalizeTextCount];   //英語テキスト
-    string[] germanText = new string[LocalizeTextCount];    //ドイツ語テキスト
-    string[] italianText = new string[LocalizeTextCount];   //イタリア語テキスト
-    string[] frenchText = new string[LocalizeTextCount];    //フランス語テキスト
-    string[] chineseText = new string[LocalizeTextCount];   //中国語テキスト
-    string[] spanishText = new string[LocalizeTextCount];   //スペイン語テキスト
+    [SerializeField] string[] localizeText;  //ローカライズされたテキスト
+    [SerializeField] Text[] displayText;     //表示用テキスト
+    [SerializeField] int[] displayTextNum; 　//表示用テキストの番号
 
     /// <summary>
-    /// CSVファイル読み込み
+    /// 開始処理
     /// </summary>
-    /// <param name="csvData">Csv data.</param>
-    public void TextLoad(List<string[]> csvData)
+    void Start()
     {
-        //csvファイルのデータを各言語配列に入れる
-        for (int i = 0; i < LanguageCount; i++)
-        {
-            for (int j = 0; j < LocalizeTextCount; j++)
-            {
-                //各言語の配列に入れる
-                switch (i)
-                {
-                    case (int)LocalizeLanguage.Japanese: japaneseText[j] = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.English : englishText[j]  = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.German  : germanText[j]   = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.Italian : italianText[j]  = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.French  : frenchText[j]   = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.Chinese : chineseText[j]  = csvData[i][j]; break;
-                    case (int)LocalizeLanguage.Spanish : spanishText[j]  = csvData[i][j]; break;
-                }
-            }
-        }
-
         //ローカライズのデータが保存されていないなら端末の言語設定から、
         //データが保存されているなら、保存されている言語番号からローカライズする
         switch (LanguageNum)
@@ -115,22 +88,41 @@ public class LocalizeController : MonoBehaviour
     /// </summary>
     void TerminalLocalize()
     {
-        for (int i = 0; i < LocalizeTextCount; i++)
+        //言語番号を更新 + ローカライズ
+        switch (Application.systemLanguage)
         {
-            //言語番号を更新 + ローカライズ
-            switch (Application.systemLanguage)
-            {
-                case SystemLanguage.Japanese: localizeText[i] = japaneseText[i]; LanguageNum = (int)LocalizeLanguage.Japanese; break;
-                case SystemLanguage.English: localizeText[i] = englishText[i]; LanguageNum = (int)LocalizeLanguage.English; break;
-                case SystemLanguage.German: localizeText[i] = germanText[i]; LanguageNum = (int)LocalizeLanguage.German; break;
-                case SystemLanguage.Italian: localizeText[i] = italianText[i]; LanguageNum = (int)LocalizeLanguage.Italian; break;
-                case SystemLanguage.French: localizeText[i] = frenchText[i]; LanguageNum = (int)LocalizeLanguage.French; break;
-                case SystemLanguage.Chinese: localizeText[i] = chineseText[i]; LanguageNum = (int)LocalizeLanguage.Chinese; break;
-                case SystemLanguage.Spanish: localizeText[i] = spanishText[i]; LanguageNum = (int)LocalizeLanguage.Spanish; break;
+            case SystemLanguage.Japanese: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Japanese); 
+                LanguageNum = (int)LocalizeLanguage.Japanese; break;
 
-                //7か国以外は英語に統一
-                default: localizeText[i] = englishText[i]; LanguageNum = (int)LocalizeLanguage.English; break;
-            }
+            case SystemLanguage.English: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.English);
+                LanguageNum = (int)LocalizeLanguage.English; break;
+
+            case SystemLanguage.German: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.German); 
+                LanguageNum = (int)LocalizeLanguage.German; break;
+
+            case SystemLanguage.Italian: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Italian); 
+                LanguageNum = (int)LocalizeLanguage.Italian; break;
+
+            case SystemLanguage.French: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.French); 
+                LanguageNum = (int)LocalizeLanguage.French; break;
+
+            case SystemLanguage.Chinese: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Chinese); 
+                LanguageNum = (int)LocalizeLanguage.Chinese; break;
+
+            case SystemLanguage.Spanish: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Spanish); 
+                LanguageNum = (int)LocalizeLanguage.Spanish; break;
+
+            //7か国以外は英語に統一
+            default:
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.English);
+                LanguageNum = (int)LocalizeLanguage.English; break;
         }
 
         //ローカライズしたアイテム名、説明をセット
@@ -146,26 +138,35 @@ public class LocalizeController : MonoBehaviour
     /// <param name="num">言語番号(ボタンの中に入れた時はボタンの番号)</param>
     public void LanguageNumLocalize(int num)
     {
-        Debug.Log(LanguageNum);
-        Debug.Log(num);
         //言語番号を更新
         LanguageNum = num;
 
-        for (int i = 0; i < LocalizeTextCount; i++)
+        switch (num)
         {
-            switch (num)
-            {
-                case (int)LocalizeLanguage.Japanese: localizeText[i] = japaneseText[i]; break;
-                case (int)LocalizeLanguage.English : localizeText[i] = englishText[i]; break;
-                case (int)LocalizeLanguage.German  : localizeText[i] = germanText[i]; break;
-                case (int)LocalizeLanguage.Italian : localizeText[i] = italianText[i]; break;
-                case (int)LocalizeLanguage.French  : localizeText[i] = frenchText[i]; break;
-                case (int)LocalizeLanguage.Chinese : localizeText[i] = chineseText[i]; break;
-                case (int)LocalizeLanguage.Spanish : localizeText[i] = spanishText[i]; break;
+            case (int)LocalizeLanguage.Japanese: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Japanese); break;
 
-                //7か国以外は英語に統一
-                default: localizeText[i] = englishText[i]; LanguageNum = (int)LocalizeLanguage.English; break;
-            }
+            case (int)LocalizeLanguage.English: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.English); break;
+
+            case (int)LocalizeLanguage.German: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.German); break;
+
+            case (int)LocalizeLanguage.Italian: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Italian); break;
+
+            case (int)LocalizeLanguage.French: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.French); break;
+
+            case (int)LocalizeLanguage.Chinese: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Chinese); break;
+
+            case (int)LocalizeLanguage.Spanish: 
+                localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.Spanish); break;
+
+            //7か国以外は英語に統一
+            default: 
+            localizeText = LocalizeDataObject.Instance.GetLocalizeText((int)LocalizeLanguage.English); LanguageNum = (int)LocalizeLanguage.English; break;
         }
 
         //ローカライズしたアイテム名、説明をセット
@@ -174,6 +175,7 @@ public class LocalizeController : MonoBehaviour
         //ローカライズしたテキストをセット
         SetLocalizeText();
     }
+
 
     /// <summary>
     /// ローカライズしたアイテム名、説明をセットする
@@ -209,11 +211,12 @@ public class LocalizeController : MonoBehaviour
     /// </summary>
     void SetLocalizeText()
     {
-        for (int i = 0; i < displayTextNum.Length; i++) 
+        for (int i = 0; i < displayTextNum.Length; i++)
         {
             displayText[i].text = localizeText[displayTextNum[i]];
         }
     }
+
 
     /// <summary>
     /// 言語番号セット関数

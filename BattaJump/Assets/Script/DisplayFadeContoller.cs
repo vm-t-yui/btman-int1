@@ -46,7 +46,7 @@ public class DisplayFadeContoller : MonoBehaviour
     public bool IsFadeEnd { get; private set; } = false;    // フェード終了
 
     float adViewTime = 0f;                                  // 広告表示時間計測
-    const float adViewMaxTime = 2.5f;                       // 広告表示時間
+    const float AdViewMaxTime = 2.5f;                       // 広告表示時間
 
     /// <summary>
     /// 更新
@@ -133,7 +133,7 @@ public class DisplayFadeContoller : MonoBehaviour
     void Fade()
     {
         // フェードイン
-        if (fadeType == (int)FadeType.FadeIn)
+        if (fadeType == FadeType.FadeIn)
         {
             // alphaが1以上になるまで増加
             fadeCanvas.alpha += fadeSpeed;
@@ -150,7 +150,7 @@ public class DisplayFadeContoller : MonoBehaviour
         else
         {
             // パネルタイプが広告なら、指定した時間までフェードアウトを待つ
-            if (panelType == PanelType.AdView && adViewTime < adViewMaxTime)
+            if (panelType == PanelType.AdView && adViewTime < AdViewMaxTime)
             {
                 // 表示時間を計測
                 adViewTime += Time.deltaTime;
