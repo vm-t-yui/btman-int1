@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// アイテムボタン作成
 /// </summary>
-public class CreatItemButton : MonoBehaviour
+public class ItemButtonCreater : MonoBehaviour
 {
     [SerializeField]
     GameObject originalButton = default;        //複製用ボタンのオリジナル
