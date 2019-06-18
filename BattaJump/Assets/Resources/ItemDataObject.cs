@@ -11,9 +11,9 @@ public class ItemDataObject : ScriptableObject
 {
     static readonly string ResourcePath = "ItemDataObject";    //リソースのパス
 
-    static ItemDataObject staticInstance = null;
+    static ItemDataObject staticInstance = null;               //アイテム用のScriptableObjectクラス
 
-    //リソース内のアイテム用用ScriptableObject取得
+    //リソース内のアイテム用ScriptableObject取得
     public static ItemDataObject Instance
     {
         get

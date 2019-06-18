@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ItemDataManager : MonoBehaviour
 { 
-    bool[] isHasItem = new bool[ItemManager.ItemNum];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    bool[] isHasItem = new bool[ItemManager.ItemNum];  　//アイテムゲットフラグ
 
     /// <summary>
     /// 起動時処理

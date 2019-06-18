@@ -10,7 +10,7 @@ public class LocalizeDataObject : ScriptableObject
 {
     static readonly string ResourcePath = "LocalizeDataObject";    //リソースのパス
 
-    static LocalizeDataObject staticInstance = null;
+    static LocalizeDataObject staticInstance = null;               //ローカライズ用のScriptableObject
 
     //リソース内のローカライズ用ScriptableObject取得
     public static LocalizeDataObject Instance
