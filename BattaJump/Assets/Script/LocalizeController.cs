@@ -12,7 +12,6 @@ public class LocalizeController : MonoBehaviour
     [SerializeField] 
     ItemDescription itemDescription = default;          //アイテム説明クラス
 
-    [SerializeField]
     int LanguageNum = 0;     //言語番号
 
     [SerializeField] string[] localizeText;  //ローカライズされたテキスト

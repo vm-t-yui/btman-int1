@@ -13,13 +13,13 @@ public class NewItemDisPlay : MonoBehaviour
     LocalizeController localizeController = default;  //ローカライズクラス
     [SerializeField]
     ItemDescription itemDescription = default;        //アイテム説明クラス
-    [SerializeField]
-    Animator animator;
+
+    Animator animator;                                //アニメータークラス
 
     List<int> newHasNum = new List<int>();            //新しく手に入れたアイテムの数
     List<string> names = new List<string>();          //今の言語のアイテム名前
     List<string> descriptions = new List<string>();   //今の言語のアイテム説明
-    [SerializeField]
+
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     int touchCount = 0;     //タッチ数カウント
