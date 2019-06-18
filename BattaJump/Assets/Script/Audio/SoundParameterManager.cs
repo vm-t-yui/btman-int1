@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// サウンドのパラメータを管理
 /// </summary>
-public class SoundParameterManager : MonoBehaviour
+public class SoundParameterManager
 {
     static public float bgmVolume { get; private set; } = 1;      // BGMの音量
     static public float seVolume  { get; private set; } = 1;      // SEの音量
