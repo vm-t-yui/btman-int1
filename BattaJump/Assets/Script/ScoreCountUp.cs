@@ -29,7 +29,7 @@ public class ScoreCountUp : MonoBehaviour
     /// <summary>
     /// 更新
     /// </summary>
-    void Update()
+    void FixedUpdate()
     {
         // ゲーム内で獲得したスコアまでカウントアップする
         if (countScore < getScore)
