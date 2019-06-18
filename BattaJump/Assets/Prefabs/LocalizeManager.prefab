@@ -739,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: {fileID: 0}
   LanguageNum: 0
+  localizeText: []
   displayText:
   - {fileID: 2270307594525262001}
   - {fileID: 2270307595997006597}
@@ -774,7 +775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csvFile: {fileID: 4900000, guid: eddf78315e892a049aa30b9bdae34bb3, type: 3}
-  localizeController: {fileID: 2528723213305394832}
 --- !u!1 &2270307595571907607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,9 +1848,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6112898741317154629}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1769805338695832740}
+        m_MethodName: SaveData
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1859,9 +1859,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1769805338695832740}
-        m_MethodName: SaveData
+      - m_Target: {fileID: 2188593994028439490, guid: 0a28a23b28c28a545ab3bde4f56461fd,
+          type: 3}
+        m_MethodName: OnOptionClose
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2285031959966804325, guid: acae857d19d295e4997810a7e9de7078,
+          type: 3}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
