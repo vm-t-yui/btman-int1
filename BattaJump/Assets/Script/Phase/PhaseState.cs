@@ -28,7 +28,8 @@ public class PhaseState : MonoBehaviour
     [SerializeField] PlayerFalling     playerFalling     = default;         // プレイヤーの落下演出
     [SerializeField] NextSceneChanger  nextScene         = default;         // シーン移行クラス
 
-    [SerializeField] ScoreDataManager  scoreData         = default;         // スコアデータクラス  
+    [SerializeField] ScoreDataManager  scoreData         = default;         // スコアデータクラス
+    [SerializeField] InputController   inputController   = default;         // 入力制御クラス
 
     /// <summary>
     /// 開始
@@ -65,7 +66,8 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void EnterWaitFadeOut()
     {
-        fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.Black);
+        // フェードアウト開始
+        fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.AdView);
     }
 
     /// <summary>
@@ -73,8 +75,10 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void UpdateWaitFadeOut()
     {
+        // フェードアウトが終わったら
         if (fadeContoller.IsFadeEnd)
         {
+            // ステートを"ChargeCountDown"に変更する
             stateMachine.SetState(PhaseType.ChargeCountDown);
         }
     }
@@ -86,6 +90,9 @@ public class PhaseState : MonoBehaviour
     {
         // "ChargeCountDown"をtrueに設定
         chargeCountDown.enabled = true;
+
+        // 入力制御クラスをオン
+        inputController.enabled = true;
     }
 
     /// <summary>
@@ -108,6 +115,9 @@ public class PhaseState : MonoBehaviour
     {
         // "ChargeCountDown"をfalseに設定
         chargeCountDown.enabled = false;
+
+        // 入力制御クラスをオフ
+        inputController.enabled = false;
     }
 
     /// <summary>

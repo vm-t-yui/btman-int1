@@ -52,6 +52,9 @@ public class ResultPhaseState : MonoBehaviour
 
         // 現在のフェーズをロード完了待機に設定
         nowPhase = PhaseType.WaitAdLoad;
+
+        // FPSを15に固定
+        Application.targetFrameRate = 15;
     }
 
     /// <summary>
@@ -70,7 +73,9 @@ public class ResultPhaseState : MonoBehaviour
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);
 
-                    // フェーズを次の状態へ
+                    // FPSをもとに戻す
+                    Application.targetFrameRate = -1;
+
                     nowPhase = PhaseType.WaitFadeOut;
                 }
                 break;

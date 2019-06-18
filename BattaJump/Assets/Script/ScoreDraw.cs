@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ScoreDraw : MonoBehaviour
 {
     [SerializeField]
-    Text scoreText;                         // テキスト
+    Text scoreText = default;               // テキスト
 
     [SerializeField]
     ScoreCountUp scoreCountUp = default;    // スコアカウントアップクラス

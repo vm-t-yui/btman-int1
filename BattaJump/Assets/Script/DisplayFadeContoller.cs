@@ -23,7 +23,7 @@ public class DisplayFadeContoller : MonoBehaviour
     {
         Black,        // 黒
         White,        // 白
-        Logo          // ロゴが入った白
+        AdView        // 黒＋広告
     }
 
     [SerializeField]
@@ -34,7 +34,7 @@ public class DisplayFadeContoller : MonoBehaviour
     [SerializeField]
     GameObject whitePanel = default;                        // 白いパネル
     [SerializeField]
-    GameObject logoPanel = default;                         // ロゴが入ったパネル
+    GameObject adPanel = default;                           // 広告パネル
 
     [SerializeField][Range(0.0f, 0.1f)]
     float fadeSpeed = 0.02f;                                // フェードするスピード
@@ -45,13 +45,16 @@ public class DisplayFadeContoller : MonoBehaviour
     public bool IsFade { get; private set; } = false;       // フェード中
     public bool IsFadeEnd { get; private set; } = false;    // フェード終了
 
+    float adViewTime = 0f;                                  // 広告表示時間計測
+    const float AdViewMaxTime = 2.5f;                       // 広告表示時間
+
     /// <summary>
     /// 更新
     /// </summary>
     void FixedUpdate()
     {
         // フェード中のフラグがtrueならフェード処理
-        if (IsFade)
+        if (IsFade && !IsFadeEnd)
         {
             Fade();
         }
@@ -74,27 +77,26 @@ public class DisplayFadeContoller : MonoBehaviour
         }
         else
         {
-
             fadeCanvas.alpha = 0;
         }
 
-        // 指定されたパネルを表示、他２つは非表示
+        // 指定されたパネルを表示、他は非表示
         switch (panel)
         {
             case PanelType.Black:    // 黒
                 blackPanel.SetActive(true);
                 whitePanel.SetActive(false);
-                logoPanel.SetActive(false);
+                adPanel.SetActive(false);
                 break;
 
             case PanelType.White:    // 白
                 whitePanel.SetActive(true);
                 blackPanel.SetActive(false);
-                logoPanel.SetActive(false);
+                adPanel.SetActive(false);
                 break;
 
-            case PanelType.Logo:  // ロゴ入り 
-                logoPanel.SetActive(true);
+            case PanelType.AdView:  // 広告
+                adPanel.SetActive(true);
                 blackPanel.SetActive(false);
                 whitePanel.SetActive(false);
                 break;
@@ -131,7 +133,7 @@ public class DisplayFadeContoller : MonoBehaviour
     void Fade()
     {
         // フェードイン
-        if (fadeType == (int)FadeType.FadeIn)
+        if (fadeType == FadeType.FadeIn)
         {
             // alphaが1以上になるまで増加
             fadeCanvas.alpha += fadeSpeed;
@@ -147,12 +149,22 @@ public class DisplayFadeContoller : MonoBehaviour
         // フェードアウト
         else
         {
-            // alphaが0以下になるまで減少
-            fadeCanvas.alpha -= fadeSpeed;
+            // パネルタイプが広告なら、指定した時間までフェードアウトを待つ
+            if (panelType == PanelType.AdView && adViewTime < AdViewMaxTime)
+            {
+                // 表示時間を計測
+                adViewTime += Time.deltaTime;
+            }
+            else
+            {
+                // alphaが0以下になるまで減少
+                fadeCanvas.alpha -= fadeSpeed;
+            }
 
             // 0以下になったらフェード処理終了
             if (fadeCanvas.alpha <= 0)
             {
+                adViewTime = 0;
                 fadeCanvas.alpha = 0;
 
                 fadeCanvas.gameObject.SetActive(false);

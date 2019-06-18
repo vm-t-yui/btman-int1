@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// シーンロードクラス
 /// </summary>
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField]
+    GameObject loadingUI = default;　// ロード中に表示するUI
+
+    [SerializeField]
+    Slider loadingGauge = default;   // ロードゲージ
+
     /// <summary>
     /// シーンの番号
     /// </summary>
@@ -38,6 +45,27 @@ public class SceneLoader : MonoBehaviour
     /// <param name="num">ロードしたいシーンの番号</param>
     public void OnLoad(SceneNum num)
     {
-        SceneManager.LoadScene(scenes[num]);
+        loadingUI.SetActive(true);
+
+        StartCoroutine(LoadScene(num));
+    }
+
+    /// <summary>
+    /// ロード処理
+    /// </summary>
+    /// <param name="num">ロードするシーン番号</param>
+    /// <returns></returns>
+    IEnumerator LoadScene(SceneNum num)
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync(scenes[num]);
+
+        // シーンのロードが完了するまでループ
+        while (!async.isDone)
+        {
+            // ロードゲージに進捗状況を反映
+            loadingGauge.value = async.progress;
+
+            yield return null;
+        }
     }
 }
