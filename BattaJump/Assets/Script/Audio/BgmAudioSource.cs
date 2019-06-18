@@ -16,9 +16,9 @@ public class BgmAudioSource: MonoBehaviour
     void Update()
     {
         // 音量をセット
-        audioSource.volume = SoundParameterManager.bgmVolume;
+        audioSource.volume = AudioParameter.bgmVolume;
         // ミュートフラグをセット
-        audioSource.mute = SoundParameterManager.bgmMute;
+        audioSource.mute = AudioParameter.bgmMute;
 
         // 再生が終了したBGMはオブジェクトを切る
         if (!audioSource.isPlaying)
