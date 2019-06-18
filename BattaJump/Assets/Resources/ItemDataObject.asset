@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f387e7ce5671d4223bf45bb454b7255f, type: 3}
+  m_Name: ItemDataObject
+  m_EditorClassIdentifier: 
+  itemButtonAtlas: {fileID: 4343727234628468602, guid: 2965232323c524e61be238a59e97debf,
+    type: 2}
+  itemName:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

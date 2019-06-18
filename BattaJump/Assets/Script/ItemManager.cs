@@ -10,18 +10,18 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     ItemDataManager itemDataManager = default;  //アイテムデータクラス
 
-    public const int Num = 8;   　             //アイテム数(10は仮)
-    static int[] isHasItem = new int[Num];    //アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    public const int ItemNum = 8;               //アイテム数(10は仮)
+
+    bool[] isHasItem = new bool[ItemNum];       //アイテムゲットフラグ
+
+    public static bool[] isNewHasItem = new bool[ItemNum];   //新しく入手したアイテムのフラグ
 
     /// <summary>
     /// データからアイテムゲットフラグをロードする
     /// </summary>
     void Start()
     {
-        for (int i = 0; i < isHasItem.Length; i++)
-        {
-            isHasItem[i] = itemDataManager.GetHaveItemFlag(i);
-        }
+        isHasItem = itemDataManager.GetHaveItemFlag();
     }
 
     /// <summary>
@@ -32,9 +32,32 @@ public class ItemManager : MonoBehaviour
     {
         //NOTE: プレイヤーのOnCollisionEnterにいれて処理をするつもり
         //NOTE: int型で指定しているので1がtrue、0がfalseになる    
-        isHasItem[num] = 1;
+        if (!isHasItem[num])
+        {
+            isNewHasItem[num] = true;
+        }
+
+        isHasItem[num] = true;
 
         //アイテムをセーブ
         itemDataManager.SaveData();
+    }
+
+    /// <summary>
+    /// 入手したアイテムのフラグのゲット関数
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool GetIsHasItem(int i)
+    {
+        return isHasItem[i];
+    }
+
+    /// <summary>
+    /// 新しく入手したアイテムのフラグのゲット関数
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool[] GetIsNewHasItem()
+    {
+        return isNewHasItem;
     }
 }
