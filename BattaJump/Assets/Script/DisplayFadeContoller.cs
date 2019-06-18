@@ -150,7 +150,7 @@ public class DisplayFadeContoller : MonoBehaviour
         else
         {
             // パネルタイプが広告なら、指定した時間までフェードアウトを待つ
-            if (panelType == PanelType.AdView && adViewTime < adViewMaxTime)
+            if (panelType == PanelType.AdView && adViewTime < AdViewMaxTime)
             {
                 // 表示時間を計測
                 adViewTime += Time.deltaTime;
