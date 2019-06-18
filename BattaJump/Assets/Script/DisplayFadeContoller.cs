@@ -133,7 +133,7 @@ public class DisplayFadeContoller : MonoBehaviour
     void Fade()
     {
         // フェードイン
-        if (fadeType == (int)FadeType.FadeIn)
+        if (fadeType == FadeType.FadeIn)
         {
             // alphaが1以上になるまで増加
             fadeCanvas.alpha += fadeSpeed;
