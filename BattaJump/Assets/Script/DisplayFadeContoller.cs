@@ -46,7 +46,7 @@ public class DisplayFadeContoller : MonoBehaviour
     public bool IsFadeEnd { get; private set; } = false;    // フェード終了
 
     float adViewTime = 0f;                                  // 広告表示時間計測
-    const float adViewMaxTime = 2.5f;                       // 広告表示時間
+    const float AdViewMaxTime = 2.5f;                       // 広告表示時間
 
     /// <summary>
     /// 更新
