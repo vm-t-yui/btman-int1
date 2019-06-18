@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ItemDataManager : MonoBehaviour
 { 
-    int[] isHasItem = new int[ItemManager.Num];  　//アイテムゲットフラグ(PlayerPrefsにboolがないため仕方なくint使用)
+    bool[] isHasItem = new bool[ItemManager.ItemNum];  　//アイテムゲットフラグ
 
     /// <summary>
     /// 起動時処理
@@ -26,7 +26,7 @@ public class ItemDataManager : MonoBehaviour
         //データロード
         for (int i = 0; i < isHasItem.Length; i++)
         {
-            isHasItem[i] = PlayerPrefs.GetInt(GetKey(i), 0);
+            isHasItem[i] = PlayerPrefs.GetInt(GetKey(i), 0) == 1 ? true : false;
         }
     }
 
@@ -38,7 +38,7 @@ public class ItemDataManager : MonoBehaviour
         for (int i = 0; i < isHasItem.Length; i++)
         {
             //ゲットのデータをセット
-            PlayerPrefs.SetInt(GetKey(i), isHasItem[i]);
+            PlayerPrefs.SetInt(GetKey(i), isHasItem[i] ? 1 : 0);
         }
 
         //セットしたデータをセーブ
@@ -60,17 +60,16 @@ public class ItemDataManager : MonoBehaviour
     /// アイテム取得フラグのゲット関数
     /// </summary>
     /// <returns>セーブデータから取ってきたアイテム取得フラグ</returns>
-    /// <param name="num">アイテムの番号</param>
-    public int GetHaveItemFlag(int num)
+    public bool[] GetHaveItemFlag()
     {
-        return isHasItem[num];
+        return isHasItem;
     }
 
     /// <summary>
     /// アイテム取得フラグのセット関数
     /// </summary>
     /// <param name="itemNum">アイテム取得時のフラグ</param>
-    public void SetHaveItemFlag(int[] itemNum)
+    public void SetHaveItemFlag(bool[] itemNum)
     {
         for (int i = 0; i < isHasItem.Length; i++)
         {

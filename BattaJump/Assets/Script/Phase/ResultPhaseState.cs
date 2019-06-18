@@ -39,6 +39,9 @@ public class ResultPhaseState : MonoBehaviour
     [SerializeField]
     GameObject resultCanvas = default;               // ボタン等のカンバス
 
+    [SerializeField]
+    GameObject signboard = default;               // ボタン等のカンバス
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -104,6 +107,8 @@ public class ResultPhaseState : MonoBehaviour
                     scoreCountUp.enabled = false;
 
                     resultCanvas.SetActive(true);
+
+                    signboard.SetActive(true);
 
                     // インタースティシャル広告を表示
                     adManager.ShowInterstitial();
