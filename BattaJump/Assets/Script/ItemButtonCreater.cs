@@ -26,7 +26,7 @@ public class ItemButtonCreater : MonoBehaviour
         for (int i = 0; i < ItemManager.ItemNum; i++)
         {
             //AddListener はアクションを渡す必要があるので、ラムダ式で簡単な無名関数を作って渡すようにする
-            int index = i + 0;
+            int index = i;
 
             GameObject duplicateButton = Instantiate(originalButton);
             duplicateButton.GetComponent<Button>().onClick.AddListener(() => itemDescription.OnClickDescription(index));

@@ -34,6 +34,7 @@ public class PlayerFalling : MonoBehaviour
         {
             // 物理演算をオンにする
             playerRigidbody.isKinematic = false;
+
             // 落下フラグを起こす
             isFalling = true;
         }

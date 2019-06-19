@@ -15,12 +15,12 @@ public class CameraMoveController : MonoBehaviour
 
     readonly Vector3 jumpCameraPos      = new Vector3(-2,-0.8f,5);    // ジャンプ時のカメラの位置
     readonly Vector3 LookAtPosOffset    = new Vector3(0, 1, 0);       // 注視点のオフセット
-    const    int     CameraMoveWaitTime = 10;                          // カメラの移動が開始するまでの待機時間
+    const    int     CameraMoveWaitTime = 10;                         // カメラの移動が開始するまでの待機時間
     const    int     ZoomTime           = 600;                        // ズーム時間
     const    float   ZoomSpeed          = 0.003f;                     // ズームスピード
     const    float   ZoomLerpRate       = 0.05f;                      // ズームのLerp率
 
-    bool isChace = false;
+    bool isChace = false;                                             // 追跡フラグ
 
     /// <summary>
     /// 更新
@@ -47,6 +47,7 @@ public class CameraMoveController : MonoBehaviour
             // カメラをプレイヤーの子オブジェクトにする
             transform.parent = playerTransform;
 
+            // カメラの位置を更新して追跡開始
             if (!isChace)
             {
                 transform.localPosition = jumpCameraPos;

@@ -40,7 +40,7 @@ public class ResultPhaseState : MonoBehaviour
     GameObject resultCanvas = default;               // ボタン等のカンバス
 
     [SerializeField]
-    GameObject playerObj = default;
+    GameObject playerObj = default;                  //　プレイヤーのオブジェクト
 
     /// <summary>
     /// 開始
@@ -94,6 +94,7 @@ public class ResultPhaseState : MonoBehaviour
                     // スコアカウントアップ処理開始
                     scoreCountUp.enabled = true;
 
+                    //プレイヤーを表示
                     playerObj.SetActive(true);
 
                     nowPhase = PhaseType.CountScore;
@@ -108,6 +109,7 @@ public class ResultPhaseState : MonoBehaviour
                     // スコアカウントアップ処理終了
                     scoreCountUp.enabled = false;
 
+                    // リザルト用カンバスを表示
                     resultCanvas.SetActive(true);
 
                     // インタースティシャル広告を表示
