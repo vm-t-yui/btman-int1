@@ -10,39 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5735a55d90b4746a9809e1d7def216b3, type: 3}
-  m_Name: LocalizeDataObject
+  m_Name: LocalizeScriptableObject
   m_EditorClassIdentifier: 
-  localizeText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   japaneseText:
   - "\u65E5\u672C\u8A9E"
   - "\u82F1\u8A9E"
@@ -54,6 +23,8 @@ MonoBehaviour:
   - "\u304A\u3059\u3059\u3081\u30A2\u30D7\u30EA"
   - "\u30EA\u30C8\u30E9\u30A4"
   - "\u30BF\u30A4\u30C8\u30EB"
+  - "\u5E83\u544A\u4FC3\u3057"
+  - "\u30BF\u30C3\u30D7\u3067\u30C1\u30E3\u30FC\u30B8\u958B\u59CB\uFF01"
   - ???
   - "\u30A2\u30A4\u30C6\u30E0\u540D1"
   - "\u30A2\u30A4\u30C6\u30E0\u540D2"
@@ -72,8 +43,6 @@ MonoBehaviour:
   - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E6"
   - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E7"
   - "\u30A2\u30A4\u30C6\u30E0\u8AAC\u660E8"
-  - "\u5E83\u544A\u4FC3\u3057"
-  - "\u30BF\u30C3\u30D7\u3067\u30C1\u30E3\u30FC\u30B8\u958B\u59CB\uFF01"
   englishText:
   - Japanese
   - English
@@ -85,6 +54,8 @@ MonoBehaviour:
   - RecommendedApplication
   - Retry
   - Title
+  - AdvertisingPrompt
+  - Start charging with a tap!
   - ???
   - ItemName1
   - ItemName2
@@ -103,8 +74,6 @@ MonoBehaviour:
   - ItemDescription6
   - ItemDescription7
   - ItemDescription8
-  - AdvertisingPrompt
-  - Start charging with a tap!
   germanText:
   - Japanisch
   - Englisch
@@ -116,6 +85,8 @@ MonoBehaviour:
   - EmpfohleneAnwendung
   - Retry
   - Title
+  - Werbeaufforderung
+  - Starten Sie den Ladevorgang mit einem Fingertipp!
   - ???
   - Artikelname1
   - Artikelname2
@@ -134,8 +105,6 @@ MonoBehaviour:
   - Artikelbeschreibung6
   - Artikelbeschreibung7
   - Artikelbeschreibung8
-  - Werbeaufforderung
-  - Starten Sie den Ladevorgang mit einem Fingertipp!
   italianText:
   - giapponese
   - inglese
@@ -147,6 +116,8 @@ MonoBehaviour:
   - Applicazione consigliata
   - Retry
   - Title
+  - Promemoria pubblicitario
+  - Inizia a caricare con un tocco!
   - ???
   - Nome dell'oggetto1
   - Nome dell'oggetto2
@@ -165,8 +136,6 @@ MonoBehaviour:
   - Descrizione dell'oggetto6
   - Descrizione dell'oggetto7
   - Descrizione dell'oggetto8
-  - Promemoria pubblicitario
-  - Inizia a caricare con un tocco!
   frenchText:
   - Japonais
   - Anglais
@@ -178,6 +147,8 @@ MonoBehaviour:
   - "Application recommand\xE9e"
   - Retry
   - Title
+  - Invite publicitaire
+  - "Commencez \xE0 charger avec un robinet!"
   - ???
   - Nom de l'article1
   - Nom de l'article2
@@ -196,8 +167,6 @@ MonoBehaviour:
   - Description de l'article6
   - Description de l'article7
   - Description de l'article8
-  - Invite publicitaire
-  - "Commencez \xE0 charger avec un robinet!"
   chineseText:
   - "\u65E5\u672C"
   - "\u82F1\u8BED"
@@ -209,6 +178,8 @@ MonoBehaviour:
   - "\u63A8\u8350\u5E94\u7528"
   - Retry
   - Title
+  - "\u5E7F\u544A\u63D0\u793A"
+  - "\u7528\u6C34\u9F99\u5934\u5F00\u59CB\u5145\u7535\uFF01"
   - ???
   - "\u7269\u54C1\u540D\u79F01"
   - "\u7269\u54C1\u540D\u79F02"
@@ -227,8 +198,6 @@ MonoBehaviour:
   - "\u9879\u76EE\u63CF\u8FF06"
   - "\u9879\u76EE\u63CF\u8FF07"
   - "\u9879\u76EE\u63CF\u8FF08"
-  - "\u5E7F\u544A\u63D0\u793A"
-  - "\u7528\u6C34\u9F99\u5934\u5F00\u59CB\u5145\u7535\uFF01"
   spanishText:
   - "Espa\xF1ol"
   - Ingles
@@ -240,6 +209,8 @@ MonoBehaviour:
   - "Aplicaci\xF3n recomendada"
   - Retry
   - Title
+  - Mensaje publicitario
+  - "\xA1Empieza a cargar con un toque!"
   - ???
   - Nombre del articulo1
   - Nombre del articulo2
@@ -258,5 +229,3 @@ MonoBehaviour:
   - "Descripci\xF3n del art\xEDculo6"
   - "Descripci\xF3n del art\xEDculo7"
   - "Descripci\xF3n del art\xEDculo8"
-  - Mensaje publicitario
-  - "\xA1Empieza a cargar con un toque!"

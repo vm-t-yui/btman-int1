@@ -6,23 +6,29 @@ using UnityEngine;
 /// ローカライズ用のScriptableObject
 /// </summary>
 [CreateAssetMenu(menuName = "DataObject/Create LocalizeDataObject", fileName = "LocalizeDataObject")]
-public class LocalizeDataObject : ScriptableObject
+public class LocalizeScriptableObject : ScriptableObject
 {
     static readonly string ResourcePath = "LocalizeDataObject";    //リソースのパス
 
-    static LocalizeDataObject staticInstance = null;               //ローカライズ用のScriptableObject
+    static LocalizeScriptableObject staticInstance = null;         //アイテム用のScriptableObjectクラス
 
-    //リソース内のローカライズ用ScriptableObject取得
-    public static LocalizeDataObject Instance
+    //リソース内のScriptableObjectロード
+    public static LocalizeScriptableObject LoadResources()
+    {
+        return Resources.Load(ResourcePath) as LocalizeScriptableObject;
+    }
+
+    //ScriptableObjectインスタンス取得
+    public static LocalizeScriptableObject Instance
     {
         get
         {
             if (staticInstance == null)
             {
-                var asset = Resources.Load(ResourcePath) as LocalizeDataObject;
+                var asset = LoadResources();
                 if (asset == null)
                 {
-                    asset = CreateInstance<LocalizeDataObject>();
+                    asset = CreateInstance<LocalizeScriptableObject>();
                 }
 
                 staticInstance = asset;
