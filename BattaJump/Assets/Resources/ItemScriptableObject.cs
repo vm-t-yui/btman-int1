@@ -7,10 +7,10 @@ using UnityEngine.U2D;
 /// <summary>
 /// アイテム用のScriptableObject
 /// </summary>
-[CreateAssetMenu(menuName = "DataObject/Create ItemDataObject", fileName = "ItemDataObject")]
+[CreateAssetMenu(menuName = "DataObject/Create ItemScriptableObject", fileName = "ItemScriptableObject")]
 public class ItemScriptableObject : ScriptableObject
 {
-    static readonly string ResourcePath = "ItemDataObject";    //リソースのパス
+    static readonly string ResourcePath = "ItemScriptableObject";    //リソースのパス
 
     static ItemScriptableObject staticInstance = null;         //アイテム用のScriptableObjectクラス
 
@@ -42,10 +42,40 @@ public class ItemScriptableObject : ScriptableObject
 
     //↓こっからアイテム用のScriptableObjectの要素
     [SerializeField]
-    SpriteAtlas itemButtonAtlas;                           //アイテムボタン用のスプライトアトラス
+    SpriteAtlas itemButtonAtlas = default;                           //アイテムボタン用のスプライトアトラス
 
     [SerializeField]
-    string[] itemName = new string[ItemManager.ItemNum];   //アイテムのスプライト画像
+    GameObject[] itemPrefab = default;
+
+    [SerializeField]
+    string[] itemName = new string[ItemManager.ItemNum];   //アイテムの名前
+
+    [SerializeField]
+    string[] itemAppearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
+
+    [SerializeField]
+    string[] itemAppearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
+
+    /// <summary>
+    /// 確率ロード
+    /// </summary>
+    public void ItemCsvLoad(List<string[]> csvData)
+    {
+        //csvファイルのデータを各言語配列に入れる
+        for (int i = 0; i < ItemManager.ItemNum; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                //各言語の配列に入れる
+                switch (j)
+                {
+                    case 0: itemName[i] = csvData[i][j]; break;
+                    case 1: itemAppearanceRate[i] = csvData[i][j]; break;
+                    case 2: itemAppearancePlace[i] = csvData[i][j]; break;
+                }
+            }
+        }
+    }
 
     /// <summary>
     /// アイテムのスプライト画像のゲット関数
@@ -56,4 +86,24 @@ public class ItemScriptableObject : ScriptableObject
     {
         return itemButtonAtlas.GetSprite(itemName[i]);
     }
+
+    /// <summary>
+    /// アイテムCSVのゲット関数
+    /// </summary>
+    /// <returns>CSVに入っている名前、出現率、出現場所</returns>
+    /// <param name="i">The index.</param>
+    public string[] GetItemCsv(int i)
+    {
+        string[] returnText = null;
+
+        switch (i)
+        {
+            case 0: returnText = itemName; break;
+            case 1: returnText = itemAppearanceRate; break;
+            case 2: returnText = itemAppearancePlace; break;
+        }
+
+        return returnText;
+    }
 }
+
