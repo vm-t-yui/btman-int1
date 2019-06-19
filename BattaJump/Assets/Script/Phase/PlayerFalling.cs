@@ -13,7 +13,7 @@ public class PlayerFalling : MonoBehaviour
     // 現在の待機時間
     int currentFallWaitTimeCount = 0;
     // 落下するまでの待機時間
-    const int FallWaitTime = 60;
+    const int FallWaitTime = 20;
     // 落下フラグ
     bool isFalling = false;
     // 落下中のカウント
@@ -34,6 +34,7 @@ public class PlayerFalling : MonoBehaviour
         {
             // 物理演算をオンにする
             playerRigidbody.isKinematic = false;
+
             // 落下フラグを起こす
             isFalling = true;
         }
