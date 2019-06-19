@@ -39,6 +39,9 @@ public class ResultPhaseState : MonoBehaviour
     [SerializeField]
     GameObject resultCanvas = default;               // ボタン等のカンバス
 
+    [SerializeField]
+    GameObject playerObj = default;
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -90,6 +93,8 @@ public class ResultPhaseState : MonoBehaviour
 
                     // スコアカウントアップ処理開始
                     scoreCountUp.enabled = true;
+
+                    playerObj.SetActive(true);
 
                     nowPhase = PhaseType.CountScore;
                 }

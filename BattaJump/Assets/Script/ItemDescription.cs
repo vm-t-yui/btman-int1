@@ -39,7 +39,7 @@ public class ItemDescription : MonoBehaviour
             int itemNum = num + 1;
 
             selectingNum = itemNum;
-            displayImage.sprite = ItemDataObject.Instance.GetSprite(itemNum);
+            //displayImage.sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
             displayName.text = itemName[itemNum];
             displayDescription.text = itemDescription[itemNum];
         }

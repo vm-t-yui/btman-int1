@@ -13,9 +13,9 @@ public class JumpController : MonoBehaviour
     public bool IsJumping { get; private set; } = false;
 
     // ワンタップあたりのジャンプ力
-    const float OneTouchJumpPower = 5;
+    const float OneTouchJumpPower = 10;
     // 初期ジャンプ力（タップ回数に関係なく必ず与えられるジャンプ力）
-    const float InitJumpPower = 20;
+    const float InitJumpPower = 100;
 
     /// <summary>
     /// プレイヤーをジャンプさせる

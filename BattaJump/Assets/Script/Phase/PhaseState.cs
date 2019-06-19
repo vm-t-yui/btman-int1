@@ -164,6 +164,8 @@ public class PhaseState : MonoBehaviour
     {
         // "PlayerFalling"をtrueに設定
         playerFalling.enabled = true;
+
+        Physics.gravity = new Vector3(0, -9.81f, 0);
     }
 
     /// <summary>
@@ -203,6 +205,8 @@ public class PhaseState : MonoBehaviour
         // フェードアウトが終わったら
         if (fadeContoller.IsFadeEnd)
         {
+            Physics.gravity = new Vector3(0, -50f, 0);
+
             // 次に読むシーンをリザルトに設定
             nextScene.SetNextSceneResult();
 

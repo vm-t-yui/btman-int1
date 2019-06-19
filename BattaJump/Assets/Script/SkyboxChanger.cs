@@ -17,7 +17,7 @@ public class SkyboxChanger : MonoBehaviour
     [SerializeField]
     GameObject rocketObj = default;                   // ロケットのオブジェクト
 
-    const int ReachUniverseHeight = 10000;            // 宇宙に達する高さ
+    const int ReachUniverseHeight = 60000;            // 宇宙に達する高さ
 
     const float RocketHideDisplayHeight = -1.2f;      // ロケットが画面を覆い隠す高さ（ロケットのローカル座標）
 

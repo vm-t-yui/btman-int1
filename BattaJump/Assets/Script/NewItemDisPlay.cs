@@ -83,8 +83,8 @@ public class NewItemDisPlay : MonoBehaviour
             {
                 newHasNum.Add(i);
                 //NOTE: +1 はまだ入手していない時の項目によるずれ
-                names.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.NoItemName + (i + 1)));
-                descriptions.Add(LocalizeDataObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeDataObject.LocalizeText.NoItemDescription + (i + 1)));
+                names.Add(LocalizeScriptableObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeScriptableObject.LocalizeText.NoItemName + (i + 1)));
+                descriptions.Add(LocalizeScriptableObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeScriptableObject.LocalizeText.NoItemDescription + (i + 1)));
 
                 itemDescription.SetItemName(i, names[i]);
                 itemDescription.SetItemDescription(i, descriptions[i]);
