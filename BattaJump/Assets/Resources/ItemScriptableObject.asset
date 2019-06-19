@@ -12,9 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f387e7ce5671d4223bf45bb454b7255f, type: 3}
   m_Name: ItemScriptableObject
   m_EditorClassIdentifier: 
-  itemButtonAtlas: {fileID: 4343727234628468602, guid: 2965232323c524e61be238a59e97debf,
-    type: 2}
+  itemButtonAtlas: {fileID: 0}
+  itemPrefab: []
   itemName:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemAppearanceRate:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemAppearancePlace:
   - 
   - 
   - 

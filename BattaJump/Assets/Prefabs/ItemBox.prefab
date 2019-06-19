@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 3655352389561153444}
   - component: {fileID: 3655352389689801717}
   - component: {fileID: 3655352389561153443}
+  - component: {fileID: 5623999524660122447}
   m_Layer: 5
   m_Name: ItemBox
   m_TagString: Untagged
@@ -222,7 +223,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDataManager: {fileID: 3655352389689801717}
-  isHasItem: 0000000000000000
+--- !u!114 &5623999524660122447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655352389561153440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd81aaabd06d0d0409b67e397175c975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemManager: {fileID: 3655352389561153443}
+  displayName: {fileID: 3655352391091333383}
+  displayDescription: {fileID: 3655352389698190462}
+  displayImage: {fileID: 3655352391085558813}
+  itemName:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemDescription:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &3655352389677956788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1081,7 @@ MonoBehaviour:
   originalButton: {fileID: 4286527726331334981, guid: ce881d766462c4387a9d348f173958e6,
     type: 3}
   scrollViewContent: {fileID: 3655352390154805093}
-  itemDescription: {fileID: 6796555307589730976}
+  itemDescription: {fileID: 5623999524660122447}
 --- !u!1 &3655352390918175162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1172,6 @@ GameObject:
   - component: {fileID: 3655352391085558810}
   - component: {fileID: 3655352391085558812}
   - component: {fileID: 3655352391085558813}
-  - component: {fileID: 6796555307589730976}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1207,42 +1242,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &6796555307589730976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3655352391085558811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd81aaabd06d0d0409b67e397175c975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemManager: {fileID: 3655352389561153443}
-  displayName: {fileID: 3655352391091333383}
-  displayDescription: {fileID: 3655352389698190462}
-  displayImage: {fileID: 4076217194558628569}
-  itemName:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  itemDescription:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
 --- !u!1 &3655352391091333380
 GameObject:
   m_ObjectHideFlags: 0

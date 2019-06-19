@@ -5,10 +5,10 @@ using UnityEngine;
 /// <summary>
 /// ローカライズ用のScriptableObject
 /// </summary>
-[CreateAssetMenu(menuName = "DataObject/Create LocalizeDataObject", fileName = "LocalizeDataObject")]
+[CreateAssetMenu(menuName = "DataObject/Create LocalizeScriptableObject", fileName = "LocalizeScriptableObject")]
 public class LocalizeScriptableObject : ScriptableObject
 {
-    static readonly string ResourcePath = "LocalizeDataObject";    //リソースのパス
+    static readonly string ResourcePath = "LocalizeScriptableObject";    //リソースのパス
 
     static LocalizeScriptableObject staticInstance = null;         //アイテム用のScriptableObjectクラス
 

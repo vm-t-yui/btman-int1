@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5443455522691809666
+--- !u!1 &3253147594962991128
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6771691131890899119}
-  - component: {fileID: 5643685825058561282}
-  - component: {fileID: 2911413503079403236}
+  - component: {fileID: 2388672196492034095}
+  - component: {fileID: 1626365777648275051}
+  - component: {fileID: 4648615629684215950}
   m_Layer: 0
   m_Name: flyNow
   m_TagString: Untagged
@@ -18,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &6771691131890899119
+--- !u!4 &2388672196492034095
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443455522691809666}
+  m_GameObject: {fileID: 3253147594962991128}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 7.31, z: 7.54}
+  m_LocalPosition: {x: 0.15, y: 0.15, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!198 &5643685825058561282
+--- !u!198 &1626365777648275051
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443455522691809666}
+  m_GameObject: {fileID: 3253147594962991128}
   serializedVersion: 6
   lengthInSec: 3
   simulationSpeed: 1
@@ -1039,22 +1039,22 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0.206948
-          inSlope: -0.13586858
-          outSlope: -0.13586858
+          time: 0.0040740967
+          value: 0.46781224
+          inSlope: 0.7430057
+          outSlope: 0.7430057
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.15435463
+          outWeight: 0.12133901
         - serializedVersion: 3
           time: 0.83924365
           value: 1
-          inSlope: 0.963752
-          outSlope: 0.963752
+          inSlope: 0.2493818
+          outSlope: 0.2493818
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.14334662
+          inWeight: 0.13849305
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
@@ -1370,8 +1370,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.27058825, g: 0.27058825, b: 0.27058825, a: 0.8509804}
-        key1: {r: 0.43529412, g: 0.43529412, b: 0.43529412, a: 0.45490196}
+        key0: {r: 0.27058825, g: 0.27058825, b: 0.27058825, a: 0.3137255}
+        key1: {r: 0.43529412, g: 0.43529412, b: 0.43529412, a: 0.39215687}
         key2: {r: 0.6392157, g: 0.6392157, b: 0.6392157, a: 0.078431375}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4703,14 +4703,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &2911413503079403236
+--- !u!199 &4648615629684215950
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443455522691809666}
+  m_GameObject: {fileID: 3253147594962991128}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
