@@ -36,7 +36,7 @@ public class TitlePhaseState : MonoBehaviour
     /// <summary>
     /// 開始
     /// </summary>
-    void Awake()
+    void Start()
     {
         // 広告管理クラス起動
         adManager.gameObject.SetActive(true);
