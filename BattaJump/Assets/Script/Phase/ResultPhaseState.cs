@@ -16,7 +16,8 @@ public class ResultPhaseState : MonoBehaviour
         WaitFadeOut,                                 // フェードアウト待機
         CountScore,                                  // スコアカウント中
         ViewResult,                                  // リザルト表示中
-        NextScene                                    // 次のシーンへ
+        NextScene,                                   // 次のシーンへ
+        SceneEnd                                     // シーンの終了
     }
 
     PhaseType nowPhase;                             // フェーズの状態
@@ -149,7 +150,13 @@ public class ResultPhaseState : MonoBehaviour
                 {
                     // シーンをロード
                     nextScene.ChangeNextScene();
+
+                    nowPhase = PhaseType.SceneEnd;
                 }
+                break;
+
+            case PhaseType.SceneEnd:          // シーンの終了
+                // 処理なし
                 break;
         }
     }

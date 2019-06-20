@@ -15,7 +15,8 @@ public class TitlePhaseState : MonoBehaviour
         WaitAdLoad,                                  // ロード完了待機
         WaitFadeOut,                                 // フェードアウト待機
         ViewTitle,                                   // タイトル表示中
-        NextScene                                    // 次のシーンへ
+        NextScene,                                   // 次のシーンへ
+        SceneEnd                                     // シーンの終了
     }
 
     PhaseType nowPhase;                             // フェーズの状態
@@ -35,7 +36,7 @@ public class TitlePhaseState : MonoBehaviour
     /// <summary>
     /// 開始
     /// </summary>
-    void Start()
+    void Awake()
     {
         // 広告管理クラス起動
         adManager.gameObject.SetActive(true);
@@ -113,7 +114,13 @@ public class TitlePhaseState : MonoBehaviour
 
                     // シーンをロード
                     nextScene.ChangeNextScene();
+
+                    nowPhase = PhaseType.SceneEnd;
                 }
+                break;
+
+            case PhaseType.SceneEnd:          // シーンの終了
+                // 処理なし
                 break;
         }
     }
