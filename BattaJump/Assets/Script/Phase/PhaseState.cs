@@ -17,6 +17,7 @@ public class PhaseState : MonoBehaviour
         JumpHeightCounter,     // プレイヤーのジャンプ高さを計測するクラス
         PlayerFalling,         // プレイヤーの落下演出
         NextScene,             // 次のシーンへ
+        SceneEnd,              // シーンの終了
     }
 
     // ステートマシン
@@ -30,6 +31,7 @@ public class PhaseState : MonoBehaviour
 
     [SerializeField] ScoreDataManager  scoreData         = default;         // スコアデータクラス
     [SerializeField] InputController   inputController   = default;         // 入力制御クラス
+    [SerializeField] CraterCreater     craterCreater     = default;
 
     /// <summary>
     /// 開始
@@ -46,7 +48,8 @@ public class PhaseState : MonoBehaviour
         stateMachine.Add(PhaseType.PlayerFalling, EnterPlayerFalling, UpdatePlayerFalling, ExitPlayerFalling);
         // "NextScene"の関数をステートマシンに追加
         stateMachine.Add(PhaseType.NextScene, EnterNextScene, UpdateNextScene);
-
+        // 
+        stateMachine.Add(PhaseType.SceneEnd);
         // 最初のステートを"WaitFadeOut"にセット
         stateMachine.SetState(PhaseType.WaitFadeOut);
     }
@@ -127,6 +130,8 @@ public class PhaseState : MonoBehaviour
     {
         // "JumpHeightCounter"をtrueに設定
         jumpHeightCounter.enabled = true;
+
+        craterCreater.Explosion();
     }
 
     /// <summary>
@@ -174,9 +179,10 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void UpdatePlayerFalling()
     {
-        // 落下処理が終わったら次のシーンへ
+        // 落下処理が終わったら
         if (playerFalling.IsEnd)
         {
+            // ステートを"NextScene"に変更する
             stateMachine.SetState(PhaseType.NextScene);
         }
     }
@@ -215,6 +221,9 @@ public class PhaseState : MonoBehaviour
 
             // シーンを移行
             nextScene.ChangeNextScene();
+
+            // ステートを"SceneEnd"に変更する
+            stateMachine.SetState(PhaseType.SceneEnd);
         }
     }
 }
