@@ -131,7 +131,7 @@ public class PhaseState : MonoBehaviour
         // "JumpHeightCounter"をtrueに設定
         jumpHeightCounter.enabled = true;
 
-        craterCreater.Explosion();
+        craterCreater.Create();
     }
 
     /// <summary>
