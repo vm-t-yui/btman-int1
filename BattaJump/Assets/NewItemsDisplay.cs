@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 ///  新規取得アイテム表示クラス
 /// </summary>
-public class NewItemDisPlay : MonoBehaviour
+public class NewItemsDisplay : MonoBehaviour
 {
     [SerializeField]
     ItemManager itemManager = default;                //アイテムクラス
@@ -39,7 +39,7 @@ public class NewItemDisPlay : MonoBehaviour
         isNewHasItem = itemManager.GetIsNewHasItem();
 
         //そもそも全ての要素数がfalseなら非表示にする
-        if (CheckAllFalse(isNewHasItem))
+        if (IsAllItemInactive(isNewHasItem))
         {
             gameObject.SetActive(false);
         }
@@ -150,7 +150,7 @@ public class NewItemDisPlay : MonoBehaviour
     /// </summary>
     /// <returns><c>true</c>全てfalse<c>false</c>trueがある</returns>
     /// <param name="flag">フラグ</param>
-    bool CheckAllFalse(bool[] flag)
+    bool IsAllItemInactive(bool[] flag)
     {
         int count = 0;
         foreach (var item in isNewHasItem)

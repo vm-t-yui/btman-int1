@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// アイテムゲットクラス(プレイヤーにアタッチ)
 /// </summary>
-public class ItemGet : MonoBehaviour
+public class PlayerItemGetEvent : MonoBehaviour
 {
     [SerializeField]
     ItemManager itemManager = default;

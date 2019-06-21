@@ -8,15 +8,15 @@ using UnityEngine;
 public class ItemCreater : MonoBehaviour
 {
     [SerializeField]
-    GameObject parentObj = default;                             //空の親オブジェクト
+    GameObject parentItemObj = default;                         //空の親オブジェクト
 
     [SerializeField]
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
     [SerializeField]
     string[] appearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
 
-    List<GameObject> skyObj = new List<GameObject>();           //空のオブジェクト
-    List<GameObject> spaceObj = new List<GameObject>();         //宇宙のオブジェクト
+    List<GameObject> existSkyItems = new List<GameObject>();    //空のオブジェクト
+    List<GameObject> existSpaceItems = new List<GameObject>();  //宇宙のオブジェクト
 
     [SerializeField]
     int appearanceNum = 6;                                      //表示数
@@ -37,26 +37,26 @@ public class ItemCreater : MonoBehaviour
         //アイテム生成
         for (int i = 0; i < appearanceNum; i++)
         {
-            ItemCreate();
+            CreateItem();
         }
 
         //空のアイテムのポジション決め
-        for (int i = 0; i < skyObj.Count; i++) 
+        for (int i = 0; i < existSkyItems.Count; i++) 
         {
             //NOTO: +1は空の境目と被らないため
             //アイテムの高さ決め
-            float itemHeight = skyBorder / (skyObj.Count + 1) * (i + 1);
+            float itemHeight = skyBorder / (existSkyItems.Count + 1) * (i + 1);
 
-            skyObj[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            existSkyItems[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
         }
 
         //宇宙のアイテムのポジション決め
-        for (int i = 0; i < spaceObj.Count; i++)
+        for (int i = 0; i < existSpaceItems.Count; i++)
         {
             //アイテムの高さ決め
             float itemHeight = skyBorder + (i * spaceItemInterval + ((i  + 1) * 50));
 
-            spaceObj[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            existSpaceItems[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
         }
     }
 
@@ -90,12 +90,12 @@ public class ItemCreater : MonoBehaviour
     /// <summary>
     /// アイテム生成
     /// </summary>
-    void ItemCreate()
+    void CreateItem()
     {
         int itemNum = AppearanceItemNum();
 
         //空の親オブジェクトから親を複製、データオブジェクトからアイテムのモデルのプレハブを持ってきて子にする
-        GameObject newParentItem = Instantiate(parentObj);
+        GameObject newParentItem = Instantiate(parentItemObj);
         GameObject newChildItem = Instantiate(ItemScriptableObject.Instance.GetItemPrefabs(itemNum));
         newChildItem.transform.parent = newParentItem.transform;
         newChildItem.transform.position = newParentItem.transform.position;
@@ -108,11 +108,11 @@ public class ItemCreater : MonoBehaviour
         //Skyなら空(0,1)、それ以外なら宇宙(2,3,4,5)に場所を指定する
         if (appearancePlace[itemNum] == "Sky")
         {
-            skyObj.Add(newParentItem);
+            existSkyItems.Add(newParentItem);
         } 
         else
         {
-            spaceObj.Add(newParentItem);
+            existSpaceItems.Add(newParentItem);
         }
     }
 }
