@@ -12,9 +12,9 @@ public class AudioPlayer : MonoBehaviour
     /// </summary>
     public enum BgmType
     {
-        SampleBgm1,
-        SampleBgm2,
-        SampleBgm3,
+        Title,    // タイトル
+        Jumping,  // プレイヤージャンプ
+        Result,   // リザルト
     }
 
     /// <summary>
@@ -23,9 +23,10 @@ public class AudioPlayer : MonoBehaviour
     public enum SeType
     {
         SampleSe1,
-        SampleSe2,
-        SampleSe3,
     }
+
+    // シングルトンインスタンス
+    static public AudioPlayer instance = null;
 
     [SerializeField] Transform parentBgm            = default;     // BGMの親オブジェクトのトランスフォーム
     [SerializeField] Transform parentSe             = default;     // SEの親オブジェクトのトランスフォーム
@@ -33,6 +34,24 @@ public class AudioPlayer : MonoBehaviour
 
     // BGMが再生中かどうか
     bool isPlayingBgm = false;
+
+    /// <summary>
+    /// 起動処理
+    /// </summary>
+    void Awake()
+    {
+        if (null == instance)
+        {
+            // 自分自身をインスタンスとして渡す
+            instance = this;
+            // シーンが切り替わってもインスタンスが破棄されないように設定
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     /// <summary>
     /// BGMの再生
@@ -88,5 +107,16 @@ public class AudioPlayer : MonoBehaviour
     {
         // 全ての再生中のSEに対してSetActiveを行う
         GeneralFuncion.SetActiveFromAllChild(parentSe, false);
+    }
+
+    /// <summary>
+    /// 指定のBGMが再生中か判定する
+    /// </summary>
+    /// <param name="type">判定するBGMの種類</param>
+    /// <returns></returns>
+    public bool IsPlayingBgm(BgmType type)
+    {
+        // BGMのオブジェクトがアクティブであれば再生中
+        return parentBgm.GetChild((int)type).gameObject.activeSelf;
     }
 }
