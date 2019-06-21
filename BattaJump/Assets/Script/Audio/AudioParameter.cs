@@ -14,24 +14,15 @@ public class AudioParameter : MonoBehaviour
     static public bool seMute  { get; private set; } = false;     // SEのミュート
 
     // 各パラメータのキー
-    static string bgmVolumeDataKey;
-    static string seVolumeDataKey;
-    static string bgmMuteDataKey;
-    static string seMuteDataKey;
-
-    /// <summary>
-    /// 開始
-    /// </summary>
-    void Start()
-    {
-        // データをロードする
-        Load();
-    }
+    [SerializeField] string bgmVolumeDataKey;
+    [SerializeField] string seVolumeDataKey;
+    [SerializeField] string bgmMuteDataKey;
+    [SerializeField] string seMuteDataKey;
 
     /// <summary>
     /// 各音量のセーブを行う
     /// </summary>
-    static public void Save()
+    public void Save()
     {
         // BGNとSEの音量
         PlayerPrefs.SetFloat(bgmVolumeDataKey, bgmVolume);
@@ -45,7 +36,7 @@ public class AudioParameter : MonoBehaviour
     /// <summary>
     /// 各パラメータのロードを行う
     /// </summary>
-    static public void Load()
+    public void Load()
     {
         // BGMとSEの音量（データが存在しない場合は、最大音量の１を返す）
         bgmVolume = PlayerPrefs.GetFloat(bgmVolumeDataKey,1);
@@ -61,31 +52,45 @@ public class AudioParameter : MonoBehaviour
     }
 
     /// <summary>
-    /// オーディオのBGMパラメータをセット
+    /// BGMボリュームをセット
     /// </summary>
     /// <param name="bgmVolume">BGMのボリューム</param>
-    /// <param name="bgmMute">BGMのミュートフラグ</param>
-    static public void SetBgmParameter(float bgmVolume,bool bgmMute)
+    public void SetBgmVolume(float bgmVolume)
     {
         AudioParameter.bgmVolume = bgmVolume;
-        AudioParameter.bgmMute   = bgmMute;
     }
 
     /// <summary>
-    /// オーディオのSEパラメータをセット
+    /// BGMのミュートフラグをセット
+    /// </summary>
+    /// <param name="bgmMute">セットするフラグ</param>
+    public void SetBgmMuteFlag(bool bgmMute)
+    {
+        AudioParameter.bgmMute = bgmMute;
+    }
+
+    /// <summary>
+    /// SEボリュームをセット
     /// </summary>
     /// <param name="seVolume">SEのボリューム</param>
-    /// <param name="seMute">SEのミュートフラグ</param>
-    static public void SetSeParameter(float seVolume,bool seMute)
+    public void SetSeVolume(float seVolume)
     {
         AudioParameter.seVolume = seVolume;
-        AudioParameter.seMute   = seMute;
+    }
+
+    /// <summary>
+    /// SEのミュートフラグをセット
+    /// </summary>
+    /// <param name="seMute">セットするフラグ</param>
+    public void SetSeMuteFlag(bool seMute)
+    {
+        AudioParameter.seMute = seMute;
     }
 
     /// <summary>
     /// オプション画面が閉じられた際のコールバック
     /// </summary>
-    public void OnOptionClose()
+    void OnOptionClose()
     {
         // パラメータをセーブする
         Save();
