@@ -42,13 +42,13 @@ public class ItemScriptableObject : ScriptableObject
 
     //↓こっからアイテム用のScriptableObjectの要素
     [SerializeField]
-    SpriteAtlas itemButtonAtlas = default;                           //アイテムボタン用のスプライトアトラス
+    SpriteAtlas itemAtlas = default;                          //アイテムボタン用のスプライトアトラス
 
     [SerializeField]
-    GameObject[] itemPrefab = default;
+    GameObject[] itemPrefabs = new GameObject[ItemManager.ItemNum]; //アイテムのプレハブ
 
     [SerializeField]
-    string[] itemName = new string[ItemManager.ItemNum];   //アイテムの名前
+    string[] itemName = new string[ItemManager.ItemNum];            //アイテムの名前
 
     [SerializeField]
     string[] itemAppearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
@@ -84,26 +84,36 @@ public class ItemScriptableObject : ScriptableObject
     /// <param name="i">アイテム番号</param>
     public Sprite GetSprite(int i)
     {
-        return itemButtonAtlas.GetSprite(itemName[i]);
+        return itemAtlas.GetSprite(itemName[i]);
     }
 
     /// <summary>
     /// アイテムCSVのゲット関数
     /// </summary>
     /// <returns>CSVに入っている名前、出現率、出現場所</returns>
-    /// <param name="i">The index.</param>
-    public string[] GetItemCsv(int i)
+    public string[] GetItemCsv(int num)
     {
-        string[] returnText = null;
+        string[] returnText = new string[ItemManager.ItemNum];
 
-        switch (i)
+        for (int i = 0; i < ItemManager.ItemNum; i++)
         {
-            case 0: returnText = itemName; break;
-            case 1: returnText = itemAppearanceRate; break;
-            case 2: returnText = itemAppearancePlace; break;
+            switch (num)
+            {
+                case 0: returnText = itemAppearanceRate; break;
+                case 1: returnText = itemAppearancePlace; break;
+            }
         }
 
         return returnText;
     }
-}
 
+    /// <summary>
+    /// アイテムのプレハブのゲット関数
+    /// </summary>
+    /// <returns>The item prefabs.</returns>
+    /// <param name="i">アイテム番号</param>
+    public GameObject GetItemPrefabs(int i)
+    {
+        return itemPrefabs[i];
+    }
+}

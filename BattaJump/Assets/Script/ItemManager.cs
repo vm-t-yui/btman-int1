@@ -10,10 +10,14 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     ItemDataManager itemDataManager = default;  //アイテムデータクラス
 
-    public const int ItemNum = 8;               //アイテム数(10は仮)
+    public const int ItemNum = 38;               //アイテム数
 
+    public const int ItemAppearanceNum = 5;
+
+    [SerializeField]
     bool[] isHasItem = new bool[ItemNum];       //アイテムゲットフラグ
 
+    [SerializeField]
     public static bool[] isNewHasItem = new bool[ItemNum];   //新しく入手したアイテムのフラグ
 
     /// <summary>
@@ -30,8 +34,7 @@ public class ItemManager : MonoBehaviour
     /// <param name="num">アイテム番号.</param>
     public void GetItem(int num)
     {
-        //NOTE: プレイヤーのOnCollisionEnterにいれて処理をするつもり
-        //NOTE: int型で指定しているので1がtrue、0がfalseになる    
+        //まだ手に入れていないアイテムならisNewHasItemもtrueに
         if (!isHasItem[num])
         {
             isNewHasItem[num] = true;
