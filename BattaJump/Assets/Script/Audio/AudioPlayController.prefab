@@ -207,7 +207,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7532937378695273858}
   - component: {fileID: 7532937378695273861}
-  - component: {fileID: 2681617778953060596}
   m_Layer: 0
   m_Name: AudioPlayController
   m_TagString: Untagged
@@ -247,18 +246,6 @@ MonoBehaviour:
   parentBgm: {fileID: 7532937376909900455}
   parentSe: {fileID: 7532937376907502739}
   parentPlayingSe: {fileID: 7532937378392345600}
---- !u!114 &2681617778953060596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7532937378695273860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3235908810168bc4a8cd5640fc95bd6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7532937377093907389
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ using UnityEngine.UI;
 /// </summary>
 public class AudioSettingUiController : MonoBehaviour
 {
+    // オーディオパラメータクラス
+    [SerializeField] AudioParameter audioParameter = default;
+
     [SerializeField] Slider bgmVolumeSlider = default;
     [SerializeField] Slider seVolumeSlider = default;
 
@@ -15,20 +18,50 @@ public class AudioSettingUiController : MonoBehaviour
     [SerializeField] Toggle seMuteToggle  = default;
 
     /// <summary>
-    /// BGMのパラメータが変更された際のコールバック
+    /// 開始
     /// </summary>
-    public void OnBgmParameterChange()
+    void OnEnable()
     {
-        // スライダーの値をBGMのパラメータとしてセットする
-        AudioParameter.SetBgmParameter(bgmVolumeSlider.value, bgmMuteToggle.isOn);
+        // ロードしたパラメータをUIに反映
+        bgmVolumeSlider.value = AudioParameter.bgmVolume;   // BGMボリューム
+        seVolumeSlider.value = AudioParameter.seVolume;     // SEボリューム
+        bgmMuteToggle.isOn = AudioParameter.bgmMute;        // BGMミュートフラグ
+        seMuteToggle.isOn = AudioParameter.seMute;          // SEミュートフラグ
     }
 
     /// <summary>
-    /// SEのパラメータが変更された際のコールバック
+    /// BGMのスライダーが変更された際のコールバック
     /// </summary>
-    public void OnSeParameterChange()
+    public void OnBgmVolumeSliderChange()
     {
-        // スライダーの値をSEのパラメータとしてセットする
-        AudioParameter.SetSeParameter(seVolumeSlider.value, seMuteToggle.isOn);
+        // スライダーの値をBGMのボリュームとしてセットする
+        audioParameter.SetBgmVolume(bgmVolumeSlider.value);
+    }
+
+    /// <summary>
+    /// BGMのミュートトグルが変更された際のコールバック
+    /// </summary>
+    public void OnBgmMuteToggleChange()
+    {
+        // BGMのトグルのフラグをミュートフラグとしてセット
+        audioParameter.SetBgmMuteFlag(bgmMuteToggle.isOn);
+    }
+
+    /// <summary>
+    /// SEのスライダーが変更された際のコールバック
+    /// </summary>
+    public void OnSeVolumeSliderChange()
+    {
+        // スライダーの値をSEのボリュームとしてセットする
+        audioParameter.SetSeVolume(seVolumeSlider.value);
+    }
+
+    /// <summary>
+    /// SEのミュートトグルが変更された際のコールバック
+    /// </summary>
+    public void OnSeMuteToggleChange()
+    {
+        // SEのトグルのフラグをミュートフラグとしてセット
+        audioParameter.SetSeMuteFlag(seMuteToggle.isOn);
     }
 }

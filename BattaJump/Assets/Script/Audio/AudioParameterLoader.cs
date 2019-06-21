@@ -7,12 +7,15 @@ using UnityEngine;
 /// </summary>
 public class AudioParameterLoader : MonoBehaviour
 {
+    // オーディオパラメータクラス
+    [SerializeField] AudioParameter audioParameter = default;
+
     /// <summary>
     /// 起動処理
     /// </summary>
     void Awake()
     {
         // ロードする
-        AudioParameter.Load();
+        audioParameter.Load();
     }
 }
