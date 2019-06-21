@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// アイテムゲットクラス
+/// アイテムゲットクラス(プレイヤーにアタッチ)
 /// </summary>
 public class ItemGet : MonoBehaviour
 {

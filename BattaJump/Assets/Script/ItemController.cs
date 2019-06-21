@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// アイテム制御クラス
+/// アイテム制御クラス(子にアタッチ)
 /// </summary>
 public class ItemController : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class ItemController : MonoBehaviour
     int myNum;       //自分のアイテム番号
 
     /// <summary>
-    /// 範囲に入るとアイテム取得
+    /// 範囲に入るとアイテム取得(非表示)
     /// </summary>
     /// <param name="other">プレイヤー</param>
     void OnTriggerEnter(Collider other)

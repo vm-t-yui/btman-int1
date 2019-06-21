@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// アイテム出現管理クラス
+/// アイテム出現管理クラス(親にアタッチ)
 /// </summary>
 public class ItemAppearance : MonoBehaviour
 {
