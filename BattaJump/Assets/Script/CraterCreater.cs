@@ -115,6 +115,7 @@ public class CraterCreater : MonoBehaviour
         // 移動時間をカウント
         moveTime += Time.deltaTime;
 
+        // 移動時間が指定した時間までいったら
         if (moveTime >= MoveMaxTime)
         {
             // 破片の初期化
@@ -122,8 +123,9 @@ public class CraterCreater : MonoBehaviour
 
             moveTime = 0;
 
+            // クレーターを非表示
             crater.SetActive(false);
-
+            // パーティクルを非表示
             takeOffParticle.SetActive(false);
 
             isCreate = false;
