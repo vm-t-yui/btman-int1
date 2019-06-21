@@ -139,7 +139,65 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   itemDescription:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -164,7 +222,11 @@ MonoBehaviour:
   itemManager: {fileID: 0}
   localizeController: {fileID: 0}
   itemDescription: {fileID: 7858674210555299660}
-  animator: {fileID: 7858674210555299651}
+  newHasNum: 
+  names: []
+  descriptions: []
+  isNewHasItem: 0000000000000000000000000000000000000000000000000000000000000000000000000000
+  touchCount: 0
 --- !u!95 &7858674210555299651
 Animator:
   serializedVersion: 3

@@ -515,9 +515,9 @@ GameObject:
   - component: {fileID: 3385632072840591524}
   - component: {fileID: 3385632073668828740}
   - component: {fileID: 3385632073668828741}
-  - component: {fileID: 3385632073668828745}
-  - component: {fileID: 3385632073668828743}
-  - component: {fileID: 3385632073668828738}
+  - component: {fileID: 9133758618837450665}
+  - component: {fileID: 4868513010381488552}
+  - component: {fileID: 3103792195536444146}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -591,7 +591,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8, z: 1}
   m_Center: {x: 0, y: 0.89, z: 0}
---- !u!114 &3385632073668828745
+--- !u!114 &9133758618837450665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -604,20 +604,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 3385632073668828740}
---- !u!114 &3385632073668828743
+--- !u!114 &4868513010381488552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3385632072831093606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a736a9802f119d4085dcf46ab718107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 3385632073668828740}
---- !u!114 &3385632073668828738
+  playerRigidbody: {fileID: 0}
+--- !u!114 &3103792195536444146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -632,7 +632,7 @@ MonoBehaviour:
   animator: {fileID: 3385632072840591524}
   chargeCountDown: {fileID: 0}
   jumpHeightCounter: {fileID: 0}
-  playerFalling: {fileID: 3385632073668828743}
+  playerFalling: {fileID: 4868513010381488552}
   chargeParticlre: {fileID: 4247223024067509889}
   JumpImpactParticle: {fileID: 0}
   JumpNowParticle: {fileID: 7311356069049009867}

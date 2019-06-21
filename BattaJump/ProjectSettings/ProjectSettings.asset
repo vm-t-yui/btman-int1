@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/sho-1/Desktop/AllPlatformTest/BattaJump/btmanJump.keystore
+  AndroidKeystoreName: btmanJump.keystore
   AndroidKeyaliasName: btmanjumpkey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
