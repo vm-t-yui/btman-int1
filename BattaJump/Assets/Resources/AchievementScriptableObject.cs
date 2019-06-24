@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// 実績用のScriptableObject
 /// </summary>
 [CreateAssetMenu(menuName = "DataObject/Create AchievementScriptableObject", fileName = "AchievementScriptableObjects")]
 public class AchievementScriptableObject : ScriptableObject
