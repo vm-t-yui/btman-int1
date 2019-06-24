@@ -31,9 +31,9 @@ public class PhaseState : MonoBehaviour
     [SerializeField] PlayerFalling     playerFalling     = default;         // プレイヤーの落下演出
     [SerializeField] NextSceneChanger  nextScene         = default;         // シーン移行クラス
 
-    [SerializeField] ScoreDataManager  scoreData         = default;         // スコアデータクラス
+    [SerializeField] PlayDataManager   playData          = default;         // プレイデータクラス
     [SerializeField] InputController   inputController   = default;         // 入力制御クラス
-    [SerializeField] CraterCreater     craterCreater     = default;
+    [SerializeField] CraterCreater     craterCreater     = default;         // ジャンプ時クレーター生成クラス
 
     /// <summary>
     /// 開始
@@ -52,7 +52,7 @@ public class PhaseState : MonoBehaviour
         stateMachine.Add(PhaseType.PlayerFalling, EnterPlayerFalling, UpdatePlayerFalling, ExitPlayerFalling);
         // "NextScene"の関数をステートマシンに追加
         stateMachine.Add(PhaseType.NextScene, EnterNextScene, UpdateNextScene);
-        // 
+        // "SceneEnd"をステートマシンに追加
         stateMachine.Add(PhaseType.SceneEnd);
         // 最初のステートを"WaitFadeOut"にセット
         stateMachine.SetState(PhaseType.WaitFadeOut);
@@ -155,6 +155,7 @@ public class PhaseState : MonoBehaviour
         // "JumpHeightCounter"をtrueに設定
         jumpHeightCounter.enabled = true;
 
+        // ジャンプした瞬間にクレーターを生成
         craterCreater.Create();
     }
 
@@ -167,10 +168,7 @@ public class PhaseState : MonoBehaviour
         if (jumpHeightCounter.IsJumpHeightResult)
         {
             // スコアをデータにセット
-            scoreData.SetNowScore(jumpHeightCounter.JumpHeightToKiloMetre);
-
-            // データを保存
-            scoreData.SaveData();
+            playData.SetNowScore(jumpHeightCounter.JumpHeightToKiloMetre);
 
             // ステートを"PlayerFalling"に変更する
             stateMachine.SetState(PhaseType.PlayerFalling);

@@ -12,32 +12,161 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f387e7ce5671d4223bf45bb454b7255f, type: 3}
   m_Name: ItemScriptableObject
   m_EditorClassIdentifier: 
-  itemButtonAtlas: {fileID: 0}
-  itemPrefab: []
+  itemAtlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03,
+    type: 2}
+  itemPrefabs:
+  - {fileID: 3731069862110468660, guid: 72cda41e637c06441b306441675dc13e, type: 3}
+  - {fileID: 7342050787748303497, guid: fb2aa863fed470b41aeffb5a3947eb18, type: 3}
+  - {fileID: 4733807567300328884, guid: b88e2aaae55e0c240b5d7947db58241b, type: 3}
+  - {fileID: 5301209570948250575, guid: 4e109232d727cc341ab7847a0d800b0e, type: 3}
+  - {fileID: 8587104232674299217, guid: 757b551f22aa72549b2cf6e3531b3864, type: 3}
+  - {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
+  - {fileID: 7154281836230376319, guid: 800667f99f0c8ad4eb71205dbb48244e, type: 3}
+  - {fileID: 6976395151616204202, guid: d4717afb334ed4d5689a56e35f9b6aba, type: 3}
+  - {fileID: 6778729669960493885, guid: 21bbd7d958345f14c8ae0cb00b7847c3, type: 3}
+  - {fileID: 8186538177001929858, guid: 15f4ca9133c086141be784a5fa4c7b34, type: 3}
+  - {fileID: 1664421944111397426, guid: 2827c3a2ade5ef34e8daef221e68bedf, type: 3}
+  - {fileID: 2667268205868067178, guid: cdf13791f02146a4d9ba919fb3d4a8ce, type: 3}
+  - {fileID: 3002239680596136295, guid: b7c01d090ec661a46a8b7937fa2c92b4, type: 3}
+  - {fileID: 2520195702632372808, guid: cc335c25f0c9a0d46a6be187cde6078b, type: 3}
+  - {fileID: 8979364372249586256, guid: f812f359936375b458c46bdebe05f20a, type: 3}
+  - {fileID: 7916872364536532571, guid: 200a7a94f4ba49f4b912e212583f3f82, type: 3}
+  - {fileID: 40316597019180247, guid: 88400edeb1ba82d4781ae9973d249803, type: 3}
+  - {fileID: 6340600286197436495, guid: 68a3dfd5fcb8b0e42a133d9f570cfba9, type: 3}
+  - {fileID: 5084226958316224701, guid: ce1593408f3cd420fa682fb392297592, type: 3}
+  - {fileID: 5171981642432107127, guid: 73fc77ae6bbbd4b5082cf47a1fd02c77, type: 3}
+  - {fileID: 8047647516314606851, guid: d12d4f32b599642b5b1ec98c138c605e, type: 3}
+  - {fileID: 4981728249343761377, guid: 02189856b5b6f4089a35f20d8b5d097b, type: 3}
+  - {fileID: 1763695906816503985, guid: 61606d0778e734ffc8bc2bc67f333c47, type: 3}
+  - {fileID: 8914061953430599417, guid: ea6401249763445078062bbb9edafa00, type: 3}
+  - {fileID: 6486812469933627006, guid: 238d477654e8d4eb285eef54464a258d, type: 3}
+  - {fileID: 4934190781671829939, guid: 755fdf85674cc4534ba670cbd4930b36, type: 3}
+  - {fileID: 9038945911055521903, guid: e67e265c1ba8b4399a119c15f1789ae2, type: 3}
+  - {fileID: 4338943267014101452, guid: 419d5a60b5e544a708d9c29044b64bc5, type: 3}
+  - {fileID: 3341638381746758618, guid: 97ffd61cfefd94562bc20454f39bd885, type: 3}
+  - {fileID: 7875508353186218403, guid: 5d7570d3ebc4043c08bb5d96d5a3e37b, type: 3}
+  - {fileID: 5302946507465983374, guid: 3b602f66dde37b346871d468d6b57cd0, type: 3}
+  - {fileID: 6847829265095495543, guid: d0b5f169f7106024e9c050d817c6cb50, type: 3}
+  - {fileID: 5362670374130645414, guid: f8133e38e75d0284aab8a6c3df787476, type: 3}
+  - {fileID: 645938984276476523, guid: 0b194e821c9753944a26282446635d1b, type: 3}
+  - {fileID: 2778639546654650484, guid: 47eb78fc1c6d84f4fa1aa763f2fef875, type: 3}
+  - {fileID: 100000, guid: aecd23fbeda2242d1a021b637d1de28e, type: 3}
+  - {fileID: 7804603399934967252, guid: 281924b8054a39d4fbb75701e7ef3a66, type: 3}
+  - {fileID: 8682598499800782739, guid: e493b5f606d39d348ad2b15414c1eed6, type: 3}
   itemName:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Dwarf
+  - Dwarf Wizard
+  - Sandbag-chan
+  - Home run ball
+  - Tennis ball
+  - Soccer ball
+  - Cloud shellfish
+  - Cotton candy cloud
+  - Rainbow feather
+  - Transparent feather
+  - Chicken
+  - Batta Rice
+  - Tire
+  - Poop fossil
+  - Poop fossil of copper
+  - Poop fossil of silver
+  - Poop fossil of gold
+  - Dwarf Santa
+  - Aries
+  - Taurus
+  - Gemini
+  - Cancer
+  - Leo
+  - Virgo
+  - Libra
+  - Scorpion
+  - Sagittarius
+  - Capricorn
+  - Aquarius
+  - Pisces
+  - Red meteorites
+  - Blue meteorites
+  - Green meteorites
+  - Broken UFO
+  - Pounder and millstone
+  - Pengin
+  - Spaceship
+  - Tricore emblem
   itemAppearanceRate:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 4
+  - 3.5
+  - 2
+  - 4
+  - 4
+  - 3.5
+  - 3.5
+  - 4
+  - 0.5
+  - 2
+  - 4
+  - 0.5
+  - 3.5
+  - 4
+  - 3
+  - 2
+  - 0.5
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 2
+  - 0.5
+  - 2
+  - 3.5
+  - 3
+  - 2
+  - 0.5
   itemAppearancePlace:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Sky
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space
+  - Space

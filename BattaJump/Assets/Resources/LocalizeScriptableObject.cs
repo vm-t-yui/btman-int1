@@ -69,6 +69,8 @@ public class LocalizeScriptableObject : ScriptableObject
         Title,                  //タイトル
         AdvertisingPrompt,      //広告促し
         TapToStart,             //タップしてスタート
+        MuteBGM,                //BGMをミュート
+        MuteSE,                 //SEをミュート
         NoItemName,             //アイテムの名前無し
         NoItemDescription = NoItemName + ItemManager.ItemNum + 1,      //アイテムの説明無し (NOTE: +1 はまだ入手していない時の項目によるずれ)
         EnumLength = NoItemDescription + ItemManager.ItemNum + 1,      //このenumのサイズ  (上記のずれ)
@@ -113,6 +115,7 @@ public class LocalizeScriptableObject : ScriptableObject
                     case (int)LocalizeLanguage.French: frenchText[j] = csvData[i][j]; break;
                     case (int)LocalizeLanguage.Chinese: chineseText[j] = csvData[i][j]; break;
                     case (int)LocalizeLanguage.Spanish: spanishText[j] = csvData[i][j]; break;
+                    default: englishText[j] = csvData[i][j]; break;
                 }
             }
         }
@@ -127,7 +130,7 @@ public class LocalizeScriptableObject : ScriptableObject
     {
         string[] returnText = null;
 
-        switch(num)
+        switch (num)
         {
             case (int)LocalizeLanguage.Japanese: returnText = japaneseText; break;
             case (int)LocalizeLanguage.English: returnText = englishText; break;
