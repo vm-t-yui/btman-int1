@@ -10,7 +10,6 @@ using System;
 /// </summary>
 public class ItemDistanceMeter : MonoBehaviour
 {
-
     [SerializeField]
     GameObject player = default;        //プレイヤー
 
@@ -46,11 +45,12 @@ public class ItemDistanceMeter : MonoBehaviour
     {
         //アイコンを複製
         GameObject icon = Instantiate(meterIcon);
+        Image iconImage = icon.GetComponent<Image>();
 
         //0ならプレイヤー用アイコン作成
         if (i == 0)
         {
-            icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[0]);
+            iconImage.sprite = meterAtlas.GetSprite(atlasName[0]);
             icon.transform.position = new Vector3(550, 350, 0);
         }
         //それ以外ならレア度に応じたアイコン作成
@@ -59,11 +59,11 @@ public class ItemDistanceMeter : MonoBehaviour
             //各アイテムのレア度をゲット
             switch (itemCreater.GetExistAllItemsRate(i))
             {
-                case 0.5f: icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[5]); break;
-                case 2f: icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[4]); break;
-                case 3f: icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[3]); break;
-                case 3.5f: icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[2]); break;
-                case 4f: icon.GetComponent<Image>().sprite = meterAtlas.GetSprite(atlasName[1]); break;
+                case 0.5f: iconImage.sprite = meterAtlas.GetSprite(atlasName[5]); break;
+                case 2f: iconImage.sprite = meterAtlas.GetSprite(atlasName[4]); break;
+                case 3f: iconImage.sprite = meterAtlas.GetSprite(atlasName[3]); break;
+                case 3.5f: iconImage.sprite = meterAtlas.GetSprite(atlasName[2]); break;
+                case 4f: iconImage.sprite = meterAtlas.GetSprite(atlasName[1]); break;
             }
         }
 

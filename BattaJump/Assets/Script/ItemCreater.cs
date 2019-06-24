@@ -77,8 +77,10 @@ public class ItemCreater : MonoBehaviour
             newChildItem.transform.position = newParentItem.transform.position;
 
             //子オブジェクトにトリガーのコライダーとアイテム番号を追加
-            newChildItem.AddComponent<SphereCollider>().isTrigger = true;
-            newChildItem.GetComponent<SphereCollider>().radius = 8;
+            SphereCollider coll = newChildItem.AddComponent<SphereCollider>();
+            coll.isTrigger = true;
+            coll.radius = 8;
+
             newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
 
             //Skyなら空、それ以外なら宇宙のアイテムリストにいれる
@@ -110,7 +112,7 @@ public class ItemCreater : MonoBehaviour
             //NOTO: +1は空の境目と被らないため
             //アイテムの高さ
             float itemHeight = skyBorder / (existSkyItems.Count + 1) * (index + 1);
-            existSkyItems[key].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            existSkyItems[key].transform.position = (new Vector3(0, itemHeight, 0));
 
             index++;
         }
@@ -128,8 +130,7 @@ public class ItemCreater : MonoBehaviour
         {
             //アイテムの高さ
             float itemHeight = skyBorder + (index * spaceItemInterval + ((index + 1) * spaceItemPlusInterval));
-
-            existSpaceItems[key].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            existSpaceItems[key].transform.position = (new Vector3(0, itemHeight, 0));
 
             index++;
         }
