@@ -29,8 +29,8 @@ public class ChargeCountDown : MonoBehaviour
         // カウントダウンのUIを表示する
         GeneralFuncion.SetActiveFromAllChild(transform, true);
 
-        // 入力制御クラス初期化
-        InputController.Init();
+        // ジャンプ力のチャージ音を再生
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.JumpChargeing);
     }
 
     /// <summary>
@@ -44,14 +44,10 @@ public class ChargeCountDown : MonoBehaviour
             // タップの回数を記録する
             InputController.CountTouch();
 
-            // 最初のタッチが行われたらカウントダウンを開始する
-            if (InputController.IsFirstTouch) 
-            {
-                // カウントダウンを行う
-                CurrentCountNum -= Time.deltaTime;
-                // カウントダウンの値を表示
-                countDownText.text = CurrentCountNum.ToString("F1");
-            }
+            // カウントダウンを行う
+            CurrentCountNum -= Time.deltaTime;
+            // カウントダウンの値を表示
+            countDownText.text = CurrentCountNum.ToString("F1");
         }
     }
 
@@ -62,5 +58,8 @@ public class ChargeCountDown : MonoBehaviour
     {
         // カウントダウンのUIを非表示にする
         GeneralFuncion.SetActiveFromAllChild(transform, false);
+
+        // チャージ音を停止する
+        AudioPlayer.instance.StopSe(AudioPlayer.SeType.JumpChargeing);
     }
 }

@@ -28,6 +28,10 @@ public class JumpController : MonoBehaviour
 
         // プレイヤーに上方向に力を加える（ジャンプ力＝ワンタップあたりのジャンプ力＊タッチされた数）
         playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+
+        // ジャンプ音を再生
+       // AudioPlayer.instance.PlaySe(AudioPlayer.SeType.Jump);
+
         // ジャンプフラグを立てる
         IsJumping = true;
     }

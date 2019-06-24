@@ -22,7 +22,14 @@ public class AudioPlayer : MonoBehaviour
     /// </summary>
     public enum SeType
     {
-        SampleSe1,
+        SelectButton,   // 決定
+        CancelButton,   // キャンセル
+        BirdTwitter,    // 鳥のさえずり
+        JumpChargeing,  // ジャンプ溜め
+        Jump,           // ジャンプ
+        WindNoise,      // 風切り
+        FallingCry,     // 落下時の叫び声
+        Landing,        // 着地
     }
 
     // シングルトンインスタンス
@@ -103,10 +110,28 @@ public class AudioPlayer : MonoBehaviour
     /// <summary>
     /// 指定のSEを停止する
     /// </summary>
+    /// <param name="type">停止するSEの種類</param>
+    public void StopSe(SeType type)
+    {
+        // 再生中のSEで指定されたSEと同じものは停止する
+        foreach (Transform playingSeChild in parentPlayingSe)
+        {
+            // オブジェクト名とEnumの種類名で判定（クローンされたオブジェクトの名前には"(Clone)"が付加される）
+            if (playingSeChild.gameObject.name == type.ToString() + "(Clone)")
+            {
+                // 名前が一致したSEは停止する
+                playingSeChild.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 全てのSEを停止する
+    /// </summary>
     public void StopAllSe()
     {
         // 全ての再生中のSEに対してSetActiveを行う
-        GeneralFuncion.SetActiveFromAllChild(parentSe, false);
+        GeneralFuncion.SetActiveFromAllChild(parentPlayingSe, false);
     }
 
     /// <summary>

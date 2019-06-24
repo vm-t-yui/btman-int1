@@ -82,6 +82,9 @@ public class CraterCreater : MonoBehaviour
         // パーティクルを表示
         takeOffParticle.SetActive(true);
 
+        // 着地音を再生する
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.Landing);
+
         isCreate = true;
     }
 
