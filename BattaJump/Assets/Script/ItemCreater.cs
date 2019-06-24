@@ -8,22 +8,29 @@ using UnityEngine;
 public class ItemCreater : MonoBehaviour
 {
     [SerializeField]
+    ItemDistanceMeter itemDistanceMeter = default;
+
+    [SerializeField]
     GameObject parentItemObj = default;                         //空の親オブジェクト
 
-    [SerializeField]
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
-    [SerializeField]
     string[] appearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
 
-    List<GameObject> existSkyItems = new List<GameObject>();    //空のオブジェクト
-    List<GameObject> existSpaceItems = new List<GameObject>();  //宇宙のオブジェクト
+    Dictionary<int, GameObject> existSkyItems = new Dictionary<int, GameObject>();  //空のアイテムリスト
+    Dictionary<int, GameObject> existSpaceItems = new Dictionary<int, GameObject>();//宇宙のアイテムリスト
 
     [SerializeField]
-    int appearanceNum = 6;                                      //表示数
+    List<GameObject> existAllItems = new List<GameObject>();    //表示されるアイテムのオブジェクト
     [SerializeField]
-    int skyBorder = 300;                                        //空の境目
+    List<float> existAllItemsRate = new List<float>();          //表示されるアイテムの出現確立
+
+    public const int appearanceNum = 6;                         //表示数
     [SerializeField]
-    int spaceItemInterval = 350;                                //宇宙のアイテムの間隔
+    float skyBorder = 300;                                      //空の境目
+    [SerializeField]
+    float spaceItemInterval = 350;                              //宇宙のアイテムの間隔
+    [SerializeField]
+    float spaceItemPlusInterval = 50;                           //宇宙のアイテムの間隔の増加値
 
     /// <summary>
     /// 開始処理
@@ -40,23 +47,91 @@ public class ItemCreater : MonoBehaviour
             CreateItem();
         }
 
-        //空のアイテムのポジション決め
-        for (int i = 0; i < existSkyItems.Count; i++) 
+        //それぞれのアイテムのポジション決め
+        SetSkyItemPositon();
+        SetSpaceItemPositon();
+
+        //アイテムメーター作成
+        itemDistanceMeter.CreateMeter();
+    }
+
+    /// <summary>
+    /// アイテム生成
+    /// </summary>
+    void CreateItem()
+    {
+        int itemNum = AppearanceItemNum();
+
+        //アイテム番号が重複したら
+        if (existSkyItems.ContainsKey(itemNum) || existSpaceItems.ContainsKey(itemNum))
+        {
+            //もう一回やり直す
+            CreateItem();
+        }
+        else
+        {
+            //空の親オブジェクトから親を複製、データオブジェクトからアイテムのモデルのプレハブを持ってきて子にする
+            GameObject newParentItem = Instantiate(parentItemObj);
+            GameObject newChildItem = Instantiate(ItemScriptableObject.Instance.GetItemPrefabs(itemNum));
+            newChildItem.transform.parent = newParentItem.transform;
+            newChildItem.transform.position = newParentItem.transform.position;
+
+            //子オブジェクトにトリガーのコライダーとアイテム番号を追加
+            newChildItem.AddComponent<SphereCollider>().isTrigger = true;
+            newChildItem.GetComponent<SphereCollider>().radius = 8;
+            newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
+
+            //Skyなら空、それ以外なら宇宙のアイテムリストにいれる
+            if (appearancePlace[itemNum] == "Sky")
+            {
+                existSkyItems.Add(itemNum, newParentItem);
+            }
+            else
+            {
+                existSpaceItems.Add(itemNum, newParentItem);
+            }
+
+            //それぞれの表示アイテムのリストに追加
+            existAllItems.Add(newParentItem);
+            existAllItemsRate.Add(float.Parse(appearanceRate[itemNum]));
+        }
+    }
+
+    /// <summary>
+    /// 空のアイテムの高さ決め
+    /// </summary>
+    void SetSkyItemPositon()
+    {
+        //回った回数
+        int index = 0;
+
+        foreach (int key in existSkyItems.Keys)
         {
             //NOTO: +1は空の境目と被らないため
-            //アイテムの高さ決め
-            float itemHeight = skyBorder / (existSkyItems.Count + 1) * (i + 1);
+            //アイテムの高さ
+            float itemHeight = skyBorder / (existSkyItems.Count + 1) * (index + 1);
+            existSkyItems[key].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
 
-            existSkyItems[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            index++;
         }
+    }
 
-        //宇宙のアイテムのポジション決め
-        for (int i = 0; i < existSpaceItems.Count; i++)
+    /// <summary>
+    /// 宇宙のアイテムの高さ決め
+    /// </summary>
+    void SetSpaceItemPositon()
+    {
+        //回った回数
+        int index = 0;
+
+        foreach (int key in existSpaceItems.Keys)
         {
-            //アイテムの高さ決め
-            float itemHeight = skyBorder + (i * spaceItemInterval + ((i  + 1) * 50));
+            //アイテムの高さ
+            float itemHeight = skyBorder + (index * spaceItemInterval + ((index + 1) * spaceItemPlusInterval));
 
-            existSpaceItems[i].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+            existSpaceItems[key].GetComponent<ItemAppearance>().SetPosition(new Vector3(0, itemHeight, 0));
+
+            index++;
         }
     }
 
@@ -79,7 +154,7 @@ public class ItemCreater : MonoBehaviour
 
             //番号を返す
             if (randomPoint < 0)
-            { 
+            {
                 return index;
             }
         }
@@ -87,32 +162,23 @@ public class ItemCreater : MonoBehaviour
         return 0;
     }
 
+
     /// <summary>
-    /// アイテム生成
+    /// 全ての表示アイテムのゲット関数
     /// </summary>
-    void CreateItem()
+    /// <returns>表示アイテムのオブジェクト</returns>
+    public GameObject GetExistItemList(int i)
     {
-        int itemNum = AppearanceItemNum();
+        return existAllItems[i];
+    }
 
-        //空の親オブジェクトから親を複製、データオブジェクトからアイテムのモデルのプレハブを持ってきて子にする
-        GameObject newParentItem = Instantiate(parentItemObj);
-        GameObject newChildItem = Instantiate(ItemScriptableObject.Instance.GetItemPrefabs(itemNum));
-        newChildItem.transform.parent = newParentItem.transform;
-        newChildItem.transform.position = newParentItem.transform.position;
-
-        //子オブジェクトにトリガーのコライダーとアイテム番号を追加
-        newChildItem.AddComponent<SphereCollider>().isTrigger = true;
-        newChildItem.GetComponent<SphereCollider>().radius = 8;
-        newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
-
-        //Skyなら空(0,1)、それ以外なら宇宙(2,3,4,5)に場所を指定する
-        if (appearancePlace[itemNum] == "Sky")
-        {
-            existSkyItems.Add(newParentItem);
-        } 
-        else
-        {
-            existSpaceItems.Add(newParentItem);
-        }
+    /// <summary>
+    /// 全ての表示アイテムのゲット関数
+    /// </summary>
+    /// <param name="i">アイテムの番号</param>
+    /// <returns>表示アイテムの出現確率</returns>
+    public float GetExistAllItemsRate(int i)
+    {
+        return existAllItemsRate[i];
     }
 }
