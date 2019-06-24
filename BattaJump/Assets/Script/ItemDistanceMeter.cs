@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D;
 using System;
+#pragma warning disable RECS0018 // 等値演算子による浮動小数点値の比較
 
 /// <summary>
 /// アイテムとの距離メータークラス
@@ -56,14 +57,16 @@ public class ItemDistanceMeter : MonoBehaviour
         //それ以外ならレア度に応じたアイコン作成
         else
         {
-            //各アイテムのレア度をゲット
-            switch (itemCreater.GetExistAllItemsRate(i))
+            //アイテムのレアリティをセット
+            Dictionary<int, float> itemRarity = ItemScriptableObject.Instance.GetItemRarity();
+
+            //このアイテムのレアリティにあわせたアイコンを作成
+            foreach(int key in itemRarity.Keys)
             {
-                case 0.5f: iconImage.sprite = meterAtlas.GetSprite(atlasName[5]); break;
-                case 2f: iconImage.sprite = meterAtlas.GetSprite(atlasName[4]); break;
-                case 3f: iconImage.sprite = meterAtlas.GetSprite(atlasName[3]); break;
-                case 3.5f: iconImage.sprite = meterAtlas.GetSprite(atlasName[2]); break;
-                case 4f: iconImage.sprite = meterAtlas.GetSprite(atlasName[1]); break;
+                if (itemCreater.GetExistAllItemsRate(i) == itemRarity[key])
+                {
+                    iconImage.sprite = meterAtlas.GetSprite(atlasName[key]);
+                }
             }
         }
 
@@ -91,7 +94,6 @@ public class ItemDistanceMeter : MonoBehaviour
     /// </summary>
     void Update()
     {
-
         //ちゃんとメーターが生成されたら差分を取り始める
         if (isCreate)
         {

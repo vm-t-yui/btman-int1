@@ -42,7 +42,14 @@ public class ItemScriptableObject : ScriptableObject
 
     //↓こっからアイテム用のScriptableObjectの要素
     [SerializeField]
-    SpriteAtlas itemAtlas = default;                          //アイテムボタン用のスプライトアトラス
+    SpriteAtlas itemAtlas = default;                                //アイテムボタン用のスプライトアトラス
+
+    [SerializeField]
+    int[] rarity;                                                   //アイテムのレアリティ
+    [SerializeField]
+    float[] rate;                                                   //アイテムの出現確率    
+
+    Dictionary<int, float> itemRarity = new Dictionary<int, float>(); //アイテムの出現確率
 
     [SerializeField]
     GameObject[] itemPrefabs = new GameObject[ItemManager.ItemNum]; //アイテムのプレハブ
@@ -115,5 +122,19 @@ public class ItemScriptableObject : ScriptableObject
     public GameObject GetItemPrefabs(int i)
     {
         return itemPrefabs[i];
+    }
+
+    /// <summary>
+    /// アイテムの出現確率のゲット関数
+    /// </summary>
+    /// <returns>The appearance rate.</returns>
+    public Dictionary<int, float> GetItemRarity()
+    {
+        for (int i = 0; i < rarity.Length; i++)
+        {
+            itemRarity.Add(rarity[i], rate[i]);
+        }
+
+        return itemRarity;
     }
 }
