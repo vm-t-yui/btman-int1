@@ -47,10 +47,11 @@ public class ItemCreater : MonoBehaviour
         //アイテム生成
         for (int i = 0; i < appearanceNum; i++)
         {
-            bool masakiflg = true;      //仮の動画広告フラグ
+            //TODO:あとでちゃんとした広告リワードのフラグを入れるます
+            bool isReward = true;      //仮の動画広告フラグ
 
             //動画広告をみたら一番最初に新規アイテム作成
-            if (i == 0 && masakiflg)
+            if (i == 0 && isReward)
             {
                 CreateItem(true);
             }
