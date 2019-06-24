@@ -8,14 +8,18 @@ using UnityEngine;
 public class ScoreCountUp : MonoBehaviour
 {
     [SerializeField]
-    ScoreDataManager scoreData = default;               // スコアデータクラス
+    PlayDataManager playData = default;                      // スコアデータクラス
 
-    public int countScore { get; private set; } = 0;    // カウントアップ用スコア
+    public int countScore { get; private set; } = 0;         // カウントアップ用スコア
 
-    [SerializeField]
-    int getScore = 1000;                                // ゲーム内で獲得したスコア（デバッグ用にSerializeFiedを設定）
+    int getScore = 0;                                        // ゲーム内で獲得したスコア（デバッグ用にSerializeFiedを設定）
+    const int SpendTime = 4;                                 // カウントアップにかける時間（大体これ+1秒くらいになる）
 
-    public bool IsEnd { get; private set; } = false;    // 処理終了フラグ
+    float waitTime = 0;                                      // 待機時間計測用
+    const float WaitMaxTime = 1.5f;                          // カウント終了後待機時間
+
+    public bool IsCountEnd { get; private set; } = false;    // カウント終了フラグ
+    public bool IsEnd { get; private set; } = false;         // 処理終了フラグ
 
     /// <summary>
     /// オブジェクト起動時
@@ -23,7 +27,7 @@ public class ScoreCountUp : MonoBehaviour
     void OnEnable()
     {
         // 獲得スコアを取得
-        getScore = scoreData.GetNowScore();
+        getScore = playData.GetNowScore();
     }
 
     /// <summary>
@@ -31,16 +35,36 @@ public class ScoreCountUp : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
+        // タップされたら即時カウントアップ終了
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                countScore = getScore;
+            }
+        }
+
         // ゲーム内で獲得したスコアまでカウントアップする
         if (countScore < getScore)
         {
-            countScore += (int)(getScore * Time.deltaTime);
+            countScore += (int)(getScore * (Time.deltaTime / SpendTime));
         }
         // ゲーム内で獲得したスコアを超えたらカウントアップ終了
         else
         {
+            // 待機時間計測
+            waitTime += Time.deltaTime;
+
             countScore = getScore;
-            IsEnd = true;
+            IsCountEnd = true;
+
+            // 指定した時間待機したら
+            if (waitTime >= WaitMaxTime)
+            {
+                // 処理終了
+                IsEnd = true;
+            }
         }
     }
 }

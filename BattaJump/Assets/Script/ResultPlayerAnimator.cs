@@ -14,7 +14,7 @@ public class ResultPlayerAnimator : MonoBehaviour
     ScoreCountUp scoreCountUp = default;     // スコアカウントアップクラス
 
     [SerializeField]
-    ScoreDataManager scoreData = default;    // スコアデータクラス
+    PlayDataManager playData = default;      // スコアデータクラス
 
     [SerializeField]
     int GoodScore = 10000;                   // この値を超えたら喜ぶアニメーション再生（定数ですがデバッグ用にシリアライズにしてます）
@@ -30,10 +30,10 @@ public class ResultPlayerAnimator : MonoBehaviour
         if (isEnd) { return; }
 
         // スコアのカウントアップが終わったら
-        if (scoreCountUp.IsEnd)
+        if (scoreCountUp.IsCountEnd)
         {
             // スコアが指定した値を超えていれば
-            if (scoreData.GetNowScore() > GoodScore)
+            if (playData.GetNowScore() > GoodScore)
             {
                 // 喜ぶアニメーション再生
                 animator.SetTrigger("Rejoice");

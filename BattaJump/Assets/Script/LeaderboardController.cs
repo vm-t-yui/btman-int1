@@ -18,9 +18,9 @@ public class LeaderboardController : MonoBehaviour
         "CgkI_vDQ3ZYdEAIQBg";
 #elif UNITY_IOS
         "maxdistance";
+#else
+        "unexpected_platform";
 #endif
-
-    long score = 0;                    // リーダーボードへ登録するスコア
 
     /// <summary>
     /// リーダーボードへスコアを登録

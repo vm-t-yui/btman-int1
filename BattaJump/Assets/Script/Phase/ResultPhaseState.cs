@@ -22,26 +22,43 @@ public class ResultPhaseState : MonoBehaviour
 
     PhaseType nowPhase;                             // フェーズの状態
 
+    // フェード管理クラス
     [SerializeField]
-    DisplayFadeContoller fadeContoller = default;    // フェード管理クラス
+    DisplayFadeContoller fadeContoller = default;
+    // 広告管理クラス
+    [SerializeField]
+    AdManager adManager = default;
+    // クレーター生成クラス
+    [SerializeField]
+    CraterCreater craterCreater = default;
+    // スコアカウントアップクラス
+    [SerializeField]
+    ScoreCountUp scoreCountUp = default;
+    // 動画広告勧誘クラス
+    [SerializeField]
+    AdVideoRecommender adVideoRecommender = default;
+    // プレイデータ管理クラス
+    [SerializeField]
+    PlayDataManager playData = default;
+    // 実績コントロールクラス
+    [SerializeField]
+    AchievementController achievementController = default;
+    // リザルト終了検知クラス
+    [SerializeField]
+    ResultEnd resultEnd = default;
+    // シーン移行クラス
+    [SerializeField]
+    NextSceneChanger nextScene = default;
 
+    // ボタン等のカンバス
     [SerializeField]
-    AdManager adManager = default;                   // 広告管理クラス
+    GameObject resultCanvas = default;
+    // プレイヤーのオブジェクト
+    [SerializeField]
+    GameObject playerObj = default;
 
-    [SerializeField]
-    ScoreCountUp scoreCountUp = default;             // スコアカウントアップクラス
-
-    [SerializeField]
-    ResultEnd resultEnd = default;                   // リザルト終了検知クラス
-
-    [SerializeField]
-    NextSceneChanger nextScene = default;            // シーン移行クラス
-
-    [SerializeField]
-    GameObject resultCanvas = default;               // ボタン等のカンバス
-
-    [SerializeField]
-    GameObject playerObj = default;                  //　プレイヤーのオブジェクト
+    float landingTime = 0;                           // 着地のアニメーション再生時間
+    const float LandingCraterCreateTime = 0.1f;      // 着地アニメーション中にクレーターを生成する時間
 
     /// <summary>
     /// 開始
@@ -59,6 +76,12 @@ public class ResultPhaseState : MonoBehaviour
 
         // FPSを15に固定
         Application.targetFrameRate = 15;
+
+        // プレイ回数を加算
+        playData.IncreasePlayCount();
+
+        // 動画広告勧誘クラス初期化
+        adVideoRecommender.Init();
     }
 
     /// <summary>
@@ -104,6 +127,16 @@ public class ResultPhaseState : MonoBehaviour
 
             case PhaseType.CountScore:        // スコアカウント中
 
+                landingTime += Time.deltaTime;
+                // 着地アニメーションの再生時間が指定した時間まで行ったら
+                if (landingTime >= LandingCraterCreateTime && craterCreater.enabled)
+                {
+                    // クレーターを生成
+                    craterCreater.Create();
+                    // クレーターを消す処理が入ってるので、スクリプトをオフにする
+                    craterCreater.enabled = false;
+                }
+
                 // カウントが終わったら次の処理へ
                 if (scoreCountUp.IsEnd)
                 {
@@ -116,14 +149,24 @@ public class ResultPhaseState : MonoBehaviour
                     // インタースティシャル広告を表示
                     adManager.ShowInterstitial();
 
+                    // 実績解除できるかチェック
+                    achievementController.CheckRelease();
+
                     nowPhase = PhaseType.ViewResult;
                 }
                 break;
 
             case PhaseType.ViewResult:        // リザルト表示中
 
+                // インタースティシャル広告が閉じられて、勧誘済みでないなら
+                if (adManager.IsInterstitialClosed() && !adVideoRecommender.IsRecommend)
+                {
+                    // 動画広告勧誘
+                    adVideoRecommender.Recommend();
+                }
+
                 // リザルトが終了したら次の処理へ
-                if (resultEnd.IsEnd)
+                if (resultEnd.IsEnd || adVideoRecommender.IsEnd)
                 {
                     // 次に読むシーンがメインゲームなら黒いパネルでフェードイン開始
                     if (nextScene.NextSceneNum == SceneLoader.SceneNum.MainGame)
@@ -148,6 +191,9 @@ public class ResultPhaseState : MonoBehaviour
                 // フェードインが終わったら次のシーンへ移行
                 if (fadeContoller.IsFadeEnd)
                 {
+                    // 
+                    playData.SaveData();
+
                     // シーンをロード
                     nextScene.ChangeNextScene();
 
