@@ -12,47 +12,13 @@ using UnityEngine.SocialPlatforms;
 /// </summary>
 public class AchievementController : MonoBehaviour
 {
-    /// <summary>
-    /// 実績の種類
-    /// </summary>
-    public enum AchievementType
-    {
-        FirstJump = 0,
-        ReachedUniverse,
-        ConqueredSolarSystem,
-        NotJump,
-        JumpedFifteen,
-        JumpedThirty,
-        ItemComplete,
-    }
-
-    readonly string[] AchievementIDs = {                     // 実績ID群
-#if UNITY_ANDROID
-        "CgkI_vDQ3ZYdEAIQAQ",                                // 実績１：初ジャンプ
-        "CgkI_vDQ3ZYdEAIQAg",                                // 実績２：宇宙到達
-        "CgkI_vDQ3ZYdEAIQAw",                                // 実績３：太陽系制覇
-        "CgkI_vDQ3ZYdEAIQBA",                                // 実績４：開始後、放置
-        "CgkI_vDQ3ZYdEAIQBQ",                                // 実績５：15回ジャンプ
-        "CgkI_vDQ3ZYdEAIQBw",                                // 実績６：30回ジャンプ
-        "CgkI_vDQ3ZYdEAIQCA"                                 // 実績７：アイテムコンプリート
-#elif UNITY_IOS
-        "firstjump",                                         // 実績１：初ジャンプ
-        "spacecame",                                         // 実績２：宇宙到達
-        "planetarycature",                                   // 実績３：太陽系制覇
-        "pleasefly",                                         // 実績４：開始後、放置
-        "fifteenjump",                                       // 実績５：15回ジャンプ
-        "thirtyjump",                                        // 実績６：30回ジャンプ
-        "itemComplete",                                      // 実績７：アイテムコンプリート
-#endif
-    };
+    string[] achievementIDs = new string[AchievementScriptableObject.AchievementNum];    // 実績ID群
 
     [SerializeField]
     PlayDataManager playData = default;            // プレイデータ管理クラス
 
     [SerializeField]
     ItemDataManager itemData = default;            // アイテムデータ管理クラス
-
-    public const int AchievementNum = 7;           // 実績の総数
 
     // 実績解除用の各値
     const int FirstJumpNum = 1;                    // 初ジャンプ
@@ -63,12 +29,26 @@ public class AchievementController : MonoBehaviour
     const int ItemCompleteNum = 38;                // アイテムコンプリート
 
     /// <summary>
+    /// 開始
+    /// </summary>
+    void Start()
+    {
+        // 実績IDを取得
+        achievementIDs =
+#if UNITY_ANDROID
+        AchievementScriptableObject.Instance.GetAndroidIDs();
+#elif UNITY_IOS
+        AchievementScriptableObject.Instance.GetIosIDs();
+#endif
+    }
+
+    /// <summary>
     /// 実績解除
     /// </summary>
     /// <param type="id">実績の種類</param>
     /// <param name="id">実績ID</param>
     /// <param name="progress">実績の進捗（0で非表示解除、100で実績解除）</param>
-    void ReleaseAchievement(AchievementType type, string id, float progress)
+    void ReleaseAchievement(AchievementScriptableObject.AchievementType type, string id, float progress)
     {
         // 解除処理
         Social.ReportProgress(id, progress, (bool success) => {
@@ -93,31 +73,34 @@ public class AchievementController : MonoBehaviour
     /// </summary>
     public void CheckRelease()
     {
+        // インスタンスを取得
+        AchievementScriptableObject achievementData = AchievementScriptableObject.Instance;
+
         // 各実績が解除できる状態なら、解除する
         // 初ジャンプ
-        if (playData.PlayCount == FirstJumpNum && !playData.AchievementStatus[(int)AchievementType.FirstJump])
+        if (playData.PlayCount == achievementData.GetFirstJumpNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.FirstJump])
         {
-            ReleaseAchievement(AchievementType.FirstJump, AchievementIDs[(int)AchievementType.FirstJump], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.FirstJump, achievementIDs[(int)AchievementScriptableObject.AchievementType.FirstJump], 100);
         }
         // 宇宙到達
-        if (playData.GetNowScore() >= ReachedUniverseNum && !playData.AchievementStatus[(int)AchievementType.ReachedUniverse])
+        if (playData.GetNowScore() >= achievementData.GetReachedUniverseNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.ReachedUniverse])
         {
-            ReleaseAchievement(AchievementType.ReachedUniverse, AchievementIDs[(int)AchievementType.ReachedUniverse], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.ReachedUniverse, achievementIDs[(int)AchievementScriptableObject.AchievementType.ReachedUniverse], 100);
         }
         // 太陽系制覇
-        if (playData.GetNowScore() >= ConqueredSolarSystemNum && !playData.AchievementStatus[(int)AchievementType.ConqueredSolarSystem])
+        if (playData.GetNowScore() >= achievementData.GetConqueredSolarSystemNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.ConqueredSolarSystem])
         {
-            ReleaseAchievement(AchievementType.ConqueredSolarSystem, AchievementIDs[(int)AchievementType.ConqueredSolarSystem], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.ConqueredSolarSystem, achievementIDs[(int)AchievementScriptableObject.AchievementType.ConqueredSolarSystem], 100);
         }
         // 15回ジャンプ
-        if (playData.PlayCount == JumpedFifteenNum && !playData.AchievementStatus[(int)AchievementType.JumpedFifteen])
+        if (playData.PlayCount == achievementData.GetJumpedFifteenNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.JumpedFifteen])
         {
-            ReleaseAchievement(AchievementType.JumpedFifteen, AchievementIDs[(int)AchievementType.JumpedFifteen], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.JumpedFifteen, achievementIDs[(int)AchievementScriptableObject.AchievementType.JumpedFifteen], 100);
         }
         // 30回ジャンプ
-        if (playData.PlayCount == JumpedThirtyNum && !playData.AchievementStatus[(int)AchievementType.JumpedThirty])
+        if (playData.PlayCount == achievementData.GetJumpedThirtyNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.JumpedThirty])
         {
-            ReleaseAchievement(AchievementType.JumpedThirty, AchievementIDs[(int)AchievementType.JumpedThirty], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.JumpedThirty, achievementIDs[(int)AchievementScriptableObject.AchievementType.JumpedThirty], 100);
         }
 
         int haveItem = 0;                                  // アイテム所持数
@@ -131,9 +114,9 @@ public class AchievementController : MonoBehaviour
             }
         }
         // アイテムコンプリート
-        if (haveItem == ItemCompleteNum && !playData.AchievementStatus[(int)AchievementType.ItemComplete])
+        if (haveItem == achievementData.GetItemCompleteNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.ItemComplete])
         {
-            ReleaseAchievement(AchievementType.ItemComplete, AchievementIDs[(int)AchievementType.ItemComplete], 100);
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.ItemComplete, achievementIDs[(int)AchievementScriptableObject.AchievementType.ItemComplete], 100);
         }
     }
 }
