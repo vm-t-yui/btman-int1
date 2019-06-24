@@ -10,7 +10,7 @@ public class PlayDataManager : MonoBehaviour
     public int PlayCount { get; private set; } = 0;            // プレイ回数
     public int HighScore { get; private set; } = 0;            // ハイスコア
     public bool[] AchievementStatus { get; private set; } =    // 実績解除状況
-           new bool[AchievementController.AchievementNum];
+           new bool[AchievementScriptableObject.AchievementNum];
 
     static int nowScore = 0;                                   // 現在のスコア
 
@@ -58,7 +58,7 @@ public class PlayDataManager : MonoBehaviour
     /// 実績の解除状況をセット
     /// </summary>
     /// <param name="achievementType">実績の種類</param>
-    public void SetAchievementStatus(AchievementController.AchievementType achievementType)
+    public void SetAchievementStatus(AchievementScriptableObject.AchievementType achievementType)
     {
         AchievementStatus[(int)achievementType] = true;
     }
