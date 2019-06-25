@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -200,5 +200,15 @@ public class LocalizeController : MonoBehaviour
     public int GetLanguageNum()
     {
         return languageNum;
+    }
+    
+    /// <summary>
+    /// ローカライズされたテキストのゲット関数
+    /// </summary>
+    /// <returns>ローカライズされたテキスト</returns>
+    /// <param name="i">要素番号</param>
+    public string GetLocalizeText(int i)
+    {
+        return localizeText[i];
     }
 }
