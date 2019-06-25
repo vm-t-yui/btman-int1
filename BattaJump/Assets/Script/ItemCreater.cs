@@ -11,6 +11,9 @@ public class ItemCreater : MonoBehaviour
     ItemDistanceMeter itemDistanceMeter = default;
 
     [SerializeField]
+    ItemManager itemManager = default;
+
+    [SerializeField]
     GameObject parentItemObj = default;                         //空の親オブジェクト
 
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
@@ -44,7 +47,18 @@ public class ItemCreater : MonoBehaviour
         //アイテム生成
         for (int i = 0; i < appearanceNum; i++)
         {
-            CreateItem();
+            //TODO:あとでちゃんとした広告リワードのフラグを入れるます
+            bool isReward = true;      //仮の動画広告フラグ
+
+            //動画広告をみたら一番最初に新規アイテム作成
+            if (i == 0 && isReward)
+            {
+                CreateItem(true);
+            }
+            else
+            {
+                CreateItem(false);
+            }
         }
 
         //それぞれのアイテムのポジション決め
@@ -58,15 +72,17 @@ public class ItemCreater : MonoBehaviour
     /// <summary>
     /// アイテム生成
     /// </summary>
-    void CreateItem()
+    /// <param name="isNewItem">新しいアイテムをつくるかどうか<c>true</c>作る</param>
+    void CreateItem(bool isNewItem)
     {
-        int itemNum = AppearanceItemNum();
+        //生成するアイテムの番号を取得
+        int itemNum = AppearanceItemNum(isNewItem);
 
         //アイテム番号が重複したら
         if (existSkyItems.ContainsKey(itemNum) || existSpaceItems.ContainsKey(itemNum))
         {
             //もう一回やり直す
-            CreateItem();
+            CreateItem(isNewItem);
         }
         else
         {
@@ -139,8 +155,9 @@ public class ItemCreater : MonoBehaviour
     /// <summary>
     /// 出現するアイテムの番号
     /// </summary>
-    /// <returns>アイテムの番号</returns>
-    int AppearanceItemNum()
+    /// <returns>生成するアイテムの番号</returns>
+    /// <param name="isNewItem">新しいアイテムを作るかどうか<c>true</c>作る</param>
+    int AppearanceItemNum(bool isNewItem)
     {
         int index = 0;                              //回った回数
         float randomPoint = Random.value * 100;     //ランダム値
@@ -156,10 +173,25 @@ public class ItemCreater : MonoBehaviour
             //番号を返す
             if (randomPoint < 0)
             {
-                return index;
+                //新しいアイテムを作らないならそのまま番号を渡す
+                if(!isNewItem)
+                {
+                    return index;
+                }
+                //新しいアイテムを作るが、もともと所持しているものならもう一回
+                else if (itemManager.GetIsHasItem(index))
+                {
+                    AppearanceItemNum(isNewItem);
+                }
+                //所持していないのでそのまま渡す
+                else
+                {
+                    return index;
+                }
             }
         }
-        //万が一値が引きれなかったらうんこの化石
+
+        //万が一、値が引きれなかったらうんこの化石
         return 0;
     }
 

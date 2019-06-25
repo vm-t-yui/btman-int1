@@ -14,6 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAtlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03,
     type: 2}
+  rarity: 0500000004000000030000000200000001000000
+  rate:
+  - 4
+  - 3.5
+  - 3
+  - 2
+  - 0.5
   itemPrefabs:
   - {fileID: 3731069862110468660, guid: 72cda41e637c06441b306441675dc13e, type: 3}
   - {fileID: 7342050787748303497, guid: fb2aa863fed470b41aeffb5a3947eb18, type: 3}
