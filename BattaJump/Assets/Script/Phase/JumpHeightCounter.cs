@@ -27,6 +27,8 @@ public class JumpHeightCounter : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
+        // 入力制御クラス初期化
+        InputController.Init();
         // プレイヤーの上方向に力を与えて、ジャンプさせる
         jumpController.PlayerJump(InputController.TouchCountNum);
         // ジャンプ高さのUIを表示する

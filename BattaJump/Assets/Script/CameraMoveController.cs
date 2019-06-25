@@ -31,8 +31,7 @@ public class CameraMoveController : MonoBehaviour
         // プレイヤーにカメラを向ける
         transform.LookAt(playerTransform.position + LookAtPosOffset);
 
-        // 最初のタップ操作が行われるまで更新処理をスキップする
-        if (!InputController.IsFirstTouch) { return; }
+        // ズーム時のカウントをインクリメント
         currentZoomTimeCount++;
 
         // 指定の時間だけ、プレイヤーにズームし続ける
@@ -62,8 +61,6 @@ public class CameraMoveController : MonoBehaviour
             {
                 // カメラとプレイヤーの親子関係を解除する
                 transform.parent = null;
-                // スクリプトをオフにする
-                //enabled = false;
             }
         }
     }

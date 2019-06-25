@@ -14,9 +14,6 @@ public class JumpChargeingStay : MonoBehaviour
     {
         // 鳥のさえずりを再生
         AudioPlayer.instance.PlaySe(AudioPlayer.SeType.BirdTwitter);
-
-        // 入力制御クラス初期化
-        InputController.Init();
     }
 
     /// <summary>
