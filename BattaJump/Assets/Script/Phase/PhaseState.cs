@@ -29,6 +29,7 @@ public class PhaseState : MonoBehaviour
     [SerializeField] ChargeCountDown   chargeCountDown   = default;         // ジャンプ力の溜めている際のカウントダウン
     [SerializeField] JumpHeightCounter jumpHeightCounter = default;         // プレイヤーのジャンプ高さを計測するクラス
     [SerializeField] PlayerFalling     playerFalling     = default;         // プレイヤーの落下演出
+    [SerializeField] CameraMoveController cameraMoveController = default;   // カメラ移動制御クラス
     [SerializeField] NextSceneChanger  nextScene         = default;         // シーン移行クラス
 
     [SerializeField] PlayDataManager   playData          = default;         // プレイデータクラス
@@ -120,6 +121,8 @@ public class PhaseState : MonoBehaviour
     {
         // "ChargeCountDown"をtrueに設定
         chargeCountDown.enabled = true;
+        // カメラの制御を開始する
+        cameraMoveController.enabled = true;
     }
 
     /// <summary>
@@ -142,7 +145,6 @@ public class PhaseState : MonoBehaviour
     {
         // "ChargeCountDown"をfalseに設定
         chargeCountDown.enabled = false;
-
         // 入力制御クラスをオフ
         inputController.enabled = false;
     }
@@ -237,6 +239,9 @@ public class PhaseState : MonoBehaviour
         {
             //重力をデフォルトに設定
             Physics.gravity = new Vector3(0, -50f, 0);
+
+            // カメラの移動制御を終了する
+            cameraMoveController.enabled = false;
 
             // 次に読むシーンをリザルトに設定
             nextScene.SetNextSceneResult();
