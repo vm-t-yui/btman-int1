@@ -13,6 +13,7 @@ public class PhaseState : MonoBehaviour
     public enum PhaseType
     {
         WaitFadeOut,           // フェードアウト待機
+        JumpChargeingStay,     // ジャンプ力チャージ前の待機
         ChargeCountDown,       // ジャンプ力を溜めている際のカウントダウン
         JumpHeightCounter,     // プレイヤーのジャンプ高さを計測するクラス
         PlayerFalling,         // プレイヤーの落下演出
@@ -24,6 +25,7 @@ public class PhaseState : MonoBehaviour
     StateMachine<PhaseType> stateMachine = new StateMachine<PhaseType>();
 
     [SerializeField] DisplayFadeContoller fadeContoller  = default;         // フェード管理クラス
+    [SerializeField] JumpChargeingStay jumpChargeingStay = default;         // ジャンプ力チャージ前の待機
     [SerializeField] ChargeCountDown   chargeCountDown   = default;         // ジャンプ力の溜めている際のカウントダウン
     [SerializeField] JumpHeightCounter jumpHeightCounter = default;         // プレイヤーのジャンプ高さを計測するクラス
     [SerializeField] PlayerFalling     playerFalling     = default;         // プレイヤーの落下演出
@@ -40,6 +42,8 @@ public class PhaseState : MonoBehaviour
     {
         // "WaitFadeOut"の関数をステートマシンに追加
         stateMachine.Add(PhaseType.WaitFadeOut, EnterWaitFadeOut, UpdateWaitFadeOut);
+        // "JumpChargeingStay"の関数をステートマシンに追加
+        stateMachine.Add(PhaseType.JumpChargeingStay, EnterJumpChargeingStay, UpdateJumpChargeingStay);
         // "ChargeCountDown"の関数をステートマシンに追加
         stateMachine.Add(PhaseType.ChargeCountDown, EnterChargeCountDown, UpdateChargeCountDown, ExitChargeCountDown);
         // "JumpHeightCounter"の関数をステートマシンに追加
@@ -81,6 +85,29 @@ public class PhaseState : MonoBehaviour
         // フェードアウトが終わったら
         if (fadeContoller.IsFadeEnd)
         {
+            // ステートを"JumpChargeingStay"に変更する
+            stateMachine.SetState(PhaseType.JumpChargeingStay);
+        }
+    }
+
+    /// <summary>
+    /// JumpChargeingStayの開始
+    /// </summary>
+    void EnterJumpChargeingStay()
+    {
+        // 入力制御クラスをオン
+        inputController.enabled = true;
+
+        jumpChargeingStay.enabled = true;
+    }
+
+    /// <summary>
+    /// JumpChargeingStayの更新
+    /// </summary>
+    void UpdateJumpChargeingStay()
+    {
+        if (InputController.IsFirstTouch)
+        {
             // ステートを"ChargeCountDown"に変更する
             stateMachine.SetState(PhaseType.ChargeCountDown);
         }
@@ -93,9 +120,6 @@ public class PhaseState : MonoBehaviour
     {
         // "ChargeCountDown"をtrueに設定
         chargeCountDown.enabled = true;
-
-        // 入力制御クラスをオン
-        inputController.enabled = true;
     }
 
     /// <summary>

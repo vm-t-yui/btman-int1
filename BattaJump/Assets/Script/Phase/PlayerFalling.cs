@@ -30,10 +30,13 @@ public class PlayerFalling : MonoBehaviour
     {
         currentFallWaitTimeCount++;
         // 指定の時間まで待機したら、プレイヤーの物理演算をオンにして落下させる
-        if (currentFallWaitTimeCount > FallWaitTime)
+        if (currentFallWaitTimeCount == FallWaitTime)
         {
             // 物理演算をオンにする
             playerRigidbody.isKinematic = false;
+
+            // 落下音を再生する
+            AudioPlayer.instance.PlaySe(AudioPlayer.SeType.FallingCry);
 
             // 落下フラグを起こす
             isFalling = true;

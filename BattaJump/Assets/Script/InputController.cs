@@ -24,6 +24,29 @@ public class InputController : MonoBehaviour
     }
 
     /// <summary>
+    /// 更新
+    /// </summary>
+    void Update()
+    {
+        // タッチの情報を取得
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            // 最初の入力が行われたらフラグを起こす
+            if (touch.phase == TouchPhase.Began)
+            {
+                IsFirstTouch = true;
+            }
+        }
+
+        // 最初の入力が行われたらフラグを起こす
+        if (Input.GetMouseButtonDown(0))
+        {
+            IsFirstTouch = true;
+        }
+    }
+
+    /// <summary>
     /// 終了時
     /// </summary>
     void OnDisable()
@@ -50,13 +73,9 @@ public class InputController : MonoBehaviour
         // クラス起動フラグがtrueでなければ処理を抜ける
         if (!isAble) { return; }
 
-        // 画面のタッチ入力が行われていたら
+        // タッチの情報を取得
         if (Input.touchCount > 0)
         {
-            // 初めてタッチが行われたフラグを起こす
-            IsFirstTouch = true;
-
-            // タッチの情報を取得
             Touch touch = Input.GetTouch(0);
             // タッチされた回数をカウント
             if (touch.phase == TouchPhase.Began)
@@ -65,11 +84,9 @@ public class InputController : MonoBehaviour
             }
         }
 
-        // 画面のクリック操作（エディタ用）
+        // マウスクリック
         if (Input.GetMouseButtonDown(0))
         {
-            // 初めてタッチが行われたフラグを起こす
-            IsFirstTouch = true;
             // タッチされた回数をカウント
             TouchCountNum++;
         }
