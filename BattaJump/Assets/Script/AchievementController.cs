@@ -20,13 +20,7 @@ public class AchievementController : MonoBehaviour
     [SerializeField]
     ItemDataManager itemData = default;            // アイテムデータ管理クラス
 
-    // 実績解除用の各値
-    const int FirstJumpNum = 1;                    // 初ジャンプ
-    const int ReachedUniverseNum = 60000;          // 宇宙到達
-    const int ConqueredSolarSystemNum = 100000;    // 太陽系制覇
-    const int JumpedFifteenNum = 15;               // 15回ジャンプ
-    const int JumpedThirtyNum = 30;                // 30回ジャンプ
-    const int ItemCompleteNum = 38;                // アイテムコンプリート
+    float putTime = 0;
 
     /// <summary>
     /// 開始
@@ -66,6 +60,22 @@ public class AchievementController : MonoBehaviour
     public void ShowAchievements()
     {
         Social.ShowAchievementsUI();
+    }
+
+    /// <summary>
+    /// 放置の実績解除チェック
+    /// </summary>
+    public void CheckPutTime()
+    {
+        // 放置時間を計測
+        putTime += Time.deltaTime;
+        
+        // 放置時間が指定した値を超えたら実績解除
+        if (putTime >= AchievementScriptableObject.Instance.GetNotJumpNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.NotJump])
+        {
+            Debug.Log("jaoeigjweaoig");
+            ReleaseAchievement(AchievementScriptableObject.AchievementType.NotJump, achievementIDs[(int)AchievementScriptableObject.AchievementType.NotJump], 100);
+        }
     }
 
     /// <summary>

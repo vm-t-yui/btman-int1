@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AchievementScriptableObjects
   m_EditorClassIdentifier: 
   androidAchievementIDs:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'CgkI_vDQ3ZYdEAIQAQ '
+  - 'CgkI_vDQ3ZYdEAIQAg '
+  - 'CgkI_vDQ3ZYdEAIQAw '
+  - 'CgkI_vDQ3ZYdEAIQBA '
+  - 'CgkI_vDQ3ZYdEAIQBQ '
+  - 'CgkI_vDQ3ZYdEAIQBw '
+  - 'CgkI_vDQ3ZYdEAIQCA '
   iosAchievementIDs:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  firstJumpNum: 0
-  reachedUniverseNum: 0
-  conqueredSolarSystemNum: 0
-  notJumpNum: 0
-  jumpedFifteenNum: 0
-  jumpedThirtyNum: 0
-  itemCompleteNum: 0
+  - firstjump
+  - spacecame
+  - planetarycature
+  - pleasefly
+  - fifteenjump
+  - thirtyjump
+  - itemComplete
+  firstJumpNum: 1
+  reachedUniverseNum: 100000
+  conqueredSolarSystemNum: 300000
+  notJumpNum: 30
+  jumpedFifteenNum: 15
+  jumpedThirtyNum: 30
+  itemCompleteNum: 38

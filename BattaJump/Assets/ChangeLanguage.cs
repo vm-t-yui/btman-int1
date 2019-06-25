@@ -16,6 +16,16 @@ public class ChangeLanguage : MonoBehaviour
     //ローカライズクラス
     [SerializeField] LocalizeController localizeController = default;
 
+    /// <summary>
+    /// 開始
+    /// </summary>
+    void Start()
+    {
+        // セーブしてあった言語にドロップダウンを合わせる
+        dropdown.value = localizeController.GetLanguageNum();
+        Change();
+    }
+
     // オプションが変更されたときに言語変更
     public void Change()
     {
