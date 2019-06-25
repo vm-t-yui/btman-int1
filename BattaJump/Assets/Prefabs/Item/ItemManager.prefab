@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDistanceMeter: {fileID: 0}
+  itemManager: {fileID: 7865770566094550200}
   parentItemObj: {fileID: 1231727234567469281, guid: cdac2687c3b1d4cc3a3d8b8421dbd4c8,
     type: 3}
   existAllItems: []

@@ -13,8 +13,6 @@ public class AdManager : MonoBehaviour
     AdBannerController adBanner = default;                            // バナー広告テストクラス
     [SerializeField]
     AdInterstitialController adInterstitial = default;                // インタースティシャル広告テストクラス
-    [SerializeField]
-    AdRewardVideoController adRewardVideo = default;
 
     const string AppId = "ca-app-pub-3824454621992610~6537798789";    // アプリID（テスト用）
 
