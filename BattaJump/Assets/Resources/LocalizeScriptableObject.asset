@@ -13,653 +13,654 @@ MonoBehaviour:
   m_Name: LocalizeScriptableObject
   m_EditorClassIdentifier: 
   japaneseText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "\u65E5\u672C\u8A9E"
+  - "\u82F1\u8A9E"
+  - "\u30C9\u30A4\u30C4\u8A9E"
+  - "\u30A4\u30BF\u30EA\u30A2\u8A9E"
+  - "\u30D5\u30E9\u30F3\u30B9\u8A9E"
+  - "\u4E2D\u56FD\u8A9E"
+  - "\u30B9\u30DA\u30A4\u30F3\u8A9E"
+  - "\u304A\u3059\u3059\u3081 \u30A2\u30D7\u30EA"
+  - "\u30EA\u30C8\u30E9\u30A4"
+  - "\u30BF\u30A4\u30C8\u30EB"
+  - "\u5E83\u544A\u4FC3\u3057"
+  - "\u30BF\u30C3\u30D7\u3067\u30C1\u30E3\u30FC\u30B8\u958B\u59CB\uFF01"
+  - "BGM\u3092\u30DF\u30E5\u30FC\u30C8"
+  - "SE\u3092\u30DF\u30E5\u30FC\u30C8"
+  - ???
+  - "\u5C0F\u4EBA"
+  - "\u5C0F\u4EBA\u306E\u9B54\u6CD5\u4F7F\u3044"
+  - "\u30B5\u30F3\u30C9\u30D0\u30C3\u30AF\u3061\u3083\u3093"
+  - "\u30DB\u30FC\u30E0\u30E9\u30F3\u30DC\u30FC\u30EB"
+  - "\u30C6\u30CB\u30B9\u30DC\u30FC\u30EB"
+  - "\u30B5\u30C3\u30AB\u30FC\u30DC\u30FC\u30EB"
+  - "\u96F2\u8C9D"
+  - "\u308F\u305F\u304C\u3057\u96F2"
+  - "\u8679\u8272\u306E\u7FBD"
+  - "\u900F\u660E\u306A\u7FBD"
+  - "\u9D8F"
+  - "\u30D0\u30C3\u30BF\u7C73"
+  - "\u30BF\u30A4\u30E4"
+  - "\u3046\u3093\u3061\u306E\u5316\u77F3"
+  - "\u9285\u306E\u3046\u3093\u3061\u306E\u5316\u77F3"
+  - "\u9280\u306E\u3046\u3093\u3061\u306E\u5316\u77F3"
+  - "\u91D1\u306E\u3046\u3093\u3061\u306E\u5316\u77F3"
+  - "\u5C0F\u4EBA\u306E\u30B5\u30F3\u30BF"
+  - "\u304A\u3072\u3064\u3058\u5EA7"
+  - "\u304A\u3046\u3057\u5EA7"
+  - "\u3075\u305F\u3054\u5EA7"
+  - "\u304B\u306B\u5EA7"
+  - "\u3057\u3057\u5EA7"
+  - "\u304A\u3068\u3081\u5EA7"
+  - "\u3066\u3093\u3073\u3093\u5EA7"
+  - "\u3055\u305D\u308A\u5EA7"
+  - "\u3044\u3066\u5EA7"
+  - "\u3084\u304E\u5EA7"
+  - "\u307F\u305A\u304C\u3081\u5EA7"
+  - "\u3046\u304A\u5EA7"
+  - "\u8D64\u8272\u306E\u9695\u77F3"
+  - "\u9752\u8272\u306E\u9695\u77F3"
+  - "\u7DD1\u8272\u306E\u9695\u77F3"
+  - "\u58CA\u308C\u305FUFO"
+  - "\u6775\u3068\u81FC"
+  - "\u30DA\u30F3\u30AE\u30F3"
+  - "\u5B87\u5B99\u8239"
+  - "\u30C8\u30E9\u30A4\u30B3\u30A2\u306E\u30A8\u30F3\u30D6\u30EC\u30E0"
+  - "\u30A2\u30A4\u30C6\u30E0\u3092\u96C6\u3081\u3088\u3046\uFF01"
+  - "\u5C0F\u3055\u304F\u3066\u53EF\u611B\u3044\u5C0F\u4EBA\u3002"
+  - "\"\u5C0F\u4EBA\u306E\u9B54\u6CD5\u4F7F\u3044\u3002\u3061\u3087\u3063\u3068\u5371\u306A\u3044\u5C0F\u4EBA...\""
+  - "\u30D0\u30C3\u30BF\u30DE\u30F3\u306E\u611B\u3057\u306E\u30B5\u30F3\u30C9\u30D0\u30C3\u30AF\u3002"
+  - "\u5C06\u6765\u6709\u671B\u3060\u306D\u3002"
+  - "\u30DF\u30B9\u308A\u3059\u304E\uFF01"
+  - "\u98DB\u3070\u3057\u3059\u304E\uFF01"
+  - "\u96F2\u306E\u6D77\u306E\u8C9D\u3002"
+  - "\u7518\u304F\u3066\u304A\u3044\u3057\u305D\u3046\u3002"
+  - "\u7DBA\u9E97\u306A\u8679\u8272\u306E\u7FBD\u6839\u3002"
+  - "\u7F8E\u3057\u3044\u900F\u660E\u306A\u7FBD\u6839\u3002"
+  - "\u9D8F\u3063\u3066\u7A7A\u98DB\u3076\u306E\uFF1F"
+  - "\u304A\u7C73\u306F\u50D5\u3089\u306E\u547D\u3060\uFF01"
+  - "\u3082\u3057\u5F53\u305F\u3063\u305F\u3089\u5371\u306A\u304B\u3063\u305F\u3002"
+  - "\u3069\u3053\u304B\u306E\u661F\u306E1\u5186\u7389\u3089\u3057\u3044\u3002"
+  - "\u3069\u3053\u304B\u306E\u661F\u306E10\u5186\u7389\u3089\u3057\u3044\u3002"
+  - "\u3069\u3053\u304B\u306E\u661F\u306E100\u5186\u7389\u3089\u3057\u3044\u3002"
+  - "\u3069\u3053\u304B\u306E\u661F\u306E500\u5186\u7389\u3089\u3057\u3044\u3002"
+  - "\"\u5C0F\u4EBA\u306E\u30B5\u30F3\u30BF\u30AF\u30ED\u30FC\u30B9\u3002\u30E1\u30EA\u30FC\u30AF\u30EA\u30B9\u30DE\u30B9\uFF01\""
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u53D6\u308C\u3066\u3057\u307E\u3063\u305F\u3082\u306E\u306F\u4ED5\u65B9\u306A\u3044\u3088\u306D\u3002"
+  - "\u307E\u308B\u3067\u30EB\u30D3\u30FC\u306E\u3088\u3046\u306B\u7DBA\u9E97\u3002"
+  - "\u307E\u308B\u3067\u30B5\u30D5\u30A1\u30A4\u30A2\u306E\u3088\u3046\u306B\u7DBA\u9E97\u3002"
+  - "\u307E\u308B\u3067\u30A8\u30E1\u30E9\u30EB\u30C9\u306E\u3088\u3046\u306B\u7DBA\u9E97\u3002"
+  - "\u3053\u308C\u306F\u591A\u304F\u306E\u4FEE\u7F85\u5834\u3092\u6F5C\u308A\u629C\u3051\u3066\u304D\u305FUFO\u3002"
+  - "\u6708\u306E\u514E\u304C\u9905\u3092\u3064\u3044\u3066\u3044\u305F\u306E\u304B\u306A\u3002"
+  - "\u30DA\u30F3\u30AE\u30F3\u3063\u3066\u5B87\u5B99\u98DB\u3076\u306E\uFF1F"
+  - "\u3042\u308C\u3001\u3055\u3063\u304D\u306E\u5B87\u5B99\u8239\uFF1F"
+  - "\u8987\u8005\u306E\u8A3C\u3002"
   englishText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Japanese
+  - English
+  - German
+  - Italian
+  - French
+  - Chinese
+  - Spanish
+  - RecommendedApplication
+  - Retry
+  - Title
+  - AdvertisingPrompt
+  - Start charging with a tap!
+  - Mute BGM
+  - Mute SE
+  - ???
+  - Dwarf
+  - Dwarf Wizard
+  - Sandbag-Chan
+  - Home run ball
+  - Tennis ball
+  - Soccer ball
+  - Cloud shellfish
+  - Cotton candy cloud
+  - Rainbow feather
+  - Transparent feather
+  - Chicken
+  - Batta Rice
+  - Tire
+  - Poop fossil
+  - Poop fossil of copper
+  - Poop fossil of silver
+  - Poop fossil of gold
+  - Dwarf Santa
+  - Aries
+  - Taurus
+  - Gemini
+  - Cancer
+  - Leo
+  - Virgo
+  - Libra
+  - Scorpion
+  - Sagittarius
+  - Capricorn
+  - Aquarius
+  - Pisces
+  - Red meteorites
+  - Blue meteorites
+  - Green meteorites
+  - Broken UFO
+  - Pounder and millstone
+  - Pengin
+  - Spaceship
+  - Tricore emblem
+  - Let's collect items!
+  - Small and cute dwarf.
+  - '"Dwarf Wizard.A little dangerous dwarf ... "'
+  - Battaman's love sandbag.
+  - It looks promising in the future.
+  - Fault !!!
+  - Fly too much !!!
+  - Sea shells in the clouds.
+  - It looks sweet and delicious.
+  - Beautiful rainbow colored feathers.
+  - Beautiful transparent feathers.
+  - Does the chicken fly?
+  - Rice is our life!
+  - It was dangerous if I hit it.
+  - It looks like a one-yen coin of a star somewhere.
+  - It looks like a 10 yen coin of some star.
+  - It looks like a 100 yen coin of some star.
+  - It looks like a 500 yen coin of some star.
+  - '"The dwarf Santa Claus.Merry Christmas! "'
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - I can not help but get rid of it.
+  - It's as beautiful as ruby.
+  - It looks like sapphire.
+  - It looks like an emerald.
+  - This is a UFO that has gone through a lot of shelters.
+  - I wonder if the moon rabbit was wearing a kite.
+  - Is a penguin flying in space?
+  - Is that the previous spaceship?
+  - Proof of the champion.
   germanText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Japanisch
+  - Englisch
+  - Deutsch
+  - Italienisch
+  - "Franz\xF6sisch"
+  - Chinesisch
+  - Spanisch
+  - EmpfohleneAnwendung
+  - Retry
+  - Title
+  - Werbeaufforderung
+  - Starten Sie den Ladevorgang mit einem Fingertipp!
+  - BGM stumm schalten
+  - SE stumm schalten
+  - ???
+  - Zwerg
+  - Zwergzauberer
+  - Sandsack-Chan
+  - Home Run Ball
+  - Tennis Ball
+  - "Fu\xDFball"
+  - Cloud Schalentiere
+  - Zuckerwatte Wolke
+  - Regenbogenfeder
+  - Transparente Feder
+  - "H\xE4hnchen"
+  - Batta Reis
+  - Reifen
+  - Kacken Sie Fossil
+  - Poop Fossil aus Kupfer
+  - Poop Fossil aus Silber
+  - Poop Fossil aus Gold
+  - Zwerg Santa
+  - Widder
+  - Stier
+  - Zwillinge
+  - Krebs
+  - "L\xF6we"
+  - Jungfrau
+  - Waage
+  - Skorpion
+  - "Sch\xFCtze"
+  - Steinbock
+  - Wassermann
+  - Fische
+  - Rote Meteoriten
+  - Rote Meteoriten
+  - Blaue Meteoriten
+  - "Gr\xFCne Meteoriten"
+  - Unterbrochenes UFO
+  - "Stampfer und M\xFChlstein"
+  - Pengin
+  - Raumschiff
+  - "Lass uns Gegenst\xE4nde sammeln!"
+  - "Kleiner und s\xFC\xDFer Zwerg."
+  - "\"Zwergzauberer.Ein kleiner gef\xE4hrlicher Zwerg ... \""
+  - Battamans Liebessandsack.
+  - Es sieht in der Zukunft vielversprechend aus.
+  - Fehler !!!
+  - Zu viel fliegen !!!
+  - Muscheln in den Wolken.
+  - "Es sieht s\xFC\xDF und lecker aus."
+  - "Sch\xF6ne regenbogenfarbene Federn."
+  - "Sch\xF6ne transparente Federn."
+  - Fliegt das Huhn?
+  - Reis ist unser Leben!
+  - "\"Es war gef\xE4hrlich"
+  - ' wenn ich es traf."'
+  - "Es sieht aus wie eine Ein-Yen-M\xFCnze eines Sterns."
+  - "Es sieht aus wie eine 10-Yen-M\xFCnze eines Sterns."
+  - "Es sieht aus wie eine 100-Yen-M\xFCnze eines Sterns."
+  - "Es sieht aus wie eine 500-Yen-M\xFCnze eines Sterns."
+  - "\"Der Zwerg Weihnachtsmann.Fr\xF6hliche Weihnachten! \""
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
+  - ' als es loszuwerden."'
+  - '"Ich kann nicht anders'
   italianText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - giapponese
+  - inglese
+  - tedesco
+  - italiano
+  - francese
+  - cinese
+  - spagnolo
+  - Applicazione consigliata
+  - Retry
+  - Title
+  - Promemoria pubblicitario
+  - Inizia a caricare con un tocco!
+  - BGM muto
+  - Muto SE
+  - ???
+  - Nano
+  - Mago nano
+  - sacchetto di sabbia-Chan
+  - Home Run Ball
+  - Palla da tennis
+  - Palla da calcio
+  - Crostacei nuvola
+  - Nuvoletta di zucchero filato
+  - Piuma arcobaleno
+  - Piuma trasparente
+  - pollo
+  - Batta Riso
+  - Pneumatico
+  - Fossile di cacca
+  - Poop fossile di rame
+  - Fossile di cacca d'argento
+  - Fossile di cacca d'oro
+  - Dwarf Santa
+  - Ariete
+  - Toro
+  - Gemelli
+  - Cancro
+  - Leo
+  - Vergine
+  - Libra
+  - Scorpione
+  - Sagittario
+  - Capricorno
+  - Acquario
+  - Pesci
+  - Meteoriti rossi
+  - Meteoriti blu
+  - Meteoriti verdi
+  - UFO rotto
+  - Pounder e macina
+  - Pengin
+  - Spaceship
+  - Tricore emblem
+  - Raccogliamo oggetti!
+  - Piccolo e carino nano.
+  - '"Mago nano.Un piccolo nano pericoloso ... "'
+  - Sandbag dell'amore di Battaman.
+  - Sembra promettente in futuro.
+  - Colpa !!!
+  - Vola troppo !!!
+  - Conchiglie di mare tra le nuvole
+  - Sembra dolce e delizioso.
+  - Belle piume colorate arcobaleno.
+  - Belle piume trasparenti.
+  - Il pollo vola?
+  - "Il riso \xE8 la nostra vita!"
+  - Era pericoloso se l'avessi colpito.
+  - Sembra una moneta da un solo yen di una stella da qualche parte.
+  - Sembra una moneta da 10 yen di qualche stella.
+  - Sembra una moneta da 100 yen di qualche stella.
+  - Sembra una moneta da 500 yen di qualche stella.
+  - '"Il nano Babbo Natale.Buon Natale! "'
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - Non posso fare a meno di sbarazzarmene.
+  - "\xC8 bello come rubino."
+  - Sembra zaffiro.
+  - Sembra uno smeraldo.
+  - "Questo \xE8 un UFO che ha attraversato molti rifugi."
+  - Mi chiedo se il coniglio luna abbia indossato un aquilone.
+  - Un pinguino vola nello spazio?
+  - E 'la precedente astronave?
+  - Prova del campione.
   frenchText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Japonais
+  - Anglais
+  - Allemand
+  - Italien
+  - "Le fran\xE7ais"
+  - Chinois
+  - Espagnol
+  - "Application recommand\xE9e"
+  - Retry
+  - Title
+  - Invite publicitaire
+  - "Commencez \xE0 charger avec un robinet!"
+  - Muet BGM
+  - Mute SE
+  - ???
+  - Nain
+  - Nain sorcier
+  - Sac de sable-Chan
+  - "Balle de course \xE0 pied"
+  - Balle de tennis
+  - Ballon de football
+  - Coquillages
+  - "Nuage de barbe \xE0 papa"
+  - Plume arc-en-ciel
+  - Plume transparente
+  - poulet
+  - Riz Batta
+  - Pneu
+  - Fossile de caca
+  - Caca fossile de cuivre
+  - Caca fossile d'argent
+  - Caca fossile d'or
+  - "Nain P\xE8re No\xEBl"
+  - "b\xE9lier"
+  - Taureau
+  - "G\xE9meaux"
+  - Cancer
+  - Leo
+  - Vierge
+  - Balance
+  - Scorpion
+  - Sagittaire
+  - Capricorne
+  - Verseau
+  - Poissons
+  - "M\xE9t\xE9orites rouges"
+  - "M\xE9t\xE9orites bleues"
+  - "M\xE9t\xE9orites vertes"
+  - "OVNI bris\xE9"
+  - Pounder et meule
+  - Pingouin
+  - Vaisseau spatial
+  - "Embl\xE8me de Tricore"
+  - Collectons des objets!
+  - Petit et mignon nain.
+  - '"Magicien Nain.Un petit nain dangereux ... "'
+  - Le sac de sable d'amour de Battaman.
+  - "Cela semble prometteur \xE0 l'avenir."
+  - Faute !!!
+  - Voler trop !!!
+  - Des coquillages dans les nuages.
+  - "\xC7a a l'air doux et d\xE9licieux."
+  - Belles plumes de couleur arc-en-ciel.
+  - Belles plumes transparentes.
+  - Est-ce que le poulet mouche?
+  - Le riz est notre vie!
+  - "C'\xE9tait dangereux si je le frappais."
+  - "Cela ressemble \xE0 une pi\xE8ce de monnaie d'un yen d'\xE9toile."
+  - "Cela ressemble \xE0 une pi\xE8ce de 10 yens repr\xE9sentant une \xE9toile."
+  - "Cela ressemble \xE0 une pi\xE8ce de 100 yens repr\xE9sentant une \xE9toile."
+  - "Cela ressemble \xE0 une pi\xE8ce de 500 yens repr\xE9sentant une \xE9toile."
+  - "\"Le nain P\xE8re No\xEBl.Joyeux No\xEBl! \""
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "Je ne peux pas m'emp\xEAcher de m'en d\xE9barrasser."
+  - "\xC8 bello come rubino."
+  - "Cela ressemble \xE0 du saphir."
+  - "Cela ressemble \xE0 une \xE9meraude."
+  - "C'est un OVNI qui a travers\xE9 beaucoup d'abris."
+  - Je me demande si le lapin lunaire portait un cerf-volant.
+  - Un pingouin vole-t-il dans l'espace?
+  - "Est-ce le vaisseau spatial pr\xE9c\xE9dent?"
+  - Preuve du champion.
   chineseText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "\u65E5\u672C"
+  - "\u82F1\u8BED"
+  - "\u5FB7\u56FD"
+  - "\u610F\u5927\u5229"
+  - "\u6CD5\u56FD"
+  - "\u4E2D\u56FD"
+  - "\u897F\u73ED\u7259\u8BED"
+  - "\u63A8\u8350\u5E94\u7528"
+  - Retry
+  - Title
+  - "\u5E7F\u544A\u63D0\u793A"
+  - "\u7528\u6C34\u9F99\u5934\u5F00\u59CB\u5145\u7535\uFF01"
+  - "\u9759\u97F3BGM"
+  - "\u9759\u97F3SE"
+  - ???
+  - "\u4F8F\u5112"
+  - "\u77EE\u4EBA\u7CBE\u7075"
+  - "\u6C99\u888B\u74D2"
+  - "\u672C\u5792\u6253\u7403"
+  - "\u7F51\u7403"
+  - "\u8DB3\u7403"
+  - "\u4E91\u8D1D\u7C7B"
+  - "\u68C9\u82B1\u7CD6\u4E91"
+  - "\u5F69\u8679\u7FBD\u6BDB"
+  - "\u900F\u660E\u7684\u7FBD\u6BDB"
+  - "\u9E21"
+  - "\u5DF4\u5854\u7C73\u996D"
+  - "\u7D2F"
+  - "\u5927\u4FBF\u5316\u77F3"
+  - "\u5927\u4FBF\u5316\u77F3\u94DC"
+  - "\u5927\u4FBF\u5316\u77F3\u94F6"
+  - "\u91D1\u7B8D\u5316\u77F3"
+  - "\u77EE\u5C0F\u7684\u5723\u8BDE\u8001\u4EBA"
+  - "\u767D\u7F8A\u5EA7"
+  - "\u91D1\u725B\u5EA7"
+  - "\u53CC\u5B50\u5EA7"
+  - "\u87F9\u5EA7"
+  - "\u72EE\u5B50\u5EA7"
+  - "\u5904\u5973\u5EA7"
+  - "\u5929\u79E4\u5EA7"
+  - "\u874E\u5EA7"
+  - "\u5C04\u624B\u5EA7"
+  - "\u6469\u7FAF\u5EA7"
+  - "\u6C34\u74F6\u5EA7"
+  - "\u53CC\u9C7C\u5EA7"
+  - "\u7EA2\u8272\u9668\u77F3"
+  - "\u84DD\u8272\u9668\u77F3"
+  - "\u7EFF\u8272\u9668\u77F3"
+  - "\u4E0D\u660E\u98DE\u884C\u7269"
+  - "\u7802\u6D46\u548C\u7802\u6D46"
+  - "\u4F01\u9E45"
+  - "\u98DE\u8239"
+  - "Tricore \u5FBD"
+  - "\u6211\u4EEC\u6536\u96C6\u7269\u54C1\uFF01"
+  - "\u5C0F\u800C\u53EF\u7231\u7684\u77EE\u4EBA\u3002"
+  - "\"\u201C\u77EE\u4EBA\u5DEB\u5E08\u3002\u4E00\u4E2A\u6709\u70B9\u5371\u9669\u7684\u77EE\u4EBA...\u201C\""
+  - "Battaman\u7684\u7231\u6C99\u888B\u3002"
+  - "\u5B83\u5728\u672A\u6765\u770B\u8D77\u6765\u5F88\u6709\u5E0C\u671B\u3002"
+  - "\u9519!!!"
+  - "\u98DE\u5F97\u592A\u591A!!!"
+  - "\u5728\u4E91\u5F69\u7684\u6D77\u58F3\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u751C\u7F8E\u53EF\u53E3\u3002"
+  - "\u7F8E\u4E3D\u7684\u5F69\u8679\u8272\u7684\u7FBD\u6BDB\u3002"
+  - "\u7F8E\u4E3D\u900F\u660E\u7684\u7FBD\u6BDB\u3002"
+  - "\u9E21\u98DE\u5417\uFF1F"
+  - "\u5927\u7C73\u662F\u6211\u4EEC\u7684\u751F\u547D\uFF01"
+  - "\u5982\u679C\u6211\u70B9\u51FB\u5B83\u662F\u5371\u9669\u7684\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u67D0\u4E2A\u661F\u661F\u7684\u4E00\u65E5\u5E01\u786C\u5E01\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u4E00\u4E2A\u660E\u661F\u768410\u65E5\u5143\u786C\u5E01\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u4E00\u4E2A\u660E\u661F\u7684100\u65E5\u5143\u786C\u5E01\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u4E00\u4E2A\u660E\u661F\u7684500\u65E5\u5143\u786C\u5E01\u3002"
+  - "\"\u201C\u77EE\u4EBA\u5723\u8BDE\u8001\u4EBA\u3002\u5723\u8BDE\u8282\u5FEB\u4E50\uFF01
+    \u201C\""
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u6211\u5FCD\u4E0D\u4F4F\u6446\u8131\u5B83\u3002"
+  - "\u5B83\u548C\u7EA2\u5B9D\u77F3\u4E00\u6837\u7F8E\u4E3D\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u84DD\u5B9D\u77F3\u3002"
+  - "\u5B83\u770B\u8D77\u6765\u50CF\u7956\u6BCD\u7EFF\u3002"
+  - "\u8FD9\u662F\u4E00\u4E2A\u7ECF\u5386\u8FC7\u5F88\u591A\u907F\u96BE\u6240\u7684\u4E0D\u660E\u98DE\u884C\u7269\u3002"
+  - "\u6211\u60F3\u77E5\u9053\u6708\u4EAE\u5154\u5B50\u662F\u5426\u6234\u7740\u98CE\u7B5D\u3002"
+  - "\u4F01\u9E45\u662F\u5426\u5728\u592A\u7A7A\u98DE\u884C\uFF1F"
+  - "\u8FD9\u662F\u4EE5\u524D\u7684\u5B87\u5B99\u98DE\u8239\u5417\uFF1F"
+  - "\u51A0\u519B\u7684\u8BC1\u660E\u3002"
   spanishText:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "Espa\xF1ol"
+  - Ingles
+  - "Alem\xE1n"
+  - Italiano
+  - "Franc\xE9s"
+  - Chino
+  - "Espa\xF1ol"
+  - "Aplicaci\xF3n recomendada"
+  - Retry
+  - Title
+  - Mensaje publicitario
+  - "\xA1Empieza a cargar con un toque!"
+  - Silenciar BGM
+  - Mute SE
+  - ???
+  - Enano
+  - Mago enano
+  - Saco terrero-Chan
+  - Pelota de home run
+  - Pelota de tenis
+  - "Bal\xF3n de f\xFAtbol"
+  - Marisco en la nube
+  - "Nube de algod\xF3n de az\xFAcar"
+  - Pluma arcoiris
+  - Pluma transparente
+  - Pollo
+  - Arroz Batta
+  - "Neum\xE1tico"
+  - "Caca f\xF3sil"
+  - "Cobre f\xF3sil de cobre."
+  - "Caca f\xF3sil de plata."
+  - "Caca f\xF3sil de oro"
+  - Santa enana
+  - Aries
+  - Tauro
+  - Geminis
+  - "C\xE1ncer"
+  - Leo
+  - Virgo
+  - Libra
+  - "Escorpi\xF3n"
+  - Sagitario
+  - Capricornio
+  - Acuario
+  - Piscis
+  - Meteoritos rojos
+  - Meteoritos azules
+  - Meteoritos verdes
+  - Ovni roto
+  - Pounder y piedra de molino
+  - Pinguino
+  - Astronave
+  - Emblema tricore
+  - "\xA1Vamos a recoger los art\xEDculos!"
+  - "Peque\xF1o y lindo enano."
+  - "\"Mago enano.Un peque\xF1o enano peligroso ... \""
+  - La bolsa de arena de amor de Battaman.
+  - Se ve prometedor en el futuro.
+  - Culpa !!!
+  - Vuela demasiado !!!
+  - Conchas de mar en las nubes.
+  - Se ve dulce y delicioso.
+  - Hermosas plumas de colores del arco iris.
+  - Hermosas plumas transparentes.
+  - "\xBFEl pollo vuela?"
+  - "\xA1El arroz es nuestra vida!"
+  - Era peligroso si lo golpeaba.
+  - Parece una moneda de un yen de una estrella en alguna parte.
+  - Parece una moneda de 10 yenes de alguna estrella.
+  - Parece una moneda de 100 yenes de alguna estrella.
+  - Parece una moneda de 100 yenes de alguna estrella.
+  - "\"El enano Pap\xE1 Noel.\xA1Feliz Navidad! \""
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - No puedo evitar deshacerme de ello.
+  - "Es tan hermoso como el rub\xED."
+  - Parece un zafiro.
+  - Parece una esmeralda.
+  - Este es un OVNI que ha pasado por muchos refugios.
+  - Me pregunto si el conejo lunar llevaba una cometa.
+  - "\xBFEst\xE1 volando un ping\xFCino en el espacio?"
+  - "\xBFEs esa la nave espacial anterior?"
+  - "Prueba del campe\xF3n."
