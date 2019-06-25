@@ -24,12 +24,14 @@ public class AudioPlayer : MonoBehaviour
     {
         SelectButton,   // 決定
         CancelButton,   // キャンセル
+        PanelOpen,      // パネル開く
+        PanelClose,     // パネル閉じる
         BirdTwitter,    // 鳥のさえずり
         JumpChargeing,  // ジャンプ溜め
-        Jump,           // ジャンプ
+        JumpVoice,      // ジャンプボイス
+        CraterExplosion,// クレーター爆発
         WindNoise,      // 風切り
         FallingCry,     // 落下時の叫び声
-        Landing,        // 着地
     }
 
     // シングルトンインスタンス

@@ -51,6 +51,9 @@ public class CameraMoveController : MonoBehaviour
             {
                 transform.localPosition = jumpCameraPos;
                 isChace = true;
+
+                // 風切り音を再生する
+                AudioPlayer.instance.PlaySe(AudioPlayer.SeType.WindNoise);
             }
 
             // Lerpを利用して移動する

@@ -38,6 +38,9 @@ public class PlayerFalling : MonoBehaviour
             // 落下音を再生する
             AudioPlayer.instance.PlaySe(AudioPlayer.SeType.FallingCry);
 
+            // 風切り音を停止する
+            AudioPlayer.instance.StopSe(AudioPlayer.SeType.WindNoise);
+
             // 落下フラグを起こす
             isFalling = true;
         }

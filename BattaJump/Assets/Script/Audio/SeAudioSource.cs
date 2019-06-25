@@ -26,4 +26,13 @@ public class SeAudioSource : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    /// <summary>
+    /// 終了
+    /// </summary>
+    void OnDisable()
+    {
+        // オーディオを停止する
+        audioSource.Stop();
+    }
 }
