@@ -39,7 +39,7 @@ public class ShareOtherApplication : MonoBehaviour
         }
 
         // 投稿する
-        string tweetText = "患者の運命は....をえが変える！！！！";
+        string tweetText = "";
         string tweetURL = "https://www.google.com/?hl=ja";
         SocialConnector.SocialConnector.Share(tweetText, tweetURL, imgPath);
     }

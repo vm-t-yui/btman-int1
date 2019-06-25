@@ -201,4 +201,14 @@ public class LocalizeController : MonoBehaviour
     {
         return languageNum;
     }
+
+    /// <summary>
+    /// ローカライズされたテキストのゲット関数
+    /// </summary>
+    /// <returns>ローカライズされたテキスト</returns>
+    /// <param name="i">要素番号</param>
+    public string GetLocalizeText(int i)
+    {
+        return localizeText[i];
+    }
 }
