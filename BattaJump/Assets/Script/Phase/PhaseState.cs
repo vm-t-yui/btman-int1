@@ -191,6 +191,9 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void EnterPlayerFalling()
     {
+        // プレイヤーの入寮情報の初期化
+        InputController.Init();
+
         // "PlayerFalling"をtrueに設定
         playerFalling.enabled = true;
 

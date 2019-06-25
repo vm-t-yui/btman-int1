@@ -18,7 +18,7 @@ public class JumpChargeingStay : MonoBehaviour
         // 鳥のさえずりを再生
         AudioPlayer.instance.PlaySe(AudioPlayer.SeType.BirdTwitter);
     }
-
+    
     /// <summary>
     /// 終了
     /// </summary>

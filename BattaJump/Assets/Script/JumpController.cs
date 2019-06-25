@@ -30,7 +30,7 @@ public class JumpController : MonoBehaviour
         playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
 
         // ジャンプ音を再生
-       // AudioPlayer.instance.PlaySe(AudioPlayer.SeType.Jump);
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.JumpVoice);
 
         // ジャンプフラグを立てる
         IsJumping = true;
