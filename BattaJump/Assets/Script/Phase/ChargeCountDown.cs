@@ -61,5 +61,7 @@ public class ChargeCountDown : MonoBehaviour
 
         // チャージ音を停止する
         AudioPlayer.instance.StopSe(AudioPlayer.SeType.JumpChargeing);
+        // 鳥のさえずりを停止する
+        AudioPlayer.instance.StopSe(AudioPlayer.SeType.BirdTwitter);
     }
 }

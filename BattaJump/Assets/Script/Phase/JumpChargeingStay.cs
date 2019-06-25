@@ -15,13 +15,4 @@ public class JumpChargeingStay : MonoBehaviour
         // 鳥のさえずりを再生
         AudioPlayer.instance.PlaySe(AudioPlayer.SeType.BirdTwitter);
     }
-
-    /// <summary>
-    /// 終了
-    /// </summary>
-    void OnDisable()
-    {
-        // 鳥のさえずりを停止する
-        AudioPlayer.instance.StopSe(AudioPlayer.SeType.BirdTwitter);
-    }
 }
