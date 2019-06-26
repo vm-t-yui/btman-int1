@@ -72,6 +72,7 @@ public class ItemDistanceMeter : MonoBehaviour
     /// </summary>
     public void CreateMeter()
     {
+        //NOTE:+1はプレイヤーのアイコン分のプラス
         for (int i = 0; i < ItemCreater.appearanceNum + 1; i++)
         {
             CreateIcon(i);
