@@ -77,10 +77,20 @@ public class InputController : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            // タッチされた回数をカウント
             if (touch.phase == TouchPhase.Began)
             {
                 TouchCountNum++;
+
+                // チャージ中のタップ音を再生
+                // memo : カウント数を２で割った余りを利用して、２種類のタップ音を交互に再生させる
+                if (TouchCountNum % 2 == 0)
+                {
+                    AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ChargeingTap1);
+                }
+                else
+                {
+                    AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ChargeingTap2);
+                }
             }
         }
 
@@ -89,6 +99,17 @@ public class InputController : MonoBehaviour
         {
             // タッチされた回数をカウント
             TouchCountNum++;
+
+            // チャージ中のタップ音を再生
+            // memo : カウント数を２で割った余りを利用して、２種類のタップ音を交互に再生させる
+            if (TouchCountNum % 2 == 0)
+            {
+                AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ChargeingTap1);
+            }
+            else
+            {
+                AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ChargeingTap2);
+            }
         }
     }
 }
