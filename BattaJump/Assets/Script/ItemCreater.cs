@@ -27,8 +27,7 @@ public class ItemCreater : MonoBehaviour
     [SerializeField]
     List<float> existAllItemsRate = new List<float>();          //表示されるアイテムの出現確立
 
-    public const int appearanceNum = 4;                         //表示数
-
+    public const int appearanceNum = 6;                         //表示数
     [SerializeField]
     float skyBorder = 300;                                      //空の境目
     [SerializeField]

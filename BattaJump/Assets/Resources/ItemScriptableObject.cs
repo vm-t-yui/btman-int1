@@ -49,6 +49,8 @@ public class ItemScriptableObject : ScriptableObject
     [SerializeField]
     float[] rate;                                                   //アイテムの出現確率    
 
+    Dictionary<int, float> itemRarity = new Dictionary<int, float>(); //アイテムの出現確率
+
     [SerializeField]
     GameObject[] itemPrefabs = new GameObject[ItemManager.ItemNum]; //アイテムのプレハブ
 
@@ -127,9 +129,7 @@ public class ItemScriptableObject : ScriptableObject
     /// </summary>
     /// <returns>The appearance rate.</returns>
     public Dictionary<int, float> GetItemRarity()
-    { 
-        Dictionary<int, float> itemRarity = new Dictionary<int, float>(); //アイテムの出現確率
-
+    {
         for (int i = 0; i < rarity.Length; i++)
         {
             itemRarity.Add(rarity[i], rate[i]);
