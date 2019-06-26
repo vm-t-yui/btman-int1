@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// スカイボックス回転クラス
+/// </summary>
 public class SkyboxRotater : MonoBehaviour
 {
     [SerializeField]
