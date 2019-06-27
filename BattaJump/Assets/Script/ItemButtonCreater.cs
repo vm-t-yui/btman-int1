@@ -68,7 +68,7 @@ public class ItemButtonCreater : MonoBehaviour
                 else
                 {
                     buttonImage.sprite = existenceSpriteAtlas.GetSprite(atlasKey[i]);
-                    buttonImage.color = new Color(0.0f, 0.0f, 0.0f);
+                    buttonImage.color = Color.black;
                 }
             }
         }
