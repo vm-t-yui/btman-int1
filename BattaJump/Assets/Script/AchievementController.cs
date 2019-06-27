@@ -33,6 +33,8 @@ public class AchievementController : MonoBehaviour
         AchievementScriptableObject.Instance.GetAndroidIDs();
 #elif UNITY_IOS
         AchievementScriptableObject.Instance.GetIosIDs();
+#else
+        null;
 #endif
     }
 
@@ -59,6 +61,9 @@ public class AchievementController : MonoBehaviour
     /// </summary>
     public void ShowAchievements()
     {
+        // IDがnullなら処理を抜ける
+        if (achievementIDs == null) { return; }
+
         Social.ShowAchievementsUI();
     }
 
@@ -67,6 +72,9 @@ public class AchievementController : MonoBehaviour
     /// </summary>
     public void CheckPutTime()
     {
+        // IDがnullなら処理を抜ける
+        if (achievementIDs == null) { return; }
+
         // 放置時間を計測
         putTime += Time.deltaTime;
         
@@ -83,6 +91,9 @@ public class AchievementController : MonoBehaviour
     /// </summary>
     public void CheckRelease()
     {
+        // IDがnullなら処理を抜ける
+        if (achievementIDs == null) { return; }
+
         // インスタンスを取得
         AchievementScriptableObject achievementData = AchievementScriptableObject.Instance;
 
