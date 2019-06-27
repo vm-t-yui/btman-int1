@@ -30,7 +30,6 @@ public class ItemDescription : MonoBehaviour
     /// <param name="num">ボタンの番号.</param>
     public void OnClickDescription(int num)
     {
-        Debug.Log(num);
         //入手しているアイテムならそのアイテムの説明表示、していなかったら説明なし
         if (itemManager.GetIsHasItem(num))
         {
@@ -38,7 +37,8 @@ public class ItemDescription : MonoBehaviour
             int itemNum = num;
 
             selectingNum = itemNum;
-            //displayImage.sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
+            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
+            displayImage.color = Color.white;
             displayName.text = itemName[itemNum];
             displayDescription.text = itemDescription[itemNum];
         }
@@ -46,8 +46,8 @@ public class ItemDescription : MonoBehaviour
         {
             selectingNum = 0;
             displayName.text = itemName[0];
-
-            //NOTE:？？？(itemName[0]の要素)をいれる
+            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(num);
+            displayImage.color = Color.black;
             displayDescription.text = itemName[0];
         }
     }
