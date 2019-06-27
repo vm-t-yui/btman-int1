@@ -93,7 +93,7 @@ public class ItemDistanceMeter : MonoBehaviour
             {
                 //NOTE:i - 1は[0](プレイヤーとプレイヤーの差分は見ないため)のずれ
                 //位置の差分をとって座標更新
-                posDifference[i - 1] = GetPosDifference(i - 1);
+                posDifference[i - 1] = GetPosDifference(i - 1) * 2;
 
                 //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                 if (posDifference[i - 1] < 0)
@@ -102,7 +102,7 @@ public class ItemDistanceMeter : MonoBehaviour
                 }
                 else
                 {
-                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(arrowMargin, (posDifference[i - 1] * 2), 0);
+                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(arrowMargin, (posDifference[i - 1]), 0);
 
                     //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                     if (iconList[i].transform.position.y > iconList[0].transform.position.y + maxDistance)
