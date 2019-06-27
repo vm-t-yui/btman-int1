@@ -93,6 +93,16 @@ public class ItemScriptableObject : ScriptableObject
     }
 
     /// <summary>
+    /// アイテムのスプライト画像のゲット関数
+    /// </summary>
+    /// <returns>The sprite.</returns>
+    /// <param name="i">アイテム番号</param>
+    public string GetName(int i)
+    {
+        return itemName[i];
+    }
+
+    /// <summary>
     /// アイテムCSVのゲット関数
     /// </summary>
     /// <returns>CSVに入っている名前、出現率、出現場所</returns>

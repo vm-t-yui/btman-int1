@@ -13,9 +13,6 @@ public class ItemCreater : MonoBehaviour
     [SerializeField]
     ItemManager itemManager = default;
 
-    [SerializeField]
-    GameObject parentItemObj = default;                         //空の親オブジェクト
-
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
     string[] appearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
 
@@ -87,30 +84,26 @@ public class ItemCreater : MonoBehaviour
         else
         {
             //空の親オブジェクトから親を複製、データオブジェクトからアイテムのモデルのプレハブを持ってきて子にする
-            GameObject newParentItem = Instantiate(parentItemObj);
             GameObject newChildItem = Instantiate(ItemScriptableObject.Instance.GetItemPrefabs(itemNum));
-            newChildItem.transform.parent = newParentItem.transform;
-            newChildItem.transform.position = newParentItem.transform.position;
 
             //子オブジェクトにトリガーのコライダーとアイテム番号を追加
             SphereCollider coll = newChildItem.AddComponent<SphereCollider>();
             coll.isTrigger = true;
-            coll.radius = 8;
 
             newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
 
             //Skyなら空、それ以外なら宇宙のアイテムリストにいれる
             if (appearancePlace[itemNum] == "Sky")
             {
-                existSkyItems.Add(itemNum, newParentItem);
+                existSkyItems.Add(itemNum, newChildItem);
             }
             else
             {
-                existSpaceItems.Add(itemNum, newParentItem);
+                existSpaceItems.Add(itemNum, newChildItem);
             }
 
             //それぞれの表示アイテムのリストに追加
-            existAllItems.Add(newParentItem);
+            existAllItems.Add(newChildItem);
             existAllItemsRate.Add(float.Parse(appearanceRate[itemNum]));
         }
     }
