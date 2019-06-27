@@ -34,6 +34,10 @@ public class AudioPlayer : MonoBehaviour
         CraterExplosion,// クレーター爆発
         WindNoise,      // 風切り
         FallingCry,     // 落下時の叫び声
+        DramRoll,       // ドラムロール
+        RollFinish,     // ロール終わり
+        Cheers,         // 歓声
+        Tin,            // チーン
     }
 
     // シングルトンインスタンス

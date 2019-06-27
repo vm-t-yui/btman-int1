@@ -60,6 +60,9 @@ public class ResultPhaseState : MonoBehaviour
     float landingTime = 0;                           // 着地のアニメーション再生時間
     const float LandingCraterCreateTime = 0.1f;      // 着地アニメーション中にクレーターを生成する時間
 
+    float countUpWaitCount = 0;         // カウントアップ待機用カウント
+    const float countWaitTime = 1.5f;   // カウントアップ待機時間
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -115,9 +118,6 @@ public class ResultPhaseState : MonoBehaviour
                     // バナー広告を表示
                     adManager.ShowBanner();
 
-                    // スコアカウントアップ処理開始
-                    scoreCountUp.enabled = true;
-
                     //プレイヤーを表示
                     playerObj.SetActive(true);
 
@@ -126,6 +126,15 @@ public class ResultPhaseState : MonoBehaviour
                 break;
 
             case PhaseType.CountScore:        // スコアカウント中
+
+                // 指定の時間までカウントアップを待機
+                countUpWaitCount += Time.deltaTime;
+                if (countUpWaitCount > countWaitTime)
+                {
+                    // 指定の時間経過したらカウントアップを開始
+                    scoreCountUp.enabled = true;
+
+                }
 
                 landingTime += Time.deltaTime;
                 // 着地アニメーションの再生時間が指定した時間まで行ったら

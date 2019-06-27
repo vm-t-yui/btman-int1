@@ -28,6 +28,9 @@ public class ScoreCountUp : MonoBehaviour
     {
         // 獲得スコアを取得
         getScore = playData.GetNowScore();
+
+        // カウントアップ中のドラムロール音を再生
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.DramRoll);
     }
 
     /// <summary>
@@ -57,7 +60,12 @@ public class ScoreCountUp : MonoBehaviour
             waitTime += Time.deltaTime;
 
             countScore = getScore;
-            IsCountEnd = true;
+            if (!IsCountEnd)
+            {
+                // ロール終了サウンドを再生
+                AudioPlayer.instance.PlaySe(AudioPlayer.SeType.RollFinish);
+                IsCountEnd = true;
+            }
 
             // 指定した時間待機したら
             if (waitTime >= WaitMaxTime)

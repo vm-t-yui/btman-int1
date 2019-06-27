@@ -18,6 +18,9 @@ public class ChargeCountDown : MonoBehaviour
     // カウントダウンの初期値
     const float CountDownNum = 10;
 
+    // ジャンプボイスを再生させる残りカウント数
+    const float JumpVoiceRemainCountNum = 1;
+
     /// <summary>
     /// 初期化処理
     /// </summary>
@@ -28,6 +31,10 @@ public class ChargeCountDown : MonoBehaviour
 
         // ジャンプ力のチャージ音を再生
         AudioPlayer.instance.PlaySe(AudioPlayer.SeType.JumpChargeing);
+
+        // 指定の残りカウント数まで待機したあとにジャンプボイスを再生させる
+        // NOTE : 待機時間 = 最大カウント数 - 指定の残りカウント数
+        Invoke("PlayJumpVoice", CountDownNum - JumpVoiceRemainCountNum);
     }
 
     /// <summary>
@@ -45,7 +52,16 @@ public class ChargeCountDown : MonoBehaviour
             CurrentCountNum -= Time.deltaTime;
             // カウントダウンの値を表示
             countDownText.text = CurrentCountNum.ToString("F1");
+
         }
+    }
+
+    /// <summary>
+    /// ジャンプボイスを再生させる
+    /// </summary>
+    void PlayJumpVoice()
+    {
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.JumpVoice);
     }
 
     /// <summary>
