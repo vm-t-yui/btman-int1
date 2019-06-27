@@ -13,14 +13,15 @@ public class CameraMoveController : MonoBehaviour
     // 現在のズームカウント数
     int currentZoomTimeCount = 0;
 
-    readonly Vector3 jumpCameraPos      = new Vector3(-2,-0.8f,5);    // ジャンプ時のカメラの位置
-    readonly Vector3 LookAtPosOffset    = new Vector3(0, 1, 0);       // 注視点のオフセット
-    const    int     CameraMoveWaitTime = 10;                         // カメラの移動が開始するまでの待機時間
-    const    int     ZoomTime           = 600;                        // ズーム時間
-    const    float   ZoomSpeed          = 0.003f;                     // ズームスピード
-    const    float   ZoomLerpRate       = 0.05f;                      // ズームのLerp率
+    readonly Vector3 jumpCameraPos         = new Vector3(-2.5f,2.5f,7);   // ジャンプ時のカメラの位置
+    readonly Vector3 LookAtPosGroundOffset = new Vector3(0, 1, 0);        // 注視点のオフセット
+    readonly Vector3 LookAtPosJumpOffset   = new Vector3(0, 3, 0);        // 注視点のオフセット
+    const    int     CameraMoveWaitTime    = 10;                          // カメラの移動が開始するまでの待機時間
+    const    int     ZoomTime              = 600;                         // ズーム時間
+    const    float   ZoomSpeed             = 0.003f;                      // ズームスピード
+    const    float   ZoomLerpRate          = 0.05f;                       // ズームのLerp率
 
-    bool isChace = false;                                             // 追跡フラグ
+    bool isChace = false;                                                 // 追跡フラグ
 
     /// <summary>
     /// 更新
@@ -28,9 +29,6 @@ public class CameraMoveController : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        // プレイヤーにカメラを向ける
-        transform.LookAt(playerTransform.position + LookAtPosOffset);
-
         // ズーム時のカウントをインクリメント
         currentZoomTimeCount++;
 
@@ -65,6 +63,27 @@ public class CameraMoveController : MonoBehaviour
                 // カメラとプレイヤーの親子関係を解除する
                 transform.parent = null;
             }
+        }
+
+        // プレイヤーにカメラを向ける
+        transform.LookAt(playerTransform.position + GetPosOffset());
+    }
+
+    /// <summary>
+    /// 注視点のオフセットのゲット関数
+    /// </summary>
+    /// <returns>注視点のオフセット</returns>
+    Vector3 GetPosOffset()
+    {
+        // 飛ん出る時のオフセット
+        if (currentZoomTimeCount > ZoomTime + CameraMoveWaitTime)
+        {
+            return LookAtPosJumpOffset;
+        }
+        // 地面にいる時のオフセット
+        else
+        {
+            return LookAtPosGroundOffset;
         }
     }
 }
