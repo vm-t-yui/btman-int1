@@ -154,6 +154,9 @@ public class PhaseState : MonoBehaviour
     /// </summary>
     void EnterJumpHeightCounter()
     {
+        // ジャンプ開始時のBGMを再生
+        AudioPlayer.instance.PlayBgm(AudioPlayer.BgmType.Jumping);
+
         // "JumpHeightCounter"をtrueに設定
         jumpHeightCounter.enabled = true;
 
@@ -211,6 +214,9 @@ public class PhaseState : MonoBehaviour
         {
             // ステートを"NextScene"に変更する
             stateMachine.SetState(PhaseType.NextScene);
+
+            // 再生中のBGMを停止
+            AudioPlayer.instance.StopBgm();
         }
     }
 
