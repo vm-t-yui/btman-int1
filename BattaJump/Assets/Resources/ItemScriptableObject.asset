@@ -40,6 +40,8 @@ MonoBehaviour:
   - {fileID: 7916872364536532571, guid: 200a7a94f4ba49f4b912e212583f3f82, type: 3}
   - {fileID: 40316597019180247, guid: 88400edeb1ba82d4781ae9973d249803, type: 3}
   - {fileID: 6340600286197436495, guid: 68a3dfd5fcb8b0e42a133d9f570cfba9, type: 3}
+  - {fileID: 3341638381746758618, guid: 97ffd61cfefd94562bc20454f39bd885, type: 3}
+  - {fileID: 7875508353186218403, guid: 5d7570d3ebc4043c08bb5d96d5a3e37b, type: 3}
   - {fileID: 5084226958316224701, guid: ce1593408f3cd420fa682fb392297592, type: 3}
   - {fileID: 5171981642432107127, guid: 73fc77ae6bbbd4b5082cf47a1fd02c77, type: 3}
   - {fileID: 8047647516314606851, guid: d12d4f32b599642b5b1ec98c138c605e, type: 3}
@@ -50,8 +52,6 @@ MonoBehaviour:
   - {fileID: 4934190781671829939, guid: 755fdf85674cc4534ba670cbd4930b36, type: 3}
   - {fileID: 9038945911055521903, guid: e67e265c1ba8b4399a119c15f1789ae2, type: 3}
   - {fileID: 4338943267014101452, guid: 419d5a60b5e544a708d9c29044b64bc5, type: 3}
-  - {fileID: 3341638381746758618, guid: 97ffd61cfefd94562bc20454f39bd885, type: 3}
-  - {fileID: 7875508353186218403, guid: 5d7570d3ebc4043c08bb5d96d5a3e37b, type: 3}
   - {fileID: 5302946507465983374, guid: 3b602f66dde37b346871d468d6b57cd0, type: 3}
   - {fileID: 6847829265095495543, guid: d0b5f169f7106024e9c050d817c6cb50, type: 3}
   - {fileID: 5362670374130645414, guid: f8133e38e75d0284aab8a6c3df787476, type: 3}
@@ -61,44 +61,44 @@ MonoBehaviour:
   - {fileID: 7804603399934967252, guid: 281924b8054a39d4fbb75701e7ef3a66, type: 3}
   - {fileID: 8682598499800782739, guid: e493b5f606d39d348ad2b15414c1eed6, type: 3}
   itemName:
-  - Dwarf
-  - Dwarf Wizard
-  - Sandbag-chan
-  - Home run ball
-  - Tennis ball
-  - Soccer ball
-  - Cloud shellfish
-  - Cotton candy cloud
-  - Rainbow feather
-  - Transparent feather
-  - Chicken
-  - Batta Rice
-  - Tire
-  - Poop fossil
-  - Poop fossil of copper
-  - Poop fossil of silver
-  - Poop fossil of gold
-  - Dwarf Santa
-  - Aries
-  - Taurus
-  - Gemini
-  - Cancer
-  - Leo
-  - Virgo
-  - Libra
-  - Scorpion
-  - Sagittarius
-  - Capricorn
-  - Aquarius
-  - Pisces
-  - Red meteorites
-  - Blue meteorites
-  - Green meteorites
-  - Broken UFO
-  - Pounder and millstone
-  - Pengin
-  - Spaceship
-  - Tricore emblem
+  - green_kobito
+  - witch_kobito
+  - sandbag_chan
+  - baseball
+  - tennis
+  - soccer
+  - shell
+  - watagashi
+  - feather_rainbow
+  - feather_transparent
+  - chicken
+  - battamai
+  - tire
+  - unko
+  - copper_unko
+  - silver_unko
+  - golden_unko
+  - santa_kobito
+  - aquarius
+  - pisces
+  - aries
+  - taurus
+  - gemini
+  - cancer
+  - leo
+  - virgo
+  - libra
+  - scorpio
+  - sagittarius
+  - capricorn
+  - red_meteorite
+  - blue_meteorite
+  - green_meteorite
+  - ufo
+  - kine_usu
+  - penguin
+  - rocket
+  - emblem
   itemAppearanceRate:
   - 4
   - 3.5
