@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D;
 using System;
-#pragma warning disable RECS0018 // 等値演算子による浮動小数点値の比較
 
 /// <summary>
 /// アイテムとの距離メータークラス
@@ -13,9 +12,6 @@ public class ItemDistanceMeter : MonoBehaviour
 {
     [SerializeField]
     GameObject player = default;        //プレイヤー
-
-    [SerializeField]
-    GameObject meterIcon = default;     //メーターのアイコン
 
     [SerializeField]
     ItemCreater itemCreater = default;  //アイテム生成クラス
@@ -104,7 +100,7 @@ public class ItemDistanceMeter : MonoBehaviour
                 }
                 else
                 {
-                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(0, (posDifference[i - 1]), 0);
+                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(40, (posDifference[i - 1] * 2), 0);
 
                     //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                     if (iconList[i].transform.position.y > iconList[0].transform.position.y + maxDistance)

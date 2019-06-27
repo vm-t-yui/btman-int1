@@ -8,7 +8,18 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     [SerializeField]
-    int myNum;       //自分のアイテム番号
+    int myNum;                  //自分のアイテム番号
+
+    bool isCollider = false;    //当たり判定フラグ
+
+    /// <summary>
+    /// 開始処理
+    /// </summary>
+    void Start()
+    {
+        //当たり判定開始
+        isCollider = true;
+    }
 
     /// <summary>
     /// 範囲に入るとアイテム取得(非表示)
@@ -16,7 +27,7 @@ public class ItemController : MonoBehaviour
     /// <param name="other">プレイヤー</param>
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Player" && isCollider)
         {
             gameObject.SetActive(false);
         }
