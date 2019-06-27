@@ -4802,8 +4802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debris:
-  - {fileID: 335355482506879661, guid: 8bade483d80c7ee4ca3974f99592dda4, type: 3}
-  - {fileID: 1813501336970484477, guid: bca7593429db15a46b71ba2a1da94c7e, type: 3}
+  - {fileID: 4647004711454760562}
+  - {fileID: 6567569790464027084}
   crater: {fileID: 241327173816512984}
   takeOffParticle: {fileID: 241327172981413136}
   VelocityMin: {x: -5, y: 20, z: -5}
@@ -4823,7 +4823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5929254154358535438}
-  Deceleration: {x: 0, y: 0.15, z: 0}
+  Deceleration: {x: 0, y: 1.5, z: 0}
 --- !u!114 &9148658202754007249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7846411975482803544}
-  Deceleration: {x: 0, y: 0.15, z: 0}
+  Deceleration: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &4759856437379969841
 PrefabInstance:
   m_ObjectHideFlags: 0

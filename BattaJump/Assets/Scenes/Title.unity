@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -637,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -681,10 +685,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 13700000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -794,16 +794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: adRewardVideo
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
       propertyPath: m_Name
@@ -813,11 +803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: cube
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506186, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
@@ -874,6 +859,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: adRewardVideo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: cube
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40d8f8ea7048774b93ef090ad9be19c, type: 3}
 --- !u!1 &1188290198 stripped
@@ -901,6 +901,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
+        type: 3}
+      propertyPath: m_Name
+      value: AchievementController
+      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411111, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: playData
@@ -911,11 +916,6 @@ PrefabInstance:
       propertyPath: itemData
       value: 
       objectReference: {fileID: 6919808163537053082}
-    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
-        type: 3}
-      propertyPath: m_Name
-      value: AchievementController
-      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411110, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1267,16 +1267,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1188290198}
-    - target: {fileID: 433408632271294753, guid: d8bca727ac5d646bb840d166e42e9e1d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192857900455311252, guid: d8bca727ac5d646bb840d166e42e9e1d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5180824126823918482, guid: d8bca727ac5d646bb840d166e42e9e1d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1288,15 +1278,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4343727234628468602, guid: 8ae4af2bc683b456eaa7115ef85baa79,
         type: 2}
-    - target: {fileID: 7232446542086599992, guid: d8bca727ac5d646bb840d166e42e9e1d,
+    - target: {fileID: 5180824127894214268, guid: d8bca727ac5d646bb840d166e42e9e1d,
         type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7232446542086599992, guid: d8bca727ac5d646bb840d166e42e9e1d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bca727ac5d646bb840d166e42e9e1d, type: 3}
