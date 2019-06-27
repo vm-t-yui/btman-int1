@@ -23,9 +23,6 @@ public class ChargeCountDown : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
-        // 自分自身のインスタンスを"BgmPlayState"に渡す
-        BgmPlayState.instance.chargeCountDown = this;
-
         // カウントダウンのUIを表示する
         GeneralFuncion.SetActiveFromAllChild(transform, true);
 
