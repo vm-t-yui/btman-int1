@@ -38,7 +38,7 @@ public class ItemDescription : MonoBehaviour
 
             selectingNum = itemNum;
             displayImage.sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
-            displayImage.color = new Color(255.0f, 255.0f, 255.0f);
+            displayImage.color = Color.white;
             displayName.text = itemName[itemNum];
             displayDescription.text = itemDescription[itemNum];
         }
@@ -47,7 +47,7 @@ public class ItemDescription : MonoBehaviour
             selectingNum = 0;
             displayName.text = itemName[0];
             displayImage.sprite = ItemScriptableObject.Instance.GetSprite(num);
-            displayImage.color = new Color(0.0f, 0.0f, 0.0f);
+            displayImage.color = Color.black;
             displayDescription.text = itemName[0];
         }
     }
