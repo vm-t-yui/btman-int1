@@ -59,6 +59,7 @@ ModelImporter:
     400052: //RootNode
     7400000: idleLoop
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,7 +73,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'Bip001 L Thigh' : position error
+      = 10.592522 mm\n\t'Bip001 R Thigh' : position error = 9.936882 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -91,7 +94,7 @@ ModelImporter:
       name: idleLoop
       takeName: btm@idleLoop
       firstFrame: 0.8
-      lastFrame: 14.8
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

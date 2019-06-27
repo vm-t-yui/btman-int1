@@ -59,6 +59,7 @@ ModelImporter:
     400052: //RootNode
     7400000: rejoice
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,7 +73,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'Bip001 L Thigh' : position error
+      = 17.918676 mm\n\t'Bip001 R Thigh' : position error = 21.051504 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
