@@ -48,8 +48,8 @@ public class ItemButtonCreater : MonoBehaviour
             duplicateButton.transform.localScale = new Vector3(1, 1, 1);
             buttons.Add(duplicateButton);
         }
-
-        //スプライトアトラスの名前習得
+        //TODO:後にちゃんとしたスプライトアトラスに差し替えるので一旦コメントアウト
+        ////スプライトアトラスの名前習得
         //for (int j = 0; j < atlasKey.Length; j++) 
         //{
         //    atlasKey[j] = GetAtlasKey(j);
@@ -67,8 +67,9 @@ public class ItemButtonCreater : MonoBehaviour
             //ボタンのアイテムゲット
             for (int i = 0; i < ItemManager.ItemNum; i++) 
             {
+                //TODO:後にちゃんとしたスプライトアトラスに差し替えるので一旦コメントアウト
                 //Image buttonImage = buttons[i].GetComponent<Image>();
-
+                //
                 ////ゲットしているなら実態、していないならシルエットのみ
                 //if (itemManager.GetIsHasItem(i))
                 //{

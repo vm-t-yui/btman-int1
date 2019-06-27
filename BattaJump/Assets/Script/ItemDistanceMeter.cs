@@ -11,24 +11,26 @@ using System;
 public class ItemDistanceMeter : MonoBehaviour
 {
     [SerializeField]
-    GameObject player = default;        //プレイヤー
-
-    [SerializeField]
-    ItemCreater itemCreater = default;  //アイテム生成クラス
-
-    [SerializeField]
-    SpriteAtlas meterAtlas = default;   //メーターアイコンのスプライトアトラス
-
-    [SerializeField]
-    string[] atlasName = default;       //スプライトアトラスの検索用の名前
-
-    [SerializeField]
-    int maxDistance;              //アイテム表示の最大距離
+    GameObject player = default;                                    //プレイヤー
+                                                                    
+    [SerializeField]                                                
+    ItemCreater itemCreater = default;                              //アイテム生成クラス
+                                                                    
+    [SerializeField]                                                
+    SpriteAtlas meterAtlas = default;                               //メーターアイコンのスプライトアトラス
+                                                                    
+    [SerializeField]                                                
+    string[] atlasName = default;                                   //スプライトアトラスの検索用の名前
+                                                                    
+    [SerializeField]                                                
+    int maxDistance;                                                //アイテム表示の最大距離
 
     float[] posDifference = new float[ItemCreater.appearanceNum];   //プレイヤーの位置とアイテムの位置との距離の差分リスト
 
     [SerializeField]
-    GameObject[] iconList;             //メーターアイコンのリスト
+    GameObject[] iconList;                                          //メーターアイコンのリスト
+
+    float arrowMargin = 40;                                         //矢印分の余白
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
 
@@ -100,7 +102,7 @@ public class ItemDistanceMeter : MonoBehaviour
                 }
                 else
                 {
-                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(40, (posDifference[i - 1] * 2), 0);
+                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(arrowMargin, (posDifference[i - 1] * 2), 0);
 
                     //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                     if (iconList[i].transform.position.y > iconList[0].transform.position.y + maxDistance)
