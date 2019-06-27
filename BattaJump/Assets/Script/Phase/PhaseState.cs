@@ -199,9 +199,6 @@ public class PhaseState : MonoBehaviour
 
         // "PlayerFalling"をtrueに設定
         playerFalling.enabled = true;
-
-        //重力を落下用重力に設定
-        Physics.gravity = new Vector3(0, -9.81f, 0);
     }
 
     /// <summary>
@@ -246,9 +243,6 @@ public class PhaseState : MonoBehaviour
         // フェードアウトが終わったら
         if (fadeContoller.IsFadeEnd)
         {
-            //重力をデフォルトに設定
-            Physics.gravity = new Vector3(0, -50f, 0);
-
             // カメラの移動制御を終了する
             cameraMoveController.enabled = false;
 

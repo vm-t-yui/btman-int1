@@ -11,6 +11,9 @@ public class ResultPlayerAnimator : MonoBehaviour
     Animator animator = default;             // アニメーター
 
     [SerializeField]
+    Animator parentAnim = default;           // 親オブジェクトのアニメーター
+
+    [SerializeField]
     ScoreCountUp scoreCountUp = default;     // スコアカウントアップクラス
 
     [SerializeField]
@@ -37,6 +40,8 @@ public class ResultPlayerAnimator : MonoBehaviour
             {
                 // 喜ぶアニメーション再生
                 animator.SetTrigger("Rejoice");
+                // 位置調整用のアニメーション再生
+                parentAnim.SetTrigger("PositionChange");
             }
             else
             {
