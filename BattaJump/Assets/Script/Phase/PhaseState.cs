@@ -109,6 +109,8 @@ public class PhaseState : MonoBehaviour
     {
         if (InputController.IsFirstTouch)
         {
+            jumpChargeingStay.enabled = false;
+
             // ステートを"ChargeCountDown"に変更する
             stateMachine.SetState(PhaseType.ChargeCountDown);
         }
