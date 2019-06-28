@@ -35,7 +35,7 @@ public class ItemDistanceMeter : MonoBehaviour
 
     float arrowMargin = 25;                                         //矢印分の余白
 
-    bool isActive = false;
+    bool isChildActive = false;                                     //子オブジェクト表示フラグ
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
 
@@ -94,14 +94,14 @@ public class ItemDistanceMeter : MonoBehaviour
         if (isCreate && cameraMove.GetIsChace())
         {
             //子オブジェクトを表示
-            if (!isActive)
+            if (!isChildActive)
             {
                 foreach (Transform child in transform)
                 {
                     child.gameObject.SetActive(true);
                 }
             }
-            isActive = true;
+            isChildActive = true;
 
             //NOTE:[0]はプレイヤーのアイコンなので省く
             for (int i = 1; i < iconList.Length; i++)
@@ -128,13 +128,13 @@ public class ItemDistanceMeter : MonoBehaviour
             }
         }
         //カメラがまだ追跡していない時は
-        else if(!isActive)
+        else if(!isChildActive)
         {
             //子オブジェクトを非表示
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
-                isActive = false;
+                isChildActive = false;
             }
         }
     }
