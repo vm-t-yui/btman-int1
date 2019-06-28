@@ -12,11 +12,13 @@ public class ChargeCountDown : MonoBehaviour
 {
     // カウントダウンUIのテキスト
     [SerializeField] Text countDownText = default;
+    // カウントダウンUIのゲージ
+    [SerializeField] Image countDownGauge = default;
 
     // 現在のカウント数
     public float CurrentCountNum { get; private set; } = CountDownNum;
     // カウントダウンの初期値
-    const float CountDownNum = 10;
+    const float CountDownNum = 10f;
 
     // ジャンプボイスを再生させる残りカウント数
     const float JumpVoiceRemainCountNum = 1;
@@ -50,8 +52,10 @@ public class ChargeCountDown : MonoBehaviour
 
             // カウントダウンを行う
             CurrentCountNum -= Time.deltaTime;
-            // カウントダウンの値を表示
-            countDownText.text = CurrentCountNum.ToString("F1");
+            // カウントダウンが終わったらゲージがなくなるようfillAmountを減算
+            countDownGauge.fillAmount -= Time.deltaTime / CountDownNum;
+            // カウントダウンの値を表示（切り上げ）
+            countDownText.text = Mathf.CeilToInt(CurrentCountNum).ToString();
 
         }
     }
