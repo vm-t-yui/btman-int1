@@ -43,6 +43,9 @@ public class ResultPhaseState : MonoBehaviour
     // 実績コントロールクラス
     [SerializeField]
     AchievementController achievementController = default;
+    // カンバスのアニメーション終了検知クラス
+    [SerializeField]
+    AnimationEndChecker canvasAnimationEnd = default;
     // リザルト終了検知クラス
     [SerializeField]
     ResultEnd resultEnd = default;
@@ -129,11 +132,10 @@ public class ResultPhaseState : MonoBehaviour
 
                 // 指定の時間までカウントアップを待機
                 countUpWaitCount += Time.deltaTime;
-                if (countUpWaitCount > countWaitTime)
+                if (countUpWaitCount > countWaitTime && !scoreCountUp.IsEnd)
                 {
                     // 指定の時間経過したらカウントアップを開始
                     scoreCountUp.enabled = true;
-
                 }
 
                 landingTime += Time.deltaTime;
@@ -155,24 +157,24 @@ public class ResultPhaseState : MonoBehaviour
                     // リザルト用カンバスを表示
                     resultCanvas.SetActive(true);
 
-                    // インタースティシャル広告を表示
-                    adManager.ShowInterstitial();
+                    // カンバスのアニメーションが終了したら
+                    if (canvasAnimationEnd.IsEnd)
+                    {
+                        // インタースティシャル広告を表示
+                        adManager.ShowInterstitial();
 
-                    // 実績解除できるかチェック
-                    achievementController.CheckRelease();
+                        // 実績解除できるかチェック
+                        achievementController.CheckRelease();
 
-                    nowPhase = PhaseType.ViewResult;
+                        // 動画広告勧誘
+                        adVideoRecommender.Recommend();
+
+                        nowPhase = PhaseType.ViewResult;
+                    }
                 }
                 break;
 
             case PhaseType.ViewResult:        // リザルト表示中
-
-                // インタースティシャル広告が閉じられて、勧誘済みでないなら
-                if (adManager.IsInterstitialClosed() && !adVideoRecommender.IsRecommend)
-                {
-                    // 動画広告勧誘
-                    adVideoRecommender.Recommend();
-                }
 
                 // リザルトが終了したら次の処理へ
                 if (resultEnd.IsEnd || adVideoRecommender.IsEnd)
