@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 8046224097637900019}
   - component: {fileID: 8046224097627757341}
   m_Layer: 0
-  m_Name: PenguinFBX
+  m_Name: Penguin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 8046224097637728979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 8046224097637900029}
   - {fileID: 8046224097637900031}

@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MeterAtlas
+  m_Name: meterAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -53,5 +53,5 @@ SpriteAtlas:
   - battaman_icon
   - silver_star
   - rainbow_star
-  m_Tag: MeterAtlas
+  m_Tag: meterAtlas
   m_IsVariant: 0
