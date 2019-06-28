@@ -21,9 +21,7 @@ public class ItemDescription : MonoBehaviour
     const int DescriptionNum = ItemManager.ItemNum + 1;     //アイテム説明の数(アイテム総数 + 入手してない時の???)
     int selectingNum = 0;     //現在選ばれているアイテムの番号
 
-    [SerializeField]
     string[] itemName = new string[DescriptionNum];         //アイテムの名前(データ用)
-    [SerializeField]
     string[] itemDescription = new string[DescriptionNum];  //アイテムの説明(データ用)
 
     /// <summary>
