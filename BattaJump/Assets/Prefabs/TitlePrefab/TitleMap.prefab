@@ -200,7 +200,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 657176304435158084}
-  m_RootOrder: 10
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &657176302682250576
 MeshFilter:
@@ -367,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 657176304435158084}
-  m_RootOrder: 12
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 12.287001, z: 0}
 --- !u!33 &657176302692408437
 MeshFilter:
@@ -517,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657176302975247264}
   m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
-  m_LocalPosition: {x: -2, y: -0.19, z: 4.28}
+  m_LocalPosition: {x: -1.88, y: -0.19, z: 4.28}
   m_LocalScale: {x: 200, y: 200, z: 40}
   m_Children: []
   m_Father: {fileID: 657176304435158084}
@@ -594,7 +594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657176303080247943}
   m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
-  m_LocalPosition: {x: 2, y: -0.19, z: 4.28}
+  m_LocalPosition: {x: 1.88, y: -0.19, z: 4.28}
   m_LocalScale: {x: 200, y: 200, z: 40}
   m_Children: []
   m_Father: {fileID: 657176304435158084}
@@ -906,7 +906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657176304435158084}
-  m_RootOrder: 11
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &657176303975627172
 MeshFilter:
@@ -963,7 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657176304435158084}
   m_Layer: 0
-  m_Name: Map 1
+  m_Name: TitleMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -990,6 +990,14 @@ Transform:
   - {fileID: 657176302689443114}
   - {fileID: 657176303190075003}
   - {fileID: 657176302893162304}
+  - {fileID: 1626209855385105918}
+  - {fileID: 2830580703669114984}
+  - {fileID: 478076430287710136}
+  - {fileID: 7471042677348722734}
+  - {fileID: 4352174049226929981}
+  - {fileID: 993366880177224539}
+  - {fileID: 7004962048647754616}
+  - {fileID: 8038738502761015451}
   - {fileID: 657176302682250591}
   - {fileID: 657176303975627170}
   - {fileID: 657176302692408435}
@@ -1043,6 +1051,622 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657176304445533944}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &3315429035576584989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4352174049226929981}
+  - component: {fileID: 1462540026355989488}
+  - component: {fileID: 4066360917865145434}
+  m_Layer: 0
+  m_Name: rice_plant (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352174049226929981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315429035576584989}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: 1.299, y: 0.01, z: -0.599}
+  m_LocalScale: {x: 40, y: 40, z: 40.000027}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &1462540026355989488
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315429035576584989}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &4066360917865145434
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315429035576584989}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &4140540262523725771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626209855385105918}
+  - component: {fileID: 5814961624492774059}
+  - component: {fileID: 5174139356070406486}
+  m_Layer: 0
+  m_Name: rice_plant (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1626209855385105918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140540262523725771}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: 0.964, y: 0.012, z: -0.599}
+  m_LocalScale: {x: 40, y: 40, z: 40.000015}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &5814961624492774059
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140540262523725771}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &5174139356070406486
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140540262523725771}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &4242129739923573045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7004962048647754616}
+  - component: {fileID: 5491175545249984962}
+  - component: {fileID: 5220311671980247435}
+  m_Layer: 0
+  m_Name: rice_plant (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7004962048647754616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242129739923573045}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: -4.443, y: -0.171, z: 4.278}
+  m_LocalScale: {x: 200, y: 200, z: 40.000027}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &5491175545249984962
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242129739923573045}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &5220311671980247435
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242129739923573045}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &4921532765254913374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7471042677348722734}
+  - component: {fileID: 8617200763192249377}
+  - component: {fileID: 2646788588996600467}
+  m_Layer: 0
+  m_Name: rice_plant (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7471042677348722734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921532765254913374}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: -2.93, y: -0.18, z: 4.28}
+  m_LocalScale: {x: 200, y: 200, z: 40.000015}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &8617200763192249377
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921532765254913374}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &2646788588996600467
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921532765254913374}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &6789841037140387838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993366880177224539}
+  - component: {fileID: 1498834419306940422}
+  - component: {fileID: 6325809134861919077}
+  m_Layer: 0
+  m_Name: rice_plant (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &993366880177224539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789841037140387838}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: -1.247, y: 0.025, z: -0.603}
+  m_LocalScale: {x: 40, y: 40, z: 40.00004}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &1498834419306940422
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789841037140387838}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &6325809134861919077
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789841037140387838}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &7638120162444508552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8038738502761015451}
+  - component: {fileID: 3015049611015786410}
+  - component: {fileID: 102576666771180521}
+  m_Layer: 0
+  m_Name: rice_plant (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8038738502761015451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638120162444508552}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: 4.44, y: -0.23, z: 4.29}
+  m_LocalScale: {x: 200, y: 200, z: 40.00004}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &3015049611015786410
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638120162444508552}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &102576666771180521
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638120162444508552}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &7964082552036802094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478076430287710136}
+  - component: {fileID: 2649914322164695793}
+  - component: {fileID: 6111508492069595474}
+  m_Layer: 0
+  m_Name: rice_plant (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &478076430287710136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964082552036802094}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: 2.85, y: -0.2, z: 4.28}
+  m_LocalScale: {x: 200, y: 200, z: 40.000015}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &2649914322164695793
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964082552036802094}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &6111508492069595474
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964082552036802094}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59cad00dde69247c1bb56dd00a1a192a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &8276118192926323296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2830580703669114984}
+  - component: {fileID: 96245202640476856}
+  - component: {fileID: 2046651620265637810}
+  m_Layer: 0
+  m_Name: rice_plant (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2830580703669114984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276118192926323296}
+  m_LocalRotation: {x: 0.0028776154, y: 0.9999956, z: 0.000050133393, w: 0.0007337367}
+  m_LocalPosition: {x: -0.917, y: 0.023, z: -0.602}
+  m_LocalScale: {x: 40, y: 40, z: 40.000027}
+  m_Children: []
+  m_Father: {fileID: 657176304435158084}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -0.006, y: 179.91602, z: 0.33}
+--- !u!33 &96245202640476856
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276118192926323296}
+  m_Mesh: {fileID: 4300000, guid: f4649b35deb8249f88764e771c03f86c, type: 3}
+--- !u!23 &2046651620265637810
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276118192926323296}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
