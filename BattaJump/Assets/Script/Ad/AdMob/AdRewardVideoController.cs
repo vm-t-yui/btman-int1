@@ -12,9 +12,19 @@ public class AdRewardVideoController : MonoBehaviour
 {
     RewardBasedVideoAd rewardBasedVideo;                       // 動画リワード広告制御クラス
 
+    const string AdUnitId =                                    // 広告ユニットID（テスト用）
+#if UNITY_ANDROID
+        "ca-app-pub-3940256099942544/5224354917";
+#elif UNITY_IPHONE
+        "ca-app-pub-3940256099942544/1712485313";
+#else
+        "unexpected_platform";
+#endif
+
     public bool IsLoaded { get; private set; } = false;        // ロード完了フラグ
     public bool IsFailedLoad { get; private set; } = false;    // ロード失敗フラグ
     public bool IsStarted { get; private set; } = false;       // 再生開始フラグ
+    public bool IsSkipped { get; private set; } = false;       // スキップフラグ
     public bool IsCompleted { get; private set; } = false;     // 再生完了フラグ
     public bool IsClosed { get; private set; } = false;        // 広告閉じたフラグ
 
@@ -23,14 +33,6 @@ public class AdRewardVideoController : MonoBehaviour
     /// </summary>
     public void RequestRewardVideo()
     {
-#if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-3940256099942544/1712485313";
-#else
-        string adUnitId = "unexpected_platform";
-#endif
-
         // 動画リワード広告ベースの参照を取得
         rewardBasedVideo = RewardBasedVideoAd.Instance;
 
@@ -48,7 +50,7 @@ public class AdRewardVideoController : MonoBehaviour
         // 空の広告リクエストを作成
         AdRequest request = new AdRequest.Builder().Build();
         // リクエストを受け取った動画広告をロード
-        rewardBasedVideo.LoadAd(request, adUnitId);
+        rewardBasedVideo.LoadAd(request, AdUnitId);
     }
 
     /// <summary>
@@ -106,6 +108,12 @@ public class AdRewardVideoController : MonoBehaviour
     /// <param name="args"></param>
     void AdClosed(object sender, EventArgs args)
     {
+        // 再生完了していなければスキップしたとみなす
+        if (IsCompleted)
+        {
+            IsSkipped = false;
+        }
+
         IsClosed = true;
     }
 }
