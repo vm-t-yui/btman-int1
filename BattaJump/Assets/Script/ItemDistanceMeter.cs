@@ -100,8 +100,8 @@ public class ItemDistanceMeter : MonoBehaviour
                 {
                     child.gameObject.SetActive(true);
                 }
-                isActive = true;
             }
+            isActive = true;
 
             //NOTE:[0]はプレイヤーのアイコンなので省く
             for (int i = 1; i < iconList.Length; i++)
@@ -128,7 +128,7 @@ public class ItemDistanceMeter : MonoBehaviour
             }
         }
         //カメラがまだ追跡していない時は
-        else
+        else if(!isActive)
         {
             //子オブジェクトを非表示
             foreach (Transform child in transform)
