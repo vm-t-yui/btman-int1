@@ -11,6 +11,7 @@ public class DisableParticle : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
+        //コルーチン開始
         StartCoroutine(ParticleWorking());
     }
 
@@ -20,9 +21,9 @@ public class DisableParticle : MonoBehaviour
     IEnumerator ParticleWorking()
     {
         var particle = GetComponent<ParticleSystem>();
-
         yield return new WaitWhile(() => particle.IsAlive(true));
 
+        //コルーチンが終了したら非表示
         gameObject.SetActive(false);
     }
 }

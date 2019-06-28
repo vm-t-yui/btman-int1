@@ -22,6 +22,7 @@ public class PlayerItemGetEvent : MonoBehaviour
         //アイテムの表示用オブジェクトは反応させない
         if (LayerMask.LayerToName(item.gameObject.layer) != "ItemDisplayObject")
         {
+            //アイテムゲット
             itemManager.GetItem(item.GetComponent<ItemController>().GetMyNum());
 
             //アイテムゲット用パーティクル再生
