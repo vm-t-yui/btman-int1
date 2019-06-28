@@ -29,7 +29,7 @@ public class NewItemsDisplay : MonoBehaviour
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     [SerializeField]
-    SpriteAtlas itemAtlas = default;
+    SpriteAtlas itemAtlas = default;                  //アイテムのスプライトアトラス
 
     [SerializeField]
     int touchCount = 0;     //タッチ数カウント

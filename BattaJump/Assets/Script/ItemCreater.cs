@@ -89,6 +89,8 @@ public class ItemCreater : MonoBehaviour
             //子オブジェクトにトリガーのコライダーとアイテム番号を追加
             SphereCollider coll = newChildItem.AddComponent<SphereCollider>();
             coll.isTrigger = true;
+
+            //NOTE:デバック用に当たり判定を大きくした
             coll.radius = 8;
 
             newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);

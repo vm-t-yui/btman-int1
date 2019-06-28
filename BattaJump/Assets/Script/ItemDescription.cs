@@ -25,8 +25,6 @@ public class ItemDescription : MonoBehaviour
     string[] itemName = new string[DescriptionNum];         //アイテムの名前(データ用)
     [SerializeField]
     string[] itemDescription = new string[DescriptionNum];  //アイテムの説明(データ用)
-    [SerializeField]
-    Sprite[] itemSprite = new Sprite[DescriptionNum];  //アイテムの説明(データ用)
 
     /// <summary>
     /// 押したボタンに応じてアイテム名、説明表示
@@ -37,13 +35,10 @@ public class ItemDescription : MonoBehaviour
         //入手しているアイテムならそのアイテムの説明表示、していなかったら説明なし
         if (itemManager.GetIsHasItem(num))
         {
-            int itemNum = 0;
-            int displayNum = 0;
+            int itemNum = num + 1;
 
-            itemNum = num + 1;
-            displayNum = itemNum - 1;
             selectingNum = itemNum;
-            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(displayNum);
+            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(num);
             displayImage.color = Color.white;
             displayName.text = itemName[itemNum];
             displayDescription.text = itemDescription[itemNum];
@@ -73,16 +68,15 @@ public class ItemDescription : MonoBehaviour
         displayDescription.text = description;
     }
 
-        /// <summary>
-        /// アイテムの名前のセット関数
-        /// </summary>
-        /// <param name="num">アイテムの番号</param>
-        /// <param name="name">アイテムの名前</param>
-        public void SetItemName(int num, string name)
+    /// <summary>
+    /// アイテムの名前のセット関数
+    /// </summary>
+    /// <param name="num">アイテムの番号</param>
+    /// <param name="name">アイテムの名前</param>
+    public void SetItemName(int num, string name)
     {
         itemName[num] = name;
     }
-
 
     /// <summary>
     /// アイテム説明のセット関数
@@ -92,16 +86,6 @@ public class ItemDescription : MonoBehaviour
     public void SetItemDescription(int num, string description)
     {
         itemDescription[num] = description;
-    }
-
-    /// <summary>
-    /// アイテムスプライトのセット関数
-    /// </summary>
-    /// <param name="num">アイテムの番号</param>
-    /// <param name="sprite">アイテムの説明</param>
-    public void SetItemSprite(int num, Sprite sprite)
-    {
-        itemSprite[num] = sprite;
     }
 
     /// <summary>
