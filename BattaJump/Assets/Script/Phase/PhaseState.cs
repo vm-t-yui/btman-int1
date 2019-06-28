@@ -35,6 +35,7 @@ public class PhaseState : MonoBehaviour
     [SerializeField] PlayDataManager   playData          = default;         // プレイデータクラス
     [SerializeField] InputController   inputController   = default;         // 入力制御クラス
     [SerializeField] CraterCreater     craterCreater     = default;         // ジャンプ時クレーター生成クラス
+    [SerializeField] CameraShake       cameraShake       = default;         // カメラ揺らすクラス
 
     /// <summary>
     /// 開始
@@ -125,6 +126,8 @@ public class PhaseState : MonoBehaviour
         chargeCountDown.enabled = true;
         // カメラの制御を開始する
         cameraMoveController.enabled = true;
+
+        cameraShake.Shake(10, 0.015f);
     }
 
     /// <summary>

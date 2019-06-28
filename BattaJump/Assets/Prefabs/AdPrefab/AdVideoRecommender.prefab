@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &6666511095684898467
 RectTransform:
@@ -115,7 +115,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209265159272019
 RectTransform:
@@ -186,12 +186,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4749209265554219698}
   - component: {fileID: 4749209265554219699}
+  - component: {fileID: 1058735934}
   m_Layer: 0
   m_Name: AdRewarVideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4749209265554219698
 Transform:
@@ -219,6 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c6fc9594f3f6d40a3e245bb7079bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1058735934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749209265554219700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9f738bc0335964bafe82c27d32f483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4749209265643666885
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +248,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209265643666884
 RectTransform:
@@ -314,7 +327,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209265722552152
 RectTransform:
@@ -394,7 +407,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209265755877267
 RectTransform:
@@ -493,8 +506,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749209265554219699}
-        m_MethodName: Play
+      - m_Target: {fileID: 4749209266280754216}
+        m_MethodName: PlayAdVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -515,6 +528,17 @@ MonoBehaviour:
           m_StringArgument: Small
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetNextSceneMainGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &4749209266280754217
@@ -532,7 +556,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4749209266280754199
 Transform:
@@ -562,7 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1e15e8195a847459eb18fcd8aa2646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardVideo: {fileID: 4749209265554219699}
+  adMobVideo: {fileID: 4749209265554219699}
+  unityAdsVideo: {fileID: 1058735934}
   playData: {fileID: 0}
   recommendWindow: {fileID: 4749209266575815363}
 --- !u!1 &4749209266499088005
@@ -582,7 +607,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209266499088004
 RectTransform:
@@ -710,7 +735,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!224 &4749209266575815362
 RectTransform:
@@ -779,7 +804,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &4749209266892260268
 RectTransform:

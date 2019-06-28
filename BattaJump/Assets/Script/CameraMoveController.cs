@@ -9,6 +9,7 @@ public class CameraMoveController : MonoBehaviour
 {
     [SerializeField] Transform         playerTransform   = default;       // プレイヤーのトランスフォーム
     [SerializeField] JumpHeightCounter jumpHeightCounter = default;       // プレイヤーのジャンプ高さを計測するクラス
+    [SerializeField] CloudCreater cloudCreater = default;
 
     // 現在のズームカウント数
     int currentZoomTimeCount = 0;
@@ -18,7 +19,7 @@ public class CameraMoveController : MonoBehaviour
     readonly Vector3 LookAtPosJumpOffset   = new Vector3(0, 3, 0);        // 注視点のオフセット
     const    int     CameraMoveWaitTime    = 10;                          // カメラの移動が開始するまでの待機時間
     const    int     ZoomTime              = 600;                         // ズーム時間
-    const    float   ZoomSpeed             = 0.003f;                      // ズームスピード
+    const    float   ZoomSpeed             = 0.05f;                      // ズームスピード
     const    float   ZoomLerpRate          = 0.05f;                       // ズームのLerp率
 
     bool isChace = false;                                                 // 追跡フラグ
@@ -35,7 +36,8 @@ public class CameraMoveController : MonoBehaviour
         // 指定の時間だけ、プレイヤーにズームし続ける
         if (currentZoomTimeCount < ZoomTime)
         {
-            transform.position += new Vector3(0, 0, ZoomSpeed);
+            //transform.position += new Vector3(0, 0, ZoomSpeed);
+            Camera.main.fieldOfView -= ZoomSpeed;
         }
         // プレイヤーに向いてる状態でしばらく待機する
         // 待機したあとはLerpでプレイヤーに近づいていく
@@ -48,6 +50,8 @@ public class CameraMoveController : MonoBehaviour
             if (!isChace)
             {
                 transform.localPosition = jumpCameraPos;
+                Camera.main.fieldOfView = 60;
+                cloudCreater.enabled = true;
                 isChace = true;
 
                 // 風切り音を再生する

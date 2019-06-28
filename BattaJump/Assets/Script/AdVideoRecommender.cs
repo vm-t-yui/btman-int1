@@ -105,12 +105,16 @@ public class AdVideoRecommender : MonoBehaviour
         if ((adMobVideo.IsSkipped && adMobVideo.IsClosed) || unityAdsVideo.IsSkipped)
         {
             IsVideoSkip = true;
+
+            playData.SetIsReward(false);
         }
 
         // 動画広告を閉じたら処理終了
         if ((adMobVideo.IsCompleted && adMobVideo.IsClosed) || unityAdsVideo.IsFinished)
         {
             IsEnd = true;
+
+            playData.SetIsReward(true);
         }
     }
 }

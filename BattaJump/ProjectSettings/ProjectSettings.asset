@@ -722,10 +722,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 7679086e-18d4-4a26-9215-167fbef555db
+  cloudProjectId: 8ed93fa8-4d7c-4782-836e-15225d00d0db
   framebufferDepthMemorylessMode: 0
-  projectName: BattaJump
-  organizationId: tricore-inc
+  projectName: BattaJump (3)
+  organizationId: unity_fbaoc9jbtmk2kg
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -12,12 +12,15 @@ public class PlayDataManager : MonoBehaviour
     public bool[] AchievementStatus { get; private set; } =    // 実績解除状況
            new bool[AchievementScriptableObject.AchievementNum];
 
+    public bool IsReward { get; private set; } = false;        // リワード広告見たフラグ
+
     static int nowScore = 0;                                   // 現在のスコア
 
     readonly string PlayCountKey = "PlayCount";                // プレイ回数データキー
     readonly string HighScoreKey = "HighScore";                // ハイスコアデータキー
     readonly string AchievementStatusKey = "Achivement";       // 実績解除状況データキー
                                                                // NOTE:for文でループする際に末尾にiを付け加えて使用
+    readonly string IsRewardKey = "IsReward";                  // リワード広告見たフラグキー
 
     /// <summary>
     /// 起動時処理
@@ -34,6 +37,19 @@ public class PlayDataManager : MonoBehaviour
     public void IncreasePlayCount()
     {
         PlayCount++;
+    }
+
+    /// <summary>
+    /// リワード広告見たフラグセット
+    /// </summary>
+    /// <param name="flag">見たかどうか</param>
+    public void SetIsReward(bool flag)
+    {
+        IsReward = flag;
+
+        PlayerPrefs.SetInt(IsRewardKey, IsReward ? 1 : 0);
+
+        PlayerPrefs.Save();
     }
     
     /// <summary>
@@ -79,6 +95,9 @@ public class PlayDataManager : MonoBehaviour
             // セーブした実績解除状況を取得
             AchievementStatus[i] = PlayerPrefs.GetInt(AchievementStatusKey + i, 0) == 1 ? true : false;
         }
+
+        // リワード広告見たフラグを取得
+        IsReward = PlayerPrefs.GetInt(IsRewardKey, 0) == 1 ? true : false;
     }
 
     /// <summary>
