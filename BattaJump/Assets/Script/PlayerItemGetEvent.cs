@@ -20,6 +20,9 @@ public class PlayerItemGetEvent : MonoBehaviour
         if (LayerMask.LayerToName(item.gameObject.layer) != "ItemDisplayObject")
         {
             itemManager.GetItem(item.GetComponent<ItemController>().GetMyNum());
+
+            // アイテム取得音を鳴らす
+            AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
         }
     }
 }
