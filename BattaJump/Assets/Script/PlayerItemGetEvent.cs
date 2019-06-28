@@ -8,7 +8,10 @@ using UnityEngine;
 public class PlayerItemGetEvent : MonoBehaviour
 {
     [SerializeField]
-    ItemManager itemManager = default;
+    ItemManager itemManager = default;   //アイテムクラス
+
+    [SerializeField]
+    GameObject getParticle = default;    //ゲット時のパーティクル
 
     /// <summary>
     /// アイテムにあたったらゲット
@@ -20,6 +23,9 @@ public class PlayerItemGetEvent : MonoBehaviour
         if (LayerMask.LayerToName(item.gameObject.layer) != "ItemDisplayObject")
         {
             itemManager.GetItem(item.GetComponent<ItemController>().GetMyNum());
+
+            //アイテムゲット用パーティクル再生
+            getParticle.SetActive(true);
 
             // アイテム取得音を鳴らす
             AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
