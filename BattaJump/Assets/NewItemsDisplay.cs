@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 /// <summary>
 ///  新規取得アイテム表示クラス
@@ -28,6 +29,9 @@ public class NewItemsDisplay : MonoBehaviour
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     [SerializeField]
+    SpriteAtlas itemAtlas = default;
+
+    [SerializeField]
     int touchCount = 0;     //タッチ数カウント
 
     /// <summary>
@@ -47,9 +51,8 @@ public class NewItemsDisplay : MonoBehaviour
         else
         {
             SetNewItem();
-
+            itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[0])), names[0], descriptions[0]);
             //最初の表示
-            itemDescription.OnClickDescription(newHasNum[0]);
         }
     }
 
@@ -91,9 +94,6 @@ public class NewItemsDisplay : MonoBehaviour
                 //NOTE: +1 はまだ入手していない時の項目によるずれ
                 names.Add(LocalizeScriptableObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeScriptableObject.LocalizeText.NoItemName + (i + 1)));
                 descriptions.Add(LocalizeScriptableObject.Instance.GetLocalizeText(localizeController.GetLanguageNum(), (int)LocalizeScriptableObject.LocalizeText.NoItemDescription + (i + 1)));
-
-                itemDescription.SetItemName(i, names[newHasNum.Count - 1]);
-                itemDescription.SetItemDescription(i, descriptions[newHasNum.Count - 1]);
             }
         }
     }
@@ -127,7 +127,7 @@ public class NewItemsDisplay : MonoBehaviour
                 if (i < newHasNum.Count)
                 {
                     //新しく手に入れたアイテム説明
-                    itemDescription.OnClickDescription(newHasNum[i]);
+                    itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[i])), names[i], descriptions[i]);
                     animator.SetTrigger("In");
                 }
                 //上回ったら非表示させる

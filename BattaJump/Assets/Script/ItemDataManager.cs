@@ -16,6 +16,8 @@ public class ItemDataManager : MonoBehaviour
     {
         //データロード
         LoadData();
+
+        //DeleteData();
     }
 
     /// <summary>
