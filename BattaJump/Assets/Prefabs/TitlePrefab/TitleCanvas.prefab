@@ -4763,7 +4763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab94da617479c948ac7fc62b987fa1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDescription: {fileID: 0}
+  itemDescription: {fileID: 5468008113906519931}
   localizeText:
   - 
   - 
@@ -5641,7 +5641,7 @@ GameObject:
   - component: {fileID: 6302764710699305703}
   - component: {fileID: 6302764710699305702}
   m_Layer: 5
-  m_Name: ItermViewButton
+  m_Name: ItemViewButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8537,6 +8537,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8767542281390850504}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5468008113906519931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3625069118020849331, guid: 4a3295cdccc674041bc3af392ba4bab8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8767542281390850504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd81aaabd06d0d0409b67e397175c975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6225372004466240767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3443115828048440631, guid: 4a3295cdccc674041bc3af392ba4bab8,

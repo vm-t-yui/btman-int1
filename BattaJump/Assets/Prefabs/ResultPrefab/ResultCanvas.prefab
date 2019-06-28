@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 7573624244442987002}
   - component: {fileID: 7573624244442987005}
   m_Layer: 5
-  m_Name: ItermViewButton
+  m_Name: ItemViewButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3273,7 +3273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab94da617479c948ac7fc62b987fa1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDescription: {fileID: 0}
+  itemDescription: {fileID: 5870461469722788073}
   localizeText: []
   displayText:
   - {fileID: 7573624245260007299}
@@ -3663,6 +3663,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f414f5bc4ad44a74188a598290d4cb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5870461469722788073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3625069118020849331, guid: 4a3295cdccc674041bc3af392ba4bab8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149117729489735258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd81aaabd06d0d0409b67e397175c975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5548051187069412205 stripped
