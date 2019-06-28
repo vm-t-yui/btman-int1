@@ -64,4 +64,16 @@ public class AudioSettingUiController : MonoBehaviour
         // SEのトグルのフラグをミュートフラグとしてセット
         audioParameter.SetSeMuteFlag(seMuteToggle.isOn);
     }
+
+    /// <summary>
+    /// SEのボリュームスライダーがドラッグされた際のコールバック
+    /// </summary>
+    public void OnSeVolumeSliderDrag()
+    {
+        // SEの音量変更中にアイテム取得音を再生（既に再生中であればスキップして重複再生を防止）
+        if (!AudioPlayer.instance.IsPlayingSe(AudioPlayer.SeType.ItemGet))
+        {
+            AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
+        }
+    }
 }
