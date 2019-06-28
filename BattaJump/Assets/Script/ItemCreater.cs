@@ -91,7 +91,7 @@ public class ItemCreater : MonoBehaviour
             coll.isTrigger = true;
 
             //NOTE:デバック用に当たり判定を大きくした
-            coll.radius = 8;
+            coll.radius = 2.5f;
 
             newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
 

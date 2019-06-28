@@ -30,7 +30,12 @@ public class ItemDistanceMeter : MonoBehaviour
     [SerializeField]
     GameObject[] iconList;                                          //メーターアイコンのリスト
 
+    [SerializeField]
+    CameraMoveController cameraMove = default;                      //カメラの動き制御
+
     float arrowMargin = 25;                                         //矢印分の余白
+
+    bool isChildActive = false;                                     //子オブジェクト表示フラグ
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
 
@@ -85,9 +90,19 @@ public class ItemDistanceMeter : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //ちゃんとメーターが生成されたら差分を取り始める
-        if (isCreate)
+        //ちゃんとメーターが生成されて、カメラが追跡し始めたら差分を取り始める
+        if (isCreate && cameraMove.GetIsChace())
         {
+            //子オブジェクトを表示
+            if (!isChildActive)
+            {
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
+            isChildActive = true;
+
             //NOTE:[0]はプレイヤーのアイコンなので省く
             for (int i = 1; i < iconList.Length; i++)
             {
@@ -110,6 +125,16 @@ public class ItemDistanceMeter : MonoBehaviour
                         iconList[i].transform.position = new Vector3(iconList[i].transform.position.x, iconList[0].transform.position.y + maxDistance, 0);
                     }
                 }
+            }
+        }
+        //カメラがまだ追跡していない時は
+        else if(!isChildActive)
+        {
+            //子オブジェクトを非表示
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+                isChildActive = false;
             }
         }
     }

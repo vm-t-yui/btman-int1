@@ -86,4 +86,13 @@ public class CameraMoveController : MonoBehaviour
             return LookAtPosGroundOffset;
         }
     }
+
+    /// <summary>
+    /// カメラの追跡フラグゲット関数
+    /// </summary>
+    /// <returns>カメラの追跡フラグ</returns>
+    public bool GetIsChace()
+    {
+        return isChace;
+    }
 }
