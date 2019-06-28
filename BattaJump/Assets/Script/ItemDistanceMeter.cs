@@ -30,7 +30,7 @@ public class ItemDistanceMeter : MonoBehaviour
     [SerializeField]
     GameObject[] iconList;                                          //メーターアイコンのリスト
 
-    float arrowMargin = 40;                                         //矢印分の余白
+    float arrowMargin = 25;                                         //矢印分の余白
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
 

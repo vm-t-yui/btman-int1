@@ -33,11 +33,10 @@ public class ItemDescription : MonoBehaviour
         //入手しているアイテムならそのアイテムの説明表示、していなかったら説明なし
         if (itemManager.GetIsHasItem(num))
         {
-            //NOTE: +1 はまだ入手していない時の項目によるずれ
-            int itemNum = num;
+            int itemNum = num + 1;
 
             selectingNum = itemNum;
-            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
+            displayImage.sprite = ItemScriptableObject.Instance.GetSprite(num);
             displayImage.color = Color.white;
             displayName.text = itemName[itemNum];
             displayDescription.text = itemDescription[itemNum];
@@ -50,6 +49,21 @@ public class ItemDescription : MonoBehaviour
             displayImage.color = Color.black;
             displayDescription.text = itemName[0];
         }
+    }
+
+
+    /// <summary>
+    /// 新しいアイテムの表示
+    /// </summary>
+    /// <param name="sprite">アイテムのスプライト</param>
+    /// <param name="name">アイテムの名前</param>
+    /// <param name="description">アイテムの説明</param>
+    public void NewItemDescription(Sprite sprite, string name, string description)
+    {
+        displayImage.sprite = sprite;
+        displayImage.color = Color.white;
+        displayName.text = name;
+        displayDescription.text = description;
     }
 
     /// <summary>

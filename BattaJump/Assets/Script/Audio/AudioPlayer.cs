@@ -38,6 +38,7 @@ public class AudioPlayer : MonoBehaviour
         RollFinish,     // ロール終わり
         Cheers,         // 歓声
         Tin,            // チーン
+        ItemGet,        // アイテム取得
     }
 
     // シングルトンインスタンス

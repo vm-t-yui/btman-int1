@@ -90,6 +90,9 @@ public class ItemCreater : MonoBehaviour
             SphereCollider coll = newChildItem.AddComponent<SphereCollider>();
             coll.isTrigger = true;
 
+            //NOTE:デバック用に当たり判定を大きくした
+            coll.radius = 8;
+
             newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
 
             //Skyなら空、それ以外なら宇宙のアイテムリストにいれる
