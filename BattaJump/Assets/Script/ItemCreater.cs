@@ -13,6 +13,9 @@ public class ItemCreater : MonoBehaviour
     [SerializeField]
     ItemManager itemManager = default;
 
+    [SerializeField]
+    PlayDataManager playData = default;
+
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
     string[] appearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
 
@@ -44,11 +47,8 @@ public class ItemCreater : MonoBehaviour
         //アイテム生成
         for (int i = 0; i < appearanceNum; i++)
         {
-            //TODO:あとでちゃんとした広告リワードのフラグを入れるます
-            bool isReward = true;      //仮の動画広告フラグ
-
             //動画広告をみたら一番最初に新規アイテム作成
-            if (i == 0 && isReward)
+            if (i == 0 && playData.IsReward)
             {
                 CreateItem(true);
             }

@@ -12,6 +12,9 @@ public class SkyboxChanger : MonoBehaviour
     JumpHeightCounter jumpHeightCounter = default;    // ジャンプ高さ計測クラス
 
     [SerializeField]
+    CloudCreater cloudCreater = default;
+
+    [SerializeField]
     Material universeSkyboxMat;                       // 宇宙のスカイボックスのマテリアル
 
     [SerializeField]
@@ -44,6 +47,8 @@ public class SkyboxChanger : MonoBehaviour
         {
             // スカイボックス切り替え
             RenderSettings.skybox = universeSkyboxMat;
+
+            cloudCreater.enabled = false;
 
             isChange = true;
         }
