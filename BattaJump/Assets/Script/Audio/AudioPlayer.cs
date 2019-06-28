@@ -153,4 +153,30 @@ public class AudioPlayer : MonoBehaviour
         // BGMのオブジェクトがアクティブであれば再生中
         return parentBgm.GetChild((int)type).gameObject.activeSelf;
     }
+
+    /// <summary>
+    /// 指定のSEが再生中か判断する
+    /// </summary>
+    /// <param name="type">判定するSEの種類</param>
+    /// <returns>再生中かどうか返す</returns>
+    public bool IsPlayingSe(SeType type)
+    {
+        // 再生中のSEで指定されたSEと同じものは停止する
+        foreach (Transform playingSeChild in parentPlayingSe)
+        {
+            // オブジェクト名とEnumの種類名で判定（クローンされたオブジェクトの名前には"(Clone)"が付加される）
+            if (playingSeChild.gameObject.name == type.ToString() + "(Clone)")
+            {
+                // オブジェクトがアクティブかどうかも判定する。
+                // NOTE : 再生が終了したSEが子オブジェクトとして残ったままになっている場合があるため
+                if (playingSeChild.gameObject.activeSelf)
+                {
+                    // 名前が一致した場合はtrueを返す
+                    return true;
+                }
+            }
+        }
+        // 無ければfalseを返す
+        return false;
+    }
 }
