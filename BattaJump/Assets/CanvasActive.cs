@@ -11,7 +11,7 @@ public class CanvasActive : MonoBehaviour
     GameObject dirtSmoke = default;    //土煙
 
     [SerializeField]
-    GameObject canvas = default;       //カンバス
+    Animator canvasAnim = default;     //カンバスのアニメーター
 
     /// <summary>
     /// カンバス表示
@@ -19,6 +19,8 @@ public class CanvasActive : MonoBehaviour
     void DisplayCanvas()
     {
         dirtSmoke.SetActive(false);
-        canvas.SetActive(true);
+
+        //カンバス表示用アニメーション再生
+        canvasAnim.SetTrigger("FadeIn");
     }
 }
