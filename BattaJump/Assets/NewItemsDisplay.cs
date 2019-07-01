@@ -65,11 +65,15 @@ public class NewItemsDisplay : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //最初のタッチがされるまで
+        //NOTE:Startで呼ぶとちらつきとが目立つため、Updateに
         if(touchCount == 0)
         {
             //最初の表示
             itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[0])), names[0], descriptions[0]);
         }
+
+        //タッチされたら
         if (Input.touchCount > 0)
         {
             // タッチの情報を取得
