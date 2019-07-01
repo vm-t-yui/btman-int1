@@ -12,7 +12,7 @@ public class CloudCreater : MonoBehaviour
 
     List<GameObject> cloudClones = new List<GameObject>();       // 複製した雲のリスト
 
-    const int CloneNum = 5;                                      // 
+    const int CloneNum = 5;                                      // 複製する最大数
     float interval = 0f;                                         // 生成する間隔
     int useCount = 0;
 
@@ -119,7 +119,7 @@ public class CloudCreater : MonoBehaviour
         useCount++;
 
         // 5個使用済みになったら使用数を0に戻す
-        if (useCount == 5)
+        if (useCount >= CloneNum)
         {
             useCount = 0;
         }
