@@ -29,9 +29,9 @@ public class ItemCreater : MonoBehaviour
 
     public const int appearanceNum = 4;                         //表示数
 
-    float skyBorder = 5000;                                      //空の境目
-    float spaceItemInterval = 1000;                              //宇宙のアイテムの間隔
-    float spaceItemPlusInterval = 500;                           //宇宙のアイテムの間隔の増加値
+    const float skyBorder = 5000;                                      //空の境目
+    const float spaceItemInterval = 1000;                              //宇宙のアイテムの間隔
+    const float spaceItemPlusInterval = 500;                           //宇宙のアイテムの間隔の増加値
 
     /// <summary>
     /// 開始処理
