@@ -28,6 +28,9 @@ public class PlayerItemGetEvent : MonoBehaviour
             //アイテムゲット用パーティクル再生
             getParticle.SetActive(true);
 
+            //アイテムを非表示に
+            item.gameObject.SetActive(false);
+
             // アイテム取得音を鳴らす
             AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
         }

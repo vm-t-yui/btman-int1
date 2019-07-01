@@ -21,9 +21,6 @@ public class ItemDistanceMeter : MonoBehaviour
                                                                     
     [SerializeField]                                                
     string[] atlasName = default;                                   //スプライトアトラスの検索用の名前
-                                                                    
-    [SerializeField]                                                
-    int maxDistance;                                                //アイテム表示の最大距離
 
     float[] posDifference = new float[ItemCreater.appearanceNum];   //プレイヤーの位置とアイテムの位置との距離の差分リスト
 
@@ -32,8 +29,6 @@ public class ItemDistanceMeter : MonoBehaviour
 
     [SerializeField]
     CameraMoveController cameraMove = default;                      //カメラの動き制御
-
-    float arrowMargin = 25;                                         //矢印分の余白
 
     bool isChildActive = false;                                     //子オブジェクト表示フラグ
 
@@ -117,13 +112,7 @@ public class ItemDistanceMeter : MonoBehaviour
                 }
                 else
                 {
-                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(arrowMargin, (posDifference[i - 1]), 0);
-
-                    //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
-                    if (iconList[i].transform.position.y > iconList[0].transform.position.y + maxDistance)
-                    {
-                        iconList[i].transform.position = new Vector3(iconList[i].transform.position.x, iconList[0].transform.position.y + maxDistance, 0);
-                    }
+                    iconList[i].transform.position = new Vector3(iconList[i].transform.position.x, iconList[0].transform.position.y + (posDifference[i - 1]), 0);
                 }
             }
         }
