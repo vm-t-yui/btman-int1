@@ -32,7 +32,7 @@ public class NewItemsDisplay : MonoBehaviour
     SpriteAtlas itemAtlas = default;                  //アイテムのスプライトアトラス
 
     [SerializeField]
-    GameObject displayImage = default;                //アイテム取得パネル表示用イメージ
+    GameObject displayImage = default;                //アイテム取得演出表示用イメージ(子に名前と画像)
 
     [SerializeField]
     int touchCount = 0;     //タッチ数カウント
@@ -54,6 +54,8 @@ public class NewItemsDisplay : MonoBehaviour
         else
         {
             SetNewItem();
+
+            //アイテム取得演出表示
             displayImage.SetActive(true);
         }
     }

@@ -19,6 +19,8 @@ public class CanvasActive : MonoBehaviour
     void DisplayCanvas()
     {
         dirtSmoke.SetActive(false);
+
+        //カンバス表示用アニメーション再生
         canvasAnim.SetTrigger("FadeIn");
     }
 }
