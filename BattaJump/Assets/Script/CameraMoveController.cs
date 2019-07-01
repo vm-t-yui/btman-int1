@@ -19,8 +19,9 @@ public class CameraMoveController : MonoBehaviour
     readonly Vector3 LookAtPosJumpOffset   = new Vector3(0, 3, 0);        // 注視点のオフセット
     const    int     CameraMoveWaitTime    = 10;                          // カメラの移動が開始するまでの待機時間
     const    int     ZoomTime              = 600;                         // ズーム時間
-    const    float   ZoomSpeed             = 0.05f;                      // ズームスピード
+    const    float   ZoomSpeed             = 0.05f;                   　  // ズームスピード
     const    float   ZoomLerpRate          = 0.05f;                       // ズームのLerp率
+    const    float   DefaultFieldOfView    = 60f;                         // デフォルトの視野
 
     bool isChace = false;                                                 // 追跡フラグ
 
@@ -50,8 +51,13 @@ public class CameraMoveController : MonoBehaviour
             if (!isChace)
             {
                 transform.localPosition = jumpCameraPos;
-                Camera.main.fieldOfView = 60;
-                cloudCreater.enabled = true;
+
+                // 視野を初期化
+                Camera.main.fieldOfView = DefaultFieldOfView;
+
+                // 雲の生成を開始
+                cloudCreater.StartCreate();
+
                 isChace = true;
 
                 // 風切り音を再生する
