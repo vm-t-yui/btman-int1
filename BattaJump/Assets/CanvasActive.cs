@@ -8,9 +8,6 @@ using UnityEngine;
 public class CanvasActive : MonoBehaviour
 {
     [SerializeField]
-    GameObject dirtSmoke = default;    //土煙
-
-    [SerializeField]
     Animator canvasAnim = default;     //カンバスのアニメーター
 
     /// <summary>
@@ -18,8 +15,6 @@ public class CanvasActive : MonoBehaviour
     /// </summary>
     void DisplayCanvas()
     {
-        dirtSmoke.SetActive(false);
-
         //カンバス表示用アニメーション再生
         canvasAnim.SetTrigger("FadeIn");
     }
