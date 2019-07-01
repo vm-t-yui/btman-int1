@@ -28,11 +28,9 @@ public class ItemCreater : MonoBehaviour
     List<float> existAllItemsRate = new List<float>();          //表示されるアイテムの出現確立
 
     public const int appearanceNum = 4;                         //表示数
-    [SerializeField]
+
     float skyBorder = 5000;                                      //空の境目
-    [SerializeField]
     float spaceItemInterval = 1000;                              //宇宙のアイテムの間隔
-    [SerializeField]
     float spaceItemPlusInterval = 500;                           //宇宙のアイテムの間隔の増加値
 
     /// <summary>
