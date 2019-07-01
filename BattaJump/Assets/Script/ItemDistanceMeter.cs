@@ -33,8 +33,6 @@ public class ItemDistanceMeter : MonoBehaviour
     [SerializeField]
     CameraMoveController cameraMove = default;                      //カメラの動き制御
 
-    float arrowMargin = 25;                                         //矢印分の余白
-
     bool isChildActive = false;                                     //子オブジェクト表示フラグ
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
@@ -117,7 +115,7 @@ public class ItemDistanceMeter : MonoBehaviour
                 }
                 else
                 {
-                    iconList[i].transform.position = iconList[0].transform.position + new Vector3(arrowMargin, (posDifference[i - 1]), 0);
+                    iconList[i].transform.position = new Vector3(iconList[i].transform.position.x, iconList[0].transform.position.y + (posDifference[i - 1]), 0);
 
                     //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                     if (iconList[i].transform.position.y > iconList[0].transform.position.y + maxDistance)

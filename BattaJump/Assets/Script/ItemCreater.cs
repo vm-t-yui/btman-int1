@@ -29,11 +29,11 @@ public class ItemCreater : MonoBehaviour
 
     public const int appearanceNum = 4;                         //表示数
     [SerializeField]
-    float skyBorder = 300;                                      //空の境目
+    float skyBorder = 5000;                                      //空の境目
     [SerializeField]
-    float spaceItemInterval = 350;                              //宇宙のアイテムの間隔
+    float spaceItemInterval = 1000;                              //宇宙のアイテムの間隔
     [SerializeField]
-    float spaceItemPlusInterval = 50;                           //宇宙のアイテムの間隔の増加値
+    float spaceItemPlusInterval = 500;                           //宇宙のアイテムの間隔の増加値
 
     /// <summary>
     /// 開始処理

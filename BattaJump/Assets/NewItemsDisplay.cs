@@ -32,6 +32,9 @@ public class NewItemsDisplay : MonoBehaviour
     SpriteAtlas itemAtlas = default;                  //アイテムのスプライトアトラス
 
     [SerializeField]
+    GameObject displayImage = default;                //アイテム取得パネル表示用イメージ
+
+    [SerializeField]
     int touchCount = 0;     //タッチ数カウント
 
     /// <summary>
@@ -51,8 +54,7 @@ public class NewItemsDisplay : MonoBehaviour
         else
         {
             SetNewItem();
-            itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[0])), names[0], descriptions[0]);
-            //最初の表示
+            displayImage.SetActive(true);
         }
     }
 
@@ -61,6 +63,11 @@ public class NewItemsDisplay : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(touchCount == 0)
+        {
+            //最初の表示
+            itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[0])), names[0], descriptions[0]);
+        }
         if (Input.touchCount > 0)
         {
             // タッチの情報を取得

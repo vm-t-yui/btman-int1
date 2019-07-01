@@ -56,11 +56,31 @@ public class ItemManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 新しく入手したアイテムのフラグのゲット関数
+    /// 新しく入手したアイテムのフラグのゲット関数(全部)
     /// </summary>
     /// <returns>新しく入手したアイテムのフラグ</returns>
     public bool[] GetIsNewHasItem()
     {
         return isNewHasItem;
+    }
+
+    /// <summary>
+    /// 新しく入手したアイテムのフラグのゲット関数(1個ずつ)
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool GetIsNewHasItem(int i)
+    {
+        return isNewHasItem[i];
+    }
+
+    /// <summary>
+    /// 新規取得アイテムフラグリセット
+    /// </summary>
+    public void ResetIsNewHasItem()
+    {
+        for (int i = 0; i < isNewHasItem.Length; i++) 
+        {
+            isNewHasItem[i] = false;
+        }
     }
 }
