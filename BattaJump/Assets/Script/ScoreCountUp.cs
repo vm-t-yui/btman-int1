@@ -62,6 +62,9 @@ public class ScoreCountUp : MonoBehaviour
             countScore = getScore;
             if (!IsCountEnd)
             {
+                // ドラムロール音を終了する
+                AudioPlayer.instance.StopSe(AudioPlayer.SeType.DramRoll);
+
                 // ロール終了サウンドを再生
                 AudioPlayer.instance.PlaySe(AudioPlayer.SeType.RollFinish);
                 IsCountEnd = true;
