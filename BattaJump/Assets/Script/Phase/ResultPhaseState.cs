@@ -60,6 +60,9 @@ public class ResultPhaseState : MonoBehaviour
     [SerializeField]
     GameObject playerObj = default;
 
+    float loadTime = 0f;                             // ロード待機時間
+    const float LoadMaxTime = 3f;                    // ロード待機最大時間
+
     float landingTime = 0;                           // 着地のアニメーション再生時間
     const float LandingCraterCreateTime = 0.1f;      // 着地アニメーション中にクレーターを生成する時間
 
@@ -100,8 +103,10 @@ public class ResultPhaseState : MonoBehaviour
         {
             case PhaseType.WaitAdLoad:        // 広告ロード完了待機
 
+                loadTime += Time.deltaTime;
+
                 // 広告のロードが完了したら次の処理へ
-                if (adManager.IsLoaded())
+                if (adManager.IsLoaded() || loadTime >= LoadMaxTime)
                 {
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);

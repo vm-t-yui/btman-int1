@@ -11,7 +11,14 @@ public class AdInterstitialController : MonoBehaviour
 {
     InterstitialAd interstitialAd;                                      // インタースティシャル広告制御クラス
 
-    const string AdUnitId = "ca-app-pub-3940256099942544/1033173712";   // 広告ユニットID（テスト用ID）
+    const string AdUnitId =                                             // 広告ユニットID（テスト用ID）
+#if UNITY_ANDROID
+        "ca-app-pub-3940256099942544/1033173712";
+#elif UNITY_IOS
+        "ca-app-pub-3940256099942544/4411468910";
+#else
+        "unexpected_platform";
+#endif
 
     public bool IsClosed { get; private set; }                          // 広告を閉じているかどうか
 

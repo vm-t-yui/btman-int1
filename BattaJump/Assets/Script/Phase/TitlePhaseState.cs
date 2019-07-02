@@ -33,6 +33,9 @@ public class TitlePhaseState : MonoBehaviour
     [SerializeField]
     NextSceneChanger nextScene = default;            // シーン移行クラス
 
+    float loadTime = 0f;                             // ロード待機時間
+    const float LoadMaxTime = 3f;                    // ロード待機最大時間
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -61,8 +64,10 @@ public class TitlePhaseState : MonoBehaviour
         {
             case PhaseType.WaitAdLoad:        // 広告ロード完了待機
 
+                loadTime += Time.deltaTime;
+
                 // 広告のロードが完了したら次の処理へ
-                if (adManager.IsLoaded())
+                if (adManager.IsLoaded() || loadTime >= LoadMaxTime)
                 {
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);

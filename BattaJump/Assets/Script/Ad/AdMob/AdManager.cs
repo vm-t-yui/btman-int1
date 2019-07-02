@@ -14,9 +14,18 @@ public class AdManager : MonoBehaviour
     [SerializeField]
     AdInterstitialController adInterstitial = default;                // インタースティシャル広告テストクラス
 
-    const string AppId = "ca-app-pub-3824454621992610~6537798789";    // アプリID（テスト用）
+    const string AppId =                                              // アプリID
+#if UNITY_ANDROID
+        "ca-app-pub-7073050807259252~7297201289";
+#elif UNITY_IOS
+        "ca-app-pub-7073050807259252~7875785788";
+#else
+        "unexpected_platform";
+#endif
 
     public bool IsAdView { get; private set; }                        // 広告表示してるかどうか 
+
+    bool isOnline = false;                                            // オンラインかどうか
 
     /// <summary>
     /// ロード完了検知
@@ -24,8 +33,8 @@ public class AdManager : MonoBehaviour
     /// <returns></returns>
     public bool IsLoaded()
     {
-        // バナー、インタースティシャルどちらもロードが完了したらtrueを返す
-        if (adBanner.IsLoaded && adInterstitial.IsLoaded())
+        // バナー、インタースティシャルどちらもロードが完了したらtrueを返す、オフラインの場合も同様
+        if ((adBanner.IsLoaded && adInterstitial.IsLoaded()) || !isOnline)
         {
             return true;
         }
@@ -49,6 +58,19 @@ public class AdManager : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
+        // オンラインかどうか判断
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            isOnline = false;
+        }
+        else
+        {
+            isOnline = true;
+        }
+
+        // オフラインなら処理を抜ける
+        if (!isOnline) { return; }
+
         // Google Mobile Ads SDKを設定したアプリIDで初期化.
         MobileAds.Initialize(AppId);
 
@@ -67,6 +89,9 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void ShowBanner()
     {
+        // オフラインなら処理を抜ける
+        if (!isOnline) { return; }
+
         adBanner.Show();
     }
 
@@ -75,6 +100,9 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void HideBanner()
     {
+        // オフラインなら処理を抜ける
+        if (!isOnline) { return; }
+
         adBanner.Hide();
     }
 
@@ -83,6 +111,9 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void ShowInterstitial()
     {
+        // オフラインなら処理を抜ける
+        if (!isOnline) { return; }
+
         // 閉じているなら表示する
         if (adInterstitial.IsClosed)
         {
