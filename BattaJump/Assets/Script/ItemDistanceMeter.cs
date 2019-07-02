@@ -30,7 +30,10 @@ public class ItemDistanceMeter : MonoBehaviour
     [SerializeField]
     CameraMoveController cameraMove = default;                      //カメラの動き制御
 
-    bool isChildActive = false;                                     //子オブジェクト表示フラグ
+    [SerializeField]
+    GameObject itemBag = default;                                   //アイテム袋のオブジェクト
+
+    bool isActive = false;                                          //子オブジェクト表示フラグ
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
 
@@ -88,15 +91,17 @@ public class ItemDistanceMeter : MonoBehaviour
         //ちゃんとメーターが生成されて、カメラが追跡し始めたら差分を取り始める
         if (isCreate && cameraMove.GetIsChace())
         {
-            //子オブジェクトを表示
-            if (!isChildActive)
+            //子オブジェクトとアイテム袋表示
+            if (!isActive)
             {
                 foreach (Transform child in transform)
                 {
                     child.gameObject.SetActive(true);
                 }
+
+                itemBag.SetActive(true);
             }
-            isChildActive = true;
+            isActive = true;
 
             //NOTE:[0]はプレイヤーのアイコンなので省く
             for (int i = 1; i < iconList.Length; i++)
@@ -117,15 +122,19 @@ public class ItemDistanceMeter : MonoBehaviour
             }
         }
         //カメラがまだ追跡していない時は
-        else if(!isChildActive)
+        else if (!isActive)
         {
             //子オブジェクトを非表示
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
-                isChildActive = false;
+                isActive = false;
             }
+
+            //アイテム袋非表示
+            itemBag.SetActive(false);
         }
+
     }
 
     /// <summary>

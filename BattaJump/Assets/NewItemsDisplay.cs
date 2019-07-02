@@ -29,9 +29,6 @@ public class NewItemsDisplay : MonoBehaviour
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     [SerializeField]
-    SpriteAtlas itemAtlas = default;                  //アイテムのスプライトアトラス
-
-    [SerializeField]
     GameObject displayImage = default;                //アイテム取得演出表示用イメージ(子に名前と画像)
 
     [SerializeField]
@@ -70,7 +67,7 @@ public class NewItemsDisplay : MonoBehaviour
         if(touchCount == 0)
         {
             //最初の表示
-            itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[0])), names[0], descriptions[0]);
+            itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
         }
 
         //タッチされたら
@@ -140,12 +137,14 @@ public class NewItemsDisplay : MonoBehaviour
                 if (i < newHasNum.Count)
                 {
                     //新しく手に入れたアイテム説明
-                    itemDescription.NewItemDescription(itemAtlas.GetSprite(ItemScriptableObject.Instance.GetName(newHasNum[i])), names[i], descriptions[i]);
+                    itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[i]), names[i], descriptions[i]);
                     animator.SetTrigger("In");
                 }
                 //上回ったら非表示させる
                 else
                 {
+                    displayImage.SetActive(false);
+
                     gameObject.SetActive(false);
                 }
 

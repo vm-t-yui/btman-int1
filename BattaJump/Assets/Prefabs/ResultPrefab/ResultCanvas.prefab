@@ -3383,6 +3383,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7573624244775667719}
     m_Modifications:
+    - target: {fileID: 3815690988202314367, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_Name
+      value: NewItemDisPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815690988202314367, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6715328089191288850, guid: 49abe88d5582c484c9691016ccc01f8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3493,16 +3503,6 @@ PrefabInstance:
       propertyPath: itemManager
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3815690988202314367, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_Name
-      value: NewItemDisPlay
-      objectReference: {fileID: 0}
-    - target: {fileID: 3815690988202314367, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1908977691757823026, guid: 49abe88d5582c484c9691016ccc01f8c,
         type: 3}
       propertyPath: itemManager
@@ -3513,6 +3513,16 @@ PrefabInstance:
       propertyPath: localizeController
       value: 
       objectReference: {fileID: 7573624246038248667}
+    - target: {fileID: 7305276768766165774, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 572652860386900494, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 420714205376331327, guid: 49abe88d5582c484c9691016ccc01f8c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3532,16 +3542,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 7305276768766165774, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 572652860386900494, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49abe88d5582c484c9691016ccc01f8c, type: 3}
@@ -3570,6 +3570,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7573624245677272997}
     m_Modifications:
+    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemBoxManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3674,11 +3679,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemBoxManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3295cdccc674041bc3af392ba4bab8, type: 3}

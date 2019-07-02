@@ -297,7 +297,6 @@ MonoBehaviour:
   - silver_star
   - gold_star
   - rainbow_star
-  maxDistance: 260
   iconList:
   - {fileID: 2453502394551364900}
   - {fileID: 7398548866110298841}
@@ -305,6 +304,7 @@ MonoBehaviour:
   - {fileID: 1795235534537921385}
   - {fileID: 501663135121160308}
   cameraMove: {fileID: 0}
+  itemBag: {fileID: 0}
 --- !u!1 &6684485729469556433
 GameObject:
   m_ObjectHideFlags: 0

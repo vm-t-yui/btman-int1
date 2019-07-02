@@ -855,21 +855,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3198779632647248246, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198779632647248246, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: itemCreater
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198779632647248246, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: cameraMove
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01086368f844f0281c69b1d7e1ab9c, type: 3}
 --- !u!224 &82221529898609757 stripped
