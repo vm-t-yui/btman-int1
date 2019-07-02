@@ -83,12 +83,12 @@ public class NewItemsDisplay : MonoBehaviour
             }
         }
 
-        // 画面のクリック操作（エディタ用）
-        if (Input.GetMouseButtonDown(0))
-        {
-            touchCount++;
-            DisplayNewItem(touchCount);
-        }
+        //// 画面のクリック操作（エディタ用）
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    touchCount++;
+        //    DisplayNewItem(touchCount);
+        //}
     }
 
     /// <summary>
