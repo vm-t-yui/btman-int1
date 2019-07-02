@@ -549,6 +549,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5580492948177043874}
+        m_MethodName: ResetIsNewHasItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &7573624244327694646
@@ -1285,7 +1296,7 @@ RectTransform:
   - {fileID: 7573624246038248665}
   - {fileID: 1530526177171603083}
   m_Father: {fileID: 7573624245677272997}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2020,6 +2031,17 @@ MonoBehaviour:
       - m_Target: {fileID: 7840694261364005236, guid: 9c9d125a9ea3ec449a078493600f749d,
           type: 3}
         m_MethodName: PlaySelectButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5580492948177043874}
+        m_MethodName: ResetIsNewHasItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2895,8 +2917,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 5580492948177043875}
   - {fileID: 7573624244775667719}
+  - {fileID: 5580492948177043875}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3521,11 +3543,6 @@ PrefabInstance:
       propertyPath: localizeController
       value: 
       objectReference: {fileID: 7573624246038248667}
-    - target: {fileID: 75960911607383993, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49abe88d5582c484c9691016ccc01f8c, type: 3}
 --- !u!224 &1530526177171603083 stripped
@@ -3596,7 +3613,7 @@ PrefabInstance:
     - target: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
@@ -3665,6 +3682,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3295cdccc674041bc3af392ba4bab8, type: 3}
+--- !u!224 &5580492948177043875 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
+    type: 3}
+  m_PrefabInstance: {fileID: 9169102260569198354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5580492948177043874 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3625069118020849328, guid: 4a3295cdccc674041bc3af392ba4bab8,
@@ -3692,12 +3715,6 @@ MonoBehaviour:
 --- !u!1 &5834226913080468005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3443115828048440631, guid: 4a3295cdccc674041bc3af392ba4bab8,
-    type: 3}
-  m_PrefabInstance: {fileID: 9169102260569198354}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &5580492948177043875 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
     type: 3}
   m_PrefabInstance: {fileID: 9169102260569198354}
   m_PrefabAsset: {fileID: 0}

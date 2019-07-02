@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.62848955, g: 0.7413888, b: 0.77163225, a: 1}
+  m_IndirectSpecularColor: {r: 0.48074245, g: 0.6270279, b: 0.7171429, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,11 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6951135743852118565, guid: e3278165567384a05b7a157c35ffa6d7,
-        type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 7573624243915292178}
     - target: {fileID: 6951135743852118565, guid: e3278165567384a05b7a157c35ffa6d7,
         type: 3}
       propertyPath: canvasAnim
@@ -937,12 +932,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 4786346490017275827, guid: a05e7cfb4f0d77944b042c7d4bc26781,
+    - target: {fileID: 4315130577745593639, guid: a05e7cfb4f0d77944b042c7d4bc26781,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 4315130577745593639, guid: a05e7cfb4f0d77944b042c7d4bc26781,
+    - target: {fileID: 4786346490017275827, guid: a05e7cfb4f0d77944b042c7d4bc26781,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -2069,12 +2064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3558f9982ed403a4398d66f1620f1994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7573624243915292178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7573624244775667718, guid: 1e9033abff0344a4b939712309fbc198,
-    type: 3}
-  m_PrefabInstance: {fileID: 7573624243915292174}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &7573624243915292181 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4316543420074996311, guid: 1e9033abff0344a4b939712309fbc198,
