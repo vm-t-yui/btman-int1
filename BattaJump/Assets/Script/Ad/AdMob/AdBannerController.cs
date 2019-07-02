@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using GoogleMobileAds.Api;    // Google AdMob広告用
 
@@ -20,8 +21,17 @@ public class AdBannerController : MonoBehaviour
     /// </summary>
     public void RequestBanner()
     {
-        // サイズ320 x 50、画面上部表示の設定で初期化
-        bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Bottom);
+        // リザルトの時のみ表示位置を上にする
+        if (SceneManager.GetActiveScene().name == "Result")
+        {
+            // サイズ320 x 50、画面上部表示の設定で初期化
+            bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Top);
+        }
+        else
+        {
+            // サイズ320 x 50、画面下部表示の設定で初期化
+            bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Bottom);
+        }
 
         // 空の広告リクエストを作成
         AdRequest request = new AdRequest.Builder().Build();
