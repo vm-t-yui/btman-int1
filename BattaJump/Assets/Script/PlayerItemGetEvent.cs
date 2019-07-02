@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// アイテムゲットクラス(プレイヤーにアタッチ)
@@ -13,6 +14,9 @@ public class PlayerItemGetEvent : MonoBehaviour
     [SerializeField]
     GameObject getParticle = default;    //ゲット時のパーティクル
 
+    [SerializeField]
+    GameObject itemGetImage = default;   //アイテムゲット演出用オブジェクト
+
     /// <summary>
     /// アイテムにあたったらゲット
     /// </summary>
@@ -22,14 +26,20 @@ public class PlayerItemGetEvent : MonoBehaviour
         //アイテムの表示用オブジェクトは反応させない
         if (LayerMask.LayerToName(item.gameObject.layer) != "ItemDisplayObject")
         {
+            int itemNum = item.GetComponent<ItemController>().GetMyNum();
+
             //アイテムゲット
-            itemManager.GetItem(item.GetComponent<ItemController>().GetMyNum());
+            itemManager.GetItem(itemNum);
 
             //アイテムゲット用パーティクル再生
             getParticle.SetActive(true);
 
             //アイテムを非表示に
             item.gameObject.SetActive(false);
+
+            //アイテムゲット演出開始
+            itemGetImage.SetActive(true);
+            itemGetImage.GetComponent<Image>().sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
 
             // アイテム取得音を鳴らす
             AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
