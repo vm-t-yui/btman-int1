@@ -8,6 +8,9 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     [SerializeField]
+    GameObject player = default;
+
+    [SerializeField]
     int myNum;                  //自分のアイテム番号
 
     bool isCollider = false;    //当たり判定フラグ
@@ -19,6 +22,16 @@ public class ItemController : MonoBehaviour
     {
         //当たり判定開始
         isCollider = true;
+    }
+
+    /// <summary>
+    /// 更新処理
+    /// </summary>
+    void Update()
+    {
+        //常にプレイヤーと同じx,z軸で、カメラの方に向かせる
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.LookAt(new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z));
     }
 
     /// <summary>
@@ -48,5 +61,14 @@ public class ItemController : MonoBehaviour
     public int GetMyNum()
     {
         return myNum;
+    }
+
+    /// <summary>
+    /// プレイヤーオブジェクトのセット関数
+    /// </summary>
+    /// <param name="playerObj">Player object.</param>
+    public void SetPlayer(GameObject playerObj)
+    {
+        player = playerObj;
     }
 }

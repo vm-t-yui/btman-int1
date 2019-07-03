@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e6627ecc2dd914120a5eb1b02d5b7579, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,7 +111,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1097626633
 CanvasRenderer:
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6de67cb5a26484648b9dd34dd4889ec6, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 339843287785882220}
   - component: {fileID: 3260682182176807990}
   m_Layer: 5
-  m_Name: GetItemBackGround
+  m_Name: GetItemSpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -989,7 +989,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1151,6 +1151,36 @@ PrefabInstance:
       propertyPath: itemBag
       value: 
       objectReference: {fileID: 39858742}
+    - target: {fileID: 3198779632647248246, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: itemSpeechBubble
+      value: 
+      objectReference: {fileID: 3481930531419377768}
+    - target: {fileID: 130544599719509235, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807515876075935446, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139100995257187113, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601027163766986645, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835378135473022033, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01086368f844f0281c69b1d7e1ab9c, type: 3}
 --- !u!224 &82221529898609757 stripped

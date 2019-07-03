@@ -33,6 +33,9 @@ public class ItemDistanceMeter : MonoBehaviour
     [SerializeField]
     GameObject itemBag = default;                                   //アイテム袋のオブジェクト
 
+    [SerializeField]
+    Image itemSpeechBubble = default;                         //アイテムゲット時の吹き出し
+
     bool isActive = false;                                          //子オブジェクト表示フラグ
 
     bool isCreate = false;                                          //メーターが生成されたかどうかのフラグ
@@ -54,6 +57,10 @@ public class ItemDistanceMeter : MonoBehaviour
         //それ以外ならレア度に応じたアイコン作成
         else
         {
+            //アイテムアイコンの矢印のススプライトセット
+            Image triangleImage = iconList[i].transform.FindChild("Triangle").GetComponent<Image>();
+            triangleImage.sprite = meterAtlas.GetSprite("Triangle");
+
             //アイテムのレアリティをセット
             Dictionary<int, float> itemRarity = ItemScriptableObject.Instance.GetItemRarity();
 
@@ -78,6 +85,10 @@ public class ItemDistanceMeter : MonoBehaviour
         {
             CreateIcon(i);
         }
+
+        //アイテムバックと吹き出しのスプライト設定
+        itemBag.GetComponent<Image>().sprite = meterAtlas.GetSprite("ItemBag");
+        itemSpeechBubble.sprite = meterAtlas.GetSprite("ItemSpeechBubble");
 
         //生成完了
         isCreate = true;
