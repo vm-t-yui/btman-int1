@@ -31,6 +31,9 @@ public class JumpController : MonoBehaviour
 
         // ジャンプフラグを立てる
         IsJumping = true;
+
+        // トリガーをオンにする
+        GetComponent<BoxCollider>().isTrigger = true;
     }
 
     /// <summary>
