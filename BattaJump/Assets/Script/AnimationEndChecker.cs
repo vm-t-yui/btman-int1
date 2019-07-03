@@ -16,4 +16,12 @@ public class AnimationEndChecker : MonoBehaviour
     {
         IsEnd = true;
     }
+
+    /// <summary>
+    /// 終了時処理
+    /// </summary>
+    void OnDisable()
+    {
+        IsEnd = false;
+    }
 }

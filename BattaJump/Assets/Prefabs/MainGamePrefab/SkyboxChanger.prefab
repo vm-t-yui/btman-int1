@@ -44,5 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeightCounter: {fileID: 0}
-  universeSkyboxMat: {fileID: 2100000, guid: 16bc8a9d5451ca44d8f70575adbece3a, type: 2}
+  cloudCreater: {fileID: 0}
+  meteoCreater: {fileID: 0}
+  universeSkyboxMat: {fileID: 2100000, guid: 227ebbc0ed73906418efc34f9be7bb6f, type: 2}
+  skyboxRotater: {fileID: 0}
   rocketObj: {fileID: 0}
+  ReachUniverseHeight: 0
