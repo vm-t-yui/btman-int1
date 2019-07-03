@@ -16,7 +16,7 @@ public class CraterCreater : MonoBehaviour
     [SerializeField]
     GameObject takeOffParticle = default;                        // ジャンプの瞬間のパーティクル
 
-    const int DebrisNum = 20;                                    // 生成する破片の総数
+    const int DebrisNum = 10;                                    // 生成する破片の総数
 
     GameObject[] debriss = new GameObject[DebrisNum];            // 生成した破片を入れる配列
 

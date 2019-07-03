@@ -37,6 +37,12 @@ public class PlayDataManager : MonoBehaviour
     public void IncreasePlayCount()
     {
         PlayCount++;
+
+        // プレイ回数をセット
+        PlayerPrefs.SetInt(PlayCountKey, PlayCount);
+
+        // セットしたデータをセーブ
+        PlayerPrefs.Save();
     }
 
     /// <summary>

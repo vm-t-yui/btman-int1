@@ -10,6 +10,9 @@ public class ScoreCountUp : MonoBehaviour
     [SerializeField]
     PlayDataManager playData = default;                      // スコアデータクラス
 
+    [SerializeField]
+    RectTransform textRect = default;                        // スコアテキストのRectTransform
+
     public int countScore { get; private set; } = 0;         // カウントアップ用スコア
 
     int getScore = 0;                                        // ゲーム内で獲得したスコア（デバッグ用にSerializeFiedを設定）
@@ -45,13 +48,15 @@ public class ScoreCountUp : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 countScore = getScore;
+                textRect.localScale = Vector3.one;
             }
         }
 
-        // ゲーム内で獲得したスコアまでカウントアップする
+        // ゲーム内で獲得したスコアまでサイズを大きくしながらカウントアップする
         if (countScore < getScore)
         {
             countScore += (int)(getScore * (Time.deltaTime / SpendTime));
+            textRect.localScale += Vector3.one * (Time.deltaTime / SpendTime);
         }
         // ゲーム内で獲得したスコアを超えたらカウントアップ終了
         else
@@ -60,6 +65,7 @@ public class ScoreCountUp : MonoBehaviour
             waitTime += Time.deltaTime;
 
             countScore = getScore;
+            textRect.localScale = Vector3.one;
             if (!IsCountEnd)
             {
                 // ドラムロール音を終了する

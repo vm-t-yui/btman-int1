@@ -4806,8 +4806,8 @@ MonoBehaviour:
   - {fileID: 6567569790464027084}
   crater: {fileID: 241327173816512984}
   takeOffParticle: {fileID: 241327172981413136}
-  VelocityMin: {x: -5, y: 20, z: -5}
-  VelocityMax: {x: 5, y: 30, z: 5}
+  VelocityMin: {x: -5, y: 20, z: -2}
+  VelocityMax: {x: 5, y: 30, z: 2}
   RotateForceMagMin: 500
   RotateForceMagMax: 1000
 --- !u!114 &9032247540756359837

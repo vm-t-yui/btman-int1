@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f596a905e524146905cb1cac03b5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skyboxMat: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
+  skyboxMats:
+  - {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
+  - {fileID: 2100000, guid: 227ebbc0ed73906418efc34f9be7bb6f, type: 2}
   RotateSpeed: 0.003

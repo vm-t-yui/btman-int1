@@ -46,7 +46,6 @@ public class CloudCreater : MonoBehaviour
         {
             GameObject newCloud = Instantiate(cloud, Vector3.zero, Quaternion.Euler(CreateRotation));
             newCloud.transform.parent = transform;
-            newCloud.SetActive(false);
             cloudClones.Add(newCloud);
         }
     }
