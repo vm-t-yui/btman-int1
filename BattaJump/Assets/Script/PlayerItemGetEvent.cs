@@ -17,6 +17,9 @@ public class PlayerItemGetEvent : MonoBehaviour
     [SerializeField]
     GameObject itemGetImage = default;   //アイテムゲット演出用オブジェクト
 
+    [SerializeField]
+    GameObject itemGetBackGround = default;   //アイテムゲット演出背景用オブジェクト
+
     /// <summary>
     /// アイテムにあたったらゲット
     /// </summary>
@@ -39,6 +42,7 @@ public class PlayerItemGetEvent : MonoBehaviour
 
             //アイテムゲット演出開始
             itemGetImage.SetActive(true);
+            itemGetBackGround.SetActive(true);
             itemGetImage.GetComponent<Image>().sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
 
             // アイテム取得音を鳴らす
