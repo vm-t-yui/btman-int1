@@ -171,9 +171,6 @@ public class ResultPhaseState : MonoBehaviour
                         // 実績解除できるかチェック
                         achievementController.CheckRelease();
 
-                        // 動画広告勧誘
-                        adVideoRecommender.Recommend();
-
                         nowPhase = PhaseType.ViewResult;
                     }
                 }

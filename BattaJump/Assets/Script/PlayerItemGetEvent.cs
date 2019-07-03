@@ -26,27 +26,23 @@ public class PlayerItemGetEvent : MonoBehaviour
     /// <param name="item">アイテム</param>
     void OnTriggerEnter(Collider item)
     {
-        //アイテムの表示用オブジェクトは反応させない
-        if (LayerMask.LayerToName(item.gameObject.layer) != "ItemDisplayObject")
-        {
-            int itemNum = item.GetComponent<ItemController>().GetMyNum();
+        int itemNum = item.GetComponent<ItemController>().GetMyNum();
 
-            //アイテムゲット
-            itemManager.GetItem(itemNum);
+        //アイテムゲット
+        itemManager.GetItem(itemNum);
 
-            //アイテムゲット用パーティクル再生
-            getParticle.SetActive(true);
+        //アイテムゲット用パーティクル再生
+        getParticle.SetActive(true);
 
-            //アイテムを非表示に
-            item.gameObject.SetActive(false);
+        //アイテムを非表示に
+        item.gameObject.SetActive(false);
 
-            //アイテムゲット演出開始
-            itemGetImage.SetActive(true);
-            itemGetBackGround.SetActive(true);
-            itemGetImage.GetComponent<Image>().sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
+        //アイテムゲット演出開始
+        itemGetImage.SetActive(true);
+        itemGetBackGround.SetActive(true);
+        itemGetImage.GetComponent<Image>().sprite = ItemScriptableObject.Instance.GetSprite(itemNum);
 
-            // アイテム取得音を鳴らす
-            AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
-        }
+        // アイテム取得音を鳴らす
+        AudioPlayer.instance.PlaySe(AudioPlayer.SeType.ItemGet);
     }
 }

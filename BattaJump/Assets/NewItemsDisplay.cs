@@ -32,6 +32,12 @@ public class NewItemsDisplay : MonoBehaviour
     GameObject displayImage = default;                //アイテム取得演出表示用イメージ(子に名前と画像)
 
     [SerializeField]
+    DisplayFadeContoller displayFadeContoller = default;    //画面フェードコントロールクラス
+
+    [SerializeField]
+    AdVideoRecommender adVideoRecommender = default;        //動画広告勧誘クラス
+
+    [SerializeField]
     int touchCount = 0;     //タッチ数カウント
 
     /// <summary>
@@ -45,6 +51,9 @@ public class NewItemsDisplay : MonoBehaviour
         //そもそも全ての要素数がfalseなら非表示にする
         if (IsAllItemInactive(isNewHasItem))
         {
+            // 動画広告勧誘表示
+            adVideoRecommender.Recommend();
+
             gameObject.SetActive(false);
         }
         //あるなら新しいアイテムの情報をセット
@@ -64,14 +73,14 @@ public class NewItemsDisplay : MonoBehaviour
     {
         //最初のタッチがされるまで
         //NOTE:Startで呼ぶとちらつきとが目立つため、Updateに
-        if(touchCount == 0)
+        if (touchCount == 0)
         {
             //最初の表示
             itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
         }
 
-        //タッチされたら
-        if (Input.touchCount > 0)
+        //画面フェードが終わった状態でタッチされたら
+        if (Input.touchCount > 0 && displayFadeContoller.IsFadeEnd)
         {
             // タッチの情報を取得
             Touch touch = Input.GetTouch(0);
@@ -143,8 +152,11 @@ public class NewItemsDisplay : MonoBehaviour
                 //上回ったら非表示させる
                 else
                 {
-                    displayImage.SetActive(false);
+                    // 動画広告勧誘表示
+                    adVideoRecommender.Recommend();
 
+                    //新規アイテム関連は非表示
+                    displayImage.SetActive(false);
                     gameObject.SetActive(false);
                 }
 
