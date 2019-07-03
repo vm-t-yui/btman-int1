@@ -19,7 +19,7 @@ public class JumpHeightCounter : MonoBehaviour
 
     const    float  OneKiloMetreDistance  = 2;           // １キロあたりの距離
     const    float  GroundPosY            = -0.5f;       // 地面のY軸の位置
-    const    float  HeightUiMagnification = 10;          // UIに表示する高さの倍率
+    const    float  HeightUiMagnification = 6000;        // UIに表示する高さの倍率
     readonly string DistanceUnit          = " km";       // 距離の単位
 
     /// <summary>
@@ -49,7 +49,7 @@ public class JumpHeightCounter : MonoBehaviour
             if (jumpHeight != 0)
             {
                 // ジャンプ高さをキロメートルに変換してUIに表示
-                jumpHeightText.text = JumpHeightToKiloMetre.ToString() + DistanceUnit;
+                jumpHeightText.text = JumpHeightToKiloMetre.ToString("N0") + DistanceUnit;
             }
 
         }

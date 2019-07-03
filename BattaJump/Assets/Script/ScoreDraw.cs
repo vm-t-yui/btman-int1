@@ -20,6 +20,6 @@ public class ScoreDraw : MonoBehaviour
     void Update()
     {
         // スコアをstringに変換して代入
-        scoreText.text = scoreCountUp.countScore.ToString();
+        scoreText.text = scoreCountUp.countScore.ToString("N0") + " km";
     }
 }
