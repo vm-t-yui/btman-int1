@@ -11,20 +11,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Temp/gradleOut/unity-android-resources/build.gradle">
+        <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="289">
+              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -40,8 +39,8 @@
         <option value="$PROJECT_DIR$/Temp/StagingArea/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Assets/GooglePlayGames/Plugins/Android/GooglePlayGamesManifest.plugin/AndroidManifest.xml" />
         <option value="$USER_HOME$/AppData/Local/Temp/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -57,29 +56,50 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="GooglePlayGameTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GooglePlayGameTest" type="462c0819:PsiDirectoryNode" />
+              <item name="BattaJump" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BattaJump" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GooglePlayGameTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GooglePlayGameTest" type="462c0819:PsiDirectoryNode" />
+              <item name="BattaJump" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BattaJump" type="462c0819:PsiDirectoryNode" />
               <item name="Assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BattaJump" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BattaJump" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="Plugins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BattaJump" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BattaJump" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="Plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BattaJump" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BattaJump" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="Plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="Android" type="462c0819:PsiDirectoryNode" />
+              <item name="GoogleMobileAdsPlugin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GooglePlayGameTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -137,46 +157,24 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/AndroidManifest.xml" />
-    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GooglePlayGamesManifest.plugin/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GoogleMobileAdsPlugin/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GoogleMobileAdsPlugin/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/res/values/strings.xml" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/unity-android-resources/build.gradle" />
     <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        <state relative-caret-position="459">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/build.gradle">
+    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="52" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GooglePlayGamesManifest.plugin/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GoogleMobileAdsPlugin/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/GoogleMobileAdsPlugin/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Temp/gradleOut/unity-android-resources/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="289">
+          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
         </state>
       </provider>
     </entry>
