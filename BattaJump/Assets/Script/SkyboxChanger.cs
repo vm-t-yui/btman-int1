@@ -61,7 +61,7 @@ public class SkyboxChanger : MonoBehaviour
             meteoCreater.StartCreate();
 
             // 回転させるスカイボックスマテリアルを宇宙のものに変更
-            skyboxRotater.ChageUniverse();
+            skyboxRotater.OnChangeUniverse();
 
             isChange = true;
         }

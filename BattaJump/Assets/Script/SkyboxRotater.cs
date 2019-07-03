@@ -20,7 +20,7 @@ public class SkyboxRotater : MonoBehaviour
     /// <summary>
     /// 宇宙に入ったら呼ぶ
     /// </summary>
-    public void ChageUniverse()
+    public void OnChangeUniverse()
     {
         isUniverse = true;
     }
