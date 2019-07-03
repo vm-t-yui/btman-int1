@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6158551, g: 0.7314909, b: 0.76746166, a: 1}
+  m_IndirectSpecularColor: {r: 0.6160657, g: 0.7312602, b: 0.7667548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1669,13 +1669,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3787169931983882066, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
+      propertyPath: scoreData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169931983882066, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
       propertyPath: playData
       value: 
       objectReference: {fileID: 1341260704}
+    - target: {fileID: 3787169931983882066, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: textRect
+      value: 
+      objectReference: {fileID: 3787169931558821120}
     - target: {fileID: 3787169931983882068, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
       propertyPath: m_Name
       value: ScoreCountUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169931983882068, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3787169931983882067, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
@@ -1782,23 +1797,54 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+    - target: {fileID: 3787169930492709172, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
-      propertyPath: m_LocalScale.x
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169932429776237, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930478364447, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930478364445, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+    - target: {fileID: 3787169930478364445, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
-      propertyPath: m_LocalScale.y
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+    - target: {fileID: 3787169930478364445, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
-      propertyPath: m_LocalScale.z
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05180de82c3924066b9f334f83e8e688, type: 3}
+--- !u!224 &3787169931558821120 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+    type: 3}
+  m_PrefabInstance: {fileID: 3787169931558821119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7342755516718287775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2075,6 +2121,16 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5940858391371066027, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: adVideoRecommender
+      value: 
+      objectReference: {fileID: 1058735931}
+    - target: {fileID: 5940858391371066027, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: displayFadeContoller
+      value: 
+      objectReference: {fileID: 1644896287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e9033abff0344a4b939712309fbc198, type: 3}
 --- !u!1 &7573624243915292175 stripped
