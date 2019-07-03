@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.6144088, g: 0.7300608, b: 0.76643115, a: 1}
+  m_IndirectSpecularColor: {r: 0.48123938, g: 0.6271184, b: 0.7171606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -70,7 +70,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 1
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -637,10 +637,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -685,6 +681,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 13700000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -787,6 +787,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f5750da5c639a4ea2f7c832a29b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1143210851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6283667053274381751, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6283667054108185673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1153132418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -794,16 +806,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_Name
-      value: AdManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
       propertyPath: adRewardVideo
@@ -813,6 +815,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_Name
+      value: AdManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
@@ -982,11 +994,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
-        type: 3}
-      propertyPath: m_Name
-      value: AchievementController
-      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411111, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: playData
@@ -997,6 +1004,11 @@ PrefabInstance:
       propertyPath: itemData
       value: 
       objectReference: {fileID: 6919808163537053082}
+    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
+        type: 3}
+      propertyPath: m_Name
+      value: AchievementController
+      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411110, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1147,6 +1159,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e14d09944b576448a84944b9cdb18be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2119294550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2445993215065086925, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6283667054108185673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2111903812931755861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,6 +1251,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TitleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302764709506448064, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6302764709648661543, guid: 86d205758fed44b0aa53933f2570ba89,
         type: 3}
@@ -1354,14 +1383,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6919808163537053082}
     - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: woodenFrame.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: woodenOutFrame.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
       propertyPath: title
       value: 
       objectReference: {fileID: 1187731668}
-    - target: {fileID: 6302764709506448064, guid: 86d205758fed44b0aa53933f2570ba89,
-        type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: howToPlay
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2119294550}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: woodenFrame.Array.data[16]
+      value: 
+      objectReference: {fileID: 1143210851}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: woodenOutFrame.Array.data[2]
+      value: 
+      objectReference: {fileID: 1143210851}
     - target: {fileID: 5468008114523239456, guid: 86d205758fed44b0aa53933f2570ba89,
         type: 3}
       propertyPath: m_Sprite
@@ -1681,7 +1725,7 @@ PrefabInstance:
     - target: {fileID: 6283667053274381749, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 280
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 6283667055262839369, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
         type: 3}
@@ -1707,6 +1751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283667055262839222, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 318329f6ed8ec4d0c86e5840a28d87a2, type: 3}

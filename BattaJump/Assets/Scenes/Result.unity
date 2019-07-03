@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6160657, g: 0.7312602, b: 0.7667548, a: 1}
+  m_IndirectSpecularColor: {r: 0.4809984, g: 0.62714905, b: 0.71698874, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1026,6 +1026,11 @@ PrefabInstance:
       propertyPath: VelocityMax.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 385580089226094994, guid: b49bda27ee464b245aba780009c47cc9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b49bda27ee464b245aba780009c47cc9, type: 3}
 --- !u!114 &1790751314 stripped
@@ -1692,6 +1697,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169932429776236, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3787169931983882067, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1797,27 +1817,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3787169930492709172, guid: 05180de82c3924066b9f334f83e8e688,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3787169932429776237, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3787169930478364447, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930492709172, guid: 05180de82c3924066b9f334f83e8e688,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -1836,6 +1846,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787169930492709169, guid: 05180de82c3924066b9f334f83e8e688,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05180de82c3924066b9f334f83e8e688, type: 3}
@@ -2131,6 +2151,31 @@ PrefabInstance:
       propertyPath: displayFadeContoller
       value: 
       objectReference: {fileID: 1644896287}
+    - target: {fileID: 5940858391371066027, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: animationEndChecker
+      value: 
+      objectReference: {fileID: 7573624243915292177}
+    - target: {fileID: 7669445201399598422, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669445201399598422, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669445201399598422, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669445201399598422, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e9033abff0344a4b939712309fbc198, type: 3}
 --- !u!1 &7573624243915292175 stripped
@@ -2290,6 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 0}
+  howToPlay: {fileID: 0}
   leaderboardButtonImage: {fileID: 7573624243915292184}
   achievementButtonImage: {fileID: 7573624243915292182}
   itemViewButtonImage: {fileID: 7573624243915292179}

@@ -30,6 +30,15 @@ public class LocalizeController : MonoBehaviour
             case (int)LocalizeScriptableObject.LocalizeLanguage.NoneData: TerminalLocalize(); break;
             default: LanguageNumLocalize(languageNum); break;
         }
+
+        //子オブジェクトがあるなら表示
+        if (transform.childCount != 0)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
     }
 
     /// <summary>

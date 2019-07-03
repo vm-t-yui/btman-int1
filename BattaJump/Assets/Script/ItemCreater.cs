@@ -32,7 +32,7 @@ public class ItemCreater : MonoBehaviour
 
     public const int appearanceNum = 5;                         //表示数
 
-    const float skyBorder = 1000;                                      //空の境目
+    const float skyBorder = 980;                                      //空の境目
     const float spaceItemInterval = 300;                              //宇宙のアイテムの間隔
     const float spaceItemPlusInterval = 100;                           //宇宙のアイテムの間隔の増加値
 
@@ -137,12 +137,12 @@ public class ItemCreater : MonoBehaviour
     void SetSpaceItemPositon()
     {
         //回った回数
-        int index = 0;
+        int index = 1;
 
         foreach (int key in existSpaceItems.Keys)
         {
             //アイテムの高さ
-            float itemHeight = skyBorder + (index * spaceItemInterval + ((index + 1) * spaceItemPlusInterval));
+            float itemHeight = skyBorder + (index * spaceItemInterval + index * spaceItemPlusInterval);
             existSpaceItems[key].transform.position = (new Vector3(0, itemHeight, 0));
 
             index++;
