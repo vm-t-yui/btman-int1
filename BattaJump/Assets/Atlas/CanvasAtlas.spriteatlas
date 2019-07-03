@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ButtonAtlas
+  m_Name: CanvasAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -40,20 +40,42 @@ SpriteAtlas:
     - {fileID: 2800000, guid: ea208a90428814cfb852e3b0ce353f7d, type: 3}
     - {fileID: 2800000, guid: 18c23a7c139564b7caca3ba54d1871ca, type: 3}
     - {fileID: 2800000, guid: b0f106d00797f4540a1139c1014d9173, type: 3}
-    totalSpriteSurfaceArea: 76544
+    - {fileID: 2800000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+    - {fileID: 2800000, guid: 3d69a4169979f1c47afb394d89af8107, type: 3}
+    - {fileID: 2800000, guid: 886037d516052974ea4f174e4e60a2e4, type: 3}
+    - {fileID: 2800000, guid: ef01fff85462147b8aff957f14bbad31, type: 3}
+    totalSpriteSurfaceArea: 3370624
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: ea208a90428814cfb852e3b0ce353f7d, type: 3}
+  - {fileID: 21300000, guid: b0f106d00797f4540a1139c1014d9173, type: 3}
   - {fileID: 21300000, guid: a2f1b842820a09049b5993c7f8f4d4ee, type: 3}
+  - {fileID: 21300000, guid: 886037d516052974ea4f174e4e60a2e4, type: 3}
+  - {fileID: 21300000, guid: 3d69a4169979f1c47afb394d89af8107, type: 3}
+  - {fileID: 21300000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+  - {fileID: 21300000, guid: ef01fff85462147b8aff957f14bbad31, type: 3}
   - {fileID: 21300000, guid: 570bac4a7e5da4f4a8a05335f18a57ac, type: 3}
   - {fileID: 21300000, guid: b10bb17cde78c4840b9831d24a5d6465, type: 3}
+  - {fileID: 21300000, guid: 18c23a7c139564b7caca3ba54d1871ca, type: 3}
+  - {fileID: 21300000, guid: bc600b4d2a8c5ac48840fd6ecc3cafd3, type: 3}
   - {fileID: 21300000, guid: 0521b4bd15ab115498f57ed1019fc0fb, type: 3}
+  - {fileID: 21300000, guid: a9404cae5edcb1a4592e3214ca90c3ff, type: 3}
   - {fileID: 21300000, guid: 88a6053fbcd07fe42a76f960e408fb23, type: 3}
   m_PackedSpriteNamesToIndex:
+  - woodFrame
+  - volume
   - setting
+  - timerZero
+  - timer
+  - ItemSpeechBubble
+  - btmanLogo
   - itemView
   - achievement
+  - woodOutFrame
+  - woodButton
   - share
+  - vikingmaxxLogo
   - leaderboard
-  m_Tag: ButtonAtlas
+  m_Tag: CanvasAtlas
   m_IsVariant: 0

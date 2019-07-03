@@ -16,6 +16,9 @@ public class ItemCreater : MonoBehaviour
     [SerializeField]
     PlayDataManager playData = default;
 
+    [SerializeField]
+    GameObject player = default;
+
     string[] appearanceRate = new string[ItemManager.ItemNum];  //アイテムの出現確率
     string[] appearancePlace = new string[ItemManager.ItemNum]; //アイテムの出現場所
 
@@ -88,10 +91,10 @@ public class ItemCreater : MonoBehaviour
             SphereCollider coll = newChildItem.AddComponent<SphereCollider>();
             coll.isTrigger = true;
 
-            //NOTE:デバック用に当たり判定を大きくした
-            coll.radius = 2.5f;
-
-            newChildItem.AddComponent<ItemController>().SetMyNum(itemNum);
+            //アイテム番号とプレイヤーのゲームオブジェクト情報をセット
+            ItemController itemController = newChildItem.AddComponent<ItemController>();
+            itemController.SetMyNum(itemNum);
+            itemController.SetPlayer(player);
 
             //Skyなら空、それ以外なら宇宙のアイテムリストにいれる
             if (appearancePlace[itemNum] == "Sky")

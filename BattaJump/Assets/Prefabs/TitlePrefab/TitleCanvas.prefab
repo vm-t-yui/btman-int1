@@ -4011,7 +4011,7 @@ MonoBehaviour:
   woodenOutFrame:
   - {fileID: 3939890238865476261}
   - {fileID: 4444243344437276956}
-  buttonAtlas: {fileID: 4343727234628468602, guid: 55379a3af0f63e24fb74c84b8a088ab6,
+  canvasAtlas: {fileID: 4343727234628468602, guid: 55379a3af0f63e24fb74c84b8a088ab6,
     type: 2}
 --- !u!1 &6302764709694593307
 GameObject:
@@ -8693,6 +8693,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6302764709648661543}
     m_Modifications:
+    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemBoxManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900354579274068180, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625069118633913095, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625069118788304184, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625069118039901193, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8798,32 +8823,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemBoxManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069118039901193, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069118788304184, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069119680069416, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -234.72597
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069118633913095, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4900354579274068180, guid: 4a3295cdccc674041bc3af392ba4bab8,
+    - target: {fileID: 3625069119708285877, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
       propertyPath: m_Sprite
       value: 
@@ -8843,10 +8843,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3625069119708285877, guid: 4a3295cdccc674041bc3af392ba4bab8,
+    - target: {fileID: 3625069119680069416, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
+      propertyPath: m_SizeDelta.x
+      value: -234.72597
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3295cdccc674041bc3af392ba4bab8, type: 3}

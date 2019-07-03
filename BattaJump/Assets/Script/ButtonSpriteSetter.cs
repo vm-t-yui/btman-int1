@@ -10,6 +10,9 @@ using UnityEngine.U2D;
 public class ButtonSpriteSetter : MonoBehaviour
 {
     [SerializeField]
+    Image title = default;                     // タイトルの画像
+
+    [SerializeField]
     Image leaderboardButtonImage = default;    // リーダーボード表示ボタンの画像
 
     [SerializeField]
@@ -28,19 +31,22 @@ public class ButtonSpriteSetter : MonoBehaviour
     Image titleLogo = default;                 // 設定画面木の看板の画像
 
     [SerializeField]
-    Image[] volume = default;                 // 設定画面木の看板の画像
+    Image newItemDisplay = default;            // 設定画面木の看板の画像
 
     [SerializeField]
-    Image[] woodenButten = default;              // 設定画面木の看板の画像
+    Image[] volume = default;                  // 設定画面木の看板の画像
 
     [SerializeField]
-    Image[] woodenFrame = default;              // 設定画面木の看板の画像
+    Image[] woodenButten = default;            // 設定画面木の看板の画像
 
     [SerializeField]
-    Image[] woodenOutFrame = default;              // 設定画面木の看板の画像
+    Image[] woodenFrame = default;             // 設定画面木の看板の画像
 
     [SerializeField]
-    SpriteAtlas buttonAtlas;                   // ボタン用のスプライト
+    Image[] woodenOutFrame = default;          // 設定画面木の看板の画像
+
+    [SerializeField]
+    SpriteAtlas canvasAtlas = default;         // カンバス用のスプライト
 
     /// <summary>
     /// 開始
@@ -48,43 +54,64 @@ public class ButtonSpriteSetter : MonoBehaviour
     void Awake()
     {
         // 各ボタン画像のスプライトをセット
-        leaderboardButtonImage.sprite = buttonAtlas.GetSprite("leaderboard");
+        leaderboardButtonImage.sprite = canvasAtlas.GetSprite("leaderboard");
 
-        achievementButtonImage.sprite = buttonAtlas.GetSprite("achievement");
+        achievementButtonImage.sprite = canvasAtlas.GetSprite("achievement");
 
-        itemViewButtonImage.sprite = buttonAtlas.GetSprite("itemView");
+        itemViewButtonImage.sprite = canvasAtlas.GetSprite("itemView");
 
-        shareButtonImage.sprite = buttonAtlas.GetSprite("share");
-
-        titleLogo.sprite = buttonAtlas.GetSprite("vikingmaxxLogo");
-
-        foreach (var vol in volume)
-        {
-            vol.sprite = buttonAtlas.GetSprite("volume");
-        }
+        shareButtonImage.sprite = canvasAtlas.GetSprite("share");
 
         // 看板はある分だけセット
         foreach (var sign in woodenButten)
         {
-            sign.sprite = buttonAtlas.GetSprite("woodButton");
+            sign.sprite = canvasAtlas.GetSprite("woodButton");
         }
 
         // フレームもある分だけセット
         foreach (var frame in woodenFrame)
         {
-            frame.sprite = buttonAtlas.GetSprite("woodenFrame");
+            frame.sprite = canvasAtlas.GetSprite("woodFrame");
         }
 
         // フレームもある分だけセット
         foreach (var outFrame in woodenOutFrame)
         {
-            outFrame.sprite = buttonAtlas.GetSprite("woodenOutFrame");
+            outFrame.sprite = canvasAtlas.GetSprite("woodOutFrame");
         }
 
-        // リザルトでは設定画面表示ボタンはないので、defaultじゃない場合のみスプライトをセット
+        // リザルトではタイトルはないので、defaultじゃない場合のみスプライトをセット
+        if (title != default)
+        {
+            title.sprite = canvasAtlas.GetSprite("btmanLogo");
+        }
+
+        // リザルトではオプションはないので、defaultじゃない場合のみスプライトをセット
         if (settingButtonImage != default)
         {
-            settingButtonImage.sprite = buttonAtlas.GetSprite("setting");
+            settingButtonImage.sprite = canvasAtlas.GetSprite("setting");
+        }
+
+        // リザルトでは音量設定はないので、defaultじゃない場合のみスプライトをセット
+        if (volume != default)
+        {
+            // 音量はある分だけセット
+            foreach (var vol in volume)
+            {
+                vol.sprite = canvasAtlas.GetSprite("volume");
+            }
+        }
+
+        // リザルトではおすすめアプリ表示はないので、defaultじゃない場合のみスプライトをセット
+        if (titleLogo != default)
+        {
+            titleLogo.sprite = canvasAtlas.GetSprite("vikingmaxxLogo");
+        }
+
+        // タイトルには新規取得アイテム表示はないので、defaultじゃない場合のみスプライトをセット
+        if (newItemDisplay != default)
+        {
+            newItemDisplay.sprite = canvasAtlas.GetSprite("ItemSpeechBubble");
         }
     }
 }
