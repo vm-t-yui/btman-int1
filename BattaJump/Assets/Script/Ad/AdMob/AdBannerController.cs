@@ -28,13 +28,13 @@ public class AdBannerController : MonoBehaviour
     /// </summary>
     public void RequestBanner()
     {
-        //// リザルトの時のみ表示位置を上にする
-        //if (SceneManager.GetActiveScene().name == "Result")
-        //{
-        //    // サイズ320 x 50、画面上部表示の設定で初期化
-        //    bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Top);
-        //}
-        //else
+        // リザルトの時のみ表示位置を上にする
+        if (SceneManager.GetActiveScene().name == "Result")
+        {
+            // サイズ320 x 50、画面上部表示の設定で初期化
+            bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Top);
+        }
+        else
         {
             // サイズ320 x 50、画面下部表示の設定で初期化
             bannerView = new BannerView(AdUnitId, AdSize.Banner, AdPosition.Bottom);

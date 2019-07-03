@@ -32,7 +32,7 @@ public class NewItemsDisplay : MonoBehaviour
     GameObject displayImage = default;                //アイテム取得演出表示用イメージ(子に名前と画像)
 
     [SerializeField]
-    DisplayFadeContoller displayFadeContoller = default;    //画面フェードコントロールクラス
+    AnimationEndChecker animationEndChecker = default;    //画面フェードコントロールクラス
 
     [SerializeField]
     AdVideoRecommender adVideoRecommender = default;        //動画広告勧誘クラス
@@ -49,20 +49,20 @@ public class NewItemsDisplay : MonoBehaviour
         isNewHasItem = itemManager.GetIsNewHasItem();
 
         //そもそも全ての要素数がfalseなら非表示にする
-        if (IsAllItemInactive(isNewHasItem))
-        {
-            // 動画広告勧誘表示
-            adVideoRecommender.Recommend();
-
-            gameObject.SetActive(false);
-        }
-        //あるなら新しいアイテムの情報をセット
-        else
+        if (!IsAllItemInactive(isNewHasItem))
         {
             SetNewItem();
 
             //アイテム取得演出表示
             displayImage.SetActive(true);
+        }
+        else
+        {
+            //子オブジェクト非表示
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -71,33 +71,41 @@ public class NewItemsDisplay : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //最初のタッチがされるまで
-        //NOTE:Startで呼ぶとちらつきとが目立つため、Updateに
-        if (touchCount == 0)
+        // カンバスのボタンが表示されたら
+        if (animationEndChecker.IsEnd)
         {
-            //最初の表示
-            itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
-        }
-
-        //画面フェードが終わった状態でタッチされたら
-        if (Input.touchCount > 0 && displayFadeContoller.IsFadeEnd)
-        {
-            // タッチの情報を取得
-            Touch touch = Input.GetTouch(0);
-            // タッチされた回数をカウント
-            if (touch.phase == TouchPhase.Began)
+            // 新規アイテムがないなら動画広告勧誘表示して非表示にする
+            if (IsAllItemInactive(isNewHasItem))
             {
-                touchCount++;
-                DisplayNewItem(touchCount);
+                // 動画広告勧誘表示
+                adVideoRecommender.Recommend();
+
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                //最初のタッチがされるまで
+                //NOTE:Startで呼ぶとちらつきとが目立つため、Updateに
+                if (touchCount == 0)
+                {
+                    //最初の表示
+                    itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
+                }
+
+                //画面フェードが終わった状態でタッチされたら
+                if (Input.touchCount > 0)
+                {
+                    // タッチの情報を取得
+                    Touch touch = Input.GetTouch(0);
+                    // タッチされた回数をカウント
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        touchCount++;
+                        DisplayNewItem(touchCount);
+                    }
+                }
             }
         }
-
-        //// 画面のクリック操作（エディタ用）
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    touchCount++;
-        //    DisplayNewItem(touchCount);
-        //}
     }
 
     /// <summary>

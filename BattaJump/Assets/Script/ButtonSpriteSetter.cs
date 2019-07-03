@@ -13,6 +13,9 @@ public class ButtonSpriteSetter : MonoBehaviour
     Image title = default;                     // タイトルの画像
 
     [SerializeField]
+    Image howToPlay = default;                 // やり方説明の画像
+
+    [SerializeField]
     Image leaderboardButtonImage = default;    // リーダーボード表示ボタンの画像
 
     [SerializeField]
@@ -84,6 +87,12 @@ public class ButtonSpriteSetter : MonoBehaviour
         if (title != default)
         {
             title.sprite = canvasAtlas.GetSprite("btmanLogo");
+        }
+
+        // リザルトではやり方説明表示しないので、defaultじゃない場合のみスプライトをセット
+        if (howToPlay != default)
+        {
+            howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay");
         }
 
         // リザルトではオプションはないので、defaultじゃない場合のみスプライトをセット
