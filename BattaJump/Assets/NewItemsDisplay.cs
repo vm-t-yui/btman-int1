@@ -58,7 +58,6 @@ public class NewItemsDisplay : MonoBehaviour
         }
         else
         {
-            Debug.Log("aaa");
             //子オブジェクト非表示
             foreach (Transform child in transform)
             {

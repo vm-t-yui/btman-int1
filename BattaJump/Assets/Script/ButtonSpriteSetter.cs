@@ -89,7 +89,7 @@ public class ButtonSpriteSetter : MonoBehaviour
             title.sprite = canvasAtlas.GetSprite("btmanLogo");
         }
 
-        // やり方説明はタイトルはないので、defaultじゃない場合のみスプライトをセット
+        // タイトルではやり方説明表示しないので、defaultじゃない場合のみスプライトをセット
         if (howToPlay != default)
         {
             howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay");

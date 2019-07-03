@@ -81,7 +81,6 @@ public class AchievementController : MonoBehaviour
         // 放置時間が指定した値を超えたら実績解除
         if (putTime >= AchievementScriptableObject.Instance.GetNotJumpNum() && !playData.AchievementStatus[(int)AchievementScriptableObject.AchievementType.NotJump])
         {
-            Debug.Log("jaoeigjweaoig");
             ReleaseAchievement(AchievementScriptableObject.AchievementType.NotJump, achievementIDs[(int)AchievementScriptableObject.AchievementType.NotJump], 100);
         }
     }
