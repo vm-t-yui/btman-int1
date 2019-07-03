@@ -62,7 +62,7 @@ public class MeteoCreater : MonoBehaviour
     /// </summary>
     public void StartCreate()
     {
-        // 1つ目の雲生成
+        // 1つ目の隕石生成
         Create();
 
         // 処理を許可
