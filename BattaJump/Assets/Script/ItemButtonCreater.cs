@@ -59,7 +59,7 @@ public class ItemButtonCreater : MonoBehaviour
             for (int i = 0; i < ItemManager.ItemNum; i++)
             {
                 Image buttonImage = buttons[i].transform.FindChild("ItemImage").GetComponent<Image>();  //各アイテムボタンのイメージ
-                GameObject newItemText = buttons[i].transform.FindChild("NewText").gameObject;          //New!!というテキスト
+                GameObject newItemText = buttons[i].transform.FindChild("NewImage").gameObject;          //New!!というテキスト
 
                 //ゲットしているなら実態、していないならシルエットのみ
                 if (itemManager.GetIsHasItem(i))
