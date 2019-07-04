@@ -43,7 +43,7 @@ public class ItemBoxNewTextDisplay : MonoBehaviour
 			}
         }
         
-        //カウント数がアイテム数と同数なら確認済
+        //カウント数が0なら確認済
         if(count == 0)
         {
             return true;

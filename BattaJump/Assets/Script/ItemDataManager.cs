@@ -57,8 +57,6 @@ public class ItemDataManager : MonoBehaviour
 
         //セットしたデータをセーブ
         PlayerPrefs.Save();
-
-        Debug.Log("aaa");
     }
 
     /// <summary>
