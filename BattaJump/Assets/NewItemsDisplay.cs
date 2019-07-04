@@ -55,6 +55,9 @@ public class NewItemsDisplay : MonoBehaviour
 
             //アイテム取得演出表示
             displayImage.SetActive(true);
+
+            //最初の表示
+            itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
         }
         else
         {
@@ -83,15 +86,7 @@ public class NewItemsDisplay : MonoBehaviour
                 gameObject.SetActive(false);
             }
             else
-            {
-                //最初のタッチがされるまで
-                //NOTE:Startで呼ぶとちらつきとが目立つため、Updateに
-                if (touchCount == 0)
-                {
-                    //最初の表示
-                    itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[0]), names[0], descriptions[0]);
-                }
-
+            {           
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.touchCount > 0)
                 {

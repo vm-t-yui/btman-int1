@@ -124,7 +124,7 @@ public class AchievementController : MonoBehaviour
         }
 
         int haveItem = 0;                                  // アイテム所持数
-        bool[] isHaveItem = itemData.GetHaveItemFlag();    // アイテム所持フラグ
+        bool[] isHaveItem = itemData.GetIsHasItem();    // アイテム所持フラグ
         for (int i = 0; i < isHaveItem.Length; i++)
         {
             // アイテムを所持しているなら所持数を加算

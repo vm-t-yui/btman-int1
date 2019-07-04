@@ -49,6 +49,9 @@ public class ItemDescription : MonoBehaviour
             displayImage.color = Color.black;
             displayDescription.text = itemName[0];
         }
+
+        //アイテムのNewフラグ
+        itemManager.ResetIsNewText(num, false);
     }
 
 

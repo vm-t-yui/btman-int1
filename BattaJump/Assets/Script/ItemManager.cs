@@ -17,15 +17,19 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     bool[] isHasItem = new bool[ItemNum];       //アイテムゲットフラグ
 
-    [SerializeField]
     public static bool[] isNewHasItem = new bool[ItemNum];   //新しく入手したアイテムのフラグ
+
+    [SerializeField]
+    bool[] isNewText = new bool[ItemNum]; //Newテキストの表示フラグ
 
     /// <summary>
     /// データからアイテムゲットフラグをロードする
     /// </summary>
     void Start()
     {
-        isHasItem = itemDataManager.GetHaveItemFlag();
+        //データからアイテムゲットフラグをロードする
+        isHasItem = itemDataManager.GetIsHasItem();
+        isNewText = itemDataManager.GetIsNewText();
     }
 
     /// <summary>
@@ -34,16 +38,18 @@ public class ItemManager : MonoBehaviour
     /// <param name="num">アイテム番号.</param>
     public void GetItem(int num)
     {
-        //まだ手に入れていないアイテムならisNewHasItemもtrueに
+        //まだ手に入れていないアイテムなら
         if (!isHasItem[num])
         {
+            //新規取得アイテムフラグ、Newテキストの表示フラグをtrueにしてセーブ
             isNewHasItem[num] = true;
+            isNewText[num] = true;
+            itemDataManager.SaveData(num, true, true);
         }
 
+        //アイテムゲットフラグをtrueにしてセーブ
         isHasItem[num] = true;
-
-        //アイテムをセーブ
-        itemDataManager.SaveData();
+        itemDataManager.SaveData(num, true, false);
     }
 
     /// <summary>
@@ -53,6 +59,15 @@ public class ItemManager : MonoBehaviour
     public bool GetIsHasItem(int i)
     {
         return isHasItem[i];
+    }
+
+    /// <summary>
+    /// NewTextの表示フラグのゲット関数
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool GetIsNewText(int num)
+    {
+        return isNewText[num];
     }
 
     /// <summary>
@@ -68,9 +83,19 @@ public class ItemManager : MonoBehaviour
     /// 新しく入手したアイテムのフラグのゲット関数(1個ずつ)
     /// </summary>
     /// <returns>新しく入手したアイテムのフラグ</returns>
-    public bool GetIsNewHasItem(int i)
+    public bool GetIsNewHasItem(int num)
     {
-        return isNewHasItem[i];
+        return isNewHasItem[num];
+    }
+
+    /// <summary>
+    /// UIの新規アイテムフラグを消す
+    /// </summary>
+    public void ResetIsNewText(int num, bool flag)
+    {
+        isNewText[num] = flag;
+
+        itemDataManager.SetIsNewText(num, flag);
     }
 
     /// <summary>

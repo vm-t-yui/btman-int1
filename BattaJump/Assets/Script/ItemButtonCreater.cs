@@ -67,7 +67,7 @@ public class ItemButtonCreater : MonoBehaviour
                     buttonImage.sprite = existenceSpriteAtlas.GetSprite(atlasKey[i]);
 
                     //テキスト表示
-                    if(itemManager.GetIsNewHasItem(i) == true)
+                    if(itemManager.GetIsNewText(i))
                     {
                         newItemText.SetActive(true);
                     }
