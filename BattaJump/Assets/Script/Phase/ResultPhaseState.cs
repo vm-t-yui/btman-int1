@@ -91,6 +91,9 @@ public class ResultPhaseState : MonoBehaviour
 
         // 動画広告勧誘クラス初期化
         adVideoRecommender.Init();
+
+        // リザルトBGMを再生する
+        AudioPlayer.instance.PlayBgm(AudioPlayer.BgmType.Result);
     }
 
     /// <summary>
@@ -211,6 +214,9 @@ public class ResultPhaseState : MonoBehaviour
                     nextScene.ChangeNextScene();
 
                     nowPhase = PhaseType.SceneEnd;
+
+                    // リザルトBGMを停止する
+                    AudioPlayer.instance.StopBgm();
                 }
                 break;
 

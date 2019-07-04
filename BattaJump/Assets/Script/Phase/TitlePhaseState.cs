@@ -72,6 +72,9 @@ public class TitlePhaseState : MonoBehaviour
                     // フェードアウト開始
                     fadeContoller.OnFade(DisplayFadeContoller.FadeType.FadeOut, DisplayFadeContoller.PanelType.White);
 
+                    // タイトルBGMを再生
+                    AudioPlayer.instance.PlayBgm(AudioPlayer.BgmType.Title);
+
                     // FPSをもとに戻す
                     Application.targetFrameRate = -1;
 
@@ -119,6 +122,9 @@ public class TitlePhaseState : MonoBehaviour
 
                     // シーンをロード
                     nextScene.ChangeNextScene();
+
+                    // タイトルBGMを停止する
+                    AudioPlayer.instance.StopBgm();
 
                     nowPhase = PhaseType.SceneEnd;
                 }
