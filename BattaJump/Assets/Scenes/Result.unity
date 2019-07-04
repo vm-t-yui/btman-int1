@@ -2097,11 +2097,26 @@ PrefabInstance:
       propertyPath: itemDataManager
       value: 
       objectReference: {fileID: 1341260703}
+    - target: {fileID: 9004992120099546342, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4724527032699286292, guid: 1e9033abff0344a4b939712309fbc198,
         type: 3}
       propertyPath: itemDataManager
       value: 
       objectReference: {fileID: 1341260703}
+    - target: {fileID: 5580492948139969306, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554913547785645152, guid: 1e9033abff0344a4b939712309fbc198,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e9033abff0344a4b939712309fbc198, type: 3}
 --- !u!114 &7573624243915292177 stripped
