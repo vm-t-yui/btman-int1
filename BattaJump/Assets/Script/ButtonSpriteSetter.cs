@@ -34,7 +34,7 @@ public class ButtonSpriteSetter : MonoBehaviour
     Image titleLogo = default;                 // 設定画面木の看板の画像
 
     [SerializeField]
-    Image newItemDisplay = default;            // 設定画面木の看板の画像
+    Image[] newItemDisplay = default;            // 設定画面木の看板の画像
 
     [SerializeField]
     Image[] volume = default;                  // 設定画面木の看板の画像
@@ -69,6 +69,12 @@ public class ButtonSpriteSetter : MonoBehaviour
         foreach (var sign in woodenButten)
         {
             sign.sprite = canvasAtlas.GetSprite("woodButton");
+        }
+
+        // 看板はある分だけセット
+        foreach (var display in newItemDisplay)
+        {
+            display.sprite = canvasAtlas.GetSprite("ItemSpeechBubble");
         }
 
         // フレームもある分だけセット
@@ -115,12 +121,6 @@ public class ButtonSpriteSetter : MonoBehaviour
         if (titleLogo != default)
         {
             titleLogo.sprite = canvasAtlas.GetSprite("vikingmaxxLogo");
-        }
-
-        // タイトルには新規取得アイテム表示はないので、defaultじゃない場合のみスプライトをセット
-        if (newItemDisplay != default)
-        {
-            newItemDisplay.sprite = canvasAtlas.GetSprite("ItemSpeechBubble");
         }
     }
 }

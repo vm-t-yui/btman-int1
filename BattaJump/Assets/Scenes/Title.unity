@@ -453,8 +453,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 1
+  far clip plane: 35
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -889,18 +889,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40d8f8ea7048774b93ef090ad9be19c, type: 3}
---- !u!114 &1187731668 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6302764709506448064, guid: 86d205758fed44b0aa53933f2570ba89,
-    type: 3}
-  m_PrefabInstance: {fileID: 4061853482233614305}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1188290198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6283667054824443171, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
@@ -1253,11 +1241,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitleCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6302764709506448064, guid: 86d205758fed44b0aa53933f2570ba89,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6302764709648661543, guid: 86d205758fed44b0aa53933f2570ba89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1384,34 +1367,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6919808163537053082}
     - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
-      propertyPath: woodenFrame.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
-      propertyPath: woodenOutFrame.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
-      propertyPath: title
-      value: 
-      objectReference: {fileID: 1187731668}
-    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
       propertyPath: howToPlay
       value: 
       objectReference: {fileID: 2119294550}
     - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
-      propertyPath: woodenFrame.Array.data[16]
-      value: 
-      objectReference: {fileID: 1143210851}
-    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
       propertyPath: woodenOutFrame.Array.data[2]
       value: 
       objectReference: {fileID: 1143210851}
-    - target: {fileID: 5468008114523239456, guid: 86d205758fed44b0aa53933f2570ba89,
+    - target: {fileID: 5468008113906519931, guid: 86d205758fed44b0aa53933f2570ba89,
         type: 3}
-      propertyPath: m_Sprite
+      propertyPath: itemDataManager
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 6919808163537053082}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
 --- !u!1001 &4882840957223381710

@@ -32,7 +32,7 @@ public class ItemDataManager : MonoBehaviour
         {
             isHasItem[i] = PlayerPrefs.GetInt(GetKey(i), 0) == 1 ? true : false;
 
-            isNewText[i] = PlayerPrefs.GetInt(GetKey(i), 0) == 1 ? true : false;
+            isNewText[i] = PlayerPrefs.GetInt(UIGetKey(i), 0) == 1 ? true : false;
         }
     }
 
@@ -79,6 +79,7 @@ public class ItemDataManager : MonoBehaviour
         return isHasItem;
     }
 
+    /// <summary>
     /// アイテム取得フラグのゲット関数
     /// </summary>
     /// <returns>セーブデータから取ってきたアイテム取得フラグ</returns>
