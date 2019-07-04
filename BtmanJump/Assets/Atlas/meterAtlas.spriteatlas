@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: meterAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 21300000, guid: 655463f9cd8e649acb017cb4c890aac3, type: 3}
+    - {fileID: 21300000, guid: 65dd8b4852a42475094288bc0011e9ad, type: 3}
+    - {fileID: 21300000, guid: d42038222971c4398bc21f832e7174ba, type: 3}
+    - {fileID: 21300000, guid: e618377a60ec54e73bb4221e38b4416d, type: 3}
+    - {fileID: 21300000, guid: 4e493119d9e0f447eaf9f67246ee29b8, type: 3}
+    - {fileID: 21300000, guid: 39a583cccabef4d7ba0d1660cf87af4c, type: 3}
+    - {fileID: 21300000, guid: e6627ecc2dd914120a5eb1b02d5b7579, type: 3}
+    - {fileID: 21300000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+    - {fileID: 21300000, guid: 98e90caedfd0a4044a7aa2dd781fc15d, type: 3}
+    totalSpriteSurfaceArea: 821888
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d42038222971c4398bc21f832e7174ba, type: 3}
+  - {fileID: 21300000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+  - {fileID: 21300000, guid: 65dd8b4852a42475094288bc0011e9ad, type: 3}
+  - {fileID: 21300000, guid: 4e493119d9e0f447eaf9f67246ee29b8, type: 3}
+  - {fileID: 21300000, guid: 655463f9cd8e649acb017cb4c890aac3, type: 3}
+  - {fileID: 21300000, guid: e618377a60ec54e73bb4221e38b4416d, type: 3}
+  - {fileID: 21300000, guid: 39a583cccabef4d7ba0d1660cf87af4c, type: 3}
+  - {fileID: 21300000, guid: e6627ecc2dd914120a5eb1b02d5b7579, type: 3}
+  - {fileID: 21300000, guid: 98e90caedfd0a4044a7aa2dd781fc15d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - copper_star
+  - ItemSpeechBubble
+  - white_star
+  - gold_star
+  - battaman_icon
+  - silver_star
+  - rainbow_star
+  - ItemBag
+  - Triangle
+  m_Tag: meterAtlas
+  m_IsVariant: 0

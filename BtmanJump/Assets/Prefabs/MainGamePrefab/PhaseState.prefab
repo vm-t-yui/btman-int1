@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2914983593336236549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2914983593336236603}
+  - component: {fileID: 2914983593336236548}
+  m_Layer: 0
+  m_Name: PhaseState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2914983593336236603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914983593336236549}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2914983593336236548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914983593336236549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f8338467176da4dad42609ced50925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeContoller: {fileID: 8152976358101605184, guid: b8022a5de8e002a4f8143c2ddbc488b2,
+    type: 3}
+  chargeCountDown: {fileID: 0}
+  jumpHeightCounter: {fileID: 0}
+  playerFalling: {fileID: 5029099609729469689, guid: a0d63802a3c524555bd90208d58c86a6,
+    type: 3}
+  nextScene: {fileID: 7226960829779220822, guid: a05e7cfb4f0d77944b042c7d4bc26781,
+    type: 3}
+  scoreData: {fileID: 4018028644110445980, guid: f57feb3284b2d41c69e353b32ae63add,
+    type: 3}
+  inputController: {fileID: 1942899558937724954, guid: 110740606bff04c3998df122ce3c2104,
+    type: 3}

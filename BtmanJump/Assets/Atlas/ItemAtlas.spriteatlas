@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ItemAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 256
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    - serializedVersion: 2
+      m_BuildTarget: Android
+      m_MaxTextureSize: 256
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    - serializedVersion: 2
+      m_BuildTarget: Windows Store Apps
+      m_MaxTextureSize: 256
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 12
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    - serializedVersion: 2
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 256
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 33
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 6de67cb5a26484648b9dd34dd4889ec6, type: 3}
+    - {fileID: 2800000, guid: f6d5ccd21f66f477b818f1fdebf725ab, type: 3}
+    - {fileID: 2800000, guid: 7af8fae7c29ad4caab59d007ed7b9db8, type: 3}
+    - {fileID: 2800000, guid: 85520ca54d6304dc89ba86b86cec258b, type: 3}
+    - {fileID: 2800000, guid: 38313e74fbe644f809c819595c023d31, type: 3}
+    - {fileID: 2800000, guid: 9f7285357a1f5499fb554e8a53d88e93, type: 3}
+    - {fileID: 2800000, guid: a773cd93fe7134ef18cb48640fa795ce, type: 3}
+    - {fileID: 2800000, guid: adcef8ffe5c4c4b8f8204d3fc0d1f4bf, type: 3}
+    - {fileID: 2800000, guid: 76fd71bf2d6da4c3d8c6099de301d6ea, type: 3}
+    - {fileID: 2800000, guid: 17542cfa856da4f438acd0921c6faaf0, type: 3}
+    - {fileID: 2800000, guid: 73297f85cb32043e082a5f455a4d836a, type: 3}
+    - {fileID: 2800000, guid: b4ba76590983e4f5eb8598d9e81678f8, type: 3}
+    - {fileID: 2800000, guid: 8bdc70444d4e64b7e8fd85bbbfa9f1e7, type: 3}
+    - {fileID: 2800000, guid: ba9aaa573dd624989b55abb5fa536967, type: 3}
+    - {fileID: 2800000, guid: e01605f19956f4f6e833f6ea4415a29f, type: 3}
+    - {fileID: 2800000, guid: 3d34136d8dc264d1fbb9616a84811330, type: 3}
+    - {fileID: 2800000, guid: 295f6141ab24745c4b23cc0e8115594c, type: 3}
+    - {fileID: 2800000, guid: 8af97fe8339824d5a9ae8b4c3a20774d, type: 3}
+    - {fileID: 2800000, guid: 03f9759607d57401eb06615c13367a2e, type: 3}
+    - {fileID: 2800000, guid: 0d4499890f8634cd295c94f19cdff347, type: 3}
+    - {fileID: 2800000, guid: e84c09b1cc728427ea26851be9d5f5eb, type: 3}
+    - {fileID: 2800000, guid: 42e70b0bc7efa473db81d9071b6cefc7, type: 3}
+    - {fileID: 2800000, guid: 5c2303da94da74917a43e3b9432b086f, type: 3}
+    - {fileID: 2800000, guid: 309ea8ebfb65b4f17b9b77265c6e424f, type: 3}
+    - {fileID: 2800000, guid: 0fcebb8a3b39f4abbb11b739897466f5, type: 3}
+    - {fileID: 2800000, guid: c60199b88e77b45e5a1532732db72713, type: 3}
+    - {fileID: 2800000, guid: 669ef2359c40c439080e3280e6f7cab0, type: 3}
+    - {fileID: 2800000, guid: 3e3bf541c638b45d4a282c6a0494b320, type: 3}
+    - {fileID: 2800000, guid: 3433225998a4048468032daffdca97f7, type: 3}
+    - {fileID: 2800000, guid: 5e4bbfb98b65d4200833c8a672616385, type: 3}
+    - {fileID: 2800000, guid: 79edd4c1243bc4f9e93a35df1745c74e, type: 3}
+    - {fileID: 2800000, guid: e0f586e1a16cb420fa71bae9332a0bf6, type: 3}
+    - {fileID: 2800000, guid: 988c14b8a728c4a6e927da6b85f70928, type: 3}
+    - {fileID: 2800000, guid: 906f95f335bf442f091bd8fa7a697e01, type: 3}
+    - {fileID: 2800000, guid: 8704a3af84fbe42c0b843837ea078063, type: 3}
+    - {fileID: 2800000, guid: 9fd9d173c94bd4dcb8488777a0d50912, type: 3}
+    - {fileID: 2800000, guid: 3074511d6c956482995bbf8607db8e02, type: 3}
+    - {fileID: 2800000, guid: 849f423cbf8a54f40a157ae519330b27, type: 3}
+    totalSpriteSurfaceArea: 2490368
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 295f6141ab24745c4b23cc0e8115594c, type: 3}
+  - {fileID: 21300000, guid: 3e3bf541c638b45d4a282c6a0494b320, type: 3}
+  - {fileID: 21300000, guid: e84c09b1cc728427ea26851be9d5f5eb, type: 3}
+  - {fileID: 21300000, guid: 79edd4c1243bc4f9e93a35df1745c74e, type: 3}
+  - {fileID: 21300000, guid: e0f586e1a16cb420fa71bae9332a0bf6, type: 3}
+  - {fileID: 21300000, guid: e01605f19956f4f6e833f6ea4415a29f, type: 3}
+  - {fileID: 21300000, guid: f6d5ccd21f66f477b818f1fdebf725ab, type: 3}
+  - {fileID: 21300000, guid: 9fd9d173c94bd4dcb8488777a0d50912, type: 3}
+  - {fileID: 21300000, guid: a773cd93fe7134ef18cb48640fa795ce, type: 3}
+  - {fileID: 21300000, guid: 906f95f335bf442f091bd8fa7a697e01, type: 3}
+  - {fileID: 21300000, guid: 8bdc70444d4e64b7e8fd85bbbfa9f1e7, type: 3}
+  - {fileID: 21300000, guid: 38313e74fbe644f809c819595c023d31, type: 3}
+  - {fileID: 21300000, guid: 669ef2359c40c439080e3280e6f7cab0, type: 3}
+  - {fileID: 21300000, guid: 9f7285357a1f5499fb554e8a53d88e93, type: 3}
+  - {fileID: 21300000, guid: 73297f85cb32043e082a5f455a4d836a, type: 3}
+  - {fileID: 21300000, guid: 85520ca54d6304dc89ba86b86cec258b, type: 3}
+  - {fileID: 21300000, guid: 6de67cb5a26484648b9dd34dd4889ec6, type: 3}
+  - {fileID: 21300000, guid: 03f9759607d57401eb06615c13367a2e, type: 3}
+  - {fileID: 21300000, guid: ba9aaa573dd624989b55abb5fa536967, type: 3}
+  - {fileID: 21300000, guid: 7af8fae7c29ad4caab59d007ed7b9db8, type: 3}
+  - {fileID: 21300000, guid: 988c14b8a728c4a6e927da6b85f70928, type: 3}
+  - {fileID: 21300000, guid: c60199b88e77b45e5a1532732db72713, type: 3}
+  - {fileID: 21300000, guid: 8af97fe8339824d5a9ae8b4c3a20774d, type: 3}
+  - {fileID: 21300000, guid: 3433225998a4048468032daffdca97f7, type: 3}
+  - {fileID: 21300000, guid: b4ba76590983e4f5eb8598d9e81678f8, type: 3}
+  - {fileID: 21300000, guid: 0d4499890f8634cd295c94f19cdff347, type: 3}
+  - {fileID: 21300000, guid: 5e4bbfb98b65d4200833c8a672616385, type: 3}
+  - {fileID: 21300000, guid: 0fcebb8a3b39f4abbb11b739897466f5, type: 3}
+  - {fileID: 21300000, guid: 5c2303da94da74917a43e3b9432b086f, type: 3}
+  - {fileID: 21300000, guid: 17542cfa856da4f438acd0921c6faaf0, type: 3}
+  - {fileID: 21300000, guid: 42e70b0bc7efa473db81d9071b6cefc7, type: 3}
+  - {fileID: 21300000, guid: 309ea8ebfb65b4f17b9b77265c6e424f, type: 3}
+  - {fileID: 21300000, guid: 849f423cbf8a54f40a157ae519330b27, type: 3}
+  - {fileID: 21300000, guid: 3074511d6c956482995bbf8607db8e02, type: 3}
+  - {fileID: 21300000, guid: 3d34136d8dc264d1fbb9616a84811330, type: 3}
+  - {fileID: 21300000, guid: 8704a3af84fbe42c0b843837ea078063, type: 3}
+  - {fileID: 21300000, guid: 76fd71bf2d6da4c3d8c6099de301d6ea, type: 3}
+  - {fileID: 21300000, guid: adcef8ffe5c4c4b8f8204d3fc0d1f4bf, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - santa_kobito
+  - aries
+  - tennis
+  - gemini
+  - leo
+  - rocket
+  - battamai
+  - scorpio
+  - feather_rainbow
+  - pisces
+  - penguin
+  - copper_unko
+  - aquarius
+  - emblem
+  - green_meteorite
+  - chicken
+  - baseball
+  - silver_unko
+  - red_meteorite
+  - blue_meteorite
+  - libra
+  - witch_kobito
+  - shell
+  - cancer
+  - kine_usu
+  - soccer
+  - capricorn
+  - watagashi
+  - ufo
+  - green_kobito
+  - tire
+  - unko
+  - taurus
+  - virgo
+  - sandbag_chan
+  - sagittarius
+  - golden_unko
+  - feather_transparent
+  m_Tag: ItemAtlas
+  m_IsVariant: 0
