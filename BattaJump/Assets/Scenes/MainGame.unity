@@ -624,7 +624,13 @@ PrefabInstance:
       propertyPath: isHasItem.Array.data[3]
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7865770566094550200, guid: 709bcae6620d743b4829c20d8bcc58a5,
+        type: 3}
+      propertyPath: itemDataManager
+      value: 
+      objectReference: {fileID: 1276431040}
+    m_RemovedComponents:
+    - {fileID: 7865770566094550199, guid: 709bcae6620d743b4829c20d8bcc58a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 709bcae6620d743b4829c20d8bcc58a5, type: 3}
 --- !u!114 &525697201 stripped
 MonoBehaviour:

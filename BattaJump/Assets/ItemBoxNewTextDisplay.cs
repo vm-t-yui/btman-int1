@@ -42,9 +42,9 @@ public class ItemBoxNewTextDisplay : MonoBehaviour
                 count++;
 			}
         }
-
+        
         //カウント数がアイテム数と同数なら確認済
-        if(count == ItemManager.ItemNum)
+        if(count == 0)
         {
             return true;
         }
