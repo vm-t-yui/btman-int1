@@ -341,7 +341,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3d69a4169979f1c47afb394d89af8107, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -383,11 +383,11 @@ RectTransform:
   m_Father: {fileID: 3260682182785044847}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 5, y: -20}
+  m_SizeDelta: {x: -10, y: 30}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3260682182295635438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 3260682182974121128}
   - component: {fileID: 3260682182974121135}
   - component: {fileID: 3260682182974121134}
+  - component: {fileID: 3260682182176807991}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -656,6 +657,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3260682182176807991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260682182974121133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011d82a66655d4d0fb434e0da4240a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gage: {fileID: 3260682181697763918}
+  gageZero: {fileID: 3260682183257002300}
+  canvasAtlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03,
+    type: 2}
 --- !u!1 &3260682183189447239
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,11 +706,11 @@ RectTransform:
   m_Father: {fileID: 3260682182785044847}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 150}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 5, y: -56}
+  m_SizeDelta: {x: -10, y: 50}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3260682183189447234
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -724,12 +741,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -816,7 +833,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 886037d516052974ea4f174e4e60a2e4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1036,11 +1053,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3260682182974121129}
     m_Modifications:
-    - target: {fileID: 3198779632647248244, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemMeter
-      objectReference: {fileID: 0}
     - target: {fileID: 3198779632647248247, guid: 0d01086368f844f0281c69b1d7e1ab9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1146,6 +1158,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3198779632647248244, guid: 0d01086368f844f0281c69b1d7e1ab9c,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemMeter
+      objectReference: {fileID: 0}
     - target: {fileID: 3198779632647248246, guid: 0d01086368f844f0281c69b1d7e1ab9c,
         type: 3}
       propertyPath: itemBag
@@ -1156,31 +1173,6 @@ PrefabInstance:
       propertyPath: itemSpeechBubble
       value: 
       objectReference: {fileID: 3481930531419377768}
-    - target: {fileID: 130544599719509235, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807515876075935446, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9139100995257187113, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8601027163766986645, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5835378135473022033, guid: 0d01086368f844f0281c69b1d7e1ab9c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01086368f844f0281c69b1d7e1ab9c, type: 3}
 --- !u!224 &82221529898609757 stripped
