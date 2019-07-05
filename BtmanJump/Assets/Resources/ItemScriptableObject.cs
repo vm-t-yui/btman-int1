@@ -45,9 +45,9 @@ public class ItemScriptableObject : ScriptableObject
     SpriteAtlas itemAtlas = default;                                //アイテムボタン用のスプライトアトラス
 
     [SerializeField]
-    int[] rarity;                                                   //アイテムのレアリティ
+    int[] rarity = { 0 };                                           //アイテムのレアリティ
     [SerializeField]
-    float[] rate;                                                   //アイテムの出現確率    
+    float[] rate = { 0f };                                          //アイテムの出現確率    
 
     [SerializeField]
     GameObject[] itemPrefabs = new GameObject[ItemManager.ItemNum]; //アイテムのプレハブ

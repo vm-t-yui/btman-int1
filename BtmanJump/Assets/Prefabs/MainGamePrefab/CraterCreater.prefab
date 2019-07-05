@@ -4822,7 +4822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95a86a25c7237a4eb2214e53f4728b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 5929254154358535438}
+  myRigid: {fileID: 5929254154358535438}
   Deceleration: {x: 0, y: 1.5, z: 0}
 --- !u!114 &9148658202754007249
 MonoBehaviour:
@@ -4836,7 +4836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95a86a25c7237a4eb2214e53f4728b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 7846411975482803544}
+  myRigid: {fileID: 7846411975482803544}
   Deceleration: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &4759856437379969841
 PrefabInstance:

@@ -11,7 +11,7 @@ public class SkyboxRotater : MonoBehaviour
     Material[] skyboxMats = default;    // 回転させるマテリアル
 
     [SerializeField]
-    float RotateSpeed;                  // 回転速度
+    float RotateSpeed = 0f;             // 回転速度
 
     float rotateValue = 0f;             // 最終的にマテリアルに適応させる値
 

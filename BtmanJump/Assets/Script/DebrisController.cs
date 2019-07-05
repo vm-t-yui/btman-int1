@@ -8,10 +8,10 @@ using UnityEngine;
 public class DebrisController : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody rigidbody = default;    // Rigidbody
+    Rigidbody myRigid = default;            // Rigidbody
 
     [SerializeField]
-    Vector3 Deceleration;             // 減速度
+    Vector3 Deceleration = Vector3.zero;    // 減速度
 
     /// <summary>
     /// 更新
@@ -19,12 +19,12 @@ public class DebrisController : MonoBehaviour
     void FixedUpdate()
     {
         // 移動ベクトルを取得
-        Vector3 velocity = rigidbody.velocity;
+        Vector3 velocity = myRigid.velocity;
 
         // 減速
         velocity -= Deceleration;
 
         // 計算した移動ベクトルでvelocityを更新
-        rigidbody.velocity = velocity;
+        myRigid.velocity = velocity;
     }
 }

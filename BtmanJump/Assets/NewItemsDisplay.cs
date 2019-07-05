@@ -16,7 +16,7 @@ public class NewItemsDisplay : MonoBehaviour
     ItemDescription itemDescription = default;        //アイテム説明クラス
 
     [SerializeField]
-    Animator animator;                                //アニメータークラス
+    Animator animator = default;                      //アニメータークラス
 
     [SerializeField]
     List<int> newHasNum = new List<int>();            //新しく手に入れたアイテムの数

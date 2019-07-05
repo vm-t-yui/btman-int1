@@ -14,10 +14,10 @@ public class AudioParameter : MonoBehaviour
     static public bool seMute  { get; private set; } = false;     // SEのミュート
 
     // 各パラメータのキー
-    [SerializeField] string bgmVolumeDataKey;
-    [SerializeField] string seVolumeDataKey;
-    [SerializeField] string bgmMuteDataKey;
-    [SerializeField] string seMuteDataKey;
+    [SerializeField] string bgmVolumeDataKey = null;
+    [SerializeField] string seVolumeDataKey = null;
+    [SerializeField] string bgmMuteDataKey = null;
+    [SerializeField] string seMuteDataKey = null;
 
     /// <summary>
     /// 各音量のセーブを行う

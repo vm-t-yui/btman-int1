@@ -18,14 +18,12 @@ public class MainPlayerAnimator : MonoBehaviour
     }
 
     [SerializeField]
-    Animator animator;                                // アニメーター
+    Animator animator = default;                      // アニメーター
     [SerializeField]
     ChargeCountDown chargeCountDown = default;        // チャージ中カウントダウン
     [SerializeField]
     JumpHeightCounter jumpHeightCounter = default;    // ジャンプの高さ計測
 
-    [SerializeField]
-    PlayerFalling playerFalling = default;            // プレイヤー落下
     [SerializeField]
     GameObject chargeParticlre = default;             // チャージのパーティクル
     [SerializeField]

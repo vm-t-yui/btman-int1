@@ -14,9 +14,9 @@ public class LocalizeController : MonoBehaviour
 
     int languageNum = -1;     //言語番号
 
-    [SerializeField] string[] localizeText;  //ローカライズされたテキスト
-    [SerializeField] Text[] displayText;     //表示用テキスト
-    [SerializeField] int[] displayTextNum; 　//表示用テキストの番号
+    [SerializeField] string[] localizeText = { null };  //ローカライズされたテキスト
+    [SerializeField] Text[] displayText = default;      //表示用テキスト
+    [SerializeField] int[] displayTextNum = { 0 };    　//表示用テキストの番号
 
     /// <summary>
     /// 開始処理
