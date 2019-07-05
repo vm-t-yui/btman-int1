@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// FPS表示フラグ
+/// </summary>
 public class FpsDraw : MonoBehaviour
 {
     [SerializeField]
@@ -12,7 +15,9 @@ public class FpsDraw : MonoBehaviour
 
     float nextTime = 0;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// 開始
+    /// </summary>
     void Start()
     {
 #if DEVELOPMENT_BUILD
@@ -22,7 +27,9 @@ public class FpsDraw : MonoBehaviour
 #endif
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// 更新
+    /// </summary>
     void Update()
     {
         frameCount++;
