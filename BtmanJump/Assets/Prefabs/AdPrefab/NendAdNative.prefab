@@ -45,11 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   account:
     android:
-      apiKey: 16cb170982088d81712e63087061378c71e8aa5c
-      spotID: 485516
+      apiKey: a899b541067dfd2fb1b616a4bfb823bf5403665f
+      spotID: 961857
     iOS:
-      apiKey: 10d9088b5bd36cf43b295b0774e5dcf7d20a4071
-      spotID: 485500
+      apiKey: 02ea49c8a60911f6dbfe071e2c753442dbbc64fd
+      spotID: 961852
   loadWhenActivated: 1
   enableAutoReload: 0
   reloadInterval: 0

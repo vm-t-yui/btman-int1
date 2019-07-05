@@ -249,11 +249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   account:
     android:
-      apiKey: 16cb170982088d81712e63087061378c71e8aa5c
-      spotID: 485516
+      apiKey: f43a81f3adf3b9a1b46c06a4d4ba40763b2fe9fa
+      spotID: 961859
     iOS:
-      apiKey: 10d9088b5bd36cf43b295b0774e5dcf7d20a4071
-      spotID: 485500
+      apiKey: f35cec08b54698361681df9a8b1d6e431c69fefb
+      spotID: 961858
   loadWhenActivated: 1
   enableAutoReload: 0
   reloadInterval: 0

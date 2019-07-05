@@ -32,9 +32,9 @@ public class ItemCreater : MonoBehaviour
 
     public const int appearanceNum = 5;                         //表示数
 
-    const float skyBorder = 980;                                      //空の境目
-    const float spaceItemInterval = 300;                              //宇宙のアイテムの間隔
-    const float spaceItemPlusInterval = 100;                           //宇宙のアイテムの間隔の増加値
+    const float skyBorder = 800;                                      //空の境目
+    const float spaceItemInterval = 50;                               //宇宙のアイテムの間隔
+    const float spaceItemPlusInterval = 60;                           //宇宙のアイテムの間隔の増加値
 
     /// <summary>
     /// 開始処理
@@ -144,7 +144,7 @@ public class ItemCreater : MonoBehaviour
             //アイテムの高さ
             float itemHeight = skyBorder + (index * spaceItemInterval + index * spaceItemPlusInterval);
             existSpaceItems[key].transform.position = (new Vector3(0, itemHeight, 0));
-
+            Debug.Log(index);
             index++;
         }
     }

@@ -14,9 +14,9 @@ public class AdRewardVideoController : MonoBehaviour
 
     const string AdUnitId =                                    // 広告ユニットID（テスト用）
 #if UNITY_ANDROID
-        "ca-app-pub-3940256099942544/5224354917";
+        /*"ca-app-pub-3940256099942544/5224354917"*/"ca-app-pub-7073050807259252/3829988740";
 #elif UNITY_IPHONE
-        "ca-app-pub-3940256099942544/1712485313";
+        /*"ca-app-pub-3940256099942544/1712485313"*/"ca-app-pub-7073050807259252/9181128596";
 #else
         "unexpected_platform";
 #endif

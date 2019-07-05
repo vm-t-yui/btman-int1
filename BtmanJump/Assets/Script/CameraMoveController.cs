@@ -10,6 +10,7 @@ public class CameraMoveController : MonoBehaviour
     [SerializeField] Transform         playerTransform   = default;       // プレイヤーのトランスフォーム
     [SerializeField] JumpHeightCounter jumpHeightCounter = default;       // プレイヤーのジャンプ高さを計測するクラス
     [SerializeField] CloudCreater cloudCreater = default;
+    [SerializeField] ViewOutObjectHider mapObjectHider = default;
 
     // 現在のズームカウント数
     int currentZoomTimeCount = 0;
@@ -17,8 +18,8 @@ public class CameraMoveController : MonoBehaviour
     readonly Vector3 jumpCameraPos         = new Vector3(-2.5f,2.5f,7);   // ジャンプ時のカメラの位置
     readonly Vector3 LookAtPosGroundOffset = new Vector3(0, 1, 0);        // 注視点のオフセット
     readonly Vector3 LookAtPosJumpOffset   = new Vector3(0, 3, 0);        // 注視点のオフセット
-    const    int     CameraMoveWaitTime    = 10;                          // カメラの移動が開始するまでの待機時間
-    const    int     ZoomTime              = 600;                         // ズーム時間
+    const    int     CameraMoveWaitTime    = 50;                          // カメラの移動が開始するまでの待機時間
+    const    int     ZoomTime              = 500;                         // ズーム時間
     const    float   ZoomSpeed             = 0.05f;                   　  // ズームスピード
     const    float   ZoomLerpRate          = 0.05f;                       // ズームのLerp率
     const    float   DefaultFieldOfView    = 60f;                         // デフォルトの視野
@@ -57,6 +58,8 @@ public class CameraMoveController : MonoBehaviour
 
                 // 雲の生成を開始
                 cloudCreater.StartCreate();
+
+                mapObjectHider.Hide();
 
                 isChace = true;
 

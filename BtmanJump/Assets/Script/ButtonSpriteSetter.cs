@@ -51,6 +51,9 @@ public class ButtonSpriteSetter : MonoBehaviour
     [SerializeField]
     SpriteAtlas canvasAtlas = default;         // カンバス用のスプライト
 
+    [SerializeField]
+    LocalizeController localizeController;
+
     /// <summary>
     /// 開始
     /// </summary>
@@ -121,6 +124,22 @@ public class ButtonSpriteSetter : MonoBehaviour
         if (titleLogo != default)
         {
             titleLogo.sprite = canvasAtlas.GetSprite("vikingmaxxLogo");
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="num"></param>
+    public void SetHowToPlaySprite()
+    {
+        if (localizeController.GetLanguageNum() == (int)LocalizeScriptableObject.LocalizeLanguage.Japanese)
+        {
+            howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay");
+        }
+        else
+        {
+            howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay_English");
         }
     }
 }
