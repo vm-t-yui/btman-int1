@@ -1566,7 +1566,7 @@ MonoBehaviour:
   - {fileID: 5580492949659452583}
   woodenOutFrame:
   - {fileID: 4269059966790516678}
-  canvasAtlas: {fileID: 4343727234628468602, guid: 55379a3af0f63e24fb74c84b8a088ab6,
+  canvasAtlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03,
     type: 2}
 --- !u!1 &7573624245882314880
 GameObject:
@@ -2017,6 +2017,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7087016362250846769, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 692642221820321165, guid: 49abe88d5582c484c9691016ccc01f8c,
         type: 3}
       propertyPath: itemManager
@@ -2026,6 +2031,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NewItemDisPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815690988202314367, guid: 49abe88d5582c484c9691016ccc01f8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1908977691757823026, guid: 49abe88d5582c484c9691016ccc01f8c,
         type: 3}
@@ -2067,11 +2077,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 7087016362250846769, guid: 49abe88d5582c484c9691016ccc01f8c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49abe88d5582c484c9691016ccc01f8c, type: 3}
 --- !u!1 &9004992120099546342 stripped
