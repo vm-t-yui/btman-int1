@@ -63,19 +63,19 @@ public class AchievementScriptableObject : ScriptableObject
     string[] iosAchievementIDs = new string[AchievementNum];             // IOS用実績ID
 
     [SerializeField]
-    int firstJumpNum;                       // 初ジャンプの値
+    int firstJumpNum = 0;                       // 初ジャンプの値
     [SerializeField]
-    int reachedUniverseNum;                 // 宇宙到達の値
+    int reachedUniverseNum = 0;                 // 宇宙到達の値
     [SerializeField]
-    int conqueredSolarSystemNum;            // 太陽系制覇の値
+    int conqueredSolarSystemNum = 0;            // 太陽系制覇の値
     [SerializeField]
-    int notJumpNum;                         // 開始後、放置の値
+    int notJumpNum = 0;                         // 開始後、放置の値
     [SerializeField]
-    int jumpedFifteenNum;                   // 15回ジャンプの値
+    int jumpedFifteenNum = 0;                   // 15回ジャンプの値
     [SerializeField]
-    int jumpedThirtyNum;                    // 30回ジャンプの値
+    int jumpedThirtyNum = 0;                    // 30回ジャンプの値
     [SerializeField]
-    int itemCompleteNum;                    // アイテムコンプリートの値
+    int itemCompleteNum = 0;                    // アイテムコンプリートの値
 
     /// <summary>
     /// Android用実績IDゲット

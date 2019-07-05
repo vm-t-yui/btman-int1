@@ -8,9 +8,9 @@ using UnityEngine;
 public class LocalizeDataManager : MonoBehaviour
 {
     [SerializeField]
-    LocalizeController localizeController;  //スコアクラス
+    LocalizeController localizeController = default;  //ローカライズクラス
 
-    int languageNum = 0;                    //言語番号
+    int languageNum = 0;                              //言語番号
 
     /// <summary>
     /// 起動時処理

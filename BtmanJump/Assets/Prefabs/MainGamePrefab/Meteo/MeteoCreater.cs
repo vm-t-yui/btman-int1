@@ -8,7 +8,7 @@ using UnityEngine;
 public class MeteoCreater : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] meteos;                                  // 使用する隕石のオブジェクト
+    GameObject[] meteos = default;                        // 使用する隕石のオブジェクト
 
     [SerializeField]
     AnimationEndChecker[] meteoAnimationEnd = default;    // 隕石のアニメーション終了検知クラス
@@ -20,10 +20,11 @@ public class MeteoCreater : MonoBehaviour
     float interval = 0f;                                  // 生成間隔（秒単位）
 
     [SerializeField]
-    float IntervalMin, IntervalMax;                       // 生成間隔の最大・最小
+    float IntervalMin = 0f, IntervalMax = 0f;             // 生成間隔の最大・最小
 
     [SerializeField]
-    Vector3 CreatePosMin, CreatePosMax;                   // 生成位置の最大・最小
+    Vector3 CreatePosMin = Vector3.zero,                  // 生成位置の最大・最小
+            CreatePosMax = Vector3.zero;
 
     bool isAble = false;                                  // 処理許可フラグ
 

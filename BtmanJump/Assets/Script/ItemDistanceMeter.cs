@@ -25,7 +25,7 @@ public class ItemDistanceMeter : MonoBehaviour
     float[] posDifference = new float[ItemCreater.appearanceNum];   //プレイヤーの位置とアイテムの位置との距離の差分リスト
 
     [SerializeField]
-    GameObject[] iconList;                                          //メーターアイコンのリスト
+    GameObject[] iconList = default;                                //メーターアイコンのリスト
 
     [SerializeField]
     CameraMoveController cameraMove = default;                      //カメラの動き制御
@@ -34,7 +34,7 @@ public class ItemDistanceMeter : MonoBehaviour
     GameObject itemBag = default;                                   //アイテム袋のオブジェクト
 
     [SerializeField]
-    Image itemSpeechBubble = default;                         //アイテムゲット時の吹き出し
+    Image itemSpeechBubble = default;                               //アイテムゲット時の吹き出し
 
     bool isActive = false;                                          //子オブジェクト表示フラグ
 

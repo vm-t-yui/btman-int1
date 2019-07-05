@@ -8,7 +8,7 @@ using UnityEngine;
 public class CraterCreater : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] debris;                                         // 破片のオブジェクト
+    GameObject[] debris = default;                               // 破片のオブジェクト
 
     [SerializeField]
     GameObject crater = default;                                 // クレーターのオブジェクト
@@ -22,18 +22,19 @@ public class CraterCreater : MonoBehaviour
 
     Rigidbody[] debrisRigit = new Rigidbody[DebrisNum];          // 生成した破片のRigitBody用配列
 
-    float moveTime = 0;                                          // 破片が動いている間カウントする変数
-    const float MoveMaxTime = 2;                                 // 破片を動かす秒数
+    float moveTime = 0f;                                         // 破片が動いている間カウントする変数
+    const float MoveMaxTime = 2f;                                // 破片を動かす秒数
 
     bool isCreate = false;                                       // 生成フラグ
 
     readonly Vector3 DebrisBornPos = new Vector3(0, 0.2f, 0);    // 破片の初期位置
 
     [SerializeField]
-    Vector3 VelocityMin, VelocityMax;                            // velocityの各値の最大・最小
+    Vector3 VelocityMin = Vector3.zero,                          // velocityの各値の最大・最小
+            VelocityMax = Vector3.zero;
 
     [SerializeField]
-    int RotateForceMagMin, RotateForceMagMax;                    // 回転する力の倍率の最大・最小
+    int RotateForceMagMin = 0, RotateForceMagMax = 0;            // 回転する力の倍率の最大・最小
 
     /// <summary>
     /// 破片の初期化

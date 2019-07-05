@@ -20,7 +20,6 @@ public class AdVideoRecommender : MonoBehaviour
     GameObject recommendWindow = default;                     // 勧誘用カンバス
 
     bool isAble = false;                                      // 勧誘許可フラグ
-    bool isCancel = false;                                    // キャンセルフラグ
     public bool IsRecommend { get; private set; } = false;    // 勧誘済みフラグ
     public bool IsVideoSkip { get; private set; } = false;    // 広告スキップフラグ
     public bool IsEnd { get; private set; } = false;          // 処理終了フラグ
@@ -89,7 +88,6 @@ public class AdVideoRecommender : MonoBehaviour
     /// </summary>
     public void Cancel()
     {
-        isCancel = true;
         recommendWindow.SetActive(false);
     }
 

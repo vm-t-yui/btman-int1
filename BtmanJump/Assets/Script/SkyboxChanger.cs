@@ -18,7 +18,7 @@ public class SkyboxChanger : MonoBehaviour
     MeteoCreater meteoCreater = default;              // 隕石生成クラス
 
     [SerializeField]
-    Material universeSkyboxMat;                       // 宇宙のスカイボックスのマテリアル
+    Material universeSkyboxMat = default;             // 宇宙のスカイボックスのマテリアル
 
     [SerializeField]
     SkyboxRotater skyboxRotater = default;            // スカイボックス回転処理クラス
@@ -27,7 +27,7 @@ public class SkyboxChanger : MonoBehaviour
     GameObject rocketObj = default;                   // ロケットのオブジェクト
 
     [SerializeField]
-    int ReachUniverseHeight;                          // 宇宙に達する高さ
+    int ReachUniverseHeight = 0;                      // 宇宙に達する高さ
 
     const float RocketHideDisplayHeight = -1.2f;      // ロケットが画面を覆い隠す高さ（ロケットのローカル座標）
 

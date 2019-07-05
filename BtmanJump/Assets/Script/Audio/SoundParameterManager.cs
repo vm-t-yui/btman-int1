@@ -16,10 +16,10 @@ public class SoundParameterManager : MonoBehaviour
     static public bool seMute  { get; private set; } = false;     // SEのミュート
 
     // 各パラメータのキー
-    static string bgmVolumeDataKey;
-    static string seVolumeDataKey;
-    static string bgmMuteDataKey;
-    static string seMuteDataKey;
+    static string bgmVolumeDataKey = null;
+    static string seVolumeDataKey = null;
+    static string bgmMuteDataKey = null;
+    static string seMuteDataKey = null;
 
     /// <summary>
     /// 開始

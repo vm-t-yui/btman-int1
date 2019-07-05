@@ -21,13 +21,15 @@ public class CloudCreater : MonoBehaviour
     readonly Vector3 CreateRotation = new Vector3(0, -20, 0);    // 生成時回転角
 
     [SerializeField]
-    Vector3 CreateMinPos, CreateMaxPos;                          // 生成時の位置の最大・最小
+    Vector3 CreateMinPos = Vector3.zero,                         // 生成時の位置の最大・最小
+            CreateMaxPos = Vector3.zero;
 
     [SerializeField]
-    Vector3 CreateScaleMin, CreateScaleMax;                      // 生成時のサイズの最大・最小
+    Vector3 CreateScaleMin = Vector3.zero,                       // 生成時のサイズの最大・最小
+            CreateScaleMax = Vector3.zero;
 
     [SerializeField]
-    float intervalMin, intervalMax;                              // 生成間隔の最大・最小
+    float intervalMin = 0f, intervalMax = 0f;                    // 生成間隔の最大・最小
 
     [SerializeField]
     Transform playerPos = default;                               // プレイヤーの位置
