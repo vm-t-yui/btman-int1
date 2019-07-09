@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8046224097637900019}
-  - component: {fileID: 8046224097627757341}
+  - component: {fileID: 1814664960832704122}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -312,22 +312,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &8046224097627757341
-Animation:
+--- !u!95 &1814664960832704122
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8046224097637728979}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: f2a0c96cbd15d47208d58e2ac1f92e46, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: f2a0c96cbd15d47208d58e2ac1f92e46, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 457bf892928c14fbf9a2ae3cdd963ca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8046224097637728981
 GameObject:
   m_ObjectHideFlags: 0
