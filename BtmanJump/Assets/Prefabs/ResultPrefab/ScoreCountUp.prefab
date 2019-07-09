@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3787169930478364446}
   - component: {fileID: 3787169930478364444}
   - component: {fileID: 3787169930478364445}
-  - component: {fileID: 859533910577046403}
+  - component: {fileID: 8750770169914989778}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00 km
---- !u!114 &859533910577046403
+--- !u!114 &8750770169914989778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,11 +89,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3787169930478364447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61be5689e60524286944d96b9720dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: 1.5
+  m_nEffectNumber: 10
   m_UseGraphicAlpha: 1
 --- !u!1 &3787169930492709172
 GameObject:
@@ -271,7 +272,7 @@ RectTransform:
   m_GameObject: {fileID: 3787169932429776237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 3787169930478364446}
   m_Father: {fileID: 3787169930492709171}
