@@ -89,12 +89,12 @@ public class NewItemsDisplay : MonoBehaviour
             //新規アイテムがあるかつ、タッチフラグがたっていない状態なら
             else if(!isTouch)
             {
-                //タッチフラグを立てる
-                isTouch = true;
-
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.touchCount > 0)
                 {
+                    //タッチフラグを立てる
+                    isTouch = true;
+
                     // タッチの情報を取得
                     Touch touch = Input.GetTouch(0);
                     // タッチされた回数をカウント
@@ -110,6 +110,9 @@ public class NewItemsDisplay : MonoBehaviour
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.GetMouseButtonDown(0))
                 {
+                    //タッチフラグを立てる
+                    isTouch = true;
+
                     // タッチされた回数をカウント
                     touchCount++;
                     DisplayNewItem(touchCount);

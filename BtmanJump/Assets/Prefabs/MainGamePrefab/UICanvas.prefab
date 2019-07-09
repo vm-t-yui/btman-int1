@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 3260682181420504745}
   - component: {fileID: 3260682181420504747}
   - component: {fileID: 3260682181420504746}
-  - component: {fileID: 3260682181420504724}
+  - component: {fileID: 3447837904016320746}
   m_Layer: 5
   m_Name: TextNumber
   m_TagString: Untagged
@@ -261,7 +261,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 10
---- !u!114 &3260682181420504724
+--- !u!114 &3447837904016320746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,11 +270,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3260682181420504744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61be5689e60524286944d96b9720dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: 1.5
+  m_nEffectNumber: 10
   m_UseGraphicAlpha: 1
 --- !u!1 &3260682181697763916
 GameObject:
@@ -361,7 +362,7 @@ GameObject:
   - component: {fileID: 3260682182295635427}
   - component: {fileID: 3260682182295635438}
   - component: {fileID: 3260682182295635437}
-  - component: {fileID: 3260682182295635436}
+  - component: {fileID: 5749184229132231842}
   m_Layer: 5
   m_Name: TextHeight
   m_TagString: Untagged
@@ -430,7 +431,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Height
---- !u!114 &3260682182295635436
+--- !u!114 &5749184229132231842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,11 +440,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3260682182295635426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61be5689e60524286944d96b9720dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: 1.5
+  m_nEffectNumber: 10
   m_UseGraphicAlpha: 1
 --- !u!1 &3260682182409242886
 GameObject:
@@ -684,7 +686,7 @@ GameObject:
   - component: {fileID: 3260682183189447235}
   - component: {fileID: 3260682183189447234}
   - component: {fileID: 3260682183189447232}
-  - component: {fileID: 3260682183189447233}
+  - component: {fileID: 7310547015088191583}
   m_Layer: 5
   m_Name: TextHeightNumber
   m_TagString: Untagged
@@ -753,7 +755,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00km
---- !u!114 &3260682183189447233
+--- !u!114 &7310547015088191583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -762,11 +764,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3260682183189447239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61be5689e60524286944d96b9720dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: 1.5
+  m_nEffectNumber: 10
   m_UseGraphicAlpha: 1
 --- !u!1 &3260682183257002290
 GameObject:
@@ -853,7 +856,7 @@ GameObject:
   - component: {fileID: 3260682183294992749}
   - component: {fileID: 3260682183294992744}
   - component: {fileID: 3260682183294992751}
-  - component: {fileID: 3260682183294992750}
+  - component: {fileID: 8820002390407890798}
   m_Layer: 5
   m_Name: TextChargeTime
   m_TagString: Untagged
@@ -924,7 +927,7 @@ MonoBehaviour:
   m_Text: 'ChargeTime
 
 '
---- !u!114 &3260682183294992750
+--- !u!114 &8820002390407890798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,11 +936,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3260682183294992748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61be5689e60524286944d96b9720dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: 1.5
+  m_nEffectNumber: 10
   m_UseGraphicAlpha: 1
 --- !u!1 &4499745679900217704
 GameObject:

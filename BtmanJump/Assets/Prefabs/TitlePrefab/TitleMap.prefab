@@ -347,7 +347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 657176304435158084}
   - component: {fileID: 8580100642179559772}
-  - component: {fileID: 495700207435875801}
   m_Layer: 0
   m_Name: TitleMap
   m_TagString: Untagged
@@ -411,20 +410,6 @@ MonoBehaviour:
   - {fileID: 64645149023466948}
   - {fileID: 7428118824926101183}
   atlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03, type: 2}
---- !u!114 &495700207435875801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657176304435158085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac355552a2eed48e198b18587bc07acd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  riceSprite: []
-  atlas: {fileID: 0}
 --- !u!1 &822706932277470032
 GameObject:
   m_ObjectHideFlags: 0

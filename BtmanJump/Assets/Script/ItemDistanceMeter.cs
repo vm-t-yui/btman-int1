@@ -119,7 +119,7 @@ public class ItemDistanceMeter : MonoBehaviour
             {
                 //NOTE:i - 1は[0](プレイヤーとプレイヤーの差分は見ないため)のずれ
                 //位置の差分をとって座標更新
-                posDifference[i - 1] = GetPosDifference(i - 1) * 2;
+                posDifference[i - 1] = GetPosDifference(i - 1) * 3.5f;
 
                 //メーターの座標が表示の最大距離を上回ったなら最大距離内に収める
                 if (posDifference[i - 1] < 0)
