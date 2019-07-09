@@ -1425,6 +1425,21 @@ PrefabInstance:
       propertyPath: itemDataManager
       value: 
       objectReference: {fileID: 6919808163537053082}
+    - target: {fileID: 5468008114503961212, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468008114503961212, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468008114525683424, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
 --- !u!114 &4061853482233614306 stripped
