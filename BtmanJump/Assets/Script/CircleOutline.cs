@@ -9,13 +9,13 @@ using System.Collections.Generic;
 public class CircleOutline : BaseMeshEffect
 {
     [SerializeField]
-    private Color m_EffectColor = new Color(255, 255, 255, 0);  //アウトラインの色
+    Color effectColor = new Color(255, 255, 255, 0);  //アウトラインの色
 
     [SerializeField]
-    private float m_EffectDistance = 1.5f;                      //アウトラインをつける文字からの距離(離れればその分だけアウトラインが太くなる)
+    float effectDistance = 1.5f;                      //アウトラインをつける文字からの距離(離れればその分だけアウトラインが太くなる)
 
     [SerializeField]
-    private int m_nEffectNumber = 10;                           //アウトラインの数(増えれば増えるほど綺麗になるが重くなる)
+    int effectNumber = 10;                            //アウトラインの数(増えれば増えるほど綺麗になるが重くなる)
 
     //NOTE:配布コードのためコメント省略
     public override void ModifyMesh(VertexHelper vh)
@@ -38,11 +38,11 @@ public class CircleOutline : BaseMeshEffect
         int start = 0;
         int end = verts.Count;
 
-        for (int n = 0; n < m_nEffectNumber; ++n)
+        for (int n = 0; n < effectNumber; ++n)
         {
-            float rad = 2.0f * Mathf.PI * n / m_nEffectNumber;
-            float x = m_EffectDistance * Mathf.Cos(rad);
-            float y = m_EffectDistance * Mathf.Sin(rad);
+            float rad = 2.0f * Mathf.PI * n / effectNumber;
+            float x = effectDistance * Mathf.Cos(rad);
+            float y = effectDistance * Mathf.Sin(rad);
 
             ApplyShadow(verts, start, end, x, y);
 
@@ -65,7 +65,7 @@ public class CircleOutline : BaseMeshEffect
             v.x += x;
             v.y += y;
             vt.position = v;
-            Color32 newColor = m_EffectColor;
+            Color32 newColor = effectColor;
             vt.color = newColor;
             verts[i] = vt;
         }
