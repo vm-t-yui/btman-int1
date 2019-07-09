@@ -1516,79 +1516,6 @@ MonoBehaviour:
   dropdown: {fileID: 8375927866669686750}
   label: {fileID: 6259712152442710289}
   localizeController: {fileID: 6302764709353011832}
---- !u!1 &2129089181599395876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5486002870515264190}
-  - component: {fileID: 6062702369641328277}
-  m_Layer: 0
-  m_Name: NendAdNative
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5486002870515264190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129089181599395876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3564015162311573932}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6062702369641328277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129089181599395876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d54df88a225c4169b7942d23c85759f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  account:
-    android:
-      apiKey: 16cb170982088d81712e63087061378c71e8aa5c
-      spotID: 485516
-    iOS:
-      apiKey: 10d9088b5bd36cf43b295b0774e5dcf7d20a4071
-      spotID: 485500
-  loadWhenActivated: 1
-  enableAutoReload: 0
-  reloadInterval: 0
-  views:
-  - {fileID: 7131318472318803109}
-  - {fileID: 3129580177976424082}
-  - {fileID: 2363839642701774438}
-  - {fileID: 3922780600920977885}
-  - {fileID: 8483850330818493480}
-  - {fileID: 5496420236795522374}
-  - {fileID: 5309026635708699441}
-  - {fileID: 3294357519966536728}
-  AdLoaded:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: NendUnityPlugin.AD.Native.Events.NativeAdViewEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  AdFailedToReceive:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: NendUnityPlugin.AD.Native.Events.NativeAdViewFailedToLoadEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  type: 0
 --- !u!1 &2413188340516884386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,7 +3056,6 @@ RectTransform:
   m_Children:
   - {fileID: 8066422572169568586}
   - {fileID: 1423616582364577965}
-  - {fileID: 5486002870515264190}
   m_Father: {fileID: 1019435855204612400}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3312,43 +3238,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: NendUnityPlugin.AD.Native.Events.NativeAdViewEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!222 &1774179052
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6225372004466240767}
-  m_CullTransparentMesh: 0
---- !u!114 &1774179051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6225372004466240767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!1 &6302764709046354556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,6 +4135,7 @@ MonoBehaviour:
   - {fileID: 0}
   canvasAtlas: {fileID: 4343727234628468602, guid: fc6ce9b6cc5714daebacd0a4932eba03,
     type: 2}
+  localizeController: {fileID: 0}
 --- !u!1 &6302764709694593307
 GameObject:
   m_ObjectHideFlags: 0
@@ -8942,6 +8832,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6302764709648661543}
     m_Modifications:
+    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemBoxManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3625069118020849329, guid: 4a3295cdccc674041bc3af392ba4bab8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9046,16 +8941,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069118020849330, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemBoxManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3625069119302586354, guid: 4a3295cdccc674041bc3af392ba4bab8,
-        type: 3}
-      propertyPath: m_Text
-      value: "\xD7"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3295cdccc674041bc3af392ba4bab8, type: 3}
