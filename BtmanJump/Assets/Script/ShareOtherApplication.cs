@@ -8,6 +8,9 @@ using System.IO;
 /// </summary>
 public class ShareOtherApplication : MonoBehaviour
 {
+    [SerializeField]
+    LocalizeController localizeController = default;    //ローカライズクラス
+
     /// <summary>
     /// 共有
     /// </summary>
@@ -38,9 +41,28 @@ public class ShareOtherApplication : MonoBehaviour
             yield return null;
         }
 
+        string tweetText = null;   //共有するテキスト
+        string tweetURL = null;    //共有するURL
+
+        //ローカライズされた言語が日本語なら
+        if (localizeController.GetLanguageNum() == (int)LocalizeScriptableObject.LocalizeLanguage.Japanese)
+        {
+            tweetText = "君も一緒にバッタージャンプ！！";
+        }
+        //それ以外
+        else
+        {
+            tweetText = "Let's BATTA JUMP together！！";
+        }
+
+        //IOSならAppStore、それ以外ならGooglePlayのURL
+#if UNITY_IOS
+        tweetURL = "https://itunes.apple.com/jp/app/id1464833025?mt=8";
+#else
+        tweetURL = "https://play.google.com/store/apps/details?id=com.vikingmaxx.btmanJump";
+#endif
+
         // 投稿する
-        string tweetText = "患者の運命は....をえが変える！！！！";
-        string tweetURL = "https://www.google.com/?hl=ja";
         SocialConnector.SocialConnector.Share(tweetText, tweetURL, imgPath);
     }
 }

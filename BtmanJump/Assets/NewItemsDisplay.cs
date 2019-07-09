@@ -9,36 +9,37 @@ using UnityEngine.U2D;
 public class NewItemsDisplay : MonoBehaviour
 {
     [SerializeField]
-    ItemManager itemManager = default;                //アイテムクラス
+    ItemManager itemManager = default;                    //アイテムクラス
     [SerializeField]
-    LocalizeController localizeController = default;  //ローカライズクラス
+    LocalizeController localizeController = default;      //ローカライズクラス
     [SerializeField]
-    ItemDescription itemDescription = default;        //アイテム説明クラス
+    ItemDescription itemDescription = default;            //アイテム説明クラス
 
     [SerializeField]
-    Animator animator = default;                      //アニメータークラス
+    Animator animator = default;                          //アニメータークラス
 
     [SerializeField]
-    List<int> newHasNum = new List<int>();            //新しく手に入れたアイテムの数
+    List<int> newHasNum = new List<int>();                //新しく手に入れたアイテムの数
     [SerializeField]
-    List<string> names = new List<string>();          //今の言語のアイテム名前
+    List<string> names = new List<string>();              //今の言語のアイテム名前
     [SerializeField]
-    List<string> descriptions = new List<string>();   //今の言語のアイテム説明
+    List<string> descriptions = new List<string>();       //今の言語のアイテム説明
 
     [SerializeField]
     bool[] isNewHasItem = new bool[ItemManager.ItemNum];  //新しくゲットしたアイテムのフラグ
 
     [SerializeField]
-    GameObject displayImage = default;                //アイテム取得演出表示用イメージ(子に名前と画像)
+    GameObject displayImage = default;                    //アイテム取得演出表示用イメージ(子に名前と画像)
 
     [SerializeField]
     AnimationEndChecker animationEndChecker = default;    //画面フェードコントロールクラス
 
     [SerializeField]
-    AdVideoRecommender adVideoRecommender = default;        //動画広告勧誘クラス
+    AdVideoRecommender adVideoRecommender = default;      //動画広告勧誘クラス
 
-    [SerializeField]
-    int touchCount = 0;     //タッチ数カウント
+    int touchCount = 0;                                   //タッチ数カウント
+
+    bool isTouch = false;                                 //タッチフラグ(アニメーション途中でタッチのカウントをずらさないためのフラグ)
 
     /// <summary>
     /// 開始処理
@@ -85,8 +86,12 @@ public class NewItemsDisplay : MonoBehaviour
 
                 gameObject.SetActive(false);
             }
-            else
-            {           
+            //新規アイテムがあるかつ、タッチフラグがたっていない状態なら
+            else if(!isTouch)
+            {
+                //タッチフラグを立てる
+                isTouch = true;
+
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.touchCount > 0)
                 {
@@ -99,6 +104,17 @@ public class NewItemsDisplay : MonoBehaviour
                         DisplayNewItem(touchCount);
                     }
                 }
+
+                //エディタ上での処理
+                #if UNITY_EDITOR
+                //画面フェードが終わった状態でタッチされたら
+                if (Input.GetMouseButtonDown(0))
+                {
+                    // タッチされた回数をカウント
+                    touchCount++;
+                    DisplayNewItem(touchCount);
+                }
+                #endif
             }
         }
     }
@@ -151,6 +167,9 @@ public class NewItemsDisplay : MonoBehaviour
                     //新しく手に入れたアイテム説明
                     itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[i]), names[i], descriptions[i]);
                     animator.SetTrigger("In");
+
+                    //タッチフラグリセット
+                    isTouch = false;
                 }
                 //上回ったら非表示させる
                 else
