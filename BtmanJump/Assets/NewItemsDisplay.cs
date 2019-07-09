@@ -104,18 +104,15 @@ public class NewItemsDisplay : MonoBehaviour
                         DisplayNewItem(touchCount);
                     }
                 }
+
+                //エディタ上での処理
                 #if UNITY_EDITOR
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // タッチの情報を取得
-                    Touch touch = Input.GetTouch(0);
                     // タッチされた回数をカウント
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        touchCount++;
-                        DisplayNewItem(touchCount);
-                    }
+                    touchCount++;
+                    DisplayNewItem(touchCount);
                 }
                 #endif
             }
