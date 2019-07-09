@@ -29,8 +29,8 @@ MonoBehaviour:
   - thirtyjump
   - itemComplete
   firstJumpNum: 1
-  reachedUniverseNum: 100000
-  conqueredSolarSystemNum: 300000
+  reachedUniverseNum: 20000000
+  conqueredSolarSystemNum: 30000000
   notJumpNum: 30
   jumpedFifteenNum: 15
   jumpedThirtyNum: 30
