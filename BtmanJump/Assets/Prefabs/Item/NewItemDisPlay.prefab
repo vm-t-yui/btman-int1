@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6715328089191288850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,10 +300,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManager: {fileID: 0}
+  itemDataManager: {fileID: 0}
   displayName: {fileID: 7305276768766165774}
   displayDescription: {fileID: 6268384808295527720}
   displayImage: {fileID: 2636617278684155369}
-  backGround: {fileID: 7087016362250846769}
 --- !u!95 &4866175776592265448
 Animator:
   serializedVersion: 3
@@ -344,7 +344,8 @@ MonoBehaviour:
   descriptions: []
   isNewHasItem: 0000000000000000000000000000000000000000000000000000000000000000000000000000
   displayImage: {fileID: 8348373897894747809}
-  touchCount: 0
+  animationEndChecker: {fileID: 0}
+  adVideoRecommender: {fileID: 0}
 --- !u!1 &8201142471552510363
 GameObject:
   m_ObjectHideFlags: 0

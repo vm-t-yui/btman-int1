@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class CircleOutline : BaseMeshEffect
 {
     [SerializeField]
-    Color effectColor = new Color(255, 255, 255, 0);  //アウトラインの色
+    Color effectColor = new Color(255, 255, 255, 255);  //アウトラインの色
 
     [SerializeField]
     float effectDistance = 1.5f;                      //アウトラインをつける文字からの距離(離れればその分だけアウトラインが太くなる)
