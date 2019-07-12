@@ -144,7 +144,6 @@ public class ItemCreater : MonoBehaviour
             //アイテムの高さ
             float itemHeight = skyBorder + (index * spaceItemInterval + index * spaceItemPlusInterval);
             existSpaceItems[key].transform.position = (new Vector3(0, itemHeight, 0));
-            Debug.Log(index);
             index++;
         }
     }
@@ -171,7 +170,7 @@ public class ItemCreater : MonoBehaviour
             if (randomPoint < 0)
             {
                 //新しいアイテムを作らないならそのまま番号を渡す
-                if(!isNewItem)
+                if(!isNewItem || isItemComplete())
                 {
                     return index;
                 }
@@ -210,5 +209,35 @@ public class ItemCreater : MonoBehaviour
     public float GetExistAllItemsRate(int i)
     {
         return existAllItemsRate[i];
+    }
+
+    /// <summary>
+    /// アイテムをコンプリートしているかどうか
+    /// </summary>
+    /// <returns></returns>
+    bool isItemComplete()
+    {
+        bool[] flg = itemManager.GetIsHasItem();    //アイテムの所持フラグ
+        int count = 0;                              //trueの数
+
+        //trueの数を数える
+        for(int i = 0; i<flg.Length;i++)
+        {
+            if(flg[i])
+            {
+                count++;
+            }
+        }
+
+        //trueの数がアイテム所持フラグと一緒ならコンプしている
+        if(flg.Length == count)
+        {
+            return true;
+        }
+        //それ以外はコンプしていない
+        else
+        {
+            return false;
+        }
     }
 }
