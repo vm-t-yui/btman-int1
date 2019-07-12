@@ -34,7 +34,10 @@ public class ButtonSpriteSetter : MonoBehaviour
     Image titleLogo = default;                 // 設定画面木の看板の画像
 
     [SerializeField]
-    Image[] newItemDisplay = default;            // 設定画面木の看板の画像
+    Image[] newItemIcon = default;             // Newアイテムのアイコンの画像
+
+    [SerializeField]
+    Image[] newItemDisplay = default;          // 設定画面木の看板の画像
 
     [SerializeField]
     Image[] volume = default;                  // 設定画面木の看板の画像
@@ -74,7 +77,13 @@ public class ButtonSpriteSetter : MonoBehaviour
             sign.sprite = canvasAtlas.GetSprite("woodButton");
         }
 
-        // 看板はある分だけセット
+        // Newアイテムのアイコンはある分だけセット
+        foreach (var icon in newItemIcon)
+        {
+            icon.sprite = canvasAtlas.GetSprite("ItemSpeechBubble2");
+        }
+
+        // 新規アイテム表示はある分だけセット
         foreach (var display in newItemDisplay)
         {
             display.sprite = canvasAtlas.GetSprite("ItemSpeechBubble");
@@ -130,7 +139,6 @@ public class ButtonSpriteSetter : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="num"></param>
     public void SetHowToPlaySprite()
     {
         if (localizeController.GetLanguageNum() == (int)LocalizeScriptableObject.LocalizeLanguage.Japanese)

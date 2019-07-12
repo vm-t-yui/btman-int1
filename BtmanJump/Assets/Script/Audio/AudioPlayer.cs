@@ -28,8 +28,7 @@ public class AudioPlayer : MonoBehaviour
         PanelClose,     // パネル閉じる
         BirdTwitter,    // 鳥のさえずり
         JumpChargeing,  // ジャンプ溜め
-        ChargeingTap1,  // チャージ中のタップ音１
-        ChargeingTap2,  // チャージ中のタップ音２
+        ChargeingTap,  // チャージ中のタップ音
         JumpVoice,      // ジャンプボイス
         CraterExplosion,// クレーター爆発
         WindNoise,      // 風切り

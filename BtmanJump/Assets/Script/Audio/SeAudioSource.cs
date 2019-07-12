@@ -9,6 +9,19 @@ public class SeAudioSource : MonoBehaviour
 {
     // AudioSourceコンポーネント
     [SerializeField] AudioSource audioSource = default;
+    [SerializeField] float randomPitchBand = default;
+
+    /// <summary>
+    /// Awake
+    /// </summary>
+    void Awake()
+    {
+        // set random pitch if status is not zero
+        if (randomPitchBand > 0)
+        {
+            audioSource.pitch += Random.Range(-randomPitchBand * 0.5f, randomPitchBand * 0.5f);
+        }
+    }
 
     /// <summary>
     /// 更新

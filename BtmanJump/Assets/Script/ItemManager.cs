@@ -53,7 +53,16 @@ public class ItemManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 入手したアイテムのフラグのゲット関数
+    /// 入手したアイテムのフラグのゲット関数(全部)
+    /// </summary>
+    /// <returns>新しく入手したアイテムのフラグ</returns>
+    public bool[] GetIsHasItem()
+    {
+        return isHasItem;
+    }
+
+    /// <summary>
+    /// 入手したアイテムのフラグのゲット関数(1個ずつ)
     /// </summary>
     /// <returns>新しく入手したアイテムのフラグ</returns>
     public bool GetIsHasItem(int i)

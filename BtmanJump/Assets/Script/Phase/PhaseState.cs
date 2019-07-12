@@ -179,6 +179,7 @@ public class PhaseState : MonoBehaviour
         {
             // スコアをデータにセット
             playData.SetNowScore(jumpHeightCounter.JumpHeightToKiloMetre);
+            playData.SaveData();
 
             // ステートを"PlayerFalling"に変更する
             stateMachine.SetState(PhaseType.PlayerFalling);
