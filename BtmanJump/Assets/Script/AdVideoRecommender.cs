@@ -24,7 +24,7 @@ public class AdVideoRecommender : MonoBehaviour
     public bool IsVideoSkip { get; private set; } = false;    // 広告スキップフラグ
     public bool IsEnd { get; private set; } = false;          // 処理終了フラグ
     
-    const int RecommendInterval = 3;                          // 勧誘を行うプレイ回数間隔
+    const int RecommendInterval = 5;                          // 勧誘を行うプレイ回数間隔
 
     bool isAdMob = false;                                     // AdMobの広告を使用するかどうか（交互に使用するため）
     int adMobInterval = 6;                                    // AdMobを使用するプレイ回数間隔
