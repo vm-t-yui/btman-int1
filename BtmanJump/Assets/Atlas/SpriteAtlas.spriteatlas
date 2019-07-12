@@ -137,7 +137,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 98e90caedfd0a4044a7aa2dd781fc15d, type: 3}
     - {fileID: 21300000, guid: 2e574aa87e2494deba6d60c51cfc5981, type: 3}
     - {fileID: 2800000, guid: 54b69cd71f528834790f325f269404e5, type: 3}
-    totalSpriteSurfaceArea: 10587264
+    - {fileID: 2800000, guid: e54406c7aa292482daf3c5324efb4656, type: 3}
+    totalSpriteSurfaceArea: 10884864
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -167,6 +168,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 03f9759607d57401eb06615c13367a2e, type: 3}
   - {fileID: 21300000, guid: ba9aaa573dd624989b55abb5fa536967, type: 3}
   - {fileID: 21300000, guid: 16b972c732c47424f9c11c72dd673c6c, type: 3}
+  - {fileID: 21300000, guid: e54406c7aa292482daf3c5324efb4656, type: 3}
   - {fileID: 21300000, guid: 54b69cd71f528834790f325f269404e5, type: 3}
   - {fileID: 21300000, guid: 7af8fae7c29ad4caab59d007ed7b9db8, type: 3}
   - {fileID: 21300000, guid: 65dd8b4852a42475094288bc0011e9ad, type: 3}
@@ -231,6 +233,7 @@ SpriteAtlas:
   - silver_unko
   - red_meteorite
   - ItemSpeechBubble
+  - ItemSpeechBubble2
   - HowToPlay_English
   - blue_meteorite
   - white_star

@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class PlayDataManager : MonoBehaviour
 {
+    [SerializeField]
+    LeaderboardController leaderboard = default;               // 
+
     public int PlayCount { get; private set; } = 0;            // プレイ回数
     public int HighScore { get; private set; } = 0;            // ハイスコア
     public bool[] AchievementStatus { get; private set; } =    // 実績解除状況
@@ -118,6 +121,7 @@ public class PlayDataManager : MonoBehaviour
         if (nowScore > HighScore)
         {
             HighScore = nowScore;
+            leaderboard.RegisterScoreToLeaderboard(HighScore);
             PlayerPrefs.SetInt(HighScoreKey, HighScore);
         }
 
