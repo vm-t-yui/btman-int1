@@ -13,9 +13,9 @@ public class AdInterstitialController : MonoBehaviour
 
     const string AdUnitId =                                             // 広告ユニットID（テスト用ID）
 #if UNITY_ANDROID
-        /*"ca-app-pub-3940256099942544/1033173712"*/"ca-app-pub-7073050807259252/5950306501";
+        "ca-app-pub-7073050807259252/5950306501";
 #elif UNITY_IOS
-        /*"ca-app-pub-3940256099942544/4411468910"*/"ca-app-pub-7073050807259252/8251190303";
+        "ca-app-pub-7073050807259252/8251190303";
 #else
         "unexpected_platform";
 #endif

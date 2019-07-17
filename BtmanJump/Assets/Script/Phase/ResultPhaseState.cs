@@ -20,7 +20,7 @@ public class ResultPhaseState : MonoBehaviour
         SceneEnd                                     // シーンの終了
     }
 
-    PhaseType nowPhase;                             // フェーズの状態
+    PhaseType nowPhase;                              // フェーズの状態
 
     // フェード管理クラス
     [SerializeField]

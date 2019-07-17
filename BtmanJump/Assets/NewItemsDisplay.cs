@@ -39,8 +39,6 @@ public class NewItemsDisplay : MonoBehaviour
 
     int touchCount = 0;                                   //タッチ数カウント
 
-    bool isTouch = false;                                 //タッチフラグ(アニメーション途中でタッチのカウントをずらさないためのフラグ)
-
     /// <summary>
     /// 開始処理
     /// </summary>
@@ -87,14 +85,11 @@ public class NewItemsDisplay : MonoBehaviour
                 gameObject.SetActive(false);
             }
             //新規アイテムがあるかつ、タッチフラグがたっていない状態なら
-            else if(!isTouch)
+            else
             {
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.touchCount > 0)
                 {
-                    //タッチフラグを立てる
-                    isTouch = true;
-
                     // タッチの情報を取得
                     Touch touch = Input.GetTouch(0);
                     // タッチされた回数をカウント
@@ -110,9 +105,6 @@ public class NewItemsDisplay : MonoBehaviour
                 //画面フェードが終わった状態でタッチされたら
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //タッチフラグを立てる
-                    isTouch = true;
-
                     // タッチされた回数をカウント
                     touchCount++;
                     DisplayNewItem(touchCount);
@@ -170,9 +162,6 @@ public class NewItemsDisplay : MonoBehaviour
                     //新しく手に入れたアイテム説明
                     itemDescription.NewItemDescription(ItemScriptableObject.Instance.GetSprite(newHasNum[i]), names[i], descriptions[i]);
                     animator.SetTrigger("In");
-
-                    //タッチフラグリセット
-                    isTouch = false;
                 }
                 //上回ったら非表示させる
                 else
