@@ -116,14 +116,16 @@ public class ButtonSpriteSetter : MonoBehaviour
     }
 
     /// <summary>
-    ///
+    /// HowToPlay画像セット
     /// </summary>
     public void SetHowToPlaySprite()
     {
+        // 日本語版
         if (localizeController.GetLanguageNum() == (int)LocalizeScriptableObject.LocalizeLanguage.Japanese)
         {
             howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay");
         }
+        // 英語版
         else
         {
             howToPlay.sprite = canvasAtlas.GetSprite("HowToPlay_English");

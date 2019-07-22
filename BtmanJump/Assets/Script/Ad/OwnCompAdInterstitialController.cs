@@ -5,35 +5,40 @@ using UnityEngine.UI;
 using UnityEngine.U2D;
 
 /// <summary>
-/// 
+/// 自社広告コントロールクラス
 /// </summary>
 public class OwnCompAdInterstitialController : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] adImages = default;
+    GameObject[] adImages = default;          // 広告画像オブジェクト
 
     [SerializeField]
-    PlayDataManager playData = default;
+    PlayDataManager playData = default;       // プレイデータ管理クラス
 
-    const string UseCountKey = "UseCount";
+    const int OwnCompAdNum = 3;               // 自社広告の総数
 
-    int useCount = 0;
+    int useAdNum = 0;                         // 使用する広告番号
+    const string UseAdNumKey = "UseAdNum";    // 使用する広告番号のデータキー
+
 
     /// <summary>
-    /// 
+    /// 起動時
     /// </summary>
     void OnEnable()
     {
-        useCount = PlayerPrefs.GetInt(UseCountKey, 0);
+        // 使用する広告番号を取得
+        useAdNum = PlayerPrefs.GetInt(UseAdNumKey, 0);
 
-        adImages[useCount].SetActive(true);
+        // 取得した広告番号に応じた自社広告を表示
+        adImages[useAdNum].SetActive(true);
 
-        useCount++;
-        if (useCount > 3)
+        // 次回使用する広告番号をセットしてセーブ
+        useAdNum++;
+        if (useAdNum > 3)
         {
-            useCount = 0;
+            useAdNum = 0;
         }
-        PlayerPrefs.SetInt(UseCountKey, useCount);
+        PlayerPrefs.SetInt(UseAdNumKey, useAdNum);
         PlayerPrefs.Save();
     }
 }

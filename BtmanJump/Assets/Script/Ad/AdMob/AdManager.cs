@@ -21,6 +21,10 @@ public class AdManager : MonoBehaviour
     int showCount = 0;                                                // インタースティシャル用表示回数
     const string ShowCountKey = "ShowCount";                          // 表示回数データのキー
 
+    const int OwnCompAdCount = 4;                                     // 自社広告使用時の表示回数
+    const int AdMobCount     = 3;                                     // AdMob使用時の表示回数
+    const int RewardCount    = 5;                                     // 動画リワード使用時の表示回数
+
     const string AppId =                                              // アプリID
 #if UNITY_ANDROID
         "ca-app-pub-7073050807259252~7297201289";
@@ -120,12 +124,12 @@ public class AdManager : MonoBehaviour
         showCount = PlayerPrefs.GetInt(ShowCountKey, 1);
 
         // 4回毎に自社広告を使用
-		if (showCount % 4 == 0)
+		if (showCount % OwnCompAdCount == 0)
 		{
             ownCompInterstitial.enabled = true;
 		}
         // 3回毎にAdMobを使用
-		else if (showCount % 3 == 0)
+		else if (showCount % AdMobCount == 0)
 		{
 			// 閉じているなら表示する
 			if (adInterstitial.IsClosed)
@@ -134,15 +138,15 @@ public class AdManager : MonoBehaviour
 			}
 		}
         // 上記以外ならnendを使用、5回毎の動画リワードを出す際は表示しない
-        else if (showCount % 5 != 0)
+        else if (showCount % RewardCount != 0)
         {
             nendInterstitial.Show();
         }
 
         // 表示回数をカウント
         showCount++;
-        // 5回毎に初期化
-        if (showCount > 5)
+        // 5回毎(動画リワードの番が来るたび)に初期化
+        if (showCount > RewardCount)
         {
             showCount = 1;
         }
