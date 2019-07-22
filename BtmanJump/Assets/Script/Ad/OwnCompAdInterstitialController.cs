@@ -34,7 +34,7 @@ public class OwnCompAdInterstitialController : MonoBehaviour
 
         // 次回使用する広告番号をセットしてセーブ
         useAdNum++;
-        if (useAdNum > 3)
+        if (useAdNum > OwnCompAdNum)
         {
             useAdNum = 0;
         }
