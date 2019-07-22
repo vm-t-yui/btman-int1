@@ -10,7 +10,9 @@ public class RiceTextActive : MonoBehaviour
     [SerializeField]
     GameObject riceText = default;           // 米の文字
 
-    //米の文字を表示する
+    /// <summary>
+    /// 米の文字を表示する
+    /// </summary>
     public void Active()
     {
         riceText.SetActive(true);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D;
+
 /// <summary>
 /// 各ボタンのスプライトセットクラス
 /// </summary>
