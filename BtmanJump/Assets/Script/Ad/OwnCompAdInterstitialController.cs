@@ -12,9 +12,6 @@ public class OwnCompAdInterstitialController : MonoBehaviour
     [SerializeField]
     GameObject[] adImages = default;          // 広告画像オブジェクト
 
-    [SerializeField]
-    PlayDataManager playData = default;       // プレイデータ管理クラス
-
     const int OwnCompAdNum = 3;               // 自社広告の総数
 
     int useAdNum = 0;                         // 使用する広告番号

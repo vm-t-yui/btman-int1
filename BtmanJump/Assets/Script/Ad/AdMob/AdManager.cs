@@ -38,9 +38,6 @@ public class AdManager : MonoBehaviour
 
     bool isOnline = false;                                            // オンラインかどうか
 
-    [SerializeField]
-    bool isResult = false;                                            // リザルトシーンかどうか
-
     /// <summary>
     /// ロード完了検知
     /// </summary>

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using 
 
 /// <summary>
 /// 動画広告勧誘クラス
@@ -38,7 +37,7 @@ public class AdVideoRecommender : MonoBehaviour
         // プレイ回数が指定した値で割り切れたら
         if (playData.PlayCount > 0 && playData.PlayCount % RecommendInterval == 0)
         {
-            isAdMob = PlayerPrefs.GetInt(UseAdNumKey, 0) == 1 ? true : false;
+            isAdMob = PlayerPrefs.GetInt(IsAdMobKey, 0) == 1 ? true : false;
 
             // AdMobとUnityAdsを交互に表示
             if (isAdMob)
