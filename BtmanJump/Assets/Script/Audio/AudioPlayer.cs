@@ -38,6 +38,7 @@ public class AudioPlayer : MonoBehaviour
         Cheers,         // 歓声
         Tin,            // チーン
         ItemGet,        // アイテム取得
+        Dora,           // ドラ
     }
 
     // シングルトンインスタンス

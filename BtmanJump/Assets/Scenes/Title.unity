@@ -649,10 +649,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -697,6 +693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 13700000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -818,16 +818,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_Name
-      value: AdManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
       propertyPath: adRewardVideo
@@ -837,6 +827,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: playData
+      value: 
+      objectReference: {fileID: 8261100152004549961}
+    - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: ownCompInterstitial
+      value: 
+      objectReference: {fileID: 1153132419}
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_Name
+      value: AdManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
@@ -898,8 +908,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3266636770816430207, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: playData
+      value: 
+      objectReference: {fileID: 8261100152004549961}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40d8f8ea7048774b93ef090ad9be19c, type: 3}
+--- !u!114 &1153132419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3266636770816430207, guid: a40d8f8ea7048774b93ef090ad9be19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153132418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e880767a710a4641913ca6b65717511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188290198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6283667054824443171, guid: 318329f6ed8ec4d0c86e5840a28d87a2,
@@ -1000,11 +1027,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
-        type: 3}
-      propertyPath: m_Name
-      value: AchievementController
-      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411111, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: playData
@@ -1015,6 +1037,11 @@ PrefabInstance:
       propertyPath: itemData
       value: 
       objectReference: {fileID: 6919808163537053082}
+    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
+        type: 3}
+      propertyPath: m_Name
+      value: AchievementController
+      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411110, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1168,6 +1195,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dc2cc5f8e5f206429771c378c4da443, type: 3}
+--- !u!114 &1853286372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2694042497458873015, guid: 86d205758fed44b0aa53933f2570ba89,
+    type: 3}
+  m_PrefabInstance: {fileID: 4061853482233614305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1894092468 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6919808163537053029, guid: ada7cf72784e64e75ad8b2bb3c218646,
@@ -1398,6 +1437,14 @@ PrefabInstance:
       value: TitleCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: shareSpeechBubble.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: newTextSpeechBubble.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
       propertyPath: howToPlay
       value: 
       objectReference: {fileID: 2119294550}
@@ -1405,6 +1452,14 @@ PrefabInstance:
       propertyPath: woodenOutFrame.Array.data[2]
       value: 
       objectReference: {fileID: 1143210851}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: woodenButten.Array.data[4]
+      value: 
+      objectReference: {fileID: 1853286372}
+    - target: {fileID: 803848909, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
+      propertyPath: shareSpeechBubble.Array.data[1]
+      value: 
+      objectReference: {fileID: 4061853482233614311}
     - target: {fileID: 6302764709648661543, guid: 86d205758fed44b0aa53933f2570ba89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1535,6 +1590,21 @@ PrefabInstance:
       propertyPath: itemDataManager
       value: 
       objectReference: {fileID: 6919808163537053082}
+    - target: {fileID: 321944931206087459, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633608855406585340, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694042497458873013, guid: 86d205758fed44b0aa53933f2570ba89,
+        type: 3}
+      propertyPath: playDataManager
+      value: 
+      objectReference: {fileID: 8261100152004549961}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d205758fed44b0aa53933f2570ba89, type: 3}
 --- !u!114 &4061853482233614306 stripped
@@ -1595,6 +1665,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 390a67015b81a4ef890f7b29a2d812d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4061853482233614311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3550355210190714979, guid: 86d205758fed44b0aa53933f2570ba89,
+    type: 3}
+  m_PrefabInstance: {fileID: 4061853482233614305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4882840957223381710

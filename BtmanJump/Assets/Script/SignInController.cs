@@ -32,8 +32,11 @@ public class SignInController : MonoBehaviour
 
         IsSignIn = false;
 
-        // サインイン実行
-        SignIn();
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+        {
+            // サインイン実行
+            SignIn();
+        }
     }
 
     /// <summary>
@@ -48,14 +51,6 @@ public class SignInController : MonoBehaviour
                 // サインイン成功！
                 IsSignIn = true;
             }
-            else if (signInTryCount < MaxSignInTryCount)
-            {
-                // サインインに失敗して、処理実行回数が最大に達していないなら再度実行
-                SignIn();
-            }
         });
-
-        // サインイン処理実行回数をカウント
-        signInTryCount++;
     }
 }

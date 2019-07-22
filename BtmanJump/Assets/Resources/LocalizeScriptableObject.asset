@@ -46,6 +46,8 @@ MonoBehaviour:
   - "\u9280\u306E\u3046\u3093\u3061\u306E\u5316\u77F3"
   - "\u91D1\u306E\u3046\u3093\u3061\u306E\u5316\u77F3"
   - "\u5C0F\u4EBA\u306E\u30B5\u30F3\u30BF"
+  - "\u307F\u305A\u304C\u3081\u5EA7"
+  - "\u3046\u304A\u5EA7"
   - "\u304A\u3072\u3064\u3058\u5EA7"
   - "\u304A\u3046\u3057\u5EA7"
   - "\u3075\u305F\u3054\u5EA7"
@@ -56,8 +58,6 @@ MonoBehaviour:
   - "\u3055\u305D\u308A\u5EA7"
   - "\u3044\u3066\u5EA7"
   - "\u3084\u304E\u5EA7"
-  - "\u307F\u305A\u304C\u3081\u5EA7"
-  - "\u3046\u304A\u5EA7"
   - "\u8D64\u8272\u306E\u9695\u77F3"
   - "\u9752\u8272\u306E\u9695\u77F3"
   - "\u7DD1\u8272\u306E\u9695\u77F3"
@@ -139,6 +139,8 @@ MonoBehaviour:
   - Poop fossil of silver
   - Poop fossil of gold
   - Dwarf Santa
+  - Aquarius
+  - Pisces
   - Aries
   - Taurus
   - Gemini
@@ -149,8 +151,6 @@ MonoBehaviour:
   - Scorpion
   - Sagittarius
   - Capricorn
-  - Aquarius
-  - Pisces
   - Red meteorites
   - Blue meteorites
   - Green meteorites
@@ -232,6 +232,8 @@ MonoBehaviour:
   - Poop Fossil aus Silber
   - Poop Fossil aus Gold
   - Zwerg Santa
+  - Wassermann
+  - Fische
   - Widder
   - Stier
   - Zwillinge
@@ -242,8 +244,6 @@ MonoBehaviour:
   - Skorpion
   - "Sch\xFCtze"
   - Steinbock
-  - Wassermann
-  - Fische
   - Rote Meteoriten
   - Rote Meteoriten
   - Blaue Meteoriten
@@ -325,6 +325,8 @@ MonoBehaviour:
   - Fossile di cacca d'argento
   - Fossile di cacca d'oro
   - Dwarf Santa
+  - Acquario
+  - Pesci
   - Ariete
   - Toro
   - Gemelli
@@ -335,8 +337,6 @@ MonoBehaviour:
   - Scorpione
   - Sagittario
   - Capricorno
-  - Acquario
-  - Pesci
   - Meteoriti rossi
   - Meteoriti blu
   - Meteoriti verdi
@@ -418,6 +418,8 @@ MonoBehaviour:
   - Caca fossile d'argent
   - Caca fossile d'or
   - "Nain P\xE8re No\xEBl"
+  - Verseau
+  - Poissons
   - "b\xE9lier"
   - Taureau
   - "G\xE9meaux"
@@ -428,8 +430,6 @@ MonoBehaviour:
   - Scorpion
   - Sagittaire
   - Capricorne
-  - Verseau
-  - Poissons
   - "M\xE9t\xE9orites rouges"
   - "M\xE9t\xE9orites bleues"
   - "M\xE9t\xE9orites vertes"
@@ -511,6 +511,8 @@ MonoBehaviour:
   - "\u5927\u4FBF\u5316\u77F3\u94F6"
   - "\u91D1\u7B8D\u5316\u77F3"
   - "\u77EE\u5C0F\u7684\u5723\u8BDE\u8001\u4EBA"
+  - "\u6C34\u74F6\u5EA7"
+  - "\u53CC\u9C7C\u5EA7"
   - "\u767D\u7F8A\u5EA7"
   - "\u91D1\u725B\u5EA7"
   - "\u53CC\u5B50\u5EA7"
@@ -521,8 +523,6 @@ MonoBehaviour:
   - "\u874E\u5EA7"
   - "\u5C04\u624B\u5EA7"
   - "\u6469\u7FAF\u5EA7"
-  - "\u6C34\u74F6\u5EA7"
-  - "\u53CC\u9C7C\u5EA7"
   - "\u7EA2\u8272\u9668\u77F3"
   - "\u84DD\u8272\u9668\u77F3"
   - "\u7EFF\u8272\u9668\u77F3"
@@ -605,6 +605,8 @@ MonoBehaviour:
   - "Caca f\xF3sil de plata."
   - "Caca f\xF3sil de oro"
   - Santa enana
+  - Acuario
+  - Piscis
   - Aries
   - Tauro
   - Geminis
@@ -615,8 +617,6 @@ MonoBehaviour:
   - "Escorpi\xF3n"
   - Sagitario
   - Capricornio
-  - Acuario
-  - Piscis
   - Meteoritos rojos
   - Meteoritos azules
   - Meteoritos verdes

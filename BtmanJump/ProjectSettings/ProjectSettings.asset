@@ -158,7 +158,7 @@ PlayerSettings:
     Android: com.vikingmaxx.btmanJump
     iOS: com.vikingmaxx.btmanJump
   buildNumber: {}
-  AndroidBundleVersionCode: 15
+  AndroidBundleVersionCode: 17
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
