@@ -26,8 +26,8 @@ public class AdVideoRecommender : MonoBehaviour
     
     const int RecommendInterval = 5;                          // 勧誘を行うプレイ回数間隔
 
-    bool isAdMob = false;                                     // AdMobの広告を使用するかどうか（交互に使用するため）
-    int adMobInterval = 6;                                    // AdMobを使用するプレイ回数間隔
+    bool isAdMob = false;                                     // AdMob使用フラグ（UnityAdsと交互に使用するため）
+    string IsAdMobKey = "IsAdMob";                            // AdMob使用フラグのデータキー
 
     /// <summary>
     /// 初期化
@@ -37,13 +37,23 @@ public class AdVideoRecommender : MonoBehaviour
         // プレイ回数が指定した値で割り切れたら
         if (playData.PlayCount > 0 && playData.PlayCount % RecommendInterval == 0)
         {
-            // AdMobとUnityAdsを交互に表示させるため、6回毎にAdMobを使用する
-            if (playData.PlayCount % adMobInterval == 0)
+            isAdMob = PlayerPrefs.GetInt(IsAdMobKey, 0) == 1 ? true : false;
+
+            // AdMobとUnityAdsを交互に表示
+            if (isAdMob)
             {
                 // AdMob動画リワード広告を生成
                 adMobVideo.RequestRewardVideo();
+                isAdMob = false;
+            }
+            else
+            {
                 isAdMob = true;
             }
+
+            // AdMob使用フラグを更新してセーブ
+            PlayerPrefs.SetInt(IsAdMobKey, isAdMob ? 1 : 0);
+            PlayerPrefs.Save();
 
             // 勧誘を許可
             isAble = true;

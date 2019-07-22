@@ -15,7 +15,6 @@ public class SignInController : MonoBehaviour
     public bool IsSignIn { get; private set; }    // サインインしているかどうか
 
     const int MaxSignInTryCount = 20;             // 最大サインイン処理実行回数
-    int signInTryCount = 0;                       // サインイン処理実行回数
 
     /// <summary>
     /// 開始
