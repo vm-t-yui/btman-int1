@@ -649,13 +649,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -693,10 +697,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 03be7ab7d2cc728479bb367ee9e673fe, type: 2}
     - target: {fileID: 13700000, guid: 50373aad8877c294b9371b1fb570831a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -818,6 +818,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_Name
+      value: AdManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506165, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
       propertyPath: adRewardVideo
@@ -838,21 +848,6 @@ PrefabInstance:
       propertyPath: ownCompInterstitial
       value: 
       objectReference: {fileID: 1153132419}
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_Name
-      value: AdManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064294506164, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
-        type: 3}
-      propertyPath: cube
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1216576064294506186, guid: a40d8f8ea7048774b93ef090ad9be19c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -913,6 +908,11 @@ PrefabInstance:
       propertyPath: playData
       value: 
       objectReference: {fileID: 8261100152004549961}
+    - target: {fileID: 1216576064827277713, guid: a40d8f8ea7048774b93ef090ad9be19c,
+        type: 3}
+      propertyPath: cube
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40d8f8ea7048774b93ef090ad9be19c, type: 3}
 --- !u!114 &1153132419 stripped
@@ -1005,6 +1005,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9599a9c13c341984db90b248049b4579, type: 2}
+    - target: {fileID: 657176303975627170, guid: 38366c76e15a54aac9c737dc345fc707,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.035
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 495700207435875801, guid: 38366c76e15a54aac9c737dc345fc707, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38366c76e15a54aac9c737dc345fc707, type: 3}
@@ -1027,6 +1032,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
+        type: 3}
+      propertyPath: m_Name
+      value: AchievementController
+      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411111, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: playData
@@ -1037,11 +1047,6 @@ PrefabInstance:
       propertyPath: itemData
       value: 
       objectReference: {fileID: 6919808163537053082}
-    - target: {fileID: 3774517793028411108, guid: 2e1ae328a971661408f221749c16738d,
-        type: 3}
-      propertyPath: m_Name
-      value: AchievementController
-      objectReference: {fileID: 0}
     - target: {fileID: 3774517793028411110, guid: 2e1ae328a971661408f221749c16738d,
         type: 3}
       propertyPath: m_LocalPosition.x

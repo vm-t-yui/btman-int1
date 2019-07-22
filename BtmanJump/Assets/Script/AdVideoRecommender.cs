@@ -44,16 +44,7 @@ public class AdVideoRecommender : MonoBehaviour
             {
                 // AdMob動画リワード広告を生成
                 adMobVideo.RequestRewardVideo();
-                isAdMob = false;
             }
-            else
-            {
-                isAdMob = true;
-            }
-
-            // AdMob使用フラグを更新してセーブ
-            PlayerPrefs.SetInt(IsAdMobKey, isAdMob ? 1 : 0);
-            PlayerPrefs.Save();
 
             // 勧誘を許可
             isAble = true;
@@ -69,12 +60,18 @@ public class AdVideoRecommender : MonoBehaviour
         if (isAdMob)
         {
             adMobVideo.Play();
+            isAdMob = false;
         }
         // UnityAds再生
         else
         {
             unityAdsVideo.Play();
+            isAdMob = true;
         }
+
+        // AdMob使用フラグを更新してセーブ
+        PlayerPrefs.SetInt(IsAdMobKey, isAdMob ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     /// <summary>
